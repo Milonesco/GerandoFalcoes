@@ -1,0 +1,124 @@
+﻿@using Transformese.Domain.Entities
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var usuarioLogado = HttpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated == true
+        ? HttpContextAccessor.HttpContext.User.Identity!.Name
+        : HttpContextAccessor.HttpContext?.Session.GetString("Usuario");
+
+    var tipoUsuario = HttpContextAccessor.HttpContext?.Session.GetString("TipoUsuario");
+}
+
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Transforme-se</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet"
+          href="~/css/site.css" />
+</head>
+<body>
+
+    <!-- ============================
+         NAVBAR
+    ============================ -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm mb-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold text-white" href="@Url.Action("Index", "Home")">
+                <img src="~/images/logo-transformese.png" height="40" class="me-2" />
+
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold" href="@Url.Action("Index", "Home")">Início</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" data-bs-toggle="dropdown">Cursos</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="@Url.Action("Index", "Curso")">Todos os Cursos</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Index", "Aluno")">Meus Cursos</a></li>
+                        </ul>
+                    </li>
+
+                    @if (tipoUsuario == "Administrador")
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" data-bs-toggle="dropdown">Administração</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Dashboard")">Painel</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Professor")">Professores</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Aluno")">Alunos</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+                <!-- DARK MODE -->
+                <i class="bi bi-moon-stars-fill text-white dark-mode-toggle me-4" id="darkModeToggle"></i>
+
+                <ul class="navbar-nav">
+                    @if (string.IsNullOrEmpty(usuarioLogado))
+                    {
+                        <li class="nav-item me-2">
+                            <a class="btn btn-brand" href="@Url.Action("Register", "Account")">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-brand" href="@Url.Action("Login", "Account")">Entrar</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle me-1"></i> @usuarioLogado (@tipoUsuario)
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                <li>
+                                    <form asp-controller="Account" asp-action="Logout" method="post">
+                                        <button class="dropdown-item text-danger" type="submit">Sair</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <!-- ============================
+         FOOTER
+    ============================ -->
+    <footer class="bg-dark text-light text-center py-3 mt-auto">
+        <small>&copy; @DateTime.Now.Year - Transforme-se. Todos os direitos reservados.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dark Mode Script (Lua <-> Sol) -->
+
+
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/site.js"></script>
+   
+</body>
+</html>

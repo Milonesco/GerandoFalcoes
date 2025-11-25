@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Transformese.Domain.Entities.Curso>
+@{
+    ViewData["Title"] = "Cursos Disponíveis";
+}
+
+<h2 class="fw-bold text-primary mb-4">Cursos Disponíveis</h2>
+
+<div class="row">
+    @foreach (var curso in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">@curso.Nome</h5>
+                    <p>@curso.Descricao</p>
+                    <p class="text-muted">Unidade: @curso.Unidade?.Nome</p>
+                    <button class="btn btn-transforme w-100">Matricular-se</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

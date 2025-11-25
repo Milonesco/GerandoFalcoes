@@ -1,0 +1,56 @@
+﻿@model Transformese.Domain.Entities.Curso
+
+@{
+    ViewData["Title"] = "Detalhes do Curso";
+    bool isAdmin = User.IsInRole("Administrador");
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <div class="row">
+
+            <div class="col-md-5">
+                <img src="@(string.IsNullOrEmpty(Model.Imagem)
+                                                    ? "/images/default-course.jpg"
+                                                    : "/images/cursos/" + Model.Imagem)"
+                     class="img-fluid rounded"
+                     style="max-height:280px; object-fit:cover;">
+            </div>
+
+            <div class="col-md-7">
+                <h2 class="fw-bold">@Model.Nome</h2>
+                <p class="text-muted">@Model.Descricao</p>
+
+                <p>
+                    <strong>Unidade:</strong>
+                    @Model.Unidade?.Nome ?? "Não informada"
+                </p>
+
+                <hr />
+
+                @if (isAdmin)
+                {
+                    <div class="d-flex gap-3">
+                        <a class="btn btn-warning"
+                           href="@Url.Action("Editar", "Curso", new { id = Model.IdCurso })">
+                            <i class="bi bi-pencil-square"></i> Editar
+                        </a>
+
+                        <form method="post"
+                              action="@Url.Action("Excluir", "Curso", new { id = Model.IdCurso })"
+                              onsubmit="return confirm('Tem certeza que deseja excluir este curso?');">
+                            <button class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Excluir
+                            </button>
+                        </form>
+                    </div>
+                }
+
+                <a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Curso")">
+                    Voltar
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

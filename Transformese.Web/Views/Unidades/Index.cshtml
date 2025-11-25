@@ -1,0 +1,4 @@
+@model object
+<h1>Unidades</h1>
+<p><a class="btn btn-primary" asp-action="Create">Criar Unidade</a></p>
+<pre>@System.Text.Json.JsonSerializer.Serialize(Model, new System.Text.Json.JsonSerializerOptions { WriteIndented = true })</pre>

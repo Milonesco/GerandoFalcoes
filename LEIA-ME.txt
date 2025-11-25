@@ -1,0 +1,74 @@
+Transformese - Solução pronta (Completa)
+========================================
+
+Esta pasta contém uma solução base com 5 projetos:
+- Transformese.Domain (entidades)
+- Transformese.Data (DbContext + Seed)
+- Transformese.Api (API REST com CRUD e upload)
+- Transformese.Web (MVC que consome a API)
+- Transformese.Desktop (WinForms exemplo consumindo a API)
+
+Passos para usar (Windows, .NET 8)
+---------------------------------
+
+1) Pré-requisitos
+   - .NET 8 SDK instalado (dotnet --version)
+   - SQL Server LocalDB ou outra instância acessível
+   - Visual Studio 2022/2023 ou VS Code
+
+2) Criar a solução e adicionar projetos (se ainda não estiverem em .sln):
+   Abra um terminal na pasta raiz (onde esta README) e execute:
+     dotnet new sln -n TransformeseSolution
+     dotnet sln TransformeseSolution.sln add Transformese.Domain\Transformese.Domain.csproj
+     dotnet sln TransformeseSolution.sln add Transformese.Data\Transformese.Data.csproj
+     dotnet sln TransformeseSolution.sln add Transformese.Api\Transformese.Api.csproj
+     dotnet sln TransformeseSolution.sln add Transformese.Web\Transformese.Web.csproj
+     dotnet sln TransformeseSolution.sln add Transformese.Desktop\Transformese.Desktop.csproj
+
+3) Ajuste a connection string:
+   Edite Transformese.Api\appsettings.json e configure "DefaultConnection" para seu SQL Server.
+
+4) Instale a ferramenta dotnet-ef (se necessário):
+   dotnet tool install --global dotnet-ef
+
+5) Criar a primeira migration e atualizar o banco:
+   cd Transformese.Api
+   dotnet ef migrations add InitialCreate -p Transformese.Data/Transformese.Data.csproj -s Transformese.Api/Transformese.Api.csproj
+   dotnet ef database update -p ../Transformese.Data/Transformese.Data.csproj -s Transformese.Api/Transformese.Api.csproj
+
+   Obs: se preferir, crie o banco manualmente conforme os DbSet.
+
+6) Rodar a API:
+   dotnet run --project Transformese.Api
+
+   A API por padrão estará em https://localhost:5001
+   Acesse https://localhost:5001/swagger para testar os endpoints.
+
+7) Rodar o MVC:
+   dotnet run --project Transformese.Web
+   Acesse a rota /Cursos para ver o consumo da API.
+
+8) Rodar o Desktop:
+   Abra o projeto Transformese.Desktop no Visual Studio e execute.
+
+Observações
+-----------
+- As imagens padrão (default-course.jpg e default-user.jpg) devem ser colocadas nas pastas:
+  Transformese.Api/wwwroot/images/cursos
+  Transformese.Api/wwwroot/images/usuarios
+
+- Se ocorrerem problemas com certificados HTTPS em ambiente de desenvolvimento, rode:
+  dotnet dev-certs https --trust
+
+- O seed inicial insere tipos de usuário, 5 unidades, 10 cursos e 20 usuários.
+
+Suporte
+-------
+Se quiser, eu posso:
+- Gerar Views com Bootstrap completas (CRUD forms)
+- Implementar AutoMapper com DTOs
+- Implementar autenticação JWT
+- Adicionar paginação e filtros nos endpoints
+- Gerar .BAT que cria a solução automaticamente (download via Gist)
+
+Bons estudos e bom trabalho!

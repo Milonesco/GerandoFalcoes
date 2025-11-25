@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CursoDto>
+
+
+
+
+@* lista de cursos *@
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Cursos Disponíveis</h2>
+    <div class="row">
+        @await Html.PartialAsync("~/Views/Shared/_CursosListPartial.cshtml", Model)
+    </div>
+</div>
+
+
+<section class="container my-5">
+    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+        <iframe src="https://www.youtube.com/embed/nD1rzEsTgUU"
+                title="Transforme-se - Serasa + Senac"
+                allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Modal Detalhes -->
+<div class="modal fade" id="cursoModal" tabindex="-1" aria-labelledby="cursoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cursoModalLabel">Detalhes do Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body text-center" id="cursoModalBody">
+                <p>Carregando...</p>
+            </div>
+        </div>
+    </div>
+</div>

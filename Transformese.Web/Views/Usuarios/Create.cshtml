@@ -1,0 +1,24 @@
+﻿@{
+    var tipos = ViewBag.Tipos as System.Text.Json.JsonElement?;
+}
+<h1>Criar Usuário</h1>
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3"><label>Nome</label><input name="Nome" class="form-control" /></div>
+    <div class="mb-3"><label>Email</label><input name="Email" class="form-control" /></div>
+    <div class="mb-3"><label>Senha</label><input name="Senha" class="form-control" type="password" /></div>
+    <div class="mb-3"><label>Data de Nascimento</label><input name="DataNascimento" class="form-control" type="date" /></div>
+    <div class="mb-3">
+        <label>Tipo de usuário</label>
+        <select name="TipoUsuarioId" class="form-control">
+            @if (tipos != null && tipos.Value.ValueKind == System.Text.Json.JsonValueKind.Array)
+            {
+                foreach (var t in tipos.Value.EnumerateArray())
+                {
+                    <option value="@t.GetProperty("idTipoUsuario").GetInt32()">@t.GetProperty("descricaoTipoUsuario").GetString()</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="mb-3"><label>Foto (opcional)</label><input type="file" name="foto" class="form-control" /></div>
+    <button class="btn btn-primary">Criar</button>
+</form>

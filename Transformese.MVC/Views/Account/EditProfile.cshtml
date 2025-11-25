@@ -1,0 +1,90 @@
+﻿@model TransformeseMVC.Web.ViewModels.EditProfileViewModel
+@{
+    ViewData["Title"] = "Editar Perfil";
+}
+
+<div class="container py-5">
+
+    @* Mensagens *@
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center fw-semibold" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center fw-semibold" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            @TempData["MensagemErro"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    }
+
+    <div class="card shadow-lg border-0 mx-auto" style="max-width: 700px;">
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h4 class="mb-0 fw-bold">Editar Perfil</h4>
+        </div>
+
+        <div class="card-body p-4">
+            <form asp-action="EditProfile" asp-controller="Account" enctype="multipart/form-data" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="text-center mb-4">
+                    <img id="previewFoto"
+                         src="@(string.IsNullOrEmpty(Model.FotoPerfilUrl) ? "/images/default-user.jpg" : Model.FotoPerfilUrl)"
+                         class="rounded-circle border border-3 border-light shadow-sm"
+                         alt="Foto de perfil"
+                         style="width: 150px; height: 150px; object-fit: cover;" />
+                </div>
+
+                <div class="mb-3 text-center">
+                    <label class="btn btn-outline-primary">
+                        <input asp-for="FotoPerfil" type="file" class="d-none" accept="image/*" />
+                        <i class="bi bi-camera-fill"></i> Alterar Foto
+                    </label>
+                    <span asp-validation-for="FotoPerfil" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NomeCompleto" class="form-label fw-semibold"></label>
+                    <input asp-for="NomeCompleto" class="form-control" placeholder="Seu nome completo" />
+                    <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label fw-semibold"></label>
+                    <input asp-for="Email" class="form-control" readonly />
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-save"></i> Salvar Alterações
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer text-center bg-light">
+            <a asp-action="Index" asp-controller="Home" class="text-decoration-none text-secondary">
+                <i class="bi bi-arrow-left"></i> Voltar à Home
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Pré-visualização da foto antes do envio
+        const input = document.querySelector('input[name="FotoPerfil"]');
+        const preview = document.getElementById("previewFoto");
+        if (input && preview) {
+            input.addEventListener("change", (e) => {
+                const [file] = e.target.files || [];
+                if (file) preview.src = URL.createObjectURL(file);
+            });
+        }
+    </script>
+}

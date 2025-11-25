@@ -1,0 +1,11 @@
+﻿@model Transformese.Domain.Entities.Curso
+
+
+<div class="text-center">
+    <img src="@(Model.Imagem ?? "/images/default-course.jpg")"
+         class="img-fluid rounded mb-3"
+         style="max-height:250px; object-fit:cover;">
+    <h4>@Model.Nome</h4>
+    <p>@Model.Descricao</p>
+    <p><strong>Unidade:</strong> @Model.Unidade?.Nome</p>
+</div>

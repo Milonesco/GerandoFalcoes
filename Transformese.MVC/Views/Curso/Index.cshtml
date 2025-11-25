@@ -1,0 +1,115 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using Transformese.Domain.Entities
+@model IEnumerable<CursoDto>
+
+@{
+    var tipoUsuario = HttpContextAccessor.HttpContext?.User?.Claims
+        ?.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Role)?.Value;
+
+    bool isAdmin = tipoUsuario == "Administrador";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Cursos Disponíveis</h2>
+
+        @if (isAdmin)
+        {
+            <a href="@Url.Action("Criar", "Curso")" class="btn btn-brand">
+                <i class="bi bi-plus-circle me-1"></i> Criar Curso
+            </a>
+        }
+    </div>
+
+    <div class="row g-4">
+        @foreach (var curso in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <img src="@(string.IsNullOrEmpty(curso.Imagem)
+                                                            ? "/images/default-course.jpg"
+                                                            : $"/images/cursos/{curso.Imagem}")"
+                     class="card-img-top"
+                     alt="@curso.Nome"
+                     style="height:200px; object-fit:cover;" />
+
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@curso.Nome</h5>
+                        <p class="text-muted">@curso.Descricao</p>
+
+                        <button class="btn btn-primary w-100 mb-2"
+                                onclick="abrirModalDetalhes(@curso.IdCurso)">
+                            Ver Detalhes
+                        </button>
+
+                    @if (isAdmin)
+                        {
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-warning w-50 me-1"
+                                   href="@Url.Action("Editar", "Curso", new { id = curso.IdCurso })">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+
+                                <form method="post" action="@Url.Action("Excluir", "Curso")"
+                                      onsubmit="return confirm('Tem certeza que deseja excluir este curso?');"
+                                      class="w-50">
+                                    <input type="hidden" name="id" value="@curso.IdCurso" />
+                                    <button type="submit" class="btn btn-danger w-100">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+<!-- MODAL DETALHES -->
+<div class="modal fade" id="modalDetalhesCurso" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Detalhes do Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="cursoDetalhesContainer">
+                Carregando...
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function abrirModalDetalhes(id) {
+            const modal = new bootstrap.Modal(document.getElementById("modalDetalhesCurso"));
+
+            fetch(`/Curso/DetalhesModal/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("cursoDetalhesContainer").innerHTML = `
+                        <div class="text-center">
+                            <img src="${data.imagem}" class="img-fluid rounded mb-3"
+                                 style="max-height:250px; object-fit:cover;">
+                            <h4>${data.titulo}</h4>
+                            <p>${data.descricao}</p>
+                            <p><strong>Unidade:</strong> ${data.unidade}</p>
+                        </div>
+                    `;
+                    modal.show();
+                })
+                .catch(() => {
+                    document.getElementById("cursoDetalhesContainer").innerHTML =
+                        "<p class='text-danger'>Erro ao carregar detalhes.</p>";
+                });
+        }
+    </script>
+}

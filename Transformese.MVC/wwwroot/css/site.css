@@ -1,0 +1,166 @@
+﻿/* ================================================
+      BASE
+================================================ */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+/* Focus default do Bootstrap */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* ================================================
+      PALETA TRANSFORME-SE
+================================================ */
+:root {
+    --brand-blue: #1e4f91;
+    --brand-pink: #e80070;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-dark: #121212; /* fundo escuro global */
+    --bg-darker: #1c1c1c; /* cards/forms no modo escuro */
+    --bg-light: #f9fafb; /* fundo claro global */
+}
+
+/* ================================================
+      LIGHT MODE (invertido)
+      → fundo escuro, texto claro, botões rosa
+================================================ */
+[data-theme="light"] body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+[data-theme="light"] .navbar {
+    background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+}
+
+[data-theme="light"] .btn-brand {
+    background-color: var(--brand-pink);
+    color: #fff;
+}
+
+/* ================================================
+      DARK MODE (invertido)
+      → fundo claro, texto escuro, botões azuis
+================================================ */
+[data-theme="dark"] body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .navbar {
+    background: linear-gradient(90deg, var(--brand-blue), var(--brand-pink));
+}
+
+[data-theme="dark"] .btn-brand {
+    background-color: var(--brand-blue);
+    color: #fff;
+}
+
+/* ================================================
+      TRANSIÇÕES / HOVER
+================================================ */
+.btn-brand:hover {
+    filter: brightness(1.1);
+}
+
+/* ================================================
+      Ícone dark mode
+================================================ */
+.dark-mode-toggle {
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: .2s;
+}
+
+    .dark-mode-toggle:hover {
+        transform: scale(1.1);
+    }
+
+/* ================================================
+      ELEMENTOS INTERNOS QUE PRECISAM ESCURECER
+      (para o fundo não ficar branco igual na sua captura)
+================================================ */
+html[data-theme="light"] .card,
+html[data-theme="light"] .container,
+html[data-theme="light"] main,
+html[data-theme="light"] .modal-content {
+    background-color: var(--bg-darker) !important;
+    color: var(--text-light) !important;
+    border-color: #333 !important;
+}
+
+/* DARK MODE ajusta esses mesmos elementos */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .container,
+html[data-theme="dark"] main,
+html[data-theme="dark"] .modal-content {
+    background-color: #ffffff !important;
+    color: var(--text-dark) !important;
+    border-color: #ccc !important;
+}
+
+/* ================================================
+      TEXTOS
+================================================ */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] p,
+html[data-theme="light"] label,
+html[data-theme="light"] .nav-link {
+    color: #f1f1f1 !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] label,
+html[data-theme="dark"] .nav-link {
+    color: var(--text-dark) !important;
+}
+
+/* ================================================
+      FORM INPUTS
+================================================ */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background-color: #fff !important;
+    color: #222 !important;
+    border-color: #999 !important;
+}

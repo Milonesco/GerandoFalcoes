@@ -1,0 +1,60 @@
+@model System.Text.Json.JsonElement
+
+@{
+    ViewData["Title"] = "Cursos";
+
+    // garante que temos um array vindo da API
+    var cursos = Model.ValueKind == System.Text.Json.JsonValueKind.Array
+        ? Model.EnumerateArray().ToList()
+        : new List<System.Text.Json.JsonElement>();
+}
+
+<h1>Cursos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Criar novo curso</a>
+</p>
+
+@if (!cursos.Any())
+{
+    <div>Nenhum curso cadastrado</div>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in cursos)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+
+                    <img class="card-img-top"
+                         src="@(
+                         item.TryGetProperty("imagem", out var im)
+                             ? Url.Content("~/images/cursos/" + (im.GetString() ?? "default-course.jpg"))
+                             : Url.Content("~/images/cursos/default-course.jpg")
+                                                  )"
+                     style="height:220px; object-fit:cover;" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.GetProperty("nome").GetString()</h5>
+                        <p class="card-text">@item.GetProperty("descricao").GetString()</p>
+
+                <p class="card-text">
+                    <small class="text-muted">
+                        Unidade:
+                        @(item.TryGetProperty("unidade", out var u)
+                                                ? u.GetProperty("nome").GetString()
+                                                : "(Sem unidade)")
+                    </small>
+                </p>
+
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.GetProperty("idCurso").GetInt32()"
+                           class="btn btn-sm btn-outline-primary">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
