@@ -1,43 +1,42 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using Transformese.Domain.Enums; 
 
 namespace Transformese.Domain.Entities
 {
-    public class Candidato
+    public class Candidato : BaseEntity
     {
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = "O nome completo é obrigatório.")]
         public string NomeCompleto { get; set; }
+        public string CPF { get; set; }
+        public DateTime DataNascimento { get; set; }
 
-        [Required(ErrorMessage = "O CPF é obrigatório.")]
-        [StringLength(14)]
-        public string Cpf { get; set; }
-
-        [Required(ErrorMessage = "O e-mail é obrigatório.")]
-        [EmailAddress(ErrorMessage = "E-mail inválido.")]
+        // Contato
         public string Email { get; set; }
-
         public string Telefone { get; set; }
 
+        // Socioeconômico (Requisitos GF)
         public string Cidade { get; set; }
-
+        public string Estado { get; set; }
         public bool PossuiComputador { get; set; }
-
         public bool PossuiInternet { get; set; }
+        public string? PerfilLinkedin { get; set; }
 
-        public string? ObservacoesOng { get; set; }
-
-        // Status do processo seletivo
-        public int Status { get; set; } = 0;
-
+        // Controle de Processo
         public DateTime DataCadastro { get; set; } = DateTime.Now;
+        public DateTime? DataEntrevista { get; set; }
+        public string? ObservacoesONG { get; set; }
+        public string? ObservacoesGF { get; set; }
 
-        // Chave Estrangeira para a ONG (Unidade)
+        // Chaves Estrangeiras
         public int? UnidadeId { get; set; }
+        public Unidade? Unidade { get; set; }
 
-        [ForeignKey("UnidadeId")]
-        public virtual Unidade? Unidade { get; set; }
+        public int? CursoId { get; set; }
+        public Curso? Curso { get; set; }
+
+        public StatusCandidato Status { get; set; } = StatusCandidato.Inscrito;
+
+        // Auditoria (Quem mexeu?)
+        public ICollection<CandidatoLog>? HistoricoLogs { get; set; }
     }
 }

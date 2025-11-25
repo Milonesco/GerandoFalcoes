@@ -13,12 +13,12 @@ namespace Transformese.Api.Controllers
         public TipoUsuariosController(ApplicationDbContext db) { _db = db; }
 
         [HttpGet]
-        public async Task<IActionResult> Get() => Ok(await _db.TiposUsuarios.ToListAsync());
+        public async Task<IActionResult> Get() => Ok(await _db.TipoUsuarios.ToListAsync());
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var t = await _db.TiposUsuarios.FindAsync(id);
+            var t = await _db.TipoUsuarios.FindAsync(id);
             if (t == null) return NotFound();
             return Ok(t);
         }

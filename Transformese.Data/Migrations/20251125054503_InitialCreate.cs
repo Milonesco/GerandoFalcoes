@@ -14,7 +14,7 @@ namespace Transformese.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "TiposUsuarios",
+                name: "TipoUsuarios",
                 columns: table => new
                 {
                     IdTipoUsuario = table.Column<int>(type: "int", nullable: false)
@@ -23,7 +23,7 @@ namespace Transformese.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TiposUsuarios", x => x.IdTipoUsuario);
+                    table.PrimaryKey("PK_TipoUsuarios", x => x.IdTipoUsuario);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,9 +57,9 @@ namespace Transformese.Data.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.IdUsuario);
                     table.ForeignKey(
-                        name: "FK_Usuarios_TiposUsuarios_TipoUsuarioId",
+                        name: "FK_Usuarios_TipoUsuarios_TipoUsuarioId",
                         column: x => x.TipoUsuarioId,
-                        principalTable: "TiposUsuarios",
+                        principalTable: "TipoUsuarios",
                         principalColumn: "IdTipoUsuario",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -86,8 +86,77 @@ namespace Transformese.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Candidatos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CPF = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PossuiComputador = table.Column<bool>(type: "bit", nullable: false),
+                    PossuiInternet = table.Column<bool>(type: "bit", nullable: false),
+                    PerfilLinkedin = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataEntrevista = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ObservacoesONG = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ObservacoesGF = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UnidadeId = table.Column<int>(type: "int", nullable: true),
+                    CursoId = table.Column<int>(type: "int", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Candidatos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Candidatos_Cursos_CursoId",
+                        column: x => x.CursoId,
+                        principalTable: "Cursos",
+                        principalColumn: "IdCurso");
+                    table.ForeignKey(
+                        name: "FK_Candidatos_Unidades_UnidadeId",
+                        column: x => x.UnidadeId,
+                        principalTable: "Unidades",
+                        principalColumn: "IdUnidade");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CandidatoLogs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CandidatoId = table.Column<int>(type: "int", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: true),
+                    StatusAnterior = table.Column<int>(type: "int", nullable: false),
+                    NovoStatus = table.Column<int>(type: "int", nullable: false),
+                    Acao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Observacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataHora = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CandidatoLogs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CandidatoLogs_Candidatos_CandidatoId",
+                        column: x => x.CandidatoId,
+                        principalTable: "Candidatos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CandidatoLogs_Usuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuarios",
+                        principalColumn: "IdUsuario");
+                });
+
             migrationBuilder.InsertData(
-                table: "TiposUsuarios",
+                table: "TipoUsuarios",
                 columns: new[] { "IdTipoUsuario", "DescricaoTipoUsuario" },
                 values: new object[,]
                 {
@@ -153,6 +222,32 @@ namespace Transformese.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_CandidatoLogs_CandidatoId",
+                table: "CandidatoLogs",
+                column: "CandidatoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CandidatoLogs_UsuarioId",
+                table: "CandidatoLogs",
+                column: "UsuarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Candidatos_CPF",
+                table: "Candidatos",
+                column: "CPF",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Candidatos_CursoId",
+                table: "Candidatos",
+                column: "CursoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Candidatos_UnidadeId",
+                table: "Candidatos",
+                column: "UnidadeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Cursos_UnidadeId",
                 table: "Cursos",
                 column: "UnidadeId");
@@ -167,16 +262,22 @@ namespace Transformese.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Cursos");
+                name: "CandidatoLogs");
+
+            migrationBuilder.DropTable(
+                name: "Candidatos");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "Unidades");
+                name: "Cursos");
 
             migrationBuilder.DropTable(
-                name: "TiposUsuarios");
+                name: "TipoUsuarios");
+
+            migrationBuilder.DropTable(
+                name: "Unidades");
         }
     }
 }

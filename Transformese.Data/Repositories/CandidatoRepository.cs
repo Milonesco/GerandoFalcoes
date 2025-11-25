@@ -43,7 +43,7 @@ namespace Transformese.Data.Repositories
         {
             return await _context.Candidatos
                 .Include(c => c.Unidade)
-                .FirstOrDefaultAsync(c => c.Cpf == cpf);
+                .FirstOrDefaultAsync(c => c.CPF == cpf);
         }
 
         // Read (Por Unidade - Para a ONG ver só os dela)
@@ -58,7 +58,7 @@ namespace Transformese.Data.Repositories
         // Read (Verificar Duplicidade de CPF)
         public async Task<bool> ExisteCpf(string cpf)
         {
-            return await _context.Candidatos.AnyAsync(c => c.Cpf == cpf);
+            return await _context.Candidatos.AnyAsync(c => c.CPF == cpf);
         }
 
         // Update

@@ -12,7 +12,7 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251117125759_InitialCreate")]
+    [Migration("20251125054503_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,10 +20,121 @@ namespace Transformese.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Transformese.Domain.Entities.Candidato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CursoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataEntrevista")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeCompleto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ObservacoesGF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ObservacoesONG")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PerfilLinkedin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PossuiComputador")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PossuiInternet")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UnidadeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CPF")
+                        .IsUnique();
+
+                    b.HasIndex("CursoId");
+
+                    b.HasIndex("UnidadeId");
+
+                    b.ToTable("Candidatos");
+                });
+
+            modelBuilder.Entity("Transformese.Domain.Entities.CandidatoLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Acao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CandidatoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataHora")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NovoStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Observacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StatusAnterior")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CandidatoId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("CandidatoLogs");
+                });
 
             modelBuilder.Entity("Transformese.Domain.Entities.Curso", b =>
                 {
@@ -147,7 +258,7 @@ namespace Transformese.Data.Migrations
 
                     b.HasKey("IdTipoUsuario");
 
-                    b.ToTable("TiposUsuarios");
+                    b.ToTable("TipoUsuarios");
 
                     b.HasData(
                         new
@@ -453,6 +564,38 @@ namespace Transformese.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Transformese.Domain.Entities.Candidato", b =>
+                {
+                    b.HasOne("Transformese.Domain.Entities.Curso", "Curso")
+                        .WithMany()
+                        .HasForeignKey("CursoId");
+
+                    b.HasOne("Transformese.Domain.Entities.Unidade", "Unidade")
+                        .WithMany()
+                        .HasForeignKey("UnidadeId");
+
+                    b.Navigation("Curso");
+
+                    b.Navigation("Unidade");
+                });
+
+            modelBuilder.Entity("Transformese.Domain.Entities.CandidatoLog", b =>
+                {
+                    b.HasOne("Transformese.Domain.Entities.Candidato", "Candidato")
+                        .WithMany("HistoricoLogs")
+                        .HasForeignKey("CandidatoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Transformese.Domain.Entities.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
+
+                    b.Navigation("Candidato");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("Transformese.Domain.Entities.Curso", b =>
                 {
                     b.HasOne("Transformese.Domain.Entities.Unidade", "Unidade")
@@ -473,6 +616,11 @@ namespace Transformese.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("TipoUsuario");
+                });
+
+            modelBuilder.Entity("Transformese.Domain.Entities.Candidato", b =>
+                {
+                    b.Navigation("HistoricoLogs");
                 });
 
             modelBuilder.Entity("Transformese.Domain.Entities.TipoUsuario", b =>

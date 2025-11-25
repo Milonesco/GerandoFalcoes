@@ -92,7 +92,7 @@ namespace Transformese.Data.Repositories
         // Retornar tipos de usuário
         public async Task<List<TipoUsuario>> GetTiposAsync()
         {
-            return await _context.TiposUsuarios
+            return await _context.TipoUsuarios
                 .AsNoTracking()
                 .ToListAsync();
         }
