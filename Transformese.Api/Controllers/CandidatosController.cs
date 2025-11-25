@@ -17,24 +17,86 @@ namespace Transformese.Api.Controllers
             _context = context;
         }
 
-        // POST: api/Candidatos/inscrever
-        // Endpoint público para o formulário do site
+        // ==========================================
+        // 1. LISTAGEM (Painel Admin)
+        // ==========================================
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            // PROJEÇÃO MANUAL (.Select):
+            // Isso impede que o EF Core carregue relacionamentos desnecessários ou cíclicos.
+            var lista = await _context.Candidatos
+                .Include(c => c.Unidade)
+                .OrderByDescending(c => c.DataCadastro)
+                .Select(c => new CandidatoResumoDto
+                {
+                    Id = c.Id,
+                    NomeCompleto = c.NomeCompleto,
+                    CPF = c.CPF,
+                    Cidade = c.Cidade,
+                    Estado = c.Estado,
+                    Telefone = c.Telefone,
+                    // Convertendo Enum para String aqui mesmo
+                    Status = c.Status.ToString(),
+                    // Tratamento de nulo seguro
+                    Unidade = c.Unidade != null ? c.Unidade.Nome : "Não Atribuída",
+                    DataCadastro = c.DataCadastro
+                })
+                .ToListAsync();
+
+            return Ok(lista);
+        }
+
+        // ==========================================
+        // 2. DETALHES (Tela de Triagem)
+        // ==========================================
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            // Buscamos a entidade para ter os dados
+            var c = await _context.Candidatos
+                .Include(u => u.Unidade)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (c == null) return NotFound();
+
+            // Mapeamos MANUALMENTE para um DTO seguro antes de enviar
+            var dto = new CandidatoDetalhesDto
+            {
+                Id = c.Id,
+                NomeCompleto = c.NomeCompleto,
+                CPF = c.CPF,
+                Email = c.Email,
+                Telefone = c.Telefone,
+                Cidade = c.Cidade,
+                Estado = c.Estado,
+                PossuiComputador = c.PossuiComputador,
+                PossuiInternet = c.PossuiInternet,
+                PerfilLinkedin = c.PerfilLinkedin,
+
+                // Campos Administrativos
+                UnidadeId = c.UnidadeId,
+                Status = c.Status, // Aqui mandamos o Enum (int) para o Dropdown funcionar
+                ObservacoesGF = c.ObservacoesGF
+            };
+
+            return Ok(dto);
+        }
+
+        // ==========================================
+        // 3. INSCRIÇÃO (Portal do Aluno)
+        // ==========================================
         [HttpPost("inscrever")]
         public async Task<IActionResult> Inscrever([FromBody] CandidatoInscricaoDto dto)
         {
-            // 1. Limpeza e Validação Básica
-            if (string.IsNullOrEmpty(dto.CPF)) return BadRequest("CPF é obrigatório");
-
+            if (string.IsNullOrEmpty(dto.CPF)) return BadRequest("CPF Obrigatório");
             var cpfLimpo = dto.CPF.Replace(".", "").Replace("-", "").Trim();
 
-            // 2. REGRA DE OURO: Anti-Duplicidade
-            var existe = await _context.Candidatos.AnyAsync(c => c.CPF == cpfLimpo);
-            if (existe)
+            if (await _context.Candidatos.AnyAsync(c => c.CPF == cpfLimpo))
             {
-                return Conflict(new { message = "Já existe um cadastro para este CPF." });
+                return Conflict(new { message = "CPF já cadastrado." });
             }
 
-            // 3. Criação da Entidade
             var candidato = new Candidato
             {
                 NomeCompleto = dto.NomeCompleto,
@@ -47,69 +109,96 @@ namespace Transformese.Api.Controllers
                 PossuiComputador = dto.PossuiComputador,
                 PossuiInternet = dto.PossuiInternet,
                 PerfilLinkedin = dto.PerfilLinkedin,
-                CursoId = dto.CursoId,
-
-                // Definições Automáticas do Sistema
                 Status = StatusCandidato.Inscrito,
-                DataCadastro = DateTime.Now,
-                UnidadeId = null // Será definido na triagem do Admin
+                DataCadastro = DateTime.Now
             };
 
-            // 4. Persistência (Usando Transação para garantir consistência)
-            using var transaction = await _context.Database.BeginTransactionAsync();
-            try
-            {
-                _context.Candidatos.Add(candidato);
-                await _context.SaveChangesAsync(); // Salva para gerar o ID do candidato
+            _context.Candidatos.Add(candidato);
+            await _context.SaveChangesAsync();
 
-                // 5. Auditoria Automática
+            // Log simplificado
+            _context.CandidatoLogs.Add(new CandidatoLog
+            {
+                CandidatoId = candidato.Id,
+                Acao = "Inscrição",
+                StatusAnterior = StatusCandidato.Inscrito,
+                NovoStatus = StatusCandidato.Inscrito,
+                DataHora = DateTime.Now
+            });
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetById), new { id = candidato.Id }, candidato.Id);
+        }
+
+        // ==========================================
+        // 4. ATUALIZAÇÃO (Salvar Triagem)
+        // ==========================================
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CandidatoTriagemDto dto)
+        {
+            var candidato = await _context.Candidatos.FindAsync(id);
+            if (candidato == null) return NotFound();
+
+            // Auditoria da Mudança
+            if (candidato.Status != dto.Status || candidato.UnidadeId != dto.UnidadeId)
+            {
                 var log = new CandidatoLog
                 {
                     CandidatoId = candidato.Id,
-                    StatusAnterior = StatusCandidato.Inscrito,
-                    NovoStatus = StatusCandidato.Inscrito,
-                    Acao = "Auto-Inscrição",
-                    Observacao = "Candidato realizou cadastro pelo portal.",
-                    DataHora = DateTime.Now,
-                    UsuarioId = null // Foi o sistema/usuário anônimo
+                    StatusAnterior = candidato.Status,
+                    NovoStatus = dto.Status,
+                    Acao = "Triagem Admin",
+                    Observacao = $"Status alterado para {dto.Status}. Unidade ID: {dto.UnidadeId}",
+                    DataHora = DateTime.Now
                 };
-
                 _context.CandidatoLogs.Add(log);
-                await _context.SaveChangesAsync();
-
-                await transaction.CommitAsync();
-
-                return CreatedAtAction(nameof(GetStatus), new { cpf = candidato.CPF }, new { protocolo = candidato.Id });
             }
-            catch (Exception ex)
-            {
-                await transaction.RollbackAsync();
-                return StatusCode(500, "Erro ao processar inscrição: " + ex.Message);
-            }
-        }
 
-        // GET: api/Candidatos/status/{cpf}
-        // Para o aluno consultar "Como está meu processo?"
-        [HttpGet("status/{cpf}")]
-        public async Task<IActionResult> GetStatus(string cpf)
-        {
-            var cpfLimpo = cpf.Replace(".", "").Replace("-", "").Trim();
+            candidato.UnidadeId = dto.UnidadeId;
+            candidato.Status = dto.Status;
+            candidato.ObservacoesGF = dto.ObservacoesGF;
 
-            var candidato = await _context.Candidatos
-                .FirstOrDefaultAsync(c => c.CPF == cpfLimpo);
-
-            if (candidato == null) return NotFound(new { message = "Candidato não encontrado." });
-
-            return Ok(new
-            {
-                candidato.NomeCompleto,
-                Status = candidato.Status.ToString(),
-                Mensagem = "Seu cadastro está em análise pela nossa equipe."
-            });
+            await _context.SaveChangesAsync();
+            return NoContent();
         }
     }
 
-    // DTO (Data Transfer Object) - O que vem do formulário
+    // ==========================================
+    // DTOs (Objetos de Transferência Seguros)
+    // ==========================================
+
+    public class CandidatoResumoDto
+    {
+        public int Id { get; set; }
+        public string NomeCompleto { get; set; }
+        public string CPF { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public string Telefone { get; set; }
+        public string Status { get; set; } // Texto (Ex: "Inscrito")
+        public string Unidade { get; set; } // Texto (Ex: "Gerando Falcões")
+        public DateTime DataCadastro { get; set; }
+    }
+
+    public class CandidatoDetalhesDto
+    {
+        public int Id { get; set; }
+        public string NomeCompleto { get; set; }
+        public string CPF { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public bool PossuiComputador { get; set; }
+        public bool PossuiInternet { get; set; }
+        public string? PerfilLinkedin { get; set; }
+
+        // Dados de Edição
+        public int? UnidadeId { get; set; }
+        public StatusCandidato Status { get; set; } // Enum puro
+        public string? ObservacoesGF { get; set; }
+    }
+
     public class CandidatoInscricaoDto
     {
         public string NomeCompleto { get; set; }
@@ -123,5 +212,12 @@ namespace Transformese.Api.Controllers
         public bool PossuiInternet { get; set; }
         public string? PerfilLinkedin { get; set; }
         public int? CursoId { get; set; }
+    }
+
+    public class CandidatoTriagemDto
+    {
+        public int? UnidadeId { get; set; }
+        public StatusCandidato Status { get; set; }
+        public string? ObservacoesGF { get; set; }
     }
 }

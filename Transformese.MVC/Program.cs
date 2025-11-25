@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Text.Json.Serialization;
 using Transformese.MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // MVC
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 
 // SESSION
 builder.Services.AddSession();
@@ -29,6 +34,10 @@ builder.Services.AddHttpClient<IUsuarioApiClient, UsuarioApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
+builder.Services.AddHttpClient<ICandidatoService, CandidatoService>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"]);
+});
 builder.Services.AddHttpClient<ICursoApiClient, CursoApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
@@ -37,6 +46,7 @@ builder.Services.AddHttpClient<IUnidadeApiClient, UnidadeApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
+
 
 // BUILD
 var app = builder.Build();

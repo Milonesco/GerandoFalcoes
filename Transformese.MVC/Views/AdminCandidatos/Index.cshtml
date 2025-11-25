@@ -1,0 +1,60 @@
+﻿@model List<Transformese.MVC.ViewModels.CandidatoListaViewModel>
+
+@{
+    ViewData["Title"] = "Painel de Triagem";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📋 Painel de Candidatos</h2>
+        <button class="btn btn-outline-primary">Exportar Excel</button>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Data</th>
+                            <th>Nome</th>
+                            <th>Cidade/UF</th>
+                            <th>Status</th>
+                            <th>ONG Responsável</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.DataCadastro.ToString("dd/MM HH:mm")</td>
+                                <td>
+                                    <strong>@item.NomeCompleto</strong><br />
+                                    <small class="text-muted">@item.CPF</small>
+                                </td>
+                                <td>@item.Cidade - @item.Estado</td>
+                                <td>
+                                    <span class="badge bg-info text-dark">@item.Status</span>
+                                </td>
+                                <td>
+                                    @if (item.Unidade == "Não Atribuída")
+                                    {
+                                        <span class="text-warning fw-bold">⚠️ Pendente</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-success">@item.Unidade</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary">Ver Detalhes</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
