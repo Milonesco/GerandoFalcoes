@@ -9,4 +9,3 @@ namespace Transformese.MVC.Services
         Task AtualizarTriagem(int id, CandidatoTriagemViewModel model); 
     }
 }
-}

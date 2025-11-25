@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Transformese.Data;
 using Transformese.Domain.Entities;
+using Transformese.Api.DTOs;
 
 namespace Transformese.Api.Controllers
 {
@@ -18,6 +19,7 @@ namespace Transformese.Api.Controllers
             _env = env;
         }
 
+        // GET: api/Cursos
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -30,21 +32,20 @@ namespace Transformese.Api.Controllers
                     Descricao = c.Descricao,
                     Imagem = c.Imagem,
                     UnidadeId = c.UnidadeId,
-                    UnidadeNome = c.Unidade.Nome
+                    UnidadeNome = c.Unidade != null ? c.Unidade.Nome : "Geral"
                 })
                 .ToListAsync();
 
             return Ok(list);
         }
 
-
-
+        // GET: api/Cursos/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var c = await _db.Cursos
                 .Include(c => c.Unidade)
-                .Where(c => c.IdCurso == id)
+                .Where(x => x.IdCurso == id)
                 .Select(c => new CursoDto
                 {
                     IdCurso = c.IdCurso,
@@ -52,7 +53,7 @@ namespace Transformese.Api.Controllers
                     Descricao = c.Descricao,
                     Imagem = c.Imagem,
                     UnidadeId = c.UnidadeId,
-                    UnidadeNome = c.Unidade.Nome
+                    UnidadeNome = c.Unidade != null ? c.Unidade.Nome : "Geral"
                 })
                 .FirstOrDefaultAsync();
 
@@ -61,10 +62,11 @@ namespace Transformese.Api.Controllers
             return Ok(c);
         }
 
-
+        // POST: api/Cursos
         [HttpPost]
         public async Task<IActionResult> Post([FromForm] Curso curso, IFormFile? arquivo)
         {
+            // 1. Upload da Imagem
             if (arquivo != null && arquivo.Length > 0)
             {
                 var uploads = Path.Combine(_env.WebRootPath ?? "wwwroot", "images", "cursos");
@@ -80,9 +82,19 @@ namespace Transformese.Api.Controllers
                 curso.Imagem = "default-course.jpg";
             }
 
+            // 2. Salvar no Banco
             _db.Cursos.Add(curso);
             await _db.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = curso.IdCurso }, curso);
+
+            // 3. CORREÇÃO CRÍTICA: Retornar um Objeto Simples (DTO)
+            var dtoRetorno = new
+            {
+                id = curso.IdCurso,
+                nome = curso.Nome,
+                mensagem = "Curso criado com sucesso"
+            };
+
+            return CreatedAtAction(nameof(Get), new { id = curso.IdCurso }, dtoRetorno);
         }
 
         [HttpPut("{id}")]
@@ -119,5 +131,16 @@ namespace Transformese.Api.Controllers
             await _db.SaveChangesAsync();
             return NoContent();
         }
+    }
+
+    // DTO Local
+    public class CursoDto
+    {
+        public int IdCurso { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public string? Imagem { get; set; }
+        public int UnidadeId { get; set; }
+        public string UnidadeNome { get; set; }
     }
 }

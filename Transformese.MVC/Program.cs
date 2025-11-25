@@ -5,13 +5,10 @@ using Transformese.MVC.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // MVC
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-    });
+builder.Services.AddControllersWithViews();
 
 // SESSION
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
@@ -46,7 +43,6 @@ builder.Services.AddHttpClient<IUnidadeApiClient, UnidadeApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
-
 
 // BUILD
 var app = builder.Build();
