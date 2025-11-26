@@ -19,5 +19,6 @@ namespace Transformese.MVC.ViewModels
         public int? UnidadeId { get; set; }
         public StatusCandidato Status { get; set; }
         public string? ObservacoesGF { get; set; }
+        public string ObservacoesONG { get; internal set; }
     }
 }

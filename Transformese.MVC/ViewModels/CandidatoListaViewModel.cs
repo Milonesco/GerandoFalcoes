@@ -8,8 +8,9 @@
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Telefone { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
         public string Unidade { get; set; }
         public DateTime DataCadastro { get; set; }
+        public int UnidadeId { get; internal set; }
     }
 }

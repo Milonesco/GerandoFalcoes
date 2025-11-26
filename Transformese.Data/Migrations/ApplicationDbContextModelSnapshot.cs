@@ -277,52 +277,70 @@ namespace Transformese.Data.Migrations
 
             modelBuilder.Entity("Transformese.Domain.Entities.Unidade", b =>
                 {
-                    b.Property<int>("IdUnidade")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUnidade"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IdUnidade");
+                    b.Property<string>("Responsavel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UnidadeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Unidades");
 
                     b.HasData(
                         new
                         {
-                            IdUnidade = 1,
+                            Id = -1,
+                            Bairro = "São Miguel",
+                            Cidade = "São Paulo",
                             Endereco = "Rua A, 100",
-                            Nome = "Unidade São Miguel"
+                            Estado = "SP",
+                            Nome = "Unidade São Miguel",
+                            Responsavel = "Maria da Silva",
+                            UnidadeId = -1
                         },
                         new
                         {
-                            IdUnidade = 2,
+                            Id = -2,
+                            Bairro = "Itaquera",
+                            Cidade = "São Paulo",
                             Endereco = "Av B, 200",
-                            Nome = "Unidade Itaquera"
+                            Estado = "SP",
+                            Nome = "Unidade Itaquera",
+                            Responsavel = "João Santos",
+                            UnidadeId = -2
                         },
                         new
                         {
-                            IdUnidade = 3,
+                            Id = -3,
+                            Bairro = "Tatuapé",
+                            Cidade = "São Paulo",
                             Endereco = "Rua C, 300",
-                            Nome = "Unidade Tatuapé"
-                        },
-                        new
-                        {
-                            IdUnidade = 4,
-                            Endereco = "Rua D, 400",
-                            Nome = "Unidade Penha"
-                        },
-                        new
-                        {
-                            IdUnidade = 5,
-                            Endereco = "Av E, 500",
-                            Nome = "Unidade São Mateus"
+                            Estado = "SP",
+                            Nome = "Unidade Tatuapé",
+                            Responsavel = "Fernanda Lima",
+                            UnidadeId = -3
                         });
                 });
 
@@ -596,7 +614,7 @@ namespace Transformese.Data.Migrations
             modelBuilder.Entity("Transformese.Domain.Entities.Curso", b =>
                 {
                     b.HasOne("Transformese.Domain.Entities.Unidade", "Unidade")
-                        .WithMany("Cursos")
+                        .WithMany()
                         .HasForeignKey("UnidadeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -623,11 +641,6 @@ namespace Transformese.Data.Migrations
             modelBuilder.Entity("Transformese.Domain.Entities.TipoUsuario", b =>
                 {
                     b.Navigation("Usuarios");
-                });
-
-            modelBuilder.Entity("Transformese.Domain.Entities.Unidade", b =>
-                {
-                    b.Navigation("Cursos");
                 });
 #pragma warning restore 612, 618
         }

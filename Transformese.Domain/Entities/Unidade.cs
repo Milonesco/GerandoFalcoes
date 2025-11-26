@@ -1,13 +1,15 @@
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 namespace Transformese.Domain.Entities
 {
-    public class Unidade
+    public class Unidade : BaseEntity
     {
-        [Key]
-        public int IdUnidade { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public string Endereco { get; set; } = string.Empty;
-        public List<Curso>? Cursos { get; set; }
+        public string Nome { get; set; }
+        public string Endereco { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+
+        // Adicione esta linha se ainda não adicionou
+        public string? Responsavel { get; set; }
+        public int UnidadeId { get; set; }
     }
 }

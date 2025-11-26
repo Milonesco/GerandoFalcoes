@@ -36,13 +36,13 @@ namespace Transformese.Data.Repositories
         {
             return _context.Unidades
                 .AsNoTracking()
-                .FirstOrDefault(u => u.IdUnidade == id);
+                .FirstOrDefault(u => u.UnidadeId == id);
         }
 
         // UPDATE
         public void Update(Unidade unidade)
         {
-            var existe = _context.Unidades.Find(unidade.IdUnidade);
+            var existe = _context.Unidades.Find(unidade.UnidadeId);
             if (existe == null)
                 throw new Exception("Unidade não encontrada.");
 

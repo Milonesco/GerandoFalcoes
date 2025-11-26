@@ -28,7 +28,7 @@ namespace Transformese.Api.Controllers
         {
             _db.Unidades.Add(unidade);
             await _db.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = unidade.IdUnidade }, unidade);
+            return CreatedAtAction(nameof(Get), new { id = unidade.UnidadeId }, unidade);
         }
 
         [HttpPut("{id}")]

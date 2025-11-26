@@ -16,11 +16,39 @@ namespace Transformese.Data
             );
 
             modelBuilder.Entity<Unidade>().HasData(
-                new Unidade { IdUnidade = 1, Nome = "Unidade São Miguel", Endereco = "Rua A, 100" },
-                new Unidade { IdUnidade = 2, Nome = "Unidade Itaquera", Endereco = "Av B, 200" },
-                new Unidade { IdUnidade = 3, Nome = "Unidade Tatuapé", Endereco = "Rua C, 300" },
-                new Unidade { IdUnidade = 4, Nome = "Unidade Penha", Endereco = "Rua D, 400" },
-                new Unidade { IdUnidade = 5, Nome = "Unidade São Mateus", Endereco = "Av E, 500" }
+               new Unidade
+               {
+                   Id = -1, // CORRIGIDO: Usar 'Id' e valor negativo
+                   Nome = "Unidade São Miguel",
+                   Endereco = "Rua A, 100",
+                   Bairro = "São Miguel",
+                   Cidade = "São Paulo",
+                   Estado = "SP",
+                   Responsavel = "Maria da Silva",
+                   UnidadeId = -1 // Se UnidadeId for mantido, use o mesmo valor negativo para consistência
+               },
+               new Unidade
+                {
+                    Id = -2,
+                    Nome = "Unidade Itaquera",
+                    Endereco = "Av B, 200",
+                    Bairro = "Itaquera",
+                    Cidade = "São Paulo",
+                    Estado = "SP",
+                    Responsavel = "João Santos",
+                    UnidadeId = -2
+                },
+                new Unidade
+                {
+                    Id = -3,
+                    Nome = "Unidade Tatuapé",
+                    Endereco = "Rua C, 300",
+                    Bairro = "Tatuapé",
+                    Cidade = "São Paulo",
+                    Estado = "SP",
+                    Responsavel = "Fernanda Lima",
+                    UnidadeId = -3
+                }
             );
 
             modelBuilder.Entity<Curso>().HasData(
@@ -37,22 +65,23 @@ namespace Transformese.Data
             );
 
             var usuarios = new List<Usuario>();
-            usuarios.Add(new Usuario { IdUsuario = 1, Nome = "Admin do Sistema", Email = "admin@sistema.com", Senha = "123456", DataNascimento = new DateTime(1990,1,1), TipoUsuarioId = 1, FotoPerfil = "default-user.jpg" });
+            usuarios.Add(new Usuario { IdUsuario = 1, Nome = "Admin do Sistema", Email = "admin@sistema.com", Senha = "123456", DataNascimento = new DateTime(1990, 1, 1), TipoUsuarioId = 1, FotoPerfil = "default-user.jpg" });
 
-            usuarios.Add(new Usuario { IdUsuario = 2, Nome = "Carlos Henrique", Email = "carlos.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1985,5,10), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
-            usuarios.Add(new Usuario { IdUsuario = 3, Nome = "Marina Lopes", Email = "marina.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1987,8,3), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
-            usuarios.Add(new Usuario { IdUsuario = 4, Nome = "João Batista", Email = "joao.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1982,2,20), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
-            usuarios.Add(new Usuario { IdUsuario = 5, Nome = "Patrícia Santos", Email = "patricia.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1990,9,15), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
+            usuarios.Add(new Usuario { IdUsuario = 2, Nome = "Carlos Henrique", Email = "carlos.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1985, 5, 10), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
+            usuarios.Add(new Usuario { IdUsuario = 3, Nome = "Marina Lopes", Email = "marina.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1987, 8, 3), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
+            usuarios.Add(new Usuario { IdUsuario = 4, Nome = "João Batista", Email = "joao.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1982, 2, 20), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
+            usuarios.Add(new Usuario { IdUsuario = 5, Nome = "Patrícia Santos", Email = "patricia.prof@sistema.com", Senha = "123456", DataNascimento = new DateTime(1990, 9, 15), TipoUsuarioId = 2, FotoPerfil = "default-user.jpg" });
 
             int id = 6;
             for (int i = 1; i <= 15; i++)
             {
-                usuarios.Add(new Usuario {
+                usuarios.Add(new Usuario
+                {
                     IdUsuario = id++,
                     Nome = $"Aluno {i}",
                     Email = $"aluno{i}@sistema.com",
                     Senha = "123456",
-                    DataNascimento = new DateTime(2000,1,1).AddDays(i),
+                    DataNascimento = new DateTime(2000, 1, 1).AddDays(i),
                     TipoUsuarioId = 3,
                     FotoPerfil = "default-user.jpg"
                 });
