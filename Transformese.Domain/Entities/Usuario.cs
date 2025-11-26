@@ -10,11 +10,11 @@ namespace Transformese.Domain.Entities
         public string Nome { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Senha { get; set; } = string.Empty;
-        public DateTime DataNascimento { get; set; }
         public string? FotoPerfil { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public int? UnidadeId { get; set; }
+        public Unidade? Unidade { get; set; }
         public int TipoUsuarioId { get; set; }
-
-        // Removido [JsonIgnore] para permitir que a API serializa o TipoUsuario.
-        public TipoUsuario? TipoUsuario { get; set; }
+        public virtual TipoUsuario TipoUsuario { get; set; }
     }
 }

@@ -1,23 +1,32 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Transformese.MVC.ViewModels;
 
 namespace Transformese.MVC.Services
 {
     public class DashboardApiClient : IDashboardApiClient
     {
-        private readonly HttpClient _http;
+        private readonly HttpClient _httpClient;
+        private readonly JsonSerializerOptions _options;
 
-        public DashboardApiClient(HttpClient http)
+        public DashboardApiClient(HttpClient httpClient)
         {
-            _http = http;
+            _httpClient = httpClient;
+            _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
 
         public async Task<DashboardCountsDto> GetCountsAsync()
         {
-            var result = await _http.GetFromJsonAsync<DashboardCountsDto>("api/dashboard/counts");
-            return result ?? new DashboardCountsDto();
+            try
+            {
+                var response = await _httpClient.GetAsync("/api/Dashboard/kpis");
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<DashboardCountsDto>(content, _options);
+            }
+            catch
+            {
+                return new DashboardCountsDto();
+            }
         }
     }
 }

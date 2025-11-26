@@ -17,14 +17,10 @@ namespace Transformese.Api.Controllers
             _context = context;
         }
 
-        // ==========================================
-        // 1. LISTAGEM (Painel Admin)
-        // ==========================================
+        // 1. LISTAGEM GERAL (ADMIN)
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            // PROJEÇÃO MANUAL (.Select):
-            // Isso impede que o EF Core carregue relacionamentos desnecessários ou cíclicos.
             var lista = await _context.Candidatos
                 .Include(c => c.Unidade)
                 .OrderByDescending(c => c.DataCadastro)
@@ -36,9 +32,7 @@ namespace Transformese.Api.Controllers
                     Cidade = c.Cidade,
                     Estado = c.Estado,
                     Telefone = c.Telefone,
-                    // Convertendo Enum para String aqui mesmo
                     Status = c.Status.ToString(),
-                    // Tratamento de nulo seguro
                     Unidade = c.Unidade != null ? c.Unidade.Nome : "Não Atribuída",
                     DataCadastro = c.DataCadastro
                 })
@@ -47,20 +41,40 @@ namespace Transformese.Api.Controllers
             return Ok(lista);
         }
 
-        // ==========================================
-        // 2. DETALHES (Tela de Triagem)
-        // ==========================================
+        // 2. LISTAGEM POR UNIDADE (ONG)
+        [HttpGet("unidade/{unidadeId}")]
+        public async Task<IActionResult> GetByUnidade(int unidadeId)
+        {
+            var lista = await _context.Candidatos
+                .Where(c => c.UnidadeId == unidadeId)
+                .OrderByDescending(c => c.DataCadastro)
+                .Select(c => new CandidatoResumoDto
+                {
+                    Id = c.Id,
+                    NomeCompleto = c.NomeCompleto,
+                    CPF = c.CPF,
+                    Cidade = c.Cidade,
+                    Estado = c.Estado,
+                    Telefone = c.Telefone,
+                    Status = c.Status.ToString(),
+                    Unidade = c.Unidade.Nome,
+                    DataCadastro = c.DataCadastro
+                })
+                .ToListAsync();
+
+            return Ok(lista);
+        }
+
+        // 3. DETALHES
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            // Buscamos a entidade para ter os dados
             var c = await _context.Candidatos
                 .Include(u => u.Unidade)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (c == null) return NotFound();
 
-            // Mapeamos MANUALMENTE para um DTO seguro antes de enviar
             var dto = new CandidatoDetalhesDto
             {
                 Id = c.Id,
@@ -73,19 +87,15 @@ namespace Transformese.Api.Controllers
                 PossuiComputador = c.PossuiComputador,
                 PossuiInternet = c.PossuiInternet,
                 PerfilLinkedin = c.PerfilLinkedin,
-
-                // Campos Administrativos
                 UnidadeId = c.UnidadeId,
-                Status = c.Status, // Aqui mandamos o Enum (int) para o Dropdown funcionar
+                Status = c.Status,
                 ObservacoesGF = c.ObservacoesGF
             };
 
             return Ok(dto);
         }
 
-        // ==========================================
-        // 3. INSCRIÇÃO (Portal do Aluno)
-        // ==========================================
+        // 4. INSCRIÇÃO
         [HttpPost("inscrever")]
         public async Task<IActionResult> Inscrever([FromBody] CandidatoInscricaoDto dto)
         {
@@ -116,43 +126,17 @@ namespace Transformese.Api.Controllers
             _context.Candidatos.Add(candidato);
             await _context.SaveChangesAsync();
 
-            // Log simplificado
-            _context.CandidatoLogs.Add(new CandidatoLog
-            {
-                CandidatoId = candidato.Id,
-                Acao = "Inscrição",
-                StatusAnterior = StatusCandidato.Inscrito,
-                NovoStatus = StatusCandidato.Inscrito,
-                DataHora = DateTime.Now
-            });
-            await _context.SaveChangesAsync();
+            // _context.CandidatoLogs.Add(...) 
 
             return CreatedAtAction(nameof(GetById), new { id = candidato.Id }, candidato.Id);
         }
 
-        // ==========================================
-        // 4. ATUALIZAÇÃO (Salvar Triagem)
-        // ==========================================
+        // 5. ATUALIZAR TRIAGEM (ADMIN)
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] CandidatoTriagemDto dto)
         {
             var candidato = await _context.Candidatos.FindAsync(id);
             if (candidato == null) return NotFound();
-
-            // Auditoria da Mudança
-            if (candidato.Status != dto.Status || candidato.UnidadeId != dto.UnidadeId)
-            {
-                var log = new CandidatoLog
-                {
-                    CandidatoId = candidato.Id,
-                    StatusAnterior = candidato.Status,
-                    NovoStatus = dto.Status,
-                    Acao = "Triagem Admin",
-                    Observacao = $"Status alterado para {dto.Status}. Unidade ID: {dto.UnidadeId}",
-                    DataHora = DateTime.Now
-                };
-                _context.CandidatoLogs.Add(log);
-            }
 
             candidato.UnidadeId = dto.UnidadeId;
             candidato.Status = dto.Status;
@@ -161,12 +145,23 @@ namespace Transformese.Api.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        // 6. ATUALIZAR STATUS RÁPIDO (ONG)
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> PatchStatus(int id, [FromBody] StatusDto dto)
+        {
+            var candidato = await _context.Candidatos.FindAsync(id);
+            if (candidato == null) return NotFound();
+
+            candidato.Status = dto.NovoStatus;
+            if (!string.IsNullOrEmpty(dto.Observacao)) candidato.ObservacoesONG = dto.Observacao;
+
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 
-    // ==========================================
-    // DTOs (Objetos de Transferência Seguros)
-    // ==========================================
-
+    // DTOs
     public class CandidatoResumoDto
     {
         public int Id { get; set; }
@@ -175,11 +170,10 @@ namespace Transformese.Api.Controllers
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Telefone { get; set; }
-        public string Status { get; set; } // Texto (Ex: "Inscrito")
-        public string Unidade { get; set; } // Texto (Ex: "Gerando Falcões")
+        public string Status { get; set; }
+        public string Unidade { get; set; }
         public DateTime DataCadastro { get; set; }
     }
-
     public class CandidatoDetalhesDto
     {
         public int Id { get; set; }
@@ -192,13 +186,10 @@ namespace Transformese.Api.Controllers
         public bool PossuiComputador { get; set; }
         public bool PossuiInternet { get; set; }
         public string? PerfilLinkedin { get; set; }
-
-        // Dados de Edição
         public int? UnidadeId { get; set; }
-        public StatusCandidato Status { get; set; } // Enum puro
+        public StatusCandidato Status { get; set; }
         public string? ObservacoesGF { get; set; }
     }
-
     public class CandidatoInscricaoDto
     {
         public string NomeCompleto { get; set; }
@@ -213,11 +204,15 @@ namespace Transformese.Api.Controllers
         public string? PerfilLinkedin { get; set; }
         public int? CursoId { get; set; }
     }
-
     public class CandidatoTriagemDto
     {
         public int? UnidadeId { get; set; }
         public StatusCandidato Status { get; set; }
         public string? ObservacoesGF { get; set; }
+    }
+    public class StatusDto
+    {
+        public StatusCandidato NovoStatus { get; set; }
+        public string? Observacao { get; set; }
     }
 }

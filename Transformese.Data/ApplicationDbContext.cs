@@ -21,6 +21,10 @@ namespace Transformese.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.IdUsuario)
+                .ValueGeneratedOnAdd(); // Garante que o ID seja gerado automaticamente
+
             // Configuração Candidato
             modelBuilder.Entity<Candidato>()
                 .HasIndex(c => c.CPF)
@@ -38,7 +42,13 @@ namespace Transformese.Data
                 .HasForeignKey(l => l.CandidatoId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            SeedData.Seed(modelBuilder);
+            modelBuilder.Entity<Unidade>()
+                .Property(u => u.Id)
+                .HasColumnName("IdUnidade");
+
+            modelBuilder.Entity<TipoUsuario>()
+                .Property(t => t.IdTipoUsuario)
+                .ValueGeneratedOnAdd(); // Garante que o ID seja gerado automaticamente
         }
     }
 }

@@ -8,7 +8,7 @@ using Transformese.MVC.ViewModels;
 
 namespace TransformeseMVC.Web.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
         private readonly ICursoApiClient _cursoApi;
@@ -25,7 +25,6 @@ namespace TransformeseMVC.Web.Controllers
             var cursos = await _cursoApi.GetAllAsync();
             var usuarios = await _usuarioApi.GetAllAsync();
 
-            // Previni NullReference mantendo o mesmo tipo retornado pelo ApiClient
             cursos ??= Enumerable.Empty<CursoDto>();
             usuarios ??= Enumerable.Empty<Usuario>();
 

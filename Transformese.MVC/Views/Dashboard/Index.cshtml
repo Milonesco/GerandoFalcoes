@@ -1,116 +1,78 @@
-﻿@model Transformese.MVC.ViewModels.DashboardViewModel
+﻿@model Transformese.MVC.ViewModels.DashboardCountsDto
 
 @{
-    ViewData["Title"] = "Painel Administrativo";
+    ViewData["Title"] = "Dashboard Gerencial";
 }
 
-<div class="container mt-4">
-
-    <h2 class="fw-bold mb-4 text-center">
-        <i class="bi bi-speedometer2 me-2"></i> Painel Administrativo
-    </h2>
-
-    <!-- CARDS -->
-    <div class="row g-4">
-
-        <div class="col-md-3">
-            <div class="card shadow-lg border-0 rounded-4 dashboard-card-hover">
-                <div class="card-body text-center py-4">
-                    <i class="bi bi-mortarboard fs-1 text-primary"></i>
-                    <h5 class="mt-3">Cursos</h5>
-                    <p class="fs-3 fw-bold">@Model.TotalCursos</p>
-                    <a href="@Url.Action("Index", "Curso")" class="btn btn-outline-primary w-100">Gerenciar</a>
-                </div>
-            </div>
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-primary">📊 Visão Geral</h2>
+            <p class="text-muted">Acompanhamento em tempo real do processo seletivo.</p>
         </div>
-
-        <div class="col-md-3">
-            <div class="card shadow-lg border-0 rounded-4 dashboard-card-hover">
-                <div class="card-body text-center py-4">
-                    <i class="bi bi-person-lines-fill fs-1 text-success"></i>
-                    <h5 class="mt-3">Alunos</h5>
-                    <p class="fs-3 fw-bold">@Model.TotalAlunos</p>
-                    <a href="@Url.Action("Index", "Aluno")" class="btn btn-outline-success w-100">Gerenciar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card shadow-lg border-0 rounded-4 dashboard-card-hover">
-                <div class="card-body text-center py-4">
-                    <i class="bi bi-person-workspace fs-1 text-warning"></i>
-                    <h5 class="mt-3">Professores</h5>
-                    <p class="fs-3 fw-bold">@Model.TotalProfessores</p>
-                    <a href="@Url.Action("Index", "Professor")" class="btn btn-outline-warning w-100">Gerenciar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card shadow-lg border-0 rounded-4 dashboard-card-hover">
-                <div class="card-body text-center py-4">
-                    <i class="bi bi-shield-lock fs-1 text-danger"></i>
-                    <h5 class="mt-3">Administradores</h5>
-                    <p class="fs-3 fw-bold">@Model.TotalAdministradores</p>
-                    <a href="@Url.Action("Index", "Admin")" class="btn btn-outline-danger w-100">Gerenciar</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <hr class="my-5" />
-
-    <!-- GRÁFICOS -->
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <canvas id="graficoUsuarios"></canvas>
-        </div>
-        <div class="col-md-6">
-            <canvas id="graficoCursos"></canvas>
+        <div>
+            <a asp-controller="AdminCandidatos" asp-action="Index" class="btn btn-outline-primary">
+                <i class="bi bi-list-ul"></i> Ver Lista Completa
+            </a>
         </div>
     </div>
 
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100 border-start border-4 border-primary">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Total Inscritos</h6>
+                    <h1 class="display-4 fw-bold text-primary mb-0">@Model.TotalInscritos</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100 border-start border-4 border-warning">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Fila de Triagem (GF)</h6>
+                    <h1 class="display-4 fw-bold text-warning mb-0">@Model.PendenteTriagem</h1>
+                    <small class="text-muted">Precisam ser encaminhados</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100 border-start border-4 border-info">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Em Entrevista (ONGs)</h6>
+                    <h1 class="display-4 fw-bold text-info mb-0">@Model.AguardandoEntrevista</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100 border-start border-4 border-success">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Aprovados / Matriculados</h6>
+                    <h1 class="display-4 fw-bold text-success mb-0">@Model.Aprovados</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0">Atalhos de Gestão</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="d-grid gap-3 d-md-block">
+                        <a asp-controller="Inscricao" asp-action="Index" target="_blank" class="btn btn-secondary me-md-2">
+                            🔗 Abrir Link de Inscrição
+                        </a>
+                        <a asp-controller="PainelOng" asp-action="Index" asp-route-unidadeId="1" target="_blank" class="btn btn-secondary">
+                            🔗 Testar Painel da ONG (ID 1)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-@section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-        new Chart(document.getElementById("graficoUsuarios"), {
-            type: 'pie',
-            data: {
-                labels: ['Alunos', 'Professores', 'Administradores'],
-                datasets: [{
-                    data: [
-                        @Model.TotalAlunos,
-                        @Model.TotalProfessores,
-                        @Model.TotalAdministradores
-                    ]
-                }]
-            }
-        });
-
-        new Chart(document.getElementById("graficoCursos"), {
-            type: 'bar',
-            data: {
-                labels: ['Cursos'],
-                datasets: [{
-                    label: 'Quantidade',
-                    data: [@Model.TotalCursos]
-                }]
-            }
-        });
-    </script>
-
-    <style>
-        .dashboard-card-hover {
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-            .dashboard-card-hover:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            }
-    </style>
-}

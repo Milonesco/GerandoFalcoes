@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Transformese.Domain.Entities
 {
     public class Unidade : BaseEntity
@@ -7,9 +9,9 @@ namespace Transformese.Domain.Entities
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-
-        // Adicione esta linha se ainda não adicionou
         public string? Responsavel { get; set; }
+        public bool Ativo { get; set; }
         public int UnidadeId { get; set; }
+
     }
 }

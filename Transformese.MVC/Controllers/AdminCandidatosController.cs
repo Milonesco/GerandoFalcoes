@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Transformese.MVC.Services;
 
 namespace Transformese.MVC.Controllers
 {
-    // [Authorize(Roles = "Admin")] // Vamos descomentar isso depois que a Auth estiver 100%
+    [Authorize(Roles = "Admin")]
     public class AdminCandidatosController : Controller
     {
         private readonly ICandidatoService _service;

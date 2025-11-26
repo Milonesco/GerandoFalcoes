@@ -85,6 +85,22 @@ builder.Services.AddCors(opt =>
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+
+        SeedData.Initialize(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Um erro ocorreu ao popular o banco de dados.");
+    }
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

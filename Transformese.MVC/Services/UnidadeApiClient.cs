@@ -5,8 +5,6 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Transformese.Domain.Entities;
-// Usando Transformese.Domain.Entities.Usuario, que assumimos existir
-// se o seu projeto base usa um modelo de usuário na camada Domain.
 
 namespace Transformese.MVC.Services
 {
@@ -17,7 +15,6 @@ namespace Transformese.MVC.Services
 
         public UnidadeApiClient(HttpClient http) => _http = http;
 
-        // Este método não faz parte do IUnidadeApiClient, mas está na sua classe:
         public async Task<Usuario?> AuthenticateAsync(string email, string senha)
         {
             var resp = await _http.PostAsJsonAsync("api/auth/login", new
@@ -33,12 +30,12 @@ namespace Transformese.MVC.Services
         }
 
 
-        public async Task<IEnumerable<Unidade>> GetAllAsync()
+        public async Task<List<Unidade>> GetAllAsync()
         {
             var resp = await _http.GetAsync("api/Unidades");
             resp.EnsureSuccessStatusCode();
-            var data = await resp.Content.ReadFromJsonAsync<IEnumerable<Unidade>>(_jsonOptions);
-            return data ?? Array.Empty<Unidade>();
+            var data = await resp.Content.ReadFromJsonAsync<List<Unidade>>(_jsonOptions);
+            return data ?? new List<Unidade>();
         }
 
         public async Task<Unidade?> GetByIdAsync(int id)
@@ -49,13 +46,10 @@ namespace Transformese.MVC.Services
             return await resp.Content.ReadFromJsonAsync<Unidade>(_jsonOptions);
         }
 
-        // CORREÇÃO: Implementação do método que estava faltando!
         public async Task CreateAsync(Unidade unidade)
         {
-            // Envia o objeto Unidade para a rota padrão da API (POST api/Unidades)
             var resp = await _http.PostAsJsonAsync("api/Unidades", unidade);
 
-            // Verifica se a operação foi bem-sucedida (status 2xx)
             resp.EnsureSuccessStatusCode();
         }
     }

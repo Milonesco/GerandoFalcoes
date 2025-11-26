@@ -3,81 +3,98 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Transformese.MVC.Services;
+using Transformese.MVC.ViewModels;
 using TransformeseMVC.Web.ViewModels;
-using Transformese.Api.DTOs;
 
-
-namespace TransformeSeMVC.Web.Controllers
+namespace Transformese.MVC.Controllers
 {
+    // A herança ": Controller" é OBRIGATÓRIA para usar View(), Json(), RedirectToAction()
     public class AccountController : Controller
     {
-        private readonly IUsuarioApiClient _api;
+        private readonly IUsuarioApiClient _usuarioService;
 
-        public AccountController(IUsuarioApiClient api)
+        public AccountController(IUsuarioApiClient usuarioService)
         {
-            _api = api;
+            _usuarioService = usuarioService;
         }
 
         [HttpGet]
-        public IActionResult Login() => View();
+        public IActionResult Login()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (!ModelState.IsValid)
-                return View(model);
+            if (!ModelState.IsValid) return View(model);
 
-            // ---- AUTENTICAÇÃO VIA API ----
-            var (token, nome, tipo) = await _api.AuthenticateAsync(model.Email, model.Password);
-
-            if (token is null)
+            try
             {
-                ViewBag.Error = "Usuário ou senha inválidos.";
+                // 1. Tenta autenticar na API
+                var usuarioLogado = await _usuarioService.AuthenticateAsync(model.Email, model.Password);
+
+                if (usuarioLogado == null)
+                {
+                    ModelState.AddModelError("", "Email ou senha inválidos.");
+                    return View(model);
+                }
+
+                // 2. Monta a identidade do usuário (O Crachá)
+                // Nota: Usamos '?' e '??' para evitar erro se vier nulo da API
+                var role = usuarioLogado.TipoUsuario?.DescricaoTipoUsuario ?? "Comum";
+                var unidadeId = usuarioLogado.UnidadeId?.ToString() ?? "";
+
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, usuarioLogado.nome),
+                    new Claim(ClaimTypes.Email, usuarioLogado.email),
+                    new Claim(ClaimTypes.Role, role),
+                    new Claim("UnidadeId", unidadeId)
+                };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+
+                // 3. Cria o Cookie de Login (Isso resolve o Login Loop!)
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    principal,
+                    new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        ExpiresUtc = DateTime.UtcNow.AddHours(1)
+                    });
+
+                // 4. Redirecionamento Inteligente
+                if (role == "Administrador" || role == "Admin")
+                {
+                    return RedirectToAction("Index", "Dashboard");
+                }
+                else if (role == "Professor" || role == "Ong")
+                {
+                    // Se tiver ID da unidade, manda pro painel filtrado
+                    if (int.TryParse(unidadeId, out int id))
+                    {
+                        return RedirectToAction("Index", "PainelOng", new { unidadeId = id });
+                    }
+                    // Fallback se não tiver unidade
+                    return RedirectToAction("Index", "Home");
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Erro ao conectar com o servidor: " + ex.Message);
                 return View(model);
             }
-
-            // ---- CRIAR CLAIMS ----
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, nome),
-                new Claim(ClaimTypes.Email, model.Email),
-                new Claim(ClaimTypes.Role, tipo)
-            };
-
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var principal = new ClaimsPrincipal(identity);
-
-            // ---- LOGIN VIA COOKIE ----
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                principal,
-                new AuthenticationProperties
-                {
-                    IsPersistent = model.RememberMe,
-                    ExpiresUtc = DateTime.UtcNow.AddHours(8)
-                }
-            );
-
-            // ---- SALVAR TOKEN NA SESSÃO (IMPORTANTE!) ----
-            HttpContext.Session.SetString("JwtToken", token);
-            HttpContext.Session.SetString("Usuario", nome);
-            HttpContext.Session.SetString("TipoUsuario", tipo);
-
-            // ---- REDIRECIONAMENTO ----
-            return tipo switch
-            {
-                "Administrador" => RedirectToAction("Index", "Dashboard"),
-                "Professor" => RedirectToAction("Index", "Professor"),
-                _ => RedirectToAction("Index", "Aluno"),
-            };
         }
 
-        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Login");
         }
     }
 }

@@ -9,7 +9,12 @@ builder.Services.AddControllersWithViews();
 
 // SESSION
 builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 builder.Services.AddHttpContextAccessor();
 
 // =========================
@@ -19,9 +24,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
-        options.LogoutPath = "/Account/Logout";
         options.AccessDeniedPath = "/Account/AccessDenied";
-        options.ExpireTimeSpan = TimeSpan.FromHours(8);
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        options.SlidingExpiration = true;
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest; // IMPORTANTE para desenvolvimento
     });
 
 builder.Services.AddAuthorization();
@@ -43,6 +52,10 @@ builder.Services.AddHttpClient<IUnidadeApiClient, UnidadeApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
+builder.Services.AddHttpClient<IDashboardApiClient, DashboardApiClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
+});
 
 // BUILD
 var app = builder.Build();
@@ -54,13 +67,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 // PIPELINE
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseSession();
-app.UseAuthentication(); // <--- ESSENCIAL
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

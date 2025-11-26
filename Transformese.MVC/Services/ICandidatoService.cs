@@ -9,6 +9,7 @@ namespace Transformese.MVC.Services
         Task<List<CandidatoListaViewModel>> BuscarTodos();
         Task<CandidatoDetalhesViewModel> BuscarPorId(int id);
         Task AtualizarTriagem(int id, CandidatoTriagemViewModel model);
+        Task AtualizarStatus(int id, StatusCandidato novoStatus, string observacao = null);
 
         // --- NOVOS MÉTODOS (Fluxo 3 - Painel ONG) ---
 

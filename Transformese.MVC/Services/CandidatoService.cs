@@ -65,19 +65,26 @@ namespace Transformese.MVC.Services
 
         public async Task AtualizarStatus(int id, StatusCandidato novoStatus)
         {
-            // Busca o objeto completo para edição
+            await AtualizarStatus(id, novoStatus, null);
+        }
+
+        public async Task AtualizarStatus(int id, StatusCandidato novoStatus, string observacao = null)
+        {
             var candidato = await BuscarPorId(id);
 
             if (candidato != null)
             {
-                // CORREÇÃO: Atribuição direta do Enum (sem converter pra int)
-                // O ViewModel 'CandidatoDetalhesViewModel' espera o tipo Enum aqui.
                 candidato.Status = novoStatus;
+
+                // Se o parâmetro observacao for fornecido, atualiza o campo correspondente
+                if (observacao != null)
+                {
+                    candidato.ObservacoesONG = observacao;
+                }
 
                 var json = JsonSerializer.Serialize(candidato);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                // Envia o PUT para a API
                 await _httpClient.PutAsync($"/api/Candidatos/{id}", content);
             }
         }

@@ -3,6 +3,11 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20251125054503_InitialCreate.cs" />
+    <Compile Remove="Migrations\20251125054503_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ApplicationDbContextModelSnapshot.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Transformese.Domain\Transformese.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -19,5 +24,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>
