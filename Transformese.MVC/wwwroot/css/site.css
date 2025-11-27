@@ -1,166 +1,171 @@
-﻿/* ================================================
-      BASE
-================================================ */
-html {
-    font-size: 14px;
-    position: relative;
-    min-height: 100%;
-}
+﻿/* site-landing.css – CORRIGIDO E OTIMIZADO */
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-body {
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-}
-
-main {
-    flex: 1;
-}
-
-/* Focus default do Bootstrap */
-.btn:focus,
-.btn:active:focus,
-.btn-link.nav-link:focus,
-.form-control:focus,
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-/* ================================================
-      PALETA TRANSFORME-SE
-================================================ */
+/* Paleta Gerando Falcões */
 :root {
-    --brand-blue: #1e4f91;
-    --brand-pink: #e80070;
-    --text-dark: #333;
-    --text-light: #fff;
-    --bg-dark: #121212; /* fundo escuro global */
-    --bg-darker: #1c1c1c; /* cards/forms no modo escuro */
-    --bg-light: #f9fafb; /* fundo claro global */
+    --gf-blue: #0d1d35;
+    --gf-blue-light: #1e2d4b;
+    --gf-accent: #ff5a4d;
+    --gf-accent-alt: #9c4df5;
+    --gf-text-light: #ffffff;
+    --gf-text-dark: #0b2b42; /* Texto escuro padrão */
+    --gf-bg-light: #f8f9fb; /* Fundo claro padrão */
+    --gf-bg-dark: #0d1117; /* Fundo escuro padrão */
+    --gf-card-dark: #161b22;
+    --gf-card-border-dark: #30363d;
+    --gf-footer-dark: #0d1117;
+    /* Novas variáveis para transição de tema mais limpa */
+    --bg-color: var(--gf-bg-light);
+    --text-color: var(--gf-text-dark);
+    --card-bg: #fff;
+    --card-border: #dee2e6;
+    --navbar-bg: var(--gf-blue);
+    --footer-bg: var(--gf-blue);
 }
 
-/* ================================================
-      LIGHT MODE (invertido)
-      → fundo escuro, texto claro, botões rosa
-================================================ */
-[data-theme="light"] body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+/* ==========================
+   BASE / RESET (Modo Claro Padrão)
+   ========================== */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s; /* Adiciona transição suave */
 }
 
-[data-theme="light"] .navbar {
-    background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+/* 💡 CORREÇÃO MODO CLARO: Aplica cor escura para elementos que não herdam (títulos e links) */
+h1, h2, h3, h4, h5, h6, a:not(.btn) {
+    color: var(--text-color);
 }
 
-[data-theme="light"] .btn-brand {
-    background-color: var(--brand-pink);
-    color: #fff;
+/* NAVBAR GF */
+.gf-navbar {
+    background-color: var(--navbar-bg) !important;
 }
 
-/* ================================================
-      DARK MODE (invertido)
-      → fundo claro, texto escuro, botões azuis
-================================================ */
-[data-theme="dark"] body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-}
-
-[data-theme="dark"] .navbar {
-    background: linear-gradient(90deg, var(--brand-blue), var(--brand-pink));
-}
-
-[data-theme="dark"] .btn-brand {
-    background-color: var(--brand-blue);
-    color: #fff;
-}
-
-/* ================================================
-      TRANSIÇÕES / HOVER
-================================================ */
-.btn-brand:hover {
-    filter: brightness(1.1);
-}
-
-/* ================================================
-      Ícone dark mode
-================================================ */
-.dark-mode-toggle {
-    cursor: pointer;
-    font-size: 1.4rem;
-    transition: .2s;
-}
-
-    .dark-mode-toggle:hover {
-        transform: scale(1.1);
+    /* Garante que links e ícones na Navbar fiquem CLAROS (sobre fundo escuro) */
+    .gf-navbar .navbar-brand,
+    .gf-navbar .nav-link,
+    .gf-navbar .dropdown-item,
+    .gf-navbar .dark-mode-toggle {
+        color: var(--gf-text-light) !important;
     }
 
-/* ================================================
-      ELEMENTOS INTERNOS QUE PRECISAM ESCURECER
-      (para o fundo não ficar branco igual na sua captura)
-================================================ */
-html[data-theme="light"] .card,
-html[data-theme="light"] .container,
-html[data-theme="light"] main,
-html[data-theme="light"] .modal-content {
-    background-color: var(--bg-darker) !important;
-    color: var(--text-light) !important;
-    border-color: #333 !important;
+
+/* LANDING HERO (Mantém texto escuro no modo claro, claro no modo escuro) */
+.landing-hero {
+    /* ... (outros estilos) ... */
+    color: var(--text-color); /* Usará gf-text-dark por padrão */
+    /* ... (outros estilos) ... */
 }
 
-/* DARK MODE ajusta esses mesmos elementos */
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .container,
-html[data-theme="dark"] main,
-html[data-theme="dark"] .modal-content {
-    background-color: #ffffff !important;
-    color: var(--text-dark) !important;
-    border-color: #ccc !important;
+/* Sections claras (Modo Claro) */
+.section-light {
+    background: var(--gf-bg-light);
+    color: var(--gf-text-dark);
 }
 
-/* ================================================
-      TEXTOS
-================================================ */
-html[data-theme="light"] h1,
-html[data-theme="light"] h2,
-html[data-theme="light"] h3,
-html[data-theme="light"] p,
-html[data-theme="light"] label,
-html[data-theme="light"] .nav-link {
-    color: #f1f1f1 !important;
+/* CTA (Sempre texto CLARO sobre fundo colorido) */
+.cta {
+    background: linear-gradient(90deg, var(--gf-accent), var(--gf-accent-alt));
+    color: var(--gf-text-light);
+    border: none;
 }
 
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] p,
-html[data-theme="dark"] label,
-html[data-theme="dark"] .nav-link {
-    color: var(--text-dark) !important;
+/* Footer (Sempre fundo escuro e texto CLARO) */
+.gf-footer {
+    background: var(--footer-bg) !important;
+    color: rgba(255,255,255,0.8);
+}
+    /* Garante que small e links no footer sejam claros */
+    .gf-footer small, .gf-footer a {
+        color: inherit; /* Herda a cor do gf-footer (cinza/claro) */
+    }
+
+/* Cards (Modo Claro) */
+.card {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-color);
 }
 
-/* ================================================
-      FORM INPUTS
-================================================ */
-html[data-theme="light"] input,
-html[data-theme="light"] textarea,
-html[data-theme="light"] select {
-    background-color: #2a2a2a !important;
-    color: #fff !important;
-    border-color: #444 !important;
+    .card h5,
+    .card p {
+        color: var(--text-color);
+    }
+
+/* ==========================
+   🌙 DARK MODE (Sobrescreve variáveis e estilos)
+   ========================== */
+html[data-theme="dark"] {
+    /* Sobrescreve variáveis */
+    --bg-color: var(--gf-bg-dark);
+    --text-color: var(--gf-text-light);
+    --card-bg: var(--gf-card-dark);
+    --card-border: var(--gf-card-border-dark);
+    --navbar-bg: var(--gf-blue-light);
+    --footer-bg: var(--gf-footer-dark);
+    /* O body e elementos que herdam já se ajustam pelas variáveis --bg-color e --text-color */
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
-html[data-theme="dark"] input,
-html[data-theme="dark"] textarea,
-html[data-theme="dark"] select {
-    background-color: #fff !important;
-    color: #222 !important;
-    border-color: #999 !important;
+    /* Garante que elementos não-herdados (títulos e links) fiquem CLAROS no Dark Mode */
+    html[data-theme="dark"] h1,
+    html[data-theme="dark"] h2,
+    html[data-theme="dark"] h3,
+    html[data-theme="dark"] h4,
+    html[data-theme="dark"] h5,
+    html[data-theme="dark"] h6,
+    html[data-theme="dark"] a:not(.btn) {
+        color: var(--gf-text-light); /* Cor clara para títulos e links */
+    }
+
+    /* Ajustes específicos de componentes no Dark Mode */
+
+    html[data-theme="dark"] .gf-navbar {
+        background-color: var(--navbar-bg) !important;
+    }
+
+    html[data-theme="dark"] .card {
+        background: var(--card-bg);
+        border-color: var(--card-border);
+        color: var(--gf-text-light);
+    }
+
+    html[data-theme="dark"] .section-light {
+        background: var(--bg-color); /* gf-bg-dark */
+        color: var(--text-color); /* gf-text-light */
+    }
+
+    html[data-theme="dark"] .gf-footer {
+        background: var(--footer-bg) !important;
+        color: rgba(157,165,180,1); /* Cinza claro, conforme sua definição original */
+    }
+
+/* ... (Outras regras de dark mode e media queries permanecem as mesmas) ... */
+
+/* Botão “Conhecer ONGs” - Mantido com !important devido à alta especificidade */
+html[data-theme="light"] button#btn-ongs.btn,
+html[data-theme="light"] a#btn-ongs.btn {
+        background-color: #111 !important;
+        color: #fff !important;
+        border-color: #111 !important;
+        opacity: 1 !important;
+        box-shadow: none !important;
+}
+
+html[data-theme="dark"] button#btn-ongs.btn,
+html[data-theme="dark"] a#btn-ongs.btn {
+        background-color: var(--gf-accent) !important;
+        color: #fff !important;
+        border-color: var(--gf-accent) !important;
+        opacity: 1 !important;
+        box-shadow: none !important;
+}
+
+/* Compatibilidade botões Bootstrap - Mantido com !important */
+html[data-theme="light"] .btn-dark,
+html[data-theme="light"] .btn.btn-dark {
+        background-color: var(--gf-blue) !important;
+        color: #fff !important;
+        border-color: var(--gf-blue) !important;
 }

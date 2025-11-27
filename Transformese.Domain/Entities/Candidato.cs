@@ -31,9 +31,6 @@ namespace Transformese.Domain.Entities
         public int? UnidadeId { get; set; }
         public Unidade? Unidade { get; set; }
 
-        public int? CursoId { get; set; }
-        public Curso? Curso { get; set; }
-
         public StatusCandidato Status { get; set; } = StatusCandidato.Inscrito;
 
         // Auditoria (Quem mexeu?)

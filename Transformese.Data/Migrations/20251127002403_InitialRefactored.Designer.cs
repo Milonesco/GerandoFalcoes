@@ -12,8 +12,8 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251125054503_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20251127002403_InitialRefactored")]
+    partial class InitialRefactored
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,9 +40,6 @@ namespace Transformese.Data.Migrations
 
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("CursoId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
@@ -91,8 +88,6 @@ namespace Transformese.Data.Migrations
                     b.HasIndex("CPF")
                         .IsUnique();
 
-                    b.HasIndex("CursoId");
-
                     b.HasIndex("UnidadeId");
 
                     b.ToTable("Candidatos");
@@ -136,115 +131,6 @@ namespace Transformese.Data.Migrations
                     b.ToTable("CandidatoLogs");
                 });
 
-            modelBuilder.Entity("Transformese.Domain.Entities.Curso", b =>
-                {
-                    b.Property<int>("IdCurso")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCurso"));
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Imagem")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UnidadeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdCurso");
-
-                    b.HasIndex("UnidadeId");
-
-                    b.ToTable("Cursos");
-
-                    b.HasData(
-                        new
-                        {
-                            IdCurso = 1,
-                            Descricao = "Conceitos iniciais de computação",
-                            Imagem = "default-course.jpg",
-                            Nome = "Informática Básica",
-                            UnidadeId = 1
-                        },
-                        new
-                        {
-                            IdCurso = 2,
-                            Descricao = "Lógica e orientação a objetos",
-                            Imagem = "default-course.jpg",
-                            Nome = "Programação C#",
-                            UnidadeId = 1
-                        },
-                        new
-                        {
-                            IdCurso = 3,
-                            Descricao = "Ferramentas visuais e criatividade",
-                            Imagem = "default-course.jpg",
-                            Nome = "Design Gráfico",
-                            UnidadeId = 2
-                        },
-                        new
-                        {
-                            IdCurso = 4,
-                            Descricao = "Infraestrutura e comunicação",
-                            Imagem = "default-course.jpg",
-                            Nome = "Redes de Computadores",
-                            UnidadeId = 2
-                        },
-                        new
-                        {
-                            IdCurso = 5,
-                            Descricao = "Automação e análise de dados",
-                            Imagem = "default-course.jpg",
-                            Nome = "Excel Avançado",
-                            UnidadeId = 3
-                        },
-                        new
-                        {
-                            IdCurso = 6,
-                            Descricao = "HTML, CSS e JavaScript",
-                            Imagem = "default-course.jpg",
-                            Nome = "Desenvolvimento Web",
-                            UnidadeId = 3
-                        },
-                        new
-                        {
-                            IdCurso = 7,
-                            Descricao = "Modelagem e SQL",
-                            Imagem = "default-course.jpg",
-                            Nome = "Banco de Dados",
-                            UnidadeId = 4
-                        },
-                        new
-                        {
-                            IdCurso = 8,
-                            Descricao = "Edição e manipulação de imagens",
-                            Imagem = "default-course.jpg",
-                            Nome = "Photoshop",
-                            UnidadeId = 4
-                        },
-                        new
-                        {
-                            IdCurso = 9,
-                            Descricao = "Estratégias e campanhas online",
-                            Imagem = "default-course.jpg",
-                            Nome = "Marketing Digital",
-                            UnidadeId = 5
-                        },
-                        new
-                        {
-                            IdCurso = 10,
-                            Descricao = "Visualização e dashboard",
-                            Imagem = "default-course.jpg",
-                            Nome = "Power BI",
-                            UnidadeId = 5
-                        });
-                });
-
             modelBuilder.Entity("Transformese.Domain.Entities.TipoUsuario", b =>
                 {
                     b.Property<int>("IdTipoUsuario")
@@ -269,63 +155,76 @@ namespace Transformese.Data.Migrations
                         new
                         {
                             IdTipoUsuario = 2,
-                            DescricaoTipoUsuario = "Professor"
-                        },
-                        new
-                        {
-                            IdTipoUsuario = 3,
-                            DescricaoTipoUsuario = "Aluno"
+                            DescricaoTipoUsuario = "Candidato"
                         });
                 });
 
             modelBuilder.Entity("Transformese.Domain.Entities.Unidade", b =>
                 {
-                    b.Property<int>("IdUnidade")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUnidade"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IdUnidade");
+                    b.Property<string>("Responsavel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UnidadeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Unidades");
 
                     b.HasData(
                         new
                         {
-                            IdUnidade = 1,
+                            Id = -1,
+                            Bairro = "São Miguel",
+                            Cidade = "São Paulo",
                             Endereco = "Rua A, 100",
-                            Nome = "Unidade São Miguel"
+                            Estado = "SP",
+                            Nome = "Unidade São Miguel",
+                            Responsavel = "Maria da Silva",
+                            UnidadeId = -1
                         },
                         new
                         {
-                            IdUnidade = 2,
+                            Id = -2,
+                            Bairro = "Itaquera",
+                            Cidade = "São Paulo",
                             Endereco = "Av B, 200",
-                            Nome = "Unidade Itaquera"
+                            Estado = "SP",
+                            Nome = "Unidade Itaquera",
+                            Responsavel = "João Santos",
+                            UnidadeId = -2
                         },
                         new
                         {
-                            IdUnidade = 3,
+                            Id = -3,
+                            Bairro = "Tatuapé",
+                            Cidade = "São Paulo",
                             Endereco = "Rua C, 300",
-                            Nome = "Unidade Tatuapé"
-                        },
-                        new
-                        {
-                            IdUnidade = 4,
-                            Endereco = "Rua D, 400",
-                            Nome = "Unidade Penha"
-                        },
-                        new
-                        {
-                            IdUnidade = 5,
-                            Endereco = "Av E, 500",
-                            Nome = "Unidade São Mateus"
+                            Estado = "SP",
+                            Nome = "Unidade Tatuapé",
+                            Responsavel = "Fernanda Lima",
+                            UnidadeId = -3
                         });
                 });
 
@@ -374,207 +273,161 @@ namespace Transformese.Data.Migrations
                         },
                         new
                         {
-                            IdUsuario = 2,
-                            DataNascimento = new DateTime(1985, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "carlos.prof@sistema.com",
-                            FotoPerfil = "default-user.jpg",
-                            Nome = "Carlos Henrique",
-                            Senha = "123456",
-                            TipoUsuarioId = 2
-                        },
-                        new
-                        {
-                            IdUsuario = 3,
-                            DataNascimento = new DateTime(1987, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "marina.prof@sistema.com",
-                            FotoPerfil = "default-user.jpg",
-                            Nome = "Marina Lopes",
-                            Senha = "123456",
-                            TipoUsuarioId = 2
-                        },
-                        new
-                        {
-                            IdUsuario = 4,
-                            DataNascimento = new DateTime(1982, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "joao.prof@sistema.com",
-                            FotoPerfil = "default-user.jpg",
-                            Nome = "João Batista",
-                            Senha = "123456",
-                            TipoUsuarioId = 2
-                        },
-                        new
-                        {
-                            IdUsuario = 5,
-                            DataNascimento = new DateTime(1990, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "patricia.prof@sistema.com",
-                            FotoPerfil = "default-user.jpg",
-                            Nome = "Patrícia Santos",
-                            Senha = "123456",
-                            TipoUsuarioId = 2
-                        },
-                        new
-                        {
                             IdUsuario = 6,
                             DataNascimento = new DateTime(2000, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno1@sistema.com",
+                            Email = "candidato1@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 1",
+                            Nome = "Candidato 1",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 7,
                             DataNascimento = new DateTime(2000, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno2@sistema.com",
+                            Email = "candidato2@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 2",
+                            Nome = "Candidato 2",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 8,
                             DataNascimento = new DateTime(2000, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno3@sistema.com",
+                            Email = "candidato3@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 3",
+                            Nome = "Candidato 3",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 9,
                             DataNascimento = new DateTime(2000, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno4@sistema.com",
+                            Email = "candidato4@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 4",
+                            Nome = "Candidato 4",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 10,
                             DataNascimento = new DateTime(2000, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno5@sistema.com",
+                            Email = "candidato5@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 5",
+                            Nome = "Candidato 5",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 11,
                             DataNascimento = new DateTime(2000, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno6@sistema.com",
+                            Email = "candidato6@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 6",
+                            Nome = "Candidato 6",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 12,
                             DataNascimento = new DateTime(2000, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno7@sistema.com",
+                            Email = "candidato7@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 7",
+                            Nome = "Candidato 7",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 13,
                             DataNascimento = new DateTime(2000, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno8@sistema.com",
+                            Email = "candidato8@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 8",
+                            Nome = "Candidato 8",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 14,
                             DataNascimento = new DateTime(2000, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno9@sistema.com",
+                            Email = "candidato9@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 9",
+                            Nome = "Candidato 9",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 15,
                             DataNascimento = new DateTime(2000, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno10@sistema.com",
+                            Email = "candidato10@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 10",
+                            Nome = "Candidato 10",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 16,
                             DataNascimento = new DateTime(2000, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno11@sistema.com",
+                            Email = "candidato11@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 11",
+                            Nome = "Candidato 11",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 17,
                             DataNascimento = new DateTime(2000, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno12@sistema.com",
+                            Email = "candidato12@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 12",
+                            Nome = "Candidato 12",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 18,
                             DataNascimento = new DateTime(2000, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno13@sistema.com",
+                            Email = "candidato13@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 13",
+                            Nome = "Candidato 13",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 19,
                             DataNascimento = new DateTime(2000, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno14@sistema.com",
+                            Email = "candidato14@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 14",
+                            Nome = "Candidato 14",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         },
                         new
                         {
                             IdUsuario = 20,
                             DataNascimento = new DateTime(2000, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "aluno15@sistema.com",
+                            Email = "candidato15@sistema.com",
                             FotoPerfil = "default-user.jpg",
-                            Nome = "Aluno 15",
+                            Nome = "Candidato 15",
                             Senha = "123456",
-                            TipoUsuarioId = 3
+                            TipoUsuarioId = 2
                         });
                 });
 
             modelBuilder.Entity("Transformese.Domain.Entities.Candidato", b =>
                 {
-                    b.HasOne("Transformese.Domain.Entities.Curso", "Curso")
-                        .WithMany()
-                        .HasForeignKey("CursoId");
-
                     b.HasOne("Transformese.Domain.Entities.Unidade", "Unidade")
                         .WithMany()
                         .HasForeignKey("UnidadeId");
-
-                    b.Navigation("Curso");
 
                     b.Navigation("Unidade");
                 });
@@ -596,17 +449,6 @@ namespace Transformese.Data.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Transformese.Domain.Entities.Curso", b =>
-                {
-                    b.HasOne("Transformese.Domain.Entities.Unidade", "Unidade")
-                        .WithMany("Cursos")
-                        .HasForeignKey("UnidadeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Unidade");
-                });
-
             modelBuilder.Entity("Transformese.Domain.Entities.Usuario", b =>
                 {
                     b.HasOne("Transformese.Domain.Entities.TipoUsuario", "TipoUsuario")
@@ -626,11 +468,6 @@ namespace Transformese.Data.Migrations
             modelBuilder.Entity("Transformese.Domain.Entities.TipoUsuario", b =>
                 {
                     b.Navigation("Usuarios");
-                });
-
-            modelBuilder.Entity("Transformese.Domain.Entities.Unidade", b =>
-                {
-                    b.Navigation("Cursos");
                 });
 #pragma warning restore 612, 618
         }

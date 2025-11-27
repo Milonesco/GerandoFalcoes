@@ -84,7 +84,7 @@ namespace Transformese.Api.Controllers
         }
 
         // ==========================================
-        // 3. INSCRIÇÃO (Portal do Aluno)
+        // 3. INSCRIÇÃO (Portal do Candidato)
         // ==========================================
         [HttpPost("inscrever")]
         public async Task<IActionResult> Inscrever([FromBody] CandidatoInscricaoDto dto)

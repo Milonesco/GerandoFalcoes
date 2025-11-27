@@ -8,18 +8,14 @@ namespace Transformese.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICursoApiClient _cursoApiClient;
 
-        public HomeController(ILogger<HomeController> logger, ICursoApiClient cursoApiClient)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _cursoApiClient = cursoApiClient;
         }
-
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var cursos = await _cursoApiClient.GetAllAsync();
-            return View(cursos);
+            return View();
         }
 
         public IActionResult Privacy()

@@ -48,7 +48,7 @@ namespace Transformese.Api.Controllers
         new Claim(ClaimTypes.NameIdentifier, usuario.IdUsuario.ToString()),
         new Claim(ClaimTypes.Name, usuario.Nome),
         new Claim(ClaimTypes.Email, usuario.Email),
-        new Claim(ClaimTypes.Role, usuario.TipoUsuario?.DescricaoTipoUsuario ?? "Aluno")
+        new Claim(ClaimTypes.Role, usuario.TipoUsuario?.DescricaoTipoUsuario ?? "Candidato")
     };
 
             var credentials = new SigningCredentials(

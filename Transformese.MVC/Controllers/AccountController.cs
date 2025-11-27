@@ -67,8 +67,7 @@ namespace TransformeSeMVC.Web.Controllers
             return tipo switch
             {
                 "Administrador" => RedirectToAction("Index", "Dashboard"),
-                "Professor" => RedirectToAction("Index", "Professor"),
-                _ => RedirectToAction("Index", "Aluno"),
+                _ => RedirectToAction("Index", "Candidato"),
             };
         }
 

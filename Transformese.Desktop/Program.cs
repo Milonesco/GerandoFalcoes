@@ -22,7 +22,7 @@ namespace Transformese.Desktop
                 try
                 {
                     using var client = new HttpClient { BaseAddress = new Uri("https://localhost:5001/") };
-                    var cursos = await client.GetFromJsonAsync<object[]>("api/cursos");
+                    var unidades = await client.GetFromJsonAsync<object[]>("api/unidades");
                 }
                 catch { }
             });

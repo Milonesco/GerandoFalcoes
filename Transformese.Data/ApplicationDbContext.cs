@@ -12,7 +12,6 @@ namespace Transformese.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
-        public DbSet<Curso> Cursos { get; set; }
         public DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
         public DbSet<CandidatoLog> CandidatoLogs { get; set; }

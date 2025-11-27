@@ -1,37 +1,197 @@
-﻿@model IEnumerable<CursoDto>
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Gerando Falcões";
+}
 
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site-landing.css" />
+}
 
+<div class="landing-hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-white">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold">Gerando Falcões</h1>
+                <p class="lead mb-4">Transformando vidas por meio de educação, tecnologia e oportunidades — junte-se a nós para fazer a diferença.</p>
+                <p>
+                    <a class="btn btn-primary btn-lg me-2" href="/Account/Register">Quero me inscrever</a>
+                    <a class="btn btn-ongs">Conhecer ONGs</a>
 
-
-@* lista de cursos *@
-
-<div class="container mt-5">
-    <h2 class="mb-4 text-center">Cursos Disponíveis</h2>
-    <div class="row">
-        @await Html.PartialAsync("~/Views/Shared/_CursosListPartial.cshtml", Model)
-    </div>
-</div>
-
-
-<section class="container my-5">
-    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
-        <iframe src="https://www.youtube.com/embed/nD1rzEsTgUU"
-                title="Transforme-se - Serasa + Senac"
-                allowfullscreen></iframe>
-    </div>
-</section>
-
-<!-- Modal Detalhes -->
-<div class="modal fade" id="cursoModal" tabindex="-1" aria-labelledby="cursoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cursoModalLabel">Detalhes do Curso</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </p>
             </div>
-            <div class="modal-body text-center" id="cursoModalBody">
-                <p>Carregando...</p>
+            <div class="col-lg-5 d-none d-lg-block text-end">
+                <img src="~/images/hero-right-illustration.png" alt="Ilustração" class="img-fluid hero-illustration" />
             </div>
         </div>
     </div>
 </div>
+
+<!-- Quem somos -->
+<section class="section-light py-5">
+    <div class="container">
+        <div class="row gy-4 align-items-center">
+            <div class="col-md-6">
+                <h2>Quem somos</h2>
+                <p class="lead">Somos uma comunidade dedicada a empoderar jovens e fortalecer ONGs por meio de treinamentos, vagas e parcerias. Trabalhamos com instituições locais e empresas para criar oportunidades reais.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Formação profissional e workshops</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Acompanhamento de candidaturas</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Parcerias com empresas</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="~/images/about-illustration.jpg" alt="Sobre" class="img-fluid rounded shadow-sm" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Como funciona -->
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-center mb-4">Como funciona</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="card-body">
+                        <i class="bi bi-person-plus display-6 text-primary"></i>
+                        <h5 class="mt-3">1. Cadastro</h5>
+                        <p>O candidato realiza um cadastro simples com seus dados e currículo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="card-body">
+                        <i class="bi bi-people display-6 text-primary"></i>
+                        <h5 class="mt-3">2. Escolha a ONG</h5>
+                        <p>Conheça as ONGs parceiras, escolha a que mais combina com seu perfil e candidate-se.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="card-body">
+                        <i class="bi bi-briefcase display-6 text-primary"></i>
+                        <h5 class="mt-3">3. Acompanhamento</h5>
+                        <p>Receba atualizações sobre o status da sua candidatura e participe de treinamentos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ONGs (exemplo cards) -->
+<section class="section-light py-5">
+    <div class="container">
+        <h3 class="mb-4">ONGs Parceiras</h3>
+        <div class="row g-4">
+            <!-- Substitua os cards por uma renderização real vindo do servidor -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/ong1.jpg" class="card-img-top" alt="ONG 1">
+                    <div class="card-body">
+                        <h5 class="card-title">ONG Exemplo 1</h5>
+                        <p class="card-text">Atua em educação e inclusão digital.</p>
+                        <a href="/Unidades/Details/1" class="btn btn-outline-primary btn-sm">Ver perfil</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/ong2.jpg" class="card-img-top" alt="ONG 2">
+                    <div class="card-body">
+                        <h5 class="card-title">ONG Exemplo 2</h5>
+                        <p class="card-text">Projetos de capacitação profissional.</p>
+                        <a href="/Unidades/Details/2" class="btn btn-outline-primary btn-sm">Ver perfil</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/ong3.jpg" class="card-img-top" alt="ONG 3">
+                    <div class="card-body">
+                        <h5 class="card-title">ONG Exemplo 3</h5>
+                        <p class="card-text">Promoção de oportunidades de estágio.</p>
+                        <a href="/Unidades" class="btn btn-outline-primary btn-sm">Ver todas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impacto -->
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-center mb-4">Nosso impacto</h3>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h2 class="fw-bold counter" data-target="1240">0</h2>
+                    <p>Beneficiados</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h2 class="fw-bold counter" data-target="86">0</h2>
+                    <p>ONGs Parceiras</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h2 class="fw-bold counter" data-target="340">0</h2>
+                    <p>Vagas ofertadas</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h2 class="fw-bold counter" data-target="52">0</h2>
+                    <p>Empresas Parceiras</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta py-5 text-white text-center">
+    <div class="container">
+        <h3 class="mb-3">Pronto para transformar seu futuro?</h3>
+        <a href="/Account/Register" class="btn btn-lg btn-light">Inscreva-se agora</a>
+    </div>
+</section>
+
+<!-- Footer simples -->
+<footer class="footer py-3">
+    <div class="container text-center">
+        <p class="mb-1">© @DateTime.Now.Year - Gerando Falcões. Todos os direitos reservados.</p>
+        <small class="text-muted">Feito com ♥ pela equipe Transforme-se</small>
+    </div>
+</footer>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // contador simples
+        document.querySelectorAll('.counter').forEach(el => {
+            const target = +el.getAttribute('data-target');
+            let current = 0;
+            const step = Math.ceil(target / 100);
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    el.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    el.textContent = current.toLocaleString();
+                }
+            }, 12);
+        });
+    </script>
+}

@@ -4,17 +4,21 @@ using Transformese.MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// =======================================
 // MVC
+// =======================================
 builder.Services.AddControllersWithViews();
 
+// =======================================
 // SESSION
+// =======================================
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
-// =========================
+// =======================================
 // AUTHENTICATION + COOKIES
-// =========================
+// =======================================
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -26,25 +30,32 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization();
 
-// SUA INJEÇÃO DE API CLIENTS
+// =======================================
+// API CLIENTS
+// =======================================
+
+// Usuários — usa BaseUrl da chave "Api"
 builder.Services.AddHttpClient<IUsuarioApiClient, UsuarioApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
+
+// Candidatos — você estava misturando Api e ApiSettings
+// unifiquei para usar SEMPRE "Api:BaseUrl"
 builder.Services.AddHttpClient<ICandidatoService, CandidatoService>(client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"]);
-});
-builder.Services.AddHttpClient<ICursoApiClient, CursoApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
+
+// Unidades — rota /api/Unidades
 builder.Services.AddHttpClient<IUnidadeApiClient, UnidadeApiClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
 });
 
+// =======================================
 // BUILD
+// =======================================
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -53,16 +64,21 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// =======================================
 // PIPELINE
+// =======================================
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseSession();
-app.UseAuthentication(); // <--- ESSENCIAL
+app.UseAuthentication();
 app.UseAuthorization();
 
+// =======================================
+// ROTAS
+// =======================================
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
