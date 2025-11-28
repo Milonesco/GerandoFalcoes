@@ -45,21 +45,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataCadastro)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataEntrevista)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ObservacoesONG)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ObservacoesGF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -98,21 +83,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataCadastro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEntrevista)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ObservacoesONG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ObservacoesGF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Unidade.UnidadeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

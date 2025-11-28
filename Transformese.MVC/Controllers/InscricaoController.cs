@@ -7,14 +7,16 @@ namespace Transformese.MVC.Controllers
 {
     public class InscricaoController : Controller
     {
-        private readonly IConfiguration _configuration;
-        private readonly HttpClient _httpClient;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly string _apiBaseUrl;
 
-        public InscricaoController(IConfiguration configuration)
+        public InscricaoController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
-            _configuration = configuration;
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri(_configuration["ApiSettings:BaseUrl"]);
+            _httpClientFactory = httpClientFactory;
+
+            // Tenta pegar a URL do appsettings. Se não achar, usa o padrão da API local.
+            // IMPORTANTE: Verifique se sua API roda na porta 7001, 5000 ou 5001.
+            _apiBaseUrl = configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7001";
         }
 
         // GET: Exibe o formulário
@@ -31,10 +33,17 @@ namespace Transformese.MVC.Controllers
 
             try
             {
+                // 1. Cria o cliente HTTP da forma correta (via fábrica)
+                var client = _httpClientFactory.CreateClient();
+                client.BaseAddress = new Uri(_apiBaseUrl);
+
+                // 2. Prepara os dados
                 var json = JsonSerializer.Serialize(model);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await _httpClient.PostAsync("/api/Candidatos/inscrever", content);
+                // 3. Envia para a API
+                // A rota aqui deve bater com o [HttpPost("inscrever")] da sua API
+                var response = await client.PostAsync("api/Candidatos/inscrever", content);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -42,15 +51,16 @@ namespace Transformese.MVC.Controllers
                 }
                 else
                 {
-                    // Se der erro (ex: CPF duplicado), mostra na tela
-                    var erro = await response.Content.ReadAsStringAsync();
-                    ModelState.AddModelError("", $"Erro na inscrição: {erro}");
+                    // Erro da API (Ex: CPF duplicado)
+                    var erroMsg = await response.Content.ReadAsStringAsync();
+                    ModelState.AddModelError("", $"Erro ao inscrever: {erroMsg}");
                     return View("Index", model);
                 }
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Erro de conexão com o servidor.");
+                // Erro de conexão (API desligada ou URL errada)
+                ModelState.AddModelError("", $"Erro de conexão com o servidor: {ex.Message}");
                 return View("Index", model);
             }
         }

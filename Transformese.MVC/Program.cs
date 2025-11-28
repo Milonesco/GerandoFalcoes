@@ -1,84 +1,31 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Text.Json.Serialization;
-using Transformese.MVC.Services;
+﻿using Transformese.MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// =======================================
-// MVC
-// =======================================
+// 1. Adiciona serviços essenciais
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient(); // Necessário para o InscricaoController falar com a API
 
-// =======================================
-// SESSION
-// =======================================
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession();
-builder.Services.AddHttpContextAccessor();
+// Se o Controller de Unidades buscar dados da API, registre o serviço aqui:
+// builder.Services.AddScoped<IUnidadeApiClient, UnidadeApiClient>(); 
 
-// =======================================
-// AUTHENTICATION + COOKIES
-// =======================================
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Account/Login";
-        options.LogoutPath = "/Account/Logout";
-        options.AccessDeniedPath = "/Account/AccessDenied";
-        options.ExpireTimeSpan = TimeSpan.FromHours(8);
-    });
-
-builder.Services.AddAuthorization();
-
-// =======================================
-// API CLIENTS
-// =======================================
-
-// Usuários — usa BaseUrl da chave "Api"
-builder.Services.AddHttpClient<IUsuarioApiClient, UsuarioApiClient>(client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
-});
-
-// Candidatos — você estava misturando Api e ApiSettings
-// unifiquei para usar SEMPRE "Api:BaseUrl"
-builder.Services.AddHttpClient<ICandidatoService, CandidatoService>(client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
-});
-
-// Unidades — rota /api/Unidades
-builder.Services.AddHttpClient<IUnidadeApiClient, UnidadeApiClient>(client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["Api:BaseUrl"]);
-});
-
-// =======================================
-// BUILD
-// =======================================
 var app = builder.Build();
 
+// 2. Configuração de Erros
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-// =======================================
-// PIPELINE
-// =======================================
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseSession();
-app.UseAuthentication();
-app.UseAuthorization();
+// (Removido Authentication/Authorization pois é um site público)
 
-// =======================================
-// ROTAS
-// =======================================
+// 3. Rotas
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

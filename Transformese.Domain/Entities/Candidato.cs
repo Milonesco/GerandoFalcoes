@@ -23,17 +23,10 @@ namespace Transformese.Domain.Entities
 
         // Controle de Processo
         public DateTime DataCadastro { get; set; } = DateTime.Now;
-        public DateTime? DataEntrevista { get; set; }
-        public string? ObservacoesONG { get; set; }
-        public string? ObservacoesGF { get; set; }
 
         // Chaves Estrangeiras
         public int? UnidadeId { get; set; }
-        public Unidade? Unidade { get; set; }
 
         public StatusCandidato Status { get; set; } = StatusCandidato.Inscrito;
-
-        // Auditoria (Quem mexeu?)
-        public ICollection<CandidatoLog>? HistoricoLogs { get; set; }
     }
 }

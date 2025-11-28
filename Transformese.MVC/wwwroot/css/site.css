@@ -1,171 +1,291 @@
-﻿/* site-landing.css – CORRIGIDO E OTIMIZADO */
+﻿/* ==========================================================================
+   GERANDO FALCÕES - LANDING PAGE PROFISSIONAL (TEMA CLARO/ESCURO)
+   ========================================================================== */
 
-/* Paleta Gerando Falcões */
+/* --- Definição de Variáveis (Paleta & Temas) --- */
 :root {
-    --gf-blue: #0d1d35;
-    --gf-blue-light: #1e2d4b;
-    --gf-accent: #ff5a4d;
-    --gf-accent-alt: #9c4df5;
-    --gf-text-light: #ffffff;
-    --gf-text-dark: #0b2b42; /* Texto escuro padrão */
-    --gf-bg-light: #f8f9fb; /* Fundo claro padrão */
-    --gf-bg-dark: #0d1117; /* Fundo escuro padrão */
-    --gf-card-dark: #161b22;
-    --gf-card-border-dark: #30363d;
-    --gf-footer-dark: #0d1117;
-    /* Novas variáveis para transição de tema mais limpa */
-    --bg-color: var(--gf-bg-light);
-    --text-color: var(--gf-text-dark);
-    --card-bg: #fff;
-    --card-border: #dee2e6;
-    --navbar-bg: var(--gf-blue);
-    --footer-bg: var(--gf-blue);
+    /* Paleta Base da Marca */
+    --gf-blue-dark: #0d1d35; /* Azul Marinho Profundo */
+    --gf-blue-mid: #1e3a6b; /* Azul Intermediário para Hovers */
+    --gf-accent-primary: #ff5a4d; /* Laranja/Vermelho */
+    --gf-accent-secondary: #9c4df5; /* Roxo/Lilás */
+    --white: #ffffff;
+    /* --- TEMA CLARO (Padrão) --- */
+    --body-bg: #f8f9fb;
+    --text-main: #0b2b42;
+    --text-muted: #6c757d;
+    /* Navbar & Footer (Sempre escuros para contraste) */
+    --nav-footer-bg: var(--gf-blue-dark);
+    --nav-footer-text: rgba(255, 255, 255, 0.85);
+    --nav-footer-link-hover: var(--white);
+    /* Cards */
+    --card-bg: #ffffff;
+    --card-border: #e9ecef;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.1);
+    /* Botões Principais (Escuros) */
+    --btn-primary-bg: var(--gf-blue-dark);
+    --btn-primary-border: var(--gf-blue-dark);
+    --btn-primary-text: var(--white);
+    --btn-primary-hover-bg: var(--gf-blue-mid); /* Fica ligeiramente mais claro no hover */
+    --btn-shadow: 0 4px 6px rgba(13, 29, 53, 0.15);
+    --btn-shadow-hover: 0 8px 15px rgba(13, 29, 53, 0.25);
+}
+
+/* --- TEMA ESCURO (Ativado via JS) --- */
+html[data-theme="dark"] {
+    --body-bg: #0a0c10; /* Fundo quase preto */
+    --text-main: #e6edf3; /* Texto claro */
+    --text-muted: #8b949e;
+    /* Cards no modo escuro */
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.3);
+    /* Botões no modo escuro (Usamos o accent para destaque) */
+    --btn-primary-bg: var(--gf-accent-primary);
+    --btn-primary-border: var(--gf-accent-primary);
+    --btn-primary-hover-bg: #e64a3d; /* Um pouco mais escuro no hover */
+    --btn-shadow: 0 4px 6px rgba(255, 90, 77, 0.2);
+    --btn-shadow-hover: 0 8px 15px rgba(255, 90, 77, 0.3);
 }
 
 /* ==========================
-   BASE / RESET (Modo Claro Padrão)
+   BASE / RESET ESTRUTURAL
    ========================== */
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: background 0.3s, color 0.3s; /* Adiciona transição suave */
+    background-color: var(--body-bg);
+    color: var(--text-main);
+    /* Transição suave de 0.3s para todas as mudanças de cor */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
-/* 💡 CORREÇÃO MODO CLARO: Aplica cor escura para elementos que não herdam (títulos e links) */
-h1, h2, h3, h4, h5, h6, a:not(.btn) {
-    color: var(--text-color);
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-/* NAVBAR GF */
+a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* ==========================
+   COMPONENTES DE NAVEGAÇÃO
+   ========================== */
 .gf-navbar {
-    background-color: var(--navbar-bg) !important;
+    background-color: var(--nav-footer-bg) !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-    /* Garante que links e ícones na Navbar fiquem CLAROS (sobre fundo escuro) */
     .gf-navbar .navbar-brand,
-    .gf-navbar .nav-link,
-    .gf-navbar .dropdown-item,
-    .gf-navbar .dark-mode-toggle {
-        color: var(--gf-text-light) !important;
+    .gf-navbar .nav-link {
+        color: var(--nav-footer-text) !important;
+        font-weight: 600;
     }
 
+        .gf-navbar .nav-link:hover,
+        .gf-navbar .dropdown-item:hover {
+            color: var(--nav-footer-link-hover) !important;
+        }
 
-/* LANDING HERO (Mantém texto escuro no modo claro, claro no modo escuro) */
+/* Ícone do Dark Mode */
+.dark-mode-toggle {
+    color: var(--nav-footer-text);
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+    .dark-mode-toggle:hover {
+        transform: rotate(15deg); /* Pequena rotação divertida no hover */
+        color: var(--white);
+    }
+
+/* Footer */
+.gf-footer {
+    background-color: var(--nav-footer-bg) !important;
+    color: var(--nav-footer-text);
+    padding: 1.5rem 0;
+}
+
+    .gf-footer a {
+        color: var(--nav-footer-text);
+    }
+
+        .gf-footer a:hover {
+            color: var(--nav-footer-link-hover);
+            text-decoration: underline;
+        }
+
+/* ==========================
+   SEÇÕES DA LANDING PAGE
+   ========================== */
+
+/* Hero Section */
 .landing-hero {
-    /* ... (outros estilos) ... */
-    color: var(--text-color); /* Usará gf-text-dark por padrão */
-    /* ... (outros estilos) ... */
+    position: relative;
+    /* Certifique-se que a imagem existe nesse caminho */
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center 20%; /* Ajuste fino da posição */
+    min-height: 70vh; /* Um pouco mais alto para impacto */
+    display: flex;
+    align-items: center;
+    color: var(--white); /* Texto sempre branco no Hero */
+    padding: 4rem 0;
 }
 
-/* Sections claras (Modo Claro) */
+/* Overlay Gradiente Moderno */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradiente mais suave do azul escuro para transparente */
+    background: linear-gradient(135deg, rgba(13,29,53,0.9) 0%, rgba(13,29,53,0.4) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-illustration {
+    max-width: 350px;
+    /* Sombra projetada suave na ilustração */
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.landing-hero:hover .hero-illustration {
+    /* Movimento sutil da ilustração ao passar o mouse na seção */
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Seções de Conteúdo */
 .section-light {
-    background: var(--gf-bg-light);
-    color: var(--gf-text-dark);
+    background-color: var(--body-bg);
+    padding: 4rem 0;
 }
 
-/* CTA (Sempre texto CLARO sobre fundo colorido) */
+/* Cards Profissionais com Hover */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição "elástica" suave */
+    overflow: hidden;
+}
+
+    .card:hover {
+        transform: translateY(-8px); /* Levanta o card */
+        box-shadow: var(--card-shadow-hover); /* Aumenta a sombra */
+        border-color: transparent;
+    }
+
+    .card h5 {
+        color: var(--text-main);
+        font-weight: 700;
+    }
+
+    .card p {
+        color: var(--text-muted);
+    }
+
+/* CTA (Call to Action) Band */
 .cta {
-    background: linear-gradient(90deg, var(--gf-accent), var(--gf-accent-alt));
-    color: var(--gf-text-light);
+    background: linear-gradient(90deg, var(--gf-accent-primary), var(--gf-accent-secondary));
+    color: var(--white);
+    padding: 3rem 0;
     border: none;
 }
 
-/* Footer (Sempre fundo escuro e texto CLARO) */
-.gf-footer {
-    background: var(--footer-bg) !important;
-    color: rgba(255,255,255,0.8);
+/* ==========================
+   BOTÕES MODERNOS E UNIFICADOS
+   ========================== */
+
+/* Regra Base Unificada para todos os botões principais:
+   - .btn-dark (Bootstrap padrão)
+   - #btn-ongs (Botão específico da sua view)
+*/
+.btn-dark,
+.btn.btn-dark,
+button#btn-ongs.btn,
+a#btn-ongs.btn {
+    background-color: var(--btn-primary-bg) !important;
+    border: 1px solid var(--btn-primary-border) !important;
+    color: var(--btn-primary-text) !important;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem; /* Botões um pouco maiores */
+    border-radius: 8px; /* Bordas arredondadas modernas */
+    box-shadow: var(--btn-shadow);
+    /* A MÁGICA DO HOVER SUAVE ESTÁ AQUI */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    position: relative;
+    top: 0;
 }
-    /* Garante que small e links no footer sejam claros */
-    .gf-footer small, .gf-footer a {
-        color: inherit; /* Herda a cor do gf-footer (cinza/claro) */
+
+    /* HOVER "CERTINHO" E BONITO
+   - Muda a cor suavemente
+   - Levanta o botão levemente (transform)
+   - Aumenta a sombra para dar profundidade
+*/
+    .btn-dark:hover,
+    .btn.btn-dark:hover,
+    button#btn-ongs.btn:hover,
+    a#btn-ongs.btn:hover,
+    .btn-dark:focus, /* Adiciona estado de foco para acessibilidade */
+    button#btn-ongs.btn:focus {
+        background-color: var(--btn-primary-hover-bg) !important;
+        border-color: var(--btn-primary-hover-bg) !important;
+        color: var(--white) !important;
+        transform: translateY(-3px); /* O efeito "Lift" */
+        box-shadow: var(--btn-shadow-hover) !important;
+        cursor: pointer;
     }
 
-/* Cards (Modo Claro) */
-.card {
-    background: var(--card-bg);
-    border-color: var(--card-border);
-    color: var(--text-color);
+    /* Estado Ativo (Clique) - Efeito de "apertar" */
+    .btn-dark:active,
+    button#btn-ongs.btn:active {
+        transform: translateY(-1px); /* Afunda um pouquinho */
+        box-shadow: var(--btn-shadow) !important; /* Sombra diminui */
+        transition-duration: 0.1s !important; /* Resposta rápida */
+    }
+
+/* Botões Light (Ex: Cadastrar na Navbar) */
+.btn-light {
+    background-color: var(--white);
+    color: var(--gf-blue-dark);
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
 }
 
-    .card h5,
-    .card p {
-        color: var(--text-color);
+    .btn-light:hover {
+        background-color: #f0f2f5;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
 /* ==========================
-   🌙 DARK MODE (Sobrescreve variáveis e estilos)
+   RESPONSIVO
    ========================== */
-html[data-theme="dark"] {
-    /* Sobrescreve variáveis */
-    --bg-color: var(--gf-bg-dark);
-    --text-color: var(--gf-text-light);
-    --card-bg: var(--gf-card-dark);
-    --card-border: var(--gf-card-border-dark);
-    --navbar-bg: var(--gf-blue-light);
-    --footer-bg: var(--gf-footer-dark);
-    /* O body e elementos que herdam já se ajustam pelas variáveis --bg-color e --text-color */
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
-    /* Garante que elementos não-herdados (títulos e links) fiquem CLAROS no Dark Mode */
-    html[data-theme="dark"] h1,
-    html[data-theme="dark"] h2,
-    html[data-theme="dark"] h3,
-    html[data-theme="dark"] h4,
-    html[data-theme="dark"] h5,
-    html[data-theme="dark"] h6,
-    html[data-theme="dark"] a:not(.btn) {
-        color: var(--gf-text-light); /* Cor clara para títulos e links */
+@media (max-width: 991px) {
+    /* Ajustes para tablets e celulares */
+    .landing-hero {
+        min-height: auto;
+        padding: 3rem 0;
+        text-align: center;
     }
 
-    /* Ajustes específicos de componentes no Dark Mode */
-
-    html[data-theme="dark"] .gf-navbar {
-        background-color: var(--navbar-bg) !important;
+    .hero-illustration {
+        display: none; /* Esconde a ilustração em telas menores */
     }
 
-    html[data-theme="dark"] .card {
-        background: var(--card-bg);
-        border-color: var(--card-border);
-        color: var(--gf-text-light);
+    .hero-content {
+        padding-bottom: 2rem;
     }
-
-    html[data-theme="dark"] .section-light {
-        background: var(--bg-color); /* gf-bg-dark */
-        color: var(--text-color); /* gf-text-light */
-    }
-
-    html[data-theme="dark"] .gf-footer {
-        background: var(--footer-bg) !important;
-        color: rgba(157,165,180,1); /* Cinza claro, conforme sua definição original */
-    }
-
-/* ... (Outras regras de dark mode e media queries permanecem as mesmas) ... */
-
-/* Botão “Conhecer ONGs” - Mantido com !important devido à alta especificidade */
-html[data-theme="light"] button#btn-ongs.btn,
-html[data-theme="light"] a#btn-ongs.btn {
-        background-color: #111 !important;
-        color: #fff !important;
-        border-color: #111 !important;
-        opacity: 1 !important;
-        box-shadow: none !important;
-}
-
-html[data-theme="dark"] button#btn-ongs.btn,
-html[data-theme="dark"] a#btn-ongs.btn {
-        background-color: var(--gf-accent) !important;
-        color: #fff !important;
-        border-color: var(--gf-accent) !important;
-        opacity: 1 !important;
-        box-shadow: none !important;
-}
-
-/* Compatibilidade botões Bootstrap - Mantido com !important */
-html[data-theme="light"] .btn-dark,
-html[data-theme="light"] .btn.btn-dark {
-        background-color: var(--gf-blue) !important;
-        color: #fff !important;
-        border-color: var(--gf-blue) !important;
 }

@@ -10,11 +10,7 @@ namespace Transformese.Data
         {
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Unidade> Unidades { get; set; }
-        public DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
-        public DbSet<CandidatoLog> CandidatoLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,15 +25,6 @@ namespace Transformese.Data
                 .Property(c => c.CPF)
                 .IsRequired()
                 .HasMaxLength(14);
-
-            // Relacionamento Candidato -> Logs
-            modelBuilder.Entity<Candidato>()
-                .HasMany(c => c.HistoricoLogs)
-                .WithOne(l => l.Candidato)
-                .HasForeignKey(l => l.CandidatoId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            SeedData.Seed(modelBuilder);
         }
     }
 }
