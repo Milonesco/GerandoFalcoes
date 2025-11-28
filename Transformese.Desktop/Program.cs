@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Transformese.Desktop.Views;
 
 namespace Transformese.Desktop
 {
@@ -8,9 +9,10 @@ namespace Transformese.Desktop
         [STAThread]
         static void Main()
         {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.Dashboard());
+            Application.Run(new Dashboard());
         }
     }
 }
