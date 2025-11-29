@@ -32,4 +32,8 @@
 	  <ProjectReference Include="..\Transformese.Domain\Transformese.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Views\Unidades\" />
+	</ItemGroup>
+
 </Project>
