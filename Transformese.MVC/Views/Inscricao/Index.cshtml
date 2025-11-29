@@ -193,9 +193,8 @@
 
                             <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label class="form-label fw-semibold">CEP (Opcional)</label>
-                                    <input type="text" id="Cep" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)">
-                                    <small class="text-muted">Preenche cidade/estado automaticamente</small>
+                                    <label class="form-label fw-semibold">CEP</label>
+                                    <input type="text" id="Cep" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label asp-for="Cidade" class="form-label fw-semibold">Cidade</label>
