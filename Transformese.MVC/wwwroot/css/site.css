@@ -270,6 +270,166 @@ a#btn-ongs.btn {
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
+/* Secção de projetos */
+.projects-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Fundo cinza bem claro para destacar os cards */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.project-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave inicial */
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-img-wrapper {
+    height: 200px; /* Altura fixa para a imagem */
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Zoom suave na imagem */
+}
+
+.project-card-body {
+    padding: 25px;
+    flex-grow: 1; /* Faz o corpo ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.project-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-btn {
+    align-self: start;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #007bff; /* Cor primária padrão ou use a cor da sua marca */
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* --- Seção de Investidores (Loop Infinito) --- */
+.investors-section {
+    padding: 60px 0;
+    background-color: #fff;
+    overflow: hidden; /* Esconde a barra de rolagem horizontal */
+}
+
+.investors-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* Container do carrossel */
+.marquee-container {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efeito fade nas bordas */
+}
+
+/* Conteúdo que se move */
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem; /* Espaço entre logos */
+    min-width: 100%;
+    animation: scroll 30s linear infinite; /* O Loop mágico */
+}
+
+    /* Estilo das logos */
+    .marquee-content img {
+        height: 60px; /* Altura padrão para alinhar todos */
+        width: auto;
+        object-fit: contain;
+        filter: grayscale(100%); /* Opcional: Deixa preto e branco até passar o mouse */
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+        .marquee-content img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+/* Animação Keyframes */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 4rem)); /* Move para a esquerda exatamente o tamanho do bloco + gap */
+    }
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+    .impact-card {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding-bottom: 40px;
+    }
+
+    .marquee-content {
+        gap: 2rem;
+    }
+}
+
 /* ==========================
    RESPONSIVO
    ========================== */
