@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using Transformese.Desktop.Views;
 
 namespace Transformese.Desktop
 {
@@ -11,7 +10,9 @@ namespace Transformese.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+
+            // Inicia com o formulário de Login, que será recriado no próximo passo
+            Application.Run(new Login());
         }
     }
 }
