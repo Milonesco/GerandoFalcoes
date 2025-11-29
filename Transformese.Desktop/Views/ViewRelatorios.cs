@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Transformese.Desktop.Views
 {
-    public partial class ViewHome : UserControl
+    public partial class ViewRelatorios : UserControl
     {
-        public ViewHome()
+        public ViewRelatorios()
         {
             InitializeComponent();
         }

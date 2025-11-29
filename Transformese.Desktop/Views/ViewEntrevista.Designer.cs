@@ -1,6 +1,6 @@
 ﻿namespace Transformese.Desktop.Views
 {
-    partial class TagStatusControl
+    partial class ViewEntrevista
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,12 +30,12 @@
         {
             SuspendLayout();
             // 
-            // TagStatusControl
+            // ViewEntrevista
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            Name = "TagStatusControl";
-            Load += TagStatusControl_Load;
+            Name = "ViewEntrevista";
+            Size = new System.Drawing.Size(980, 740);
             ResumeLayout(false);
         }
 

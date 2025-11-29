@@ -1,6 +1,6 @@
 ﻿namespace Transformese.Desktop.Views
 {
-    partial class ViewInscricoes
+    partial class ViewNovoCandidato
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,11 +30,11 @@
         {
             SuspendLayout();
             // 
-            // ViewInscricoes
+            // ViewNovoCandidato
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            Name = "ViewInscricoes";
+            Name = "ViewNovoCandidato";
             Size = new System.Drawing.Size(980, 740);
             ResumeLayout(false);
         }
