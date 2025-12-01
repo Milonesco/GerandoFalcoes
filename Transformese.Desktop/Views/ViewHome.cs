@@ -16,5 +16,20 @@ namespace Transformese.Desktop.Views
         {
             InitializeComponent();
         }
+
+        private void lblTituloTabela_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblVerTodas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInscricoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
