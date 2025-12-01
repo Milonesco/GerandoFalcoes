@@ -13,7 +13,34 @@ namespace Transformese.Domain.Entities
         public string Cidade { get; set; } = string.Empty;
         public string Estado { get; set; } = string.Empty;
 
-        public DateTime DataInscricao { get; set; } = DateTime.Now;
-        public StatusCandidato Status { get; set; } = StatusCandidato.Pendente;
+            // Propriedades usadas pela API/MVC (Devolvidas!)
+        public DateTime DataNascimento { get; set; }
+        public bool PossuiComputador { get; set; }
+        public bool PossuiInternet { get; set; }
+        public string? PerfilLinkedin { get; set; }
+        public DateTime DataCadastro { get; set; }
+        // Propriedade usada pelo Desktop
+        public string? NomeOngResponsavel { get; set; }
+        public DateTime DataInscricao { get; set; }
+        public StatusCandidato Status { get; set; }
+        public Candidato() { }
+        // Construtor completo para o Desktop
+        public Candidato(string nome, string cidade, StatusCandidato status)
+        {
+            NomeCompleto = nome;
+            Cidade = cidade;
+            Status = status;
+            DataInscricao = DateTime.Now;
+            NomeOngResponsavel = "--";
+
+            // Valores padrão para evitar nulos na API se usar esse construtor
+
+
+            DataCadastro = DateTime.Now;
+            DataNascimento = DateTime.MinValue;
+
+
+        }
     }
+
 }
