@@ -32,23 +32,23 @@
     --btn-shadow-hover: 0 8px 15px rgba(13, 29, 53, 0.25);
 }
 
-/* --- TEMA ESCURO (Ativado via JS) --- */
-html[data-theme="dark"] {
-    --body-bg: #0a0c10; /* Fundo quase preto */
-    --text-main: #e6edf3; /* Texto claro */
-    --text-muted: #8b949e;
-    /* Cards no modo escuro */
-    --card-bg: #161b22;
-    --card-border: #30363d;
-    --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.3);
-    /* Botões no modo escuro (Usamos o accent para destaque) */
-    --btn-primary-bg: var(--gf-accent-primary);
-    --btn-primary-border: var(--gf-accent-primary);
-    --btn-primary-hover-bg: #e64a3d; /* Um pouco mais escuro no hover */
-    --btn-shadow: 0 4px 6px rgba(255, 90, 77, 0.2);
-    --btn-shadow-hover: 0 8px 15px rgba(255, 90, 77, 0.3);
-}
+    /* --- TEMA ESCURO (Ativado via JS) --- */
+    html[data-theme="dark"] {
+        --body-bg: #0a0c10; /* Fundo quase preto */
+        --text-main: #e6edf3; /* Texto claro */
+        --text-muted: #8b949e;
+        /* Cards no modo escuro */
+        --card-bg: #161b22;
+        --card-border: #30363d;
+        --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.3);
+        /* Botões no modo escuro (Usamos o accent para destaque) */
+        --btn-primary-bg: var(--gf-accent-primary);
+        --btn-primary-border: var(--gf-accent-primary);
+        --btn-primary-hover-bg: #e64a3d; /* Um pouco mais escuro no hover */
+        --btn-shadow: 0 4px 6px rgba(255, 90, 77, 0.2);
+        --btn-shadow-hover: 0 8px 15px rgba(255, 90, 77, 0.3);
+    }
 
 /* ==========================
    BASE / RESET ESTRUTURAL
@@ -397,10 +397,10 @@ a#btn-ongs.btn {
     flex-direction: column;
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+    .project-card:hover {
+        transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
 .project-img-wrapper {
     height: 200px; /* Altura fixa para a imagem */
@@ -452,10 +452,10 @@ a#btn-ongs.btn {
     transition: all 0.3s ease;
 }
 
-.project-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
+    .project-btn:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
 
 /* --- Seção de Investidores (Loop Infinito) --- */
 .investors-section {
@@ -531,41 +531,167 @@ a#btn-ongs.btn {
     }
 }
 
-/* --- Navbar Estilo Ilha (Menu Flutuante) --- */
-.island-navbar {
-    background-color: rgba(255, 255, 255, 0.98); /* Branco quase sólido */
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco (opcional) */
-    border-radius: 50px; /* Bordas bem arredondadas (formato pílula) */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombra suave para flutuar */
-    /* Posicionamento e Tamanho */
-    width: 92%;
-    max-width: 1200px; /* Limite para não ficar muito largo em telas gigantes */
-    margin: 20px auto; /* 20px do topo e centralizado horizontalmente (auto) */
-    padding: 0.8rem 2rem; /* Espaçamento interno mais gordinho */
-    border: 1px solid rgba(0, 0, 0, 0.03); /* Borda sutil */
+/* --- 1. Correção do Menu Cobrindo o Conteúdo --- */
+/* Isso diz ao navegador: "Quando clicar num link, pare 120px ANTES do alvo" */
+section, div[id] {
+    scroll-margin-top: 120px;
 }
 
-    /* Ajuste dos links dentro da ilha para ficarem mais elegantes */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- 2. Navbar: Estado Inicial (Topo da Página) --- */
+/* "Implantada no fundo", transparente, largura total */
+.island-navbar {
+    position: fixed; /* Precisa ser fixed para transicionar suavemente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Alto z-index para ficar acima de tudo */
+    padding: 25px 0;
+    background-color: transparent; /* Transparente */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave */
+    border: none;
+    box-shadow: none;
+}
+
+    .island-navbar .navbar-brand,
     .island-navbar .nav-link {
+        color: #333; /* Cor inicial do texto (ajuste se o fundo for escuro) */
         font-weight: 600;
-        color: #555 !important;
-        margin: 0 5px;
-        padding: 8px 16px !important;
-        border-radius: 25px;
-        transition: all 0.3s ease;
+        text-shadow: 0 0 2px rgba(255,255,255,0.5); /* Ajuda a ler se o fundo for complexo */
     }
 
-        .island-navbar .nav-link:hover,
-        .island-navbar .nav-link.active {
-            background-color: #f0f2f5; /* Fundo cinza claro ao passar o mouse */
-            color: #007bff !important; /* Azul destaque */
-            transform: translateY(-1px);
-        }
-
-    .island-navbar .navbar-brand {
-        font-weight: 800;
-        letter-spacing: -0.5px;
+    /* --- 3. Navbar: Estado Rolagem (Ilha Flutuante) --- */
+    /* Aqui acontece a mágica: ela desgruda do topo e encolhe */
+    .island-navbar.scrolled-mode {
+        top: 20px; /* Desce 20px do topo (efeito flutuante) */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza na tela */
+        width: 85%; /* Largura da ilha */
+        max-width: 1200px;
+        background-color: rgba(255, 255, 255, 0.95) !important; /* Fundo Branco */
+        backdrop-filter: blur(10px); /* Vidro fosco */
+        border-radius: 50px; /* Bordas arredondadas */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra */
+        padding: 10px 30px; /* Mais compacta */
     }
+
+/* Ajuste responsivo para celular não quebrar a ilha */
+@media (max-width: 768px) {
+    .island-navbar.scrolled-mode {
+        width: 95%;
+        top: 10px;
+        padding: 10px 15px;
+    }
+}
+
+/* Botão Inscreva-se na Navbar */
+.btn-nav-cta {
+    background-color: #0d6efd;
+    color: white !important;
+    border-radius: 30px;
+    padding: 8px 25px !important;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: transform 0.2s;
+}
+
+    .btn-nav-cta:hover {
+        transform: scale(1.05);
+        background-color: #0b5ed7;
+    }
+
+/* --- Novo Hero Centralizado (Clean) --- */
+.clean-hero {
+    position: relative;
+    padding: 180px 0 100px 0; /* Espaço extra no topo por causa da navbar fixa */
+    background-color: #fff; /* Fundo branco limpo */
+    text-align: center;
+    overflow: hidden;
+}
+
+    /* Elemento decorativo de fundo (Opcional - Bolha suave) */
+    .clean-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(13,110,253,0.05) 0%, rgba(255,255,255,0) 70%);
+        z-index: 0;
+    }
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.clean-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+}
+
+.clean-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.btn-big-cta {
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #0d6efd, #0043a8);
+    border: none;
+    color: white;
+    box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
+    transition: all 0.3s ease;
+}
+
+    .btn-big-cta:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(13, 110, 253, 0.4);
+        color: white;
+    }
+
+/* Imagem Hero Centralizada/Inferior */
+.hero-bottom-img {
+    margin-top: 60px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    transform: perspective(1000px) rotateX(2deg); /* Efeito 3D sutil */
+    transition: transform 0.5s ease;
+}
+
+    .hero-bottom-img:hover {
+        transform: perspective(1000px) rotateX(0deg) scale(1.02);
+    }
+
+@media (max-width: 768px) {
+    .clean-title {
+        font-size: 2.8rem;
+    }
+
+    .island-navbar.scrolled-mode {
+        width: 95%;
+    }
+}
 
 
 /* --- Seção Como Funciona (Steps) --- */

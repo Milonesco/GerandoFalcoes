@@ -14,40 +14,42 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light island-navbar mb-3">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light island-navbar">
+    <div class="container-fluid">
 
-            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="@Url.Action("Index", "Home")">
-                <img src="~/images/logo-transformese.png" height="40" class="me-2" />
+            <a class="navbar-brand" href="#inicio">
+                <span style="font-weight:800;">GERANDO FALCÕES</span>
             </a>
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-light fw-semibold" href="@Url.Action("Index", "Home")">Início</a>
+                        <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link text-light fw-semibold" href="@Url.Action("Index", "Unidades")">Conhecer ONGs</a>
+                        <a class="nav-link" href="#impacto">Nosso Impacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#numeros">Resultados</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#parceiros">Parceiros</a>
                     </li>
                 </ul>
-
-                <div class="d-flex align-items-center mt-3 mt-lg-0 gap-3">
-
-                    <i class="text-white dark-mode-toggle d-flex align-items-center" id="darkModeToggle" style="cursor: pointer; font-size: 1.25rem;"></i>
-
-                    <a class="btn btn-dark fw-bold d-flex align-items-center justify-content-center px-4"
-                       href="@Url.Action("Index", "Inscricao")"
-                       style="height: 40px; min-width: 180px;">
-                        INSCREVA-SE AGORA!
-                    </a>
-                </div>
-
             </div>
+
+            <div class="d-none d-sm-flex">
+                <a class="btn btn-nav-cta" href="@Url.Action("Index", "Inscricao")">Inscreva-se</a>
+            </div>
+
         </div>
     </nav>
 

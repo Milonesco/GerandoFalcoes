@@ -46,3 +46,17 @@ if (toggle) {
         applyTheme(newTheme);
     });
 }
+
+// Função Navbar Ilha
+window.addEventListener("scroll", function () {
+    // Pega especificamente a navbar que tem a classe island-navbar
+    var nav = document.querySelector(".island-navbar");
+
+    if (nav) { // Segurança para não dar erro se não achar a nav
+        if (window.scrollY > 50) {
+            nav.classList.add("scrolled-mode");
+        } else {
+            nav.classList.remove("scrolled-mode");
+        }
+    }
+});

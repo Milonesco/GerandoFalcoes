@@ -6,37 +6,34 @@
     <link href="~/css/site.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
 }
 
-<div class="landing-hero">
-    <div class="container hero-content">
-        <div class="row align-items-center">
+<section id="inicio" class="clean-hero">
+    <div class="container">
+        <div class="hero-content-wrapper">
 
-            <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
-                <h1 class="hero-title-large">Transforme-se</h1>
+            <h1 class="clean-title">
+                Transforme seu futuro <br>
+                <span class="text-primary">com tecnologia.</span>
+            </h1>
 
-                <h2 class="hero-impact-phrase">
-                    Sua jornada para o futuro começa agora.
-                </h2>
+            <p class="clean-subtitle">
+                Junte-se à Gerando Falcões e tenha acesso a educação de qualidade, mentoria de carreira e conexão com as maiores empresas do mercado. É gratuito. É transformador.
+            </p>
 
-                <p class="hero-secondary-text">
-                    Educação, tecnologia e oportunidades reais para mudar sua vida e o mundo ao seu redor. Junte-se ao movimento que está redefinindo futuros.
-                </p>
-
-                <div>
-                    <a class="btn btn-primary btn-hero-cta" href="@Url.Action("Index", "Inscricao")">
-                        INSCREVA-SE AGORA
-                    </a>
-                </div>
-
+            <div>
+                <a href="@Url.Action("Index", "Inscricao")" class="btn btn-big-cta">
+                    QUERO ME INSCREVER
+                </a>
             </div>
 
-            <div class="col-lg-6 text-center">
-                <img src="~/images/estudante_feliz.png" alt="Transforme seu futuro" class="img-fluid hero-static-img" />
+            <div class="mt-5">
+                <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Plataforma Gerando Falcões" class="hero-bottom-img">
             </div>
+
         </div>
     </div>
-</div>
+</section>
 
-<section class="island-section">
+<section id="sobre" class="island-section">
     <div class="container">
         <div class="island-card">
 
@@ -97,7 +94,7 @@
     </div>
 </section>
 
-<section class="why-section">
+<section id="impacto" class="why-section">
     <div class="container">
         <div class="row align-items-center">
 
@@ -158,7 +155,7 @@
 </section>
 
 
-<section class="spotlight-section">
+<section id="numeros" class="spotlight-section">
     <div class="container">
 
         <div class="text-center mb-5">
@@ -195,78 +192,6 @@
                 </p>
             </div>
 
-        </div>
-    </div>
-</section>
-
-
-
-<section class="section-light py-5">
-    <div class="container">
-        <h3 class="mb-4">ONGs Parceiras</h3>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong1.jpg" class="card-img-top" alt="ONG 1">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 1</h5>
-                        <p class="card-text">Atua em educação e inclusão digital.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong2.jpg" class="card-img-top" alt="ONG 2">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 2</h5>
-                        <p class="card-text">Projetos de capacitação profissional.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong3.jpg" class="card-img-top" alt="ONG 3">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 3</h5>
-                        <p class="card-text">Promoção de oportunidades de estágio.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver todas</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-5 bg-light">
-    <div class="container">
-        <h3 class="text-center mb-4">Nosso impacto</h3>
-        <div class="row text-center g-4">
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="5500">0</h2>
-                    <p class="mb-0">FAVELAS ALCANÇADAS</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="2200">0</h2>
-                    <p class="mb-0">LÍDERES SOCIAIS FORMADOS</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="26">0</h2>
-                    <p class="mb-0">ESTADOS IMPACTADOS + DF</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="900000">0</h2>
-                    <p class="mb-0">PESSOAS IMPACTADAS</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -324,7 +249,7 @@
     </div>
 </section>
 
-<section class="investors-section">
+<section id="parceiros" class="investors-section">
     <div class="container-fluid">
         <h3 class="investors-title">Investidores Master</h3>
 
