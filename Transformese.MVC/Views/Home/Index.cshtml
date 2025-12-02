@@ -7,20 +7,30 @@
 }
 
 <div class="landing-hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content text-white">
+    <div class="container hero-content">
         <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h1 class="display-4 fw-bold">Gerando Falcões</h1>
-                <p class="lead mb-4">Transformando vidas por meio de educação, tecnologia e oportunidades — junte-se a nós para fazer a diferença.</p>
-                <p>
-                    <a class="btn btn-primary btn-lg me-2" href="@Url.Action("Index", "Inscricao")">Quero me inscrever</a>
 
-                    <a class="btn btn-lg btn-light" href="@Url.Action("Index", "Unidades")">Conhecer ONGs</a>
+            <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
+                <h1 class="hero-title-large">Transforme-se</h1>
+
+                <h2 class="hero-impact-phrase">
+                    Sua jornada para o futuro começa agora.
+                </h2>
+
+                <p class="hero-secondary-text">
+                    Educação, tecnologia e oportunidades reais para mudar sua vida e o mundo ao seu redor. Junte-se ao movimento que está redefinindo futuros.
                 </p>
+
+                <div>
+                    <a class="btn btn-primary btn-hero-cta" href="@Url.Action("Index", "Inscricao")">
+                        INSCREVA-SE AGORA
+                    </a>
+                </div>
+
             </div>
-            <div class="col-lg-5 d-none d-lg-block text-end">
-                <img src="~/images/hero-right-illustration.png" alt="Ilustração" class="img-fluid hero-illustration" />
+
+            <div class="col-lg-6 text-center">
+                <img src="~/images/estudante_feliz.png" alt="Transforme seu futuro" class="img-fluid hero-static-img" />
             </div>
         </div>
     </div>
