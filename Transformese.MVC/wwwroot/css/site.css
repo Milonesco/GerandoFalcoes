@@ -200,83 +200,107 @@ a {
    SEÇÕES DA LANDING PAGE
    ========================== */
 
-/* Hero Section */
+/* --- Novo Estilo do Banner Principal (Hero) - Versão CLARA --- */
+
 .landing-hero {
     position: relative;
-    /* Certifique-se que a imagem existe nesse caminho */
-    background-image: url('/images/hero.jpg');
-    background-size: cover;
-    background-position: center 20%; /* Ajuste fino da posição */
-    min-height: 70vh; /* Um pouco mais alto para impacto */
-    display: flex;
-    align-items: center;
-    color: var(--white); /* Texto sempre branco no Hero */
-    padding: 4rem 0;
-}
-
-/* Overlay Gradiente Moderno */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    /* Gradiente mais suave do azul escuro para transparente */
-    background: linear-gradient(135deg, rgba(13,29,53,0.9) 0%, rgba(13,29,53,0.4) 100%);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-illustration {
-    max-width: 350px;
-    /* Sombra projetada suave na ilustração */
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
-    transition: transform 0.3s ease;
-}
-
-.landing-hero:hover .hero-illustration {
-    /* Movimento sutil da ilustração ao passar o mouse na seção */
-    transform: translateY(-5px) scale(1.02);
-}
-
-/* Seções de Conteúdo */
-.section-light {
-    background-color: var(--body-bg);
-    padding: 4rem 0;
-}
-
-/* Cards Profissionais com Hover */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição "elástica" suave */
+    background-color: #ffffff; /* Fundo Branco Puro */
+    /* Se quiser um cinza muito sutil para diferenciar do resto, use #f8f9fa */
+    padding: 120px 0 100px 0; /* Espaçamento generoso para dar respiro */
     overflow: hidden;
 }
 
-    .card:hover {
-        transform: translateY(-8px); /* Levanta o card */
-        box-shadow: var(--card-shadow-hover); /* Aumenta a sombra */
-        border-color: transparent;
-    }
+/* Não precisamos mais do .hero-overlay */
 
-    .card h5 {
-        color: var(--text-main);
-        font-weight: 700;
-    }
+/* Título Gigante - Versão Escura */
+.hero-title-large {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    /* Vamos usar um degradê azul sutil para o texto, usando a cor da marca */
+    background: linear-gradient(45deg, #0d6efd, #0a2342); /* Azul vibrante para azul escuro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Cor sólida de fallback caso o degradê não carregue */
+    color: #0a2342;
+}
 
-    .card p {
-        color: var(--text-muted);
-    }
+/* Frase de Impacto - Versão Escura */
+.hero-impact-phrase {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333; /* Cinza escuro forte */
+    margin-bottom: 20px;
+}
 
-/* CTA (Call to Action) Band */
-.cta {
-    background: linear-gradient(90deg, var(--gf-accent-primary), var(--gf-accent-secondary));
-    color: var(--white);
-    padding: 3rem 0;
+/* Texto de apoio - Versão Escura */
+.hero-secondary-text {
+    font-size: 1.15rem;
+    color: #555; /* Cinza médio para leitura confortável */
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Botão (Mantém o estilo, ajustando apenas a intensidade da sombra) */
+.btn-hero-cta {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* Sombra mais suave e colorida para o fundo branco */
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.25);
+    transition: all 0.3s ease;
     border: none;
+}
+
+    .btn-hero-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(13, 110, 253, 0.4);
+        background-color: #0a58ca; /* Azul um pouco mais escuro no hover */
+        color: white;
+    }
+
+/* --- ESTILO DA IMAGEM (ESTÁTICA) --- */
+.hero-static-img {
+    width: 100%;
+    max-width: 580px; /* Pode ser um pouquinho maior no fundo branco */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Sombra suave para dar profundidade no fundo branco, sem parecer artificial */
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.1));
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .landing-hero {
+        padding: 80px 0 60px 0;
+        text-align: center;
+    }
+
+    .hero-title-large {
+        font-size: 3rem;
+    }
+
+    .hero-impact-phrase {
+        font-size: 1.4rem;
+    }
+
+    .hero-secondary-text {
+        margin: 0 auto 30px auto;
+        font-size: 1rem;
+    }
+
+    .hero-static-img {
+        max-width: 90%; /* Aproveita mais espaço no celular */
+        margin-top: 50px; /* Mais espaço entre texto e imagem */
+    }
 }
 
 /* ==========================
