@@ -7,78 +7,199 @@
 }
 
 <div class="landing-hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content text-white">
+    <div class="container hero-content">
         <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h1 class="display-4 fw-bold">Gerando Falcões</h1>
-                <p class="lead mb-4">Transformando vidas por meio de educação, tecnologia e oportunidades — junte-se a nós para fazer a diferença.</p>
-                <p>
-                    <a class="btn btn-primary btn-lg me-2" href="@Url.Action("Index", "Inscricao")">Quero me inscrever</a>
 
-                    <a class="btn btn-lg btn-light" href="@Url.Action("Index", "Unidades")">Conhecer ONGs</a>
+            <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
+                <h1 class="hero-title-large">Transforme-se</h1>
+
+                <h2 class="hero-impact-phrase">
+                    Sua jornada para o futuro começa agora.
+                </h2>
+
+                <p class="hero-secondary-text">
+                    Educação, tecnologia e oportunidades reais para mudar sua vida e o mundo ao seu redor. Junte-se ao movimento que está redefinindo futuros.
                 </p>
+
+                <div>
+                    <a class="btn btn-primary btn-hero-cta" href="@Url.Action("Index", "Inscricao")">
+                        INSCREVA-SE AGORA
+                    </a>
+                </div>
+
             </div>
-            <div class="col-lg-5 d-none d-lg-block text-end">
-                <img src="~/images/hero-right-illustration.png" alt="Ilustração" class="img-fluid hero-illustration" />
+
+            <div class="col-lg-6 text-center">
+                <img src="~/images/estudante_feliz.png" alt="Transforme seu futuro" class="img-fluid hero-static-img" />
             </div>
         </div>
     </div>
 </div>
 
-<section class="section-light py-5">
+<section class="island-section">
     <div class="container">
-        <div class="row gy-4 align-items-center">
-            <div class="col-md-6">
-                <h2>Quem somos</h2>
-                <p class="lead">Somos uma comunidade dedicada a empoderar jovens e fortalecer ONGs por meio de treinamentos, vagas e parcerias. Trabalhamos com instituições locais e empresas para criar oportunidades reais.</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Formação profissional e workshops</li>
-                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Acompanhamento de candidaturas</li>
-                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Parcerias com empresas</li>
-                </ul>
+        <div class="island-card">
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-6 text-dark mb-3">
+                        Transformando Vidas através da <span class="text-primary">Educação</span>
+                    </h2>
+                    <p class="lead text-muted">
+                        Nossa metodologia é baseada em etapas claras para garantir que o conhecimento chegue a quem mais precisa. Conheça nosso fluxo de impacto.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="~/images/logo-transformese.png" alt="Ilustração" style="max-height: 80px; opacity: 0.8;">
+                </div>
             </div>
-            <div class="col-md-6 text-center">
-                <img src="~/images/about-illustration.jpg" alt="Sobre" class="img-fluid rounded shadow-sm" />
+
+            <div class="steps-container">
+
+                <div class="step-card">
+                    <div class="step-icon">01.</div>
+                    <h4 class="step-title">Inscrição</h4>
+                    <p class="step-desc">
+                        O candidato realiza o cadastro em nossa plataforma digital de forma rápida e acessível.
+                    </p>
+                    <i class="bi bi-arrow-right step-arrow"></i>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">02.</div>
+                    <h4 class="step-title">Seleção</h4>
+                    <p class="step-desc">
+                        Nossa equipe avalia o perfil socioeconômico para garantir a bolsa a quem precisa.
+                    </p>
+                    <i class="bi bi-arrow-right step-arrow"></i>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">03.</div>
+                    <h4 class="step-title">Formação</h4>
+                    <p class="step-desc">
+                        Aulas intensivas e práticas com mentores renomados do mercado de tecnologia.
+                    </p>
+                    <i class="bi bi-arrow-right step-arrow"></i>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">04.</div>
+                    <h4 class="step-title">Empregabilidade</h4>
+                    <p class="step-desc">
+                        Conectamos os talentos formados com empresas parceiras para o mercado de trabalho.
+                    </p>
+                    <i class="bi bi-check-lg step-arrow"></i>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5">
+<section class="why-section">
     <div class="container">
-        <h3 class="text-center mb-4">Como funciona</h3>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100 text-center p-3 border-0">
-                    <div class="card-body">
-                        <i class="bi bi-person-plus display-6 text-primary"></i>
-                        <h5 class="mt-3">1. Inscrição</h5>
-                        <p>O candidato realiza um cadastro simples com seus dados e contato.</p>
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="section-title text-start mb-4">Por que se inscrever?</h2>
+                <p class="text-muted mb-5">
+                    Fazer parte da Gerando Falcões é dar o primeiro passo para transformar sua realidade.
+                </p>
+
+                <div class="accordion custom-accordion" id="accordionWhy">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                1. Transformação de Vida
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionWhy">
+                            <div class="accordion-body">
+                                Acesso a educação de ponta e mentoria comportamental que preparam você não apenas tecnicamente, mas para os desafios reais do mercado de trabalho.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2. Conexão com o Mercado
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionWhy">
+                            <div class="accordion-body">
+                                Acesso direto a processos seletivos exclusivos em nossa rede de parceiros, aumentando exponencialmente suas chances de empregabilidade.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                3. Comunidade Forte
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionWhy">
+                            <div class="accordion-body">
+                                Faça parte de uma rede de alumni engajada que se apoia mutuamente no crescimento profissional e pessoal.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100 text-center p-3 border-0">
-                    <div class="card-body">
-                        <i class="bi bi-people display-6 text-primary"></i>
-                        <h5 class="mt-3">2. Triagem</h5>
-                        <p>A equipe da Gerando Falcões faz a triagem dos candidados de acordo com os critérios de elegibilidade.</p>
-                    </div>
-                </div>
+
+            <div class="col-lg-6">
+                <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Transformando Futuros" class="why-image">
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100 text-center p-3 border-0">
-                    <div class="card-body">
-                        <i class="bi bi-briefcase display-6 text-primary"></i>
-                        <h5 class="mt-3">3. Retorno</h5>
-                        <p>Receba a resposta sobre sua jornada conosco.</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
+
+
+<section class="spotlight-section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">Impacto em Números</h2>
+            <p class="text-muted">Resultados reais gerados pelo nosso ecossistema.</p>
+        </div>
+
+        <div class="spotlight-grid">
+
+            <div class="spotlight-card bg-gradient-1">
+                <i class="bi bi-people-fill spotlight-icon"></i>
+                <h3>+2 Mil</h3>
+                <p>
+                    <strong>Pessoas Beneficiadas.</strong><br>
+                    Jovens e adultos formados com excelência técnica e prontos para o mercado.
+                </p>
+            </div>
+
+            <div class="spotlight-card bg-gradient-2">
+                <i class="bi bi-buildings-fill spotlight-icon"></i>
+                <h3>+50 Empresas</h3>
+                <p>
+                    <strong>Parceiras Contratantes.</strong><br>
+                    Grandes nomes como Accenture, XP e Serasa buscam talentos aqui.
+                </p>
+            </div>
+
+            <div class="spotlight-card bg-gradient-3">
+                <i class="bi bi-graph-up-arrow spotlight-icon"></i>
+                <h3>80% Sucesso</h3>
+                <p>
+                    <strong>Empregabilidade.</strong><br>
+                    Taxa de alunos que aumentaram a renda ou conseguiram emprego após o curso.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
 <section class="section-light py-5">
     <div class="container">
@@ -237,6 +358,45 @@
         <a href="@Url.Action("Index", "Inscricao")" class="btn btn-lg btn-light fw-bold px-5">Inscreva-se agora</a>
     </div>
 </section>
+
+<footer class="footer-custom">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center footer-content-wrapper">
+
+            <div class="footer-logos-container">
+
+                <div class="footer-logo-group">
+                    <span class="footer-label">Realização</span>
+                    <img src="~/images/logo-transformese.png" alt="Gerando Falcões" class="footer-logo">
+                </div>
+
+                <div class="d-none d-md-block" style="width: 1px; height: 40px; background: #333;"></div>
+                <div class="footer-logo-group">
+                    <span class="footer-label">Parceria</span>
+                    <img src="~/images/serasa-logo-0.png" alt="Serasa" class="footer-logo">
+                </div>
+
+            </div>
+
+            <div class="footer-social-group">
+                <span class="footer-label d-block mb-2 text-end text-md-start">Siga-nos</span>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">&copy; 2025 Transforme-se. Uma iniciativa Gerando Falcões e Serasa. Todos os direitos reservados.</p>
+        </div>
+
+    </div>
+</footer>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
