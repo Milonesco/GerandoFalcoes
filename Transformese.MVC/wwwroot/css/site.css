@@ -4,12 +4,17 @@
 
 /* --- Definição de Variáveis (Paleta & Temas) --- */
 :root {
-    /* Paleta Base da Marca */
-    --gf-blue-dark: #0d1d35; /* Azul Marinho Profundo */
-    --gf-blue-mid: #1e3a6b; /* Azul Intermediário para Hovers */
-    --gf-accent-primary: #ff5a4d; /* Laranja/Vermelho */
-    --gf-accent-secondary: #9c4df5; /* Roxo/Lilás */
-    --white: #ffffff;
+    /* Primárias */
+    --gf-teal: #00a89D;
+    --gf-pink: #ec2262;
+    --gf-black: #161616;
+    --gf-white: #FFFFFF;
+    /* Secundárias */
+    --gf-orange: #E96B2A;
+    --gf-lilac: #ca9ad9;
+    --gf-purple: #7a5ad8;
+    --gf-green: #5cc454;
+    --gf-gold: #ffd700;
     /* --- TEMA CLARO (Padrão) --- */
     --body-bg: #f8f9fb;
     --text-main: #0b2b42;
@@ -32,33 +37,32 @@
     --btn-shadow-hover: 0 8px 15px rgba(13, 29, 53, 0.25);
 }
 
-    /* --- TEMA ESCURO (Ativado via JS) --- */
-    html[data-theme="dark"] {
-        --body-bg: #0a0c10; /* Fundo quase preto */
-        --text-main: #e6edf3; /* Texto claro */
-        --text-muted: #8b949e;
-        /* Cards no modo escuro */
-        --card-bg: #161b22;
-        --card-border: #30363d;
-        --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.3);
-        /* Botões no modo escuro (Usamos o accent para destaque) */
-        --btn-primary-bg: var(--gf-accent-primary);
-        --btn-primary-border: var(--gf-accent-primary);
-        --btn-primary-hover-bg: #e64a3d; /* Um pouco mais escuro no hover */
-        --btn-shadow: 0 4px 6px rgba(255, 90, 77, 0.2);
-        --btn-shadow-hover: 0 8px 15px rgba(255, 90, 77, 0.3);
-    }
+/* --- TEMA ESCURO (Ativado via JS) --- */
+html[data-theme="dark"] {
+    --body-bg: #0a0c10; /* Fundo quase preto */
+    --text-main: #e6edf3; /* Texto claro */
+    --text-muted: #8b949e;
+    /* Cards no modo escuro */
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    --card-shadow-hover: 0 15px 30px rgba(0,0,0,0.3);
+    /* Botões no modo escuro (Usamos o accent para destaque) */
+    --btn-primary-bg: var(--gf-accent-primary);
+    --btn-primary-border: var(--gf-accent-primary);
+    --btn-primary-hover-bg: #e64a3d; /* Um pouco mais escuro no hover */
+    --btn-shadow: 0 4px 6px rgba(255, 90, 77, 0.2);
+    --btn-shadow-hover: 0 8px 15px rgba(255, 90, 77, 0.3);
+}
 
 /* ==========================
    BASE / RESET ESTRUTURAL
    ========================== */
 body {
-    background-color: var(--body-bg);
-    color: var(--text-main);
-    /* Transição suave de 0.3s para todas as mudanças de cor */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: var(--gf-white);
+    background-image: linear-gradient(180deg, #f4f7fc 0%, #eef2f8 100%);
+    color: var(--gf-black);
+    overflow-x: hidden; /* Evita rolagem lateral acidental */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -204,13 +208,10 @@ a {
 
 .landing-hero {
     position: relative;
-    background-color: #ffffff; /* Fundo Branco Puro */
-    /* Se quiser um cinza muito sutil para diferenciar do resto, use #f8f9fa */
-    padding: 120px 0 100px 0; /* Espaçamento generoso para dar respiro */
-    overflow: hidden;
+    padding: 160px 0 120px 0;
+    background: linear-gradient( 180deg, #161616 0%, #0d1f2a 25%, #005bea 55%, #00a89D 75%, #ffffff 100% );
+    color: #ffffff;
 }
-
-/* Não precisamos mais do .hero-overlay */
 
 /* Título Gigante - Versão Escura */
 .hero-title-large {
@@ -302,6 +303,41 @@ a {
         margin-top: 50px; /* Mais espaço entre texto e imagem */
     }
 }
+
+/* --- 3. SEPARADOR GRADIENTE (A Linha Mágica) --- */
+.brand-separator {
+    height: 6px; /* Espessura da linha */
+    width: 100%;
+    border: none;
+    margin: 0;
+    /* Gradiente passando por todas as cores da sua paleta */
+    background: linear-gradient(90deg, var(--gf-teal) 0%, var(--gf-green) 20%, var(--gf-gold) 40%, var(--gf-orange) 60%, var(--gf-pink) 80%, var(--gf-purple) 100% );
+}
+
+/* Títulos e Destaques de Texto */
+.text-primary {
+    color: var(--gf-teal) !important; /* Substitui o azul padrão do Bootstrap */
+}
+
+.text-highlight-brand {
+    color: var(--gf-teal);
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+}
+
+    .text-highlight-brand::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 12px;
+        bottom: 5px;
+        left: 0;
+        background-color: rgba(255, 215, 0, 0.4); /* Gold transparente */
+        z-index: -1;
+        border-radius: 4px;
+        transform: rotate(-1deg);
+    }
 
 /* ==========================
    BOTÕES MODERNOS E UNIFICADOS
@@ -531,165 +567,190 @@ a#btn-ongs.btn {
     }
 }
 
-/* --- 1. Correção do Menu Cobrindo o Conteúdo --- */
-/* Isso diz ao navegador: "Quando clicar num link, pare 120px ANTES do alvo" */
-section, div[id] {
-    scroll-margin-top: 120px;
-}
-
+/* --- 1. CORREÇÃO DO SCROLL (Evita que o menu cubra o título) --- */
 html {
     scroll-behavior: smooth;
 }
 
-/* --- 2. Navbar: Estado Inicial (Topo da Página) --- */
-/* "Implantada no fundo", transparente, largura total */
-.island-navbar {
-    position: fixed; /* Precisa ser fixed para transicionar suavemente */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1030; /* Alto z-index para ficar acima de tudo */
-    padding: 25px 0;
-    background-color: transparent; /* Transparente */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave */
-    border: none;
-    box-shadow: none;
+/* Aplica margem no topo de QUALQUER elemento que tenha ID */
+section[id], div[id] {
+    scroll-margin-top: 140px; /* Aumentei para 140px para dar folga */
 }
 
-    .island-navbar .navbar-brand,
+/* --- 2. NAVBAR: ESTADO INICIAL (Transparente no Topo) --- */
+.island-navbar {
+    background-color: transparent !important; /* Força transparência inicial */
+    box-shadow: none !important;
+    border-bottom: none !important;
+    padding: 25px 0 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
     .island-navbar .nav-link {
-        color: #333; /* Cor inicial do texto (ajuste se o fundo for escuro) */
         font-weight: 600;
-        text-shadow: 0 0 2px rgba(255,255,255,0.5); /* Ajuda a ler se o fundo for complexo */
+        color: #444 !important;
+        margin: 0 5px;
     }
 
-    /* --- 3. Navbar: Estado Rolagem (Ilha Flutuante) --- */
-    /* Aqui acontece a mágica: ela desgruda do topo e encolhe */
+    /* --- 3. NAVBAR: MODO ILHA (Ativado pelo JS) --- */
     .island-navbar.scrolled-mode {
-        top: 20px; /* Desce 20px do topo (efeito flutuante) */
-        left: 50%;
-        transform: translateX(-50%); /* Centraliza na tela */
-        width: 85%; /* Largura da ilha */
-        max-width: 1200px;
-        background-color: rgba(255, 255, 255, 0.95) !important; /* Fundo Branco */
-        backdrop-filter: blur(10px); /* Vidro fosco */
-        border-radius: 50px; /* Bordas arredondadas */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra */
-        padding: 10px 30px; /* Mais compacta */
+        background-color: rgba(255, 255, 255, 0.95) !important; /* Fundo branco */
+        backdrop-filter: blur(12px);
+        /* Posicionamento e Formato da Ilha */
+        top: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Centraliza perfeitamente */
+        width: 90% !important; /* Largura da ilha */
+        max-width: 1100px !important;
+        border-radius: 50px !important; /* Borda redonda */
+        padding: 10px 30px !important; /* Mais fino */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+        border-top: 4px solid #005bea;
+        border: 1px solid rgba(0,0,0,0.05) !important;
     }
 
-/* Ajuste responsivo para celular não quebrar a ilha */
+/* Ajuste para Celular (Ilha ocupa quase toda largura) */
 @media (max-width: 768px) {
     .island-navbar.scrolled-mode {
-        width: 95%;
-        top: 10px;
-        padding: 10px 15px;
+        width: 95% !important;
+        top: 10px !important;
     }
 }
 
 /* Botão Inscreva-se na Navbar */
 .btn-nav-cta {
-    background-color: #0d6efd;
+    background-color: var(--gf-teal);
+    border-color: var(--gf-teal);
     color: white !important;
-    border-radius: 30px;
-    padding: 8px 25px !important;
-    font-weight: 600;
-    margin-right: 15px;
-    transition: transform 0.2s;
 }
-
     .btn-nav-cta:hover {
-        transform: scale(1.05);
-        background-color: #0b5ed7;
+        background-color: var(--gf-black); /* Fica preto no hover (elegante) */
+        border-color: var(--gf-black);
     }
-
-/* --- Novo Hero Centralizado (Clean) --- */
-.clean-hero {
-    position: relative;
-    padding: 180px 0 100px 0; /* Espaço extra no topo por causa da navbar fixa */
-    background-color: #fff; /* Fundo branco limpo */
-    text-align: center;
-    overflow: hidden;
-}
-
-    /* Elemento decorativo de fundo (Opcional - Bolha suave) */
-    .clean-hero::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(13,110,253,0.05) 0%, rgba(255,255,255,0) 70%);
-        z-index: 0;
-    }
-
-.hero-content-wrapper {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.clean-title {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-    color: #1a1a1a;
-}
-
-.clean-subtitle {
-    font-size: 1.25rem;
-    color: #666;
-    font-weight: 400;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
 
 .btn-big-cta {
+    background: linear-gradient(45deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3); /* Sombra Teal */
     padding: 18px 50px;
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 50px;
-    background: linear-gradient(45deg, #0d6efd, #0043a8);
-    border: none;
-    color: white;
-    box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
     transition: all 0.3s ease;
 }
-
     .btn-big-cta:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(13, 110, 253, 0.4);
+        background: linear-gradient(45deg, var(--gf-teal) 0%, var(--gf-pink) 100%); /* Muda para rosa no hover */
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4); /* Sombra Rosa */
         color: white;
     }
 
-/* Imagem Hero Centralizada/Inferior */
-.hero-bottom-img {
-    margin-top: 60px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+/* --- Novo Hero Centralizado (Clean) --- */
+.hero-section {
+    padding: 140px 0 80px 0; /* Espaço para a navbar fixa */
+    background-color: #fff;
+    position: relative;
+    overflow: hidden; /* Evita que formas decorativas vazem */
+}
+
+/* Forma decorativa sutil no fundo (Opcional - dá um charme) */
+.hero-shape {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 168, 157, 0.08) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1; /* Texto fica acima da forma decorativa */
+}
+
+/* TÍTULO */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #161616; /* Preto da marca */
+    margin-bottom: 1.5rem;
+}
+
+/* Destaque no texto (Gradiente na palavra) */
+.text-gradient {
+    background: -webkit-linear-gradient(45deg, #00a89D, #ec2262); /* Teal para Rosa */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 90%; /* Não deixa a linha ficar muito longa */
+}
+
+/* BOTÃO HERO */
+.btn-hero {
+    background-color: #00a89D; /* Teal Principal */
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 168, 157, 0.3); /* Sombra colorida */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+    .btn-hero:hover {
+        background-color: #161616; /* Preto no hover (elegante) */
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        color: white;
+    }
+
+/* IMAGEM HERO */
+.hero-img-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.hero-img {
     width: 100%;
-    max-width: 900px;
+    max-width: 600px; /* Tamanho máximo controlado */
     height: auto;
-    transform: perspective(1000px) rotateX(2deg); /* Efeito 3D sutil */
+    border-radius: 24px; /* Cantos modernos */
+    /* Sombra suave para destacar do fundo branco */
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
     transition: transform 0.5s ease;
 }
 
-    .hero-bottom-img:hover {
-        transform: perspective(1000px) rotateX(0deg) scale(1.02);
+    .hero-img:hover {
+        transform: scale(1.02); /* Efeito de zoom muito leve */
     }
 
-@media (max-width: 768px) {
-    .clean-title {
-        font-size: 2.8rem;
+/* Responsividade (Celular) */
+@media (max-width: 991px) {
+    .hero-section {
+        padding-top: 120px;
+        text-align: center;
     }
 
-    .island-navbar.scrolled-mode {
-        width: 95%;
+    .hero-subtitle {
+        margin: 0 auto 30px auto;
+    }
+
+    .hero-img-wrapper {
+        margin-top: 50px;
     }
 }
 
@@ -753,18 +814,12 @@ html {
 
 /* Mas... o card específico que estamos passando o mouse (HOVER)
    volta a ter opacidade total e cresce */
+/* Cards de Passo a Passo (Hover) */
 .steps-container .step-card:hover {
-    opacity: 1;
-    transform: scale(1.05); /* Aumenta 5% */
-    background: #fff;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Sombra forte */
-    border-color: #007bff; /* Borda azul destaque */
-    z-index: 10; /* Traz para frente */
+    border-color: var(--gf-orange); /* Laranja vibrante na borda */
 }
-
-    /* Muda a cor do número/ícone no foco */
     .steps-container .step-card:hover .step-icon {
-        color: #007bff;
+        color: var(--gf-orange);
     }
 
 /* Setas decorativas (apenas visual) */
@@ -810,16 +865,14 @@ html {
 
     /* Estilo do botão quando o item está ABERTO */
     .custom-accordion .accordion-button:not(.collapsed) {
-        color: #007bff; /* Cor azul destaque */
-        background-color: #f8fbfd; /* Fundo azul bem clarinho */
+        color: var(--gf-teal);
+        background-color: rgba(0, 168, 157, 0.05); /* Teal bem clarinho */
         box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
     }
-
-    /* Remove contorno padrão feio ao clicar */
-    .custom-accordion .accordion-button:focus {
-        border-color: rgba(0,0,0,.125);
-        box-shadow: none;
-    }
+        .custom-accordion .accordion-button:focus {
+            border-color: var(--gf-teal);
+            box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
+        }
 
 /* Corpo do texto */
 .custom-accordion .accordion-body {
@@ -962,6 +1015,52 @@ html {
     display: block;
     opacity: 0.8;
 }
+
+.hero-section, /* Hero (Topo) */
+.island-section, /* Sobre */
+.why-section, /* Impacto */
+.spotlight-section, /* Números */
+.investors-section /* Parceiros */ {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+/* Ajuste específico para o Mobile não ficar com espaços gigantes */
+@media (max-width: 768px) {
+    .hero-section,
+    .island-section,
+    .why-section,
+    .spotlight-section,
+    .investors-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+/* 1. Crie uma classe para o container dos botões */
+.hero-buttons-container {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões */
+    transition: all 0.3s ease;
+}
+
+    /* 2. Quando o mouse entra no CONTAINER, todos os botões dentro dele ficam desfocados e opacos */
+    .hero-buttons-container:hover .btn {
+        filter: blur(3px); /* Borrão leve */
+        opacity: 0.6; /* Fica meio transparente */
+        transform: scale(0.95); /* Diminui um pouquinho */
+        transition: all 0.3s ease; /* Transição suave */
+    }
+
+    /* 3. O PULO DO GATO: O botão específico que recebe o HOVER volta ao normal */
+    .hero-buttons-container .btn:hover {
+        filter: blur(0) !important; /* Remove o borrão */
+        opacity: 1 !important; /* Opacidade total */
+        transform: scale(1.1) !important; /* Cresce para destaque */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para flutuar */
+        z-index: 10; /* Garante que fique por cima dos outros */
+    }
+
 /* ==========================
    RESPONSIVO
    ========================== */

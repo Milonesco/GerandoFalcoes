@@ -1,39 +1,51 @@
 ﻿@{
-    ViewData["Title"] = "Gerando Falcões";
+    ViewData["Title"] = "Gerando Falcões - Transforme-se";
 }
 
 @section Styles {
     <link href="~/css/site.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
 }
 
-<section id="inicio" class="clean-hero">
-    <div class="container">
-        <div class="hero-content-wrapper">
+<div id="inicio" class="hero-section">
+    <div class="hero-shape"></div>
 
-            <h1 class="clean-title">
-                Transforme seu futuro <br>
-                <span class="text-primary">com tecnologia.</span>
-            </h1>
+    <div class="container hero-container">
+        <div class="row align-items-center">
 
-            <p class="clean-subtitle">
-                Junte-se à Gerando Falcões e tenha acesso a educação de qualidade, mentoria de carreira e conexão com as maiores empresas do mercado. É gratuito. É transformador.
-            </p>
+            <div class="col-lg-6">
+                <h1 class="hero-title">
+                    Transforme seu futuro <br>
+                    <span class="text-gradient">com tecnologia.</span>
+                </h1>
 
-            <div>
-                <a href="@Url.Action("Index", "Inscricao")" class="btn btn-big-cta">
-                    QUERO ME INSCREVER
-                </a>
+                <p class="hero-subtitle">
+                    Educação de qualidade, mentoria de carreira e conexão com as maiores empresas do mercado.
+                    Junte-se à Gerando Falcões e mude sua realidade.
+                </p>
+
+                <div class="d-flex gap-3 flex-column flex-sm-row justify-content-lg-start justify-content-center">
+                    <a href="@Url.Action("Index", "Inscricao")" class="btn-hero text-decoration-none">
+                        QUERO ME INSCREVER
+                    </a>
+
+                    <a href="#sobre" class="btn btn-outline-dark rounded-pill px-4 py-3 fw-bold" style="border: 2px solid #eee;">
+                        Saiba mais
+                    </a>
+                </div>
             </div>
 
-            <div class="mt-5">
-                <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Plataforma Gerando Falcões" class="hero-bottom-img">
+            <div class="col-lg-6 hero-img-wrapper">
+                <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Favela 3D Gerando Falcões" class="hero-img">
+
             </div>
 
         </div>
     </div>
-</section>
+</div>
 
-<section id="sobre" class="island-section">
+<div class="brand-separator"></div>
+
+<section id="sobre" class="island-section bg-section-gray">
     <div class="container">
         <div class="island-card">
 
@@ -43,7 +55,7 @@
                         Transformando Vidas através da <span class="text-primary">Educação</span>
                     </h2>
                     <p class="lead text-muted">
-                        Nossa metodologia é baseada em etapas claras para garantir que o conhecimento chegue a quem mais precisa. Conheça nosso fluxo de impacto.
+                        Nossa metodologia é baseada em etapas claras para garantir que o conhecimento chegue a quem mais precisa.
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
@@ -52,54 +64,44 @@
             </div>
 
             <div class="steps-container">
-
                 <div class="step-card">
                     <div class="step-icon">01.</div>
                     <h4 class="step-title">Inscrição</h4>
-                    <p class="step-desc">
-                        O candidato realiza o cadastro em nossa plataforma digital de forma rápida e acessível.
-                    </p>
+                    <p class="step-desc">Cadastro rápido e acessível em nossa plataforma.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">02.</div>
                     <h4 class="step-title">Seleção</h4>
-                    <p class="step-desc">
-                        Nossa equipe avalia o perfil socioeconômico para garantir a bolsa a quem precisa.
-                    </p>
+                    <p class="step-desc">Avaliação de perfil socioeconômico para bolsas.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">03.</div>
                     <h4 class="step-title">Formação</h4>
-                    <p class="step-desc">
-                        Aulas intensivas e práticas com mentores renomados do mercado de tecnologia.
-                    </p>
+                    <p class="step-desc">Aulas práticas com mentores renomados.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">04.</div>
-                    <h4 class="step-title">Empregabilidade</h4>
-                    <p class="step-desc">
-                        Conectamos os talentos formados com empresas parceiras para o mercado de trabalho.
-                    </p>
+                    <h4 class="step-title">Emprego</h4>
+                    <p class="step-desc">Conexão direta com empresas parceiras.</p>
                     <i class="bi bi-check-lg step-arrow"></i>
                 </div>
-
             </div>
+
         </div>
     </div>
 </section>
 
-<section id="impacto" class="why-section">
+<div class="brand-separator"></div>
+
+<section id="impacto" class="why-section bg-section-white">
     <div class="container">
         <div class="row align-items-center">
 
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="section-title text-start mb-4">Por que se inscrever?</h2>
+                <h2 class="section-title text-start mb-4" style="color: var(--gf-black);">Por que se inscrever?</h2>
                 <p class="text-muted mb-5">
                     Fazer parte da Gerando Falcões é dar o primeiro passo para transformar sua realidade.
                 </p>
@@ -113,11 +115,10 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Acesso a educação de ponta e mentoria comportamental que preparam você não apenas tecnicamente, mas para os desafios reais do mercado de trabalho.
+                                Acesso a educação de ponta e mentoria comportamental que preparam você para os desafios reais.
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -126,11 +127,10 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Acesso direto a processos seletivos exclusivos em nossa rede de parceiros, aumentando exponencialmente suas chances de empregabilidade.
+                                Acesso direto a processos seletivos exclusivos em nossa rede de parceiros (Accenture, Serasa, etc).
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -139,7 +139,7 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Faça parte de uma rede de alumni engajada que se apoia mutuamente no crescimento profissional e pessoal.
+                                Faça parte de uma rede de alumni engajada que se apoia mutuamente no crescimento.
                             </div>
                         </div>
                     </div>
@@ -154,102 +154,41 @@
     </div>
 </section>
 
+<div class="brand-separator"></div>
 
-<section id="numeros" class="spotlight-section">
+<section id="numeros" class="spotlight-section bg-section-gray">
     <div class="container">
 
         <div class="text-center mb-5">
-            <h2 class="section-title">Impacto em Números</h2>
+            <h2 class="section-title" style="color: var(--gf-black);">Impacto em Números</h2>
             <p class="text-muted">Resultados reais gerados pelo nosso ecossistema.</p>
         </div>
 
         <div class="spotlight-grid">
-
-            <div class="spotlight-card bg-gradient-1">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-teal) 0%, #008c82 100%);">
                 <i class="bi bi-people-fill spotlight-icon"></i>
                 <h3>+2 Mil</h3>
-                <p>
-                    <strong>Pessoas Beneficiadas.</strong><br>
-                    Jovens e adultos formados com excelência técnica e prontos para o mercado.
-                </p>
+                <p><strong>Pessoas Beneficiadas.</strong><br>Jovens formados com excelência.</p>
             </div>
 
-            <div class="spotlight-card bg-gradient-2">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-purple) 0%, #5a3cb5 100%);">
                 <i class="bi bi-buildings-fill spotlight-icon"></i>
                 <h3>+50 Empresas</h3>
-                <p>
-                    <strong>Parceiras Contratantes.</strong><br>
-                    Grandes nomes como Accenture, XP e Serasa buscam talentos aqui.
-                </p>
+                <p><strong>Parceiras.</strong><br>Conectadas ao banco de talentos.</p>
             </div>
 
-            <div class="spotlight-card bg-gradient-3">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);">
                 <i class="bi bi-graph-up-arrow spotlight-icon"></i>
                 <h3>80% Sucesso</h3>
-                <p>
-                    <strong>Empregabilidade.</strong><br>
-                    Taxa de alunos que aumentaram a renda ou conseguiram emprego após o curso.
-                </p>
+                <p><strong>Empregabilidade.</strong><br>Aumento de renda ou novo emprego.</p>
             </div>
-
         </div>
     </div>
 </section>
 
-<section class="projects-section">
-    <div class="container">
-        <h2 class="section-title">Nossos Projetos</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Favela 3D">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Favela 3D</h3>
-                        <p class="project-text">
-                            Um projeto revolucionário que visa transformar as favelas em ambientes Dignos, Digitais e Desenvolvidos.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
+<div class="brand-separator"></div>
 
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/curso-design.jpg" alt="Projeto Decolagem">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Decolagem</h3>
-                        <p class="project-text">
-                            Apoiamos líderes sociais para erradicar a pobreza, oferecendo mentoria e recursos para acelerar o impacto.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/curso-powerbi.png" alt="Bazar Escola">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Bazar Escola</h3>
-                        <p class="project-text">
-                            Iniciativa de economia circular que gera renda e oportunidades através da venda de produtos doados.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="parceiros" class="investors-section">
+<section id="parceiros" class="investors-section bg-section-white">
     <div class="container-fluid">
         <h3 class="investors-title">Investidores Master</h3>
 
@@ -257,12 +196,11 @@
             <div class="marquee-content">
                 <img src="~/images/accenture-logo-0.png" alt="Parceiro 1">
                 <img src="~/images/gerdau-logo-1-1.png" alt="Parceiro 2">
-                <img src="~/images/serasa-logo-0.png" alt="Parceiro 3"> 
+                <img src="~/images/serasa-logo-0.png" alt="Parceiro 3">
                 <img src="~/images/tim-logo-png_seeklogo-273240.png" alt="Parceiro 4">
                 <img src="~/images/LOGOS-fundacao-LEMANN.png" alt="Parceiro 5">
                 <img src="~/images/logofvw-e1583532437339.png" alt="Parceiro 6">
             </div>
-
             <div class="marquee-content" aria-hidden="true">
                 <img src="~/images/patria-logo-300dpi.png" alt="Parceiro 1">
                 <img src="~/images/png-clipart-citigroup-citibank-logo-organization-company-others-blue-company.png" alt="Parceiro 2">

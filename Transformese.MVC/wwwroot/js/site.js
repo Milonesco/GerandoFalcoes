@@ -1,62 +1,19 @@
-﻿// site-landing.js - Otimizado
-const html = document.documentElement;
-const toggle = document.getElementById("darkModeToggle");
+﻿// Garante que o código só rode depois que a página estiver carregada
+document.addEventListener("DOMContentLoaded", function () {
 
-// Função que aplica o tema e salva a preferência
-function applyTheme(theme) {
-    html.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-    updateIcon(theme);
-}
+    var navbar = document.getElementById("mainNavbar");
 
-// Função para atualizar o ícone com base no tema
-function updateIcon(currentTheme) {
-    // Bootstrap Icons para Lua (modo escuro) e Sol (modo claro)
-    if (currentTheme === "dark") {
-        toggle.classList.remove("bi-moon-stars-fill");
-        toggle.classList.add("bi-sun-fill");
+    if (navbar) {
+        window.addEventListener("scroll", function () {
+            // Se rolar mais que 50px, vira ilha
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled-mode");
+            } else {
+                navbar.classList.remove("scrolled-mode");
+            }
+        });
     } else {
-        toggle.classList.remove("bi-sun-fill");
-        toggle.classList.add("bi-moon-stars-fill");
+        console.error("Navbar não encontrada! Verifique se o ID 'mainNavbar' está na tag nav.");
     }
-}
 
-// Lógica de Detecção e Aplicação Imediata (para evitar FOUC - Flash of Unstyled Content)
-(function initTheme() {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme) {
-        // Se houver tema salvo, usa ele
-        html.setAttribute("data-theme", savedTheme);
-        updateIcon(savedTheme);
-    } else {
-        // Caso contrário, detecta a preferência do sistema
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = prefersDark ? "dark" : "light";
-        html.setAttribute("data-theme", initialTheme);
-        updateIcon(initialTheme);
-    }
-})();
-
-// Event Listener para a troca de tema
-if (toggle) {
-    toggle.addEventListener("click", () => {
-        const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        applyTheme(newTheme);
-    });
-}
-
-// Função Navbar Ilha
-window.addEventListener("scroll", function () {
-    // Pega especificamente a navbar que tem a classe island-navbar
-    var nav = document.querySelector(".island-navbar");
-
-    if (nav) { // Segurança para não dar erro se não achar a nav
-        if (window.scrollY > 50) {
-            nav.classList.add("scrolled-mode");
-        } else {
-            nav.classList.remove("scrolled-mode");
-        }
-    }
 });
