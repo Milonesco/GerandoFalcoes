@@ -624,8 +624,8 @@ section[id], div[id] {
     color: white !important;
 }
     .btn-nav-cta:hover {
-        background-color: var(--gf-black); /* Fica preto no hover (elegante) */
-        border-color: var(--gf-black);
+        background-color: #e90c8d;
+        border-color: #e90c8d;
     }
 
 .btn-big-cta {
@@ -712,7 +712,7 @@ section[id], div[id] {
 }
 
     .btn-hero:hover {
-        background-color: #161616; /* Preto no hover (elegante) */
+        background-color: #e90c8d;
         transform: translateY(-3px);
         box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         color: white;
