@@ -772,14 +772,18 @@ section[id], div[id] {
 .step-card {
     flex: 1; /* Distribui espaço igualmente */
     min-width: 250px; /* Tamanho mínimo para não esmagar */
+    aspect-ratio: 1 / 1; /* IMPORTANTE: Força o card a ser quadrado */
     background: #f8f9fa;
     border-radius: 16px;
     padding: 30px 20px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição suave */
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Ícone ou Número do passo */
@@ -806,27 +810,33 @@ section[id], div[id] {
 /* --- O Efeito Mágico de Foco --- */
 
 /* Quando passamos o mouse NO CONTAINER (não apenas no card),
-   fazemos TODOS os cards ficarem um pouco opacos e menores */
+   fazemos TODOS os cards ficarem um pouco opacos e desfocados */
 .steps-container:hover .step-card {
     opacity: 0.5;
     transform: scale(0.95);
+    filter: blur(3px);
 }
 
 /* Mas... o card específico que estamos passando o mouse (HOVER)
-   volta a ter opacidade total e cresce */
-/* Cards de Passo a Passo (Hover) */
+   volta a ter opacidade total, cresce e fica em foco com borda azul */
 .steps-container .step-card:hover {
-    border-color: var(--gf-orange); /* Laranja vibrante na borda */
+    opacity: 1;
+    transform: scale(1.02);
+    filter: blur(0);
+    border-color: #0d6efd; /* Borda azul do Bootstrap */
+    box-shadow: 0 8px 16px rgba(13, 110, 253, 0.2); /* Sombra azul suave */
+    z-index: 10;
 }
+
     .steps-container .step-card:hover .step-icon {
-        color: var(--gf-orange);
+        color: #0d6efd; /* Ícone azul no hover */
     }
 
 /* Setas decorativas (apenas visual) */
 .step-arrow {
     display: block;
     font-size: 1.5rem;
-    color: #007bff;
+    color: #0d6efd; /* Azul para consistência */
     margin-top: 15px;
     opacity: 0;
     transform: translateX(-10px);
@@ -836,6 +846,18 @@ section[id], div[id] {
 .step-card:hover .step-arrow {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-wrap: nowrap; /* Permite scroll horizontal */
+        overflow-x: auto;
+    }
+
+    .step-card {
+        min-width: 220px; /* Tamanho mínimo menor em mobile */
+    }
 }
 
 /* --- Seção Por Que Se Inscrever (Accordion) --- */
@@ -1060,6 +1082,73 @@ section[id], div[id] {
         box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para flutuar */
         z-index: 10; /* Garante que fique por cima dos outros */
     }
+
+
+/* --- Seção CTA (Call to Action) --- */
+.cta {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, #008c82 100%); /* Gradiente verde-água */
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Adiciona um efeito decorativo sutil no fundo */
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 60%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .cta h3 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Botão especial da CTA */
+    .cta .btn {
+        background-color: white;
+        color: var(--gf-teal);
+        border: 3px solid white;
+        padding: 15px 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .cta .btn:hover {
+            background-color: var(--gf-pink); /* Muda para rosa no hover */
+            color: white;
+            border-color: var(--gf-pink);
+            transform: translateY(-5px) scale(1.05); /* Levanta e cresce */
+            box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4); /* Sombra rosa intensa */
+        }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cta h3 {
+        font-size: 1.8rem;
+    }
+
+    .cta .btn {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+}
 
 /* ==========================
    RESPONSIVO
