@@ -33,6 +33,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,13 +56,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pnlContent = new Guna.UI2.WinForms.Guna2Panel();
-            lblTituloDashboard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
+            lblSaudacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblTituloDashboard = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlUserInfo = new Guna.UI2.WinForms.Guna2Panel();
+            lblCargoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pbPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            lblNomeUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlSidebar = new Guna.UI2.WinForms.Guna2Panel();
             guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             btnSair = new Guna.UI2.WinForms.Guna2Button();
@@ -74,17 +79,12 @@
             pnlLogo = new Guna.UI2.WinForms.Guna2Panel();
             lblSubTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTituloLogo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblSaudacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pnlUserInfo = new Guna.UI2.WinForms.Guna2Panel();
-            lblNomeUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pbPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            lblCargoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlContent.SuspendLayout();
             pnlHeader.SuspendLayout();
-            pnlSidebar.SuspendLayout();
-            pnlLogo.SuspendLayout();
             pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
+            pnlSidebar.SuspendLayout();
+            pnlLogo.SuspendLayout();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -106,17 +106,6 @@
             pnlContent.Size = new System.Drawing.Size(1200, 800);
             pnlContent.TabIndex = 0;
             // 
-            // lblTituloDashboard
-            // 
-            lblTituloDashboard.BackColor = System.Drawing.Color.Transparent;
-            lblTituloDashboard.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblTituloDashboard.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblTituloDashboard.Location = new System.Drawing.Point(20, 5);
-            lblTituloDashboard.Name = "lblTituloDashboard";
-            lblTituloDashboard.Size = new System.Drawing.Size(157, 44);
-            lblTituloDashboard.TabIndex = 4;
-            lblTituloDashboard.Text = "DASHBOARD";
-            // 
             // pnlHeader
             // 
             pnlHeader.Controls.Add(lblSaudacao);
@@ -129,6 +118,85 @@
             pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges5;
             pnlHeader.Size = new System.Drawing.Size(980, 60);
             pnlHeader.TabIndex = 3;
+            // 
+            // lblSaudacao
+            // 
+            lblSaudacao.BackColor = System.Drawing.Color.Transparent;
+            lblSaudacao.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblSaudacao.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblSaudacao.Location = new System.Drawing.Point(20, 35);
+            lblSaudacao.Name = "lblSaudacao";
+            lblSaudacao.Size = new System.Drawing.Size(319, 24);
+            lblSaudacao.TabIndex = 8;
+            lblSaudacao.Text = "Bem-vindo(a), [Usuário]! Aqui está o resumo de hoje.";
+            // 
+            // lblTituloDashboard
+            // 
+            lblTituloDashboard.BackColor = System.Drawing.Color.Transparent;
+            lblTituloDashboard.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloDashboard.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloDashboard.Location = new System.Drawing.Point(20, 5);
+            lblTituloDashboard.Name = "lblTituloDashboard";
+            lblTituloDashboard.Size = new System.Drawing.Size(157, 44);
+            lblTituloDashboard.TabIndex = 4;
+            lblTituloDashboard.Text = "DASHBOARD";
+            // 
+            // pnlUserInfo
+            // 
+            pnlUserInfo.BackColor = System.Drawing.Color.Transparent;
+            pnlUserInfo.BorderRadius = 22;
+            pnlUserInfo.Controls.Add(lblCargoUsuario);
+            pnlUserInfo.Controls.Add(pbPerfil);
+            pnlUserInfo.Controls.Add(lblNomeUsuario);
+            pnlUserInfo.CustomizableEdges = customizableEdges2;
+            pnlUserInfo.FillColor = System.Drawing.Color.White;
+            pnlUserInfo.Location = new System.Drawing.Point(740, 8);
+            pnlUserInfo.Name = "pnlUserInfo";
+            pnlUserInfo.ShadowDecoration.BorderRadius = 22;
+            pnlUserInfo.ShadowDecoration.Color = System.Drawing.Color.FromArgb(22, 22, 22);
+            pnlUserInfo.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            pnlUserInfo.ShadowDecoration.Depth = 10;
+            pnlUserInfo.ShadowDecoration.Enabled = true;
+            pnlUserInfo.Size = new System.Drawing.Size(220, 45);
+            pnlUserInfo.TabIndex = 9;
+            // 
+            // lblCargoUsuario
+            // 
+            lblCargoUsuario.BackColor = System.Drawing.Color.Transparent;
+            lblCargoUsuario.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblCargoUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblCargoUsuario.Location = new System.Drawing.Point(15, 25);
+            lblCargoUsuario.MaximumSize = new System.Drawing.Size(160, 0);
+            lblCargoUsuario.Name = "lblCargoUsuario";
+            lblCargoUsuario.Size = new System.Drawing.Size(107, 21);
+            lblCargoUsuario.TabIndex = 9;
+            lblCargoUsuario.Text = "(Cargo do Usuario)";
+            lblCargoUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pbPerfil
+            // 
+            pbPerfil.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            pbPerfil.ImageRotate = 0F;
+            pbPerfil.Location = new System.Drawing.Point(170, 2);
+            pbPerfil.Name = "pbPerfil";
+            pbPerfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            pbPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            pbPerfil.Size = new System.Drawing.Size(40, 40);
+            pbPerfil.TabIndex = 8;
+            pbPerfil.TabStop = false;
+            // 
+            // lblNomeUsuario
+            // 
+            lblNomeUsuario.BackColor = System.Drawing.Color.Transparent;
+            lblNomeUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblNomeUsuario.Location = new System.Drawing.Point(15, 5);
+            lblNomeUsuario.MaximumSize = new System.Drawing.Size(160, 0);
+            lblNomeUsuario.Name = "lblNomeUsuario";
+            lblNomeUsuario.Size = new System.Drawing.Size(129, 25);
+            lblNomeUsuario.TabIndex = 7;
+            lblNomeUsuario.Text = "(Nome do Usuário)";
+            lblNomeUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlSidebar
             // 
@@ -305,6 +373,7 @@
             btnIncricoes.TabIndex = 3;
             btnIncricoes.Text = "Inscrições Recebidas";
             btnIncricoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            btnIncricoes.Click += btnIncricoes_Click;
             // 
             // btnDashboard
             // 
@@ -352,81 +421,13 @@
             // lblTituloLogo
             // 
             lblTituloLogo.BackColor = System.Drawing.Color.Transparent;
-            lblTituloLogo.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloLogo.ForeColor = System.Drawing.Color.White;
             lblTituloLogo.Location = new System.Drawing.Point(7, 30);
             lblTituloLogo.Name = "lblTituloLogo";
-            lblTituloLogo.Size = new System.Drawing.Size(207, 32);
+            lblTituloLogo.Size = new System.Drawing.Size(206, 26);
             lblTituloLogo.TabIndex = 4;
             lblTituloLogo.Text = "GERANDO FALCÕES";
-            // 
-            // lblSaudacao
-            // 
-            lblSaudacao.BackColor = System.Drawing.Color.Transparent;
-            lblSaudacao.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblSaudacao.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblSaudacao.Location = new System.Drawing.Point(20, 35);
-            lblSaudacao.Name = "lblSaudacao";
-            lblSaudacao.Size = new System.Drawing.Size(319, 24);
-            lblSaudacao.TabIndex = 8;
-            lblSaudacao.Text = "Bem-vindo(a), [Usuário]! Aqui está o resumo de hoje.";
-            // 
-            // pnlUserInfo
-            // 
-            pnlUserInfo.BackColor = System.Drawing.Color.Transparent;
-            pnlUserInfo.BorderRadius = 22;
-            pnlUserInfo.Controls.Add(lblCargoUsuario);
-            pnlUserInfo.Controls.Add(pbPerfil);
-            pnlUserInfo.Controls.Add(lblNomeUsuario);
-            pnlUserInfo.CustomizableEdges = customizableEdges2;
-            pnlUserInfo.FillColor = System.Drawing.Color.White;
-            pnlUserInfo.Location = new System.Drawing.Point(740, 8);
-            pnlUserInfo.Name = "pnlUserInfo";
-            pnlUserInfo.ShadowDecoration.BorderRadius = 22;
-            pnlUserInfo.ShadowDecoration.Color = System.Drawing.Color.FromArgb(22, 22, 22);
-            pnlUserInfo.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            pnlUserInfo.ShadowDecoration.Depth = 10;
-            pnlUserInfo.ShadowDecoration.Enabled = true;
-            pnlUserInfo.Size = new System.Drawing.Size(220, 45);
-            pnlUserInfo.TabIndex = 9;
-            // 
-            // lblNomeUsuario
-            // 
-            lblNomeUsuario.BackColor = System.Drawing.Color.Transparent;
-            lblNomeUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblNomeUsuario.Location = new System.Drawing.Point(15, 5);
-            lblNomeUsuario.MaximumSize = new System.Drawing.Size(160, 0);
-            lblNomeUsuario.Name = "lblNomeUsuario";
-            lblNomeUsuario.Size = new System.Drawing.Size(129, 25);
-            lblNomeUsuario.TabIndex = 7;
-            lblNomeUsuario.Text = "(Nome do Usuário)";
-            lblNomeUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pbPerfil
-            // 
-            pbPerfil.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            pbPerfil.ImageRotate = 0F;
-            pbPerfil.Location = new System.Drawing.Point(170, 2);
-            pbPerfil.Name = "pbPerfil";
-            pbPerfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            pbPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            pbPerfil.Size = new System.Drawing.Size(40, 40);
-            pbPerfil.TabIndex = 8;
-            pbPerfil.TabStop = false;
-            // 
-            // lblCargoUsuario
-            // 
-            lblCargoUsuario.BackColor = System.Drawing.Color.Transparent;
-            lblCargoUsuario.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblCargoUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblCargoUsuario.Location = new System.Drawing.Point(15, 25);
-            lblCargoUsuario.MaximumSize = new System.Drawing.Size(160, 0);
-            lblCargoUsuario.Name = "lblCargoUsuario";
-            lblCargoUsuario.Size = new System.Drawing.Size(107, 21);
-            lblCargoUsuario.TabIndex = 9;
-            lblCargoUsuario.Text = "(Cargo do Usuario)";
-            lblCargoUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Dashboard
             // 
@@ -438,15 +439,16 @@
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             pnlContent.ResumeLayout(false);
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
-            pnlSidebar.ResumeLayout(false);
-            pnlLogo.ResumeLayout(false);
-            pnlLogo.PerformLayout();
             pnlUserInfo.ResumeLayout(false);
             pnlUserInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();
+            pnlSidebar.ResumeLayout(false);
+            pnlLogo.ResumeLayout(false);
+            pnlLogo.PerformLayout();
             ResumeLayout(false);
         }
 

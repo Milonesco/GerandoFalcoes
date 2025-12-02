@@ -111,5 +111,15 @@ namespace Transformese.Desktop
             panelContent.Controls.Add(newView);
             newView.BringToFront();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIncricoes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

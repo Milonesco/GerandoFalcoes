@@ -12,7 +12,7 @@ namespace Transformese.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Inicia com o formulário de Login, que será recriado no próximo passo
-            Application.Run(new Login());
+            Application.Run(new frmLogin());
         }
     }
 }
