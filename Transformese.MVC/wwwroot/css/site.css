@@ -59,10 +59,11 @@ html[data-theme="dark"] {
    BASE / RESET ESTRUTURAL
    ========================== */
 body {
-    background-color: var(--gf-white);
-    background-image: linear-gradient(180deg, #f4f7fc 0%, #eef2f8 100%);
-    color: var(--gf-black);
-    overflow-x: hidden; /* Evita rolagem lateral acidental */
+    background-color: var(--body-bg);
+    color: var(--text-main);
+    /* background-image: linear-gradient(180deg, #f4f7fc 0%, #eef2f8 100%); */
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,12 +99,12 @@ a {
 
 /* Ícone do Dark Mode */
 .dark-mode-toggle {
-    color: var(--nav-footer-text);
+    color: black; /* Isso garante que ele tenha contraste na navbar */
     transition: transform 0.3s ease, color 0.2s ease;
 }
 
     .dark-mode-toggle:hover {
-        transform: rotate(15deg); /* Pequena rotação divertida no hover */
+        transform: rotate(15deg); /* Efeito legal de rotação */
         color: var(--white);
     }
 
@@ -409,23 +410,25 @@ a#btn-ongs.btn {
 
 /* Secção de projetos */
 .projects-section {
-    padding: 60px 0;
-    background-color: #f8f9fa; /* Fundo cinza bem claro para destacar os cards */
+    background-color: var(--body-bg);
+    transition: background-color 0.3s ease;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 40px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
     text-transform: uppercase;
 }
 
 .project-card {
-    border: none;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave inicial */
     height: 100%; /* Garante que todos os cards tenham a mesma altura */
@@ -465,12 +468,12 @@ a#btn-ongs.btn {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1a1a1a;
+    color: var(--text-main);
 }
 
 .project-text {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 20px;
     flex-grow: 1;
@@ -495,9 +498,9 @@ a#btn-ongs.btn {
 
 /* --- Seção de Investidores (Loop Infinito) --- */
 .investors-section {
-    padding: 60px 0;
-    background-color: #fff;
-    overflow: hidden; /* Esconde a barra de rolagem horizontal */
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
 }
 
 .investors-title {
@@ -505,7 +508,8 @@ a#btn-ongs.btn {
     margin-bottom: 40px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #333;
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
 }
 
 /* Container do carrossel */
@@ -587,16 +591,17 @@ section[id], div[id] {
 }
 
     .island-navbar .nav-link {
+        color: var(--text-main) !important;
         font-weight: 600;
-        color: #444 !important;
         margin: 0 5px;
+        transition: color 0.3s ease;
     }
 
     /* --- 3. NAVBAR: MODO ILHA (Ativado pelo JS) --- */
     .island-navbar.scrolled-mode {
-        background-color: rgba(255, 255, 255, 0.95) !important; /* Fundo branco */
+        background-color: var(--card-bg) !important;
         backdrop-filter: blur(12px);
-        /* Posicionamento e Formato da Ilha */
+        border: 1px solid var(--card-border) !important;
         top: 20px !important;
         left: 50% !important;
         transform: translateX(-50%) !important; /* Centraliza perfeitamente */
@@ -604,7 +609,7 @@ section[id], div[id] {
         max-width: 1100px !important;
         border-radius: 50px !important; /* Borda redonda */
         padding: 10px 30px !important; /* Mais fino */
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: var(--card-shadow) !important;
         border-top: 4px solid #005bea;
         border: 1px solid rgba(0,0,0,0.05) !important;
     }
@@ -648,10 +653,8 @@ section[id], div[id] {
 
 /* --- Novo Hero Centralizado (Clean) --- */
 .hero-section {
-    padding: 140px 0 80px 0; /* Espaço para a navbar fixa */
-    background-color: #fff;
-    position: relative;
-    overflow: hidden; /* Evita que formas decorativas vazem */
+    background-color: var(--body-bg);
+    transition: background-color 0.3s ease;
 }
 
 /* Forma decorativa sutil no fundo (Opcional - dá um charme) */
@@ -676,7 +679,8 @@ section[id], div[id] {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.1;
-    color: #161616; /* Preto da marca */
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
     margin-bottom: 1.5rem;
 }
 
@@ -774,12 +778,12 @@ section[id], div[id] {
     flex: 1; /* Distribui espaço igualmente */
     min-width: 250px; /* Tamanho mínimo para não esmagar */
     aspect-ratio: 1 / 1; /* IMPORTANTE: Força o card a ser quadrado */
-    background: #f8f9fa;
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 30px 20px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição suave */
-    border: 2px solid transparent;
+    border: 1px solid var(--card-border);
     position: relative;
     cursor: pointer;
     display: flex;
@@ -799,12 +803,12 @@ section[id], div[id] {
 .step-title {
     font-weight: 700;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--text-main);
 }
 
 .step-desc {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
@@ -869,11 +873,14 @@ section[id], div[id] {
 
 /* Remove bordas padrão e adiciona espaçamento entre os itens */
 .custom-accordion .accordion-item {
+    background-color: var(--card-bg);
     border: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px !important; /* Força bordas arredondadas */
+    color: var(--text-main);
     margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02); /* Sombra leve */
+    box-shadow: none; /* Sombra leve */
+    transition: all 0.3s ease;
 }
 
 /* Estilo do botão (Cabeçalho) */
@@ -888,8 +895,8 @@ section[id], div[id] {
 
     /* Estilo do botão quando o item está ABERTO */
     .custom-accordion .accordion-button:not(.collapsed) {
-        color: var(--gf-teal);
-        background-color: rgba(0, 168, 157, 0.05); /* Teal bem clarinho */
+        background-color: rgba(0, 168, 157, 0.15);
+        color: var(--gf-teal); /* Cor da marca */
         box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
     }
         .custom-accordion .accordion-button:focus {
@@ -900,10 +907,11 @@ section[id], div[id] {
 /* Corpo do texto */
 .custom-accordion .accordion-body {
     font-size: 0.95rem;
-    color: #666;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
     line-height: 1.6;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--card-bg);
 }
 
 /* Imagem lateral */
@@ -924,7 +932,8 @@ section[id], div[id] {
 }
 
 .custom-accordion .accordion-item {
-    border: 1px solid rgba(0,0,0,0.05);
+    background-color: transparent;
+    border: 1px solid var(--card-border);
     border-radius: 12px !important;
     margin-bottom: 15px;
     overflow: hidden;
@@ -970,8 +979,10 @@ section[id], div[id] {
 
 /* --- 2. Seção Spotlight (Cards com Foco e Blur) --- */
 .spotlight-section {
+    background-color: var(--card-bg);
+    color: var(--text-main);
     padding: 80px 0;
-    background-color: #fff; /* Fundo branco para separar */
+    transition: background-color 0.3s ease;
 }
 
 .spotlight-grid {
@@ -984,6 +995,8 @@ section[id], div[id] {
 .spotlight-card {
     flex: 1;
     min-width: 300px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 40px 30px;
     color: white;
@@ -1140,6 +1153,23 @@ section[id], div[id] {
             transform: translateY(-5px) scale(1.05); /* Levanta e cresce */
             box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4); /* Sombra rosa intensa */
         }
+
+/* Títulos e Subtítulos Gerais */
+.hero-impact-phrase,
+.hero-secondary-text,
+.section-title,
+.hero-subtitle,
+.step-desc,
+.project-text,
+p {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.text-muted, .step-desc, .project-text {
+    color: var(--text-muted) !important;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .cta h3 {
