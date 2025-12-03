@@ -210,7 +210,7 @@ a {
 .landing-hero {
     position: relative;
     padding: 160px 0 120px 0;
-    background: linear-gradient( 180deg, #161616 0%, #0d1f2a 25%, #005bea 55%, #00a89D 75%, #ffffff 100% );
+    background: linear-gradient( 180deg, #161616 0%, #0d1f2a 25%, #005 Bea 55%, #00a89D 75%, #ffffff 100% );
     color: #ffffff;
 }
 
@@ -496,11 +496,12 @@ a#btn-ongs.btn {
         color: #fff;
     }
 
-/* --- Seção de Investidores (Loop Infinito) --- */
+/* --- Seção de Investidores (Loop Infinito com Auto-Hover) --- */
 .investors-section {
     background-color: var(--card-bg);
     transition: background-color 0.3s ease;
     overflow: hidden;
+    padding: 60px 0;
 }
 
 .investors-title {
@@ -517,8 +518,10 @@ a#btn-ongs.btn {
     display: flex;
     overflow: hidden;
     user-select: none;
-    gap: 2rem;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efeito fade nas bordas */
+    gap: 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    position: relative;
+    width: 100%;
 }
 
 /* Conteúdo que se move */
@@ -526,48 +529,50 @@ a#btn-ongs.btn {
     flex-shrink: 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 4rem; /* Espaço entre logos */
-    min-width: 100%;
-    animation: scroll 30s linear infinite; /* O Loop mágico */
+    animation: scroll 40s linear infinite;
+    padding: 0 2rem;
+    will-change: transform;
 }
 
-    /* Estilo das logos */
-    .marquee-content img {
-        height: 60px; /* Altura padrão para alinhar todos */
-        width: auto;
-        object-fit: contain;
-        filter: grayscale(100%); /* Opcional: Deixa preto e branco até passar o mouse */
-        opacity: 0.7;
-        transition: all 0.3s ease;
-    }
+/* Estilo das logos */
+.marquee-content img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    filter: grayscale(100%) brightness(0.95);
+    opacity: 0.6;
+}
 
-        .marquee-content img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
+/* Classe aplicada via JavaScript quando a logo está sob o cursor */
+.marquee-content img.auto-hovered {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.15);
+}
 
-/* Animação Keyframes */
+/* ANIMAÇÃO para loop infinito suave */
 @keyframes scroll {
-    from {
+    0% {
         transform: translateX(0);
     }
-
-    to {
-        transform: translateX(calc(-100% - 4rem)); /* Move para a esquerda exatamente o tamanho do bloco + gap */
+    100% {
+        transform: translateX(-100%);
     }
 }
 
-/* Responsividade simples */
+/* Responsividade */
 @media (max-width: 768px) {
-    .impact-card {
-        border-right: none;
-        border-bottom: 1px solid #333;
-        padding-bottom: 40px;
+    .marquee-content {
+        gap: 3rem;
+        animation-duration: 30s; /* Mais rápido no mobile */
     }
 
-    .marquee-content {
-        gap: 2rem;
+    .marquee-content img {
+        height: 50px;
     }
 }
 
@@ -1182,22 +1187,22 @@ p {
     }
 }
 
-/* ==========================
-   RESPONSIVO
-   ========================== */
-@media (max-width: 991px) {
-    /* Ajustes para tablets e celulares */
-    .landing-hero {
-        min-height: auto;
-        padding: 3rem 0;
-        text-align: center;
-    }
+/* === AJUSTE DO BRAND "GERANDO FALCÕES" === */
 
-    .hero-illustration {
-        display: none; /* Esconde a ilustração em telas menores */
-    }
+/* Modo Claro: Preto elegante */
+.navbar-brand.brand-text span {
+    color: var(--gf-black); /* Preto da paleta */
+    transition: color 0.3s ease;
+}
 
-    .hero-content {
-        padding-bottom: 2rem;
-    }
+/* Modo Escuro: Branco limpo */
+/*html[data-theme="dark"] .navbar-brand.brand-text span {
+    color: #ffffff;*/ /* Branco puro para contraste */
+/*}*/
+
+html[data-theme="dark"] .navbar-brand.brand-text span {
+    background: linear-gradient(45deg, #00a89D, #ec2262);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
