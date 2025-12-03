@@ -293,33 +293,50 @@
 <footer class="footer-custom">
     <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center footer-content-wrapper">
+        <div class="row align-items-start">
+            <!-- Coluna 1: Logos -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-logos-container">
+                    <div class="footer-logo-group">
+                        <span class="footer-label">Realização</span>
+                        <img src="~/images/logo-transformese.png" alt="Gerando Falcões" class="footer-logo">
+                    </div>
 
-            <div class="footer-logos-container">
-
-                <div class="footer-logo-group">
-                    <span class="footer-label">Realização</span>
-                    <img src="~/images/logo-transformese.png" alt="Gerando Falcões" class="footer-logo">
+                    <div class="d-none d-md-block" style="width: 1px; height: 40px; background: #333; margin: 0 20px;"></div>
+                    
+                    <div class="footer-logo-group">
+                        <span class="footer-label">Parceria</span>
+                        <img src="~/images/serasa-logo-0.png" alt="Serasa" class="footer-logo">
+                    </div>
                 </div>
-
-                <div class="d-none d-md-block" style="width: 1px; height: 40px; background: #333;"></div>
-                <div class="footer-logo-group">
-                    <span class="footer-label">Parceria</span>
-                    <img src="~/images/serasa-logo-0.png" alt="Serasa" class="footer-logo">
-                </div>
-
             </div>
 
-            <div class="footer-social-group">
-                <span class="footer-label d-block mb-2 text-end text-md-start">Siga-nos</span>
+            <!-- Coluna 2: Redes Sociais -->
+            <div class="col-lg-4 mb-4 mb-lg-0 text-center">
+                <span class="footer-label d-block mb-3">Siga-nos</span>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/gerandofalcoes/" target="_blank" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/gerandofalcoes/posts/?feedView=all" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://www.facebook.com/GerandoFalcoes/" target="_blank" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.youtube.com/user/gerandofalcoes" target="_blank" class="social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.instagram.com/gerandofalcoes/" target="_blank" class="social-icon social-instagram" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gerandofalcoes/posts/?feedView=all" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/GerandoFalcoes/" target="_blank" class="social-icon social-facebook" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/user/gerandofalcoes" target="_blank" class="social-icon social-youtube" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
                 </div>
             </div>
 
+            <!-- Coluna 3: Botão Sobre o Projeto -->
+            <div class="col-lg-4 text-lg-end text-center">
+                <button type="button" class="btn-about-project" data-bs-toggle="modal" data-bs-target="#teamModal">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Sobre o Projeto
+                </button>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -328,6 +345,115 @@
 
     </div>
 </footer>
+
+<!-- Modal da Equipe -->
+<div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content team-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="teamModalLabel">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Equipe do Projeto
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted mb-4 text-center">
+                    Conheça os desenvolvedores que tornaram este projeto possível.
+                </p>
+                
+                <div class="row g-4">
+                    <!-- Membro 1 - Milonesco -->
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/milonesco.jpg" alt="Milonesco" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Milonesco</h6>
+                            <p class="team-role">Líder de Desenvolvimento</p>
+                            <p class="team-role-sub">Desenvolvedor Full Stack</p>
+                            <div class="team-links">
+                                <a href="https://github.com/Milonesco" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/gabrielmilone" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 2 - Daniel Nascimento -->
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/daniel.jpg" alt="Daniel Nascimento" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Daniel Nascimento</h6>
+                            <p class="team-role">Desenvolvedor Full Stack</p>
+                            <p class="team-role-sub">DBA & QA</p>
+                            <div class="team-links">
+                                <a href="https://github.com/danielbrianez" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/daniel-nascimento-2729941a8/" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 3 - Maryana Oliveira -->
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/maryana.jpg" alt="Maryana Oliveira" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Maryana Oliveira</h6>
+                            <p class="team-role">Desenvolvedor Full Stack</p>
+                            <p class="team-role-sub">Analista de Requisitos</p>
+                            <div class="team-links">
+                                <a href="https://github.com/MaryanaOlvra" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/maryana-oliveira/" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 4 - Raphaga Willian -->
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/raphaga.png" alt="Raphaga Willian" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Raphaga Willian</h6>
+                            <p class="team-role">QA Engineer</p>
+                            <p class="team-role-sub">Testes e Implementação</p>
+                            <div class="team-links">
+                                <a href="https://github.com/Raphaga-Willian" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/raphagawillian" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-heart-fill text-danger"></i>
+                        Desenvolvido com dedicação para transformar vidas através da tecnologia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
