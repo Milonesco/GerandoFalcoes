@@ -537,7 +537,7 @@ a#btn-ongs.btn {
     align-items: center; /* NOVO: Centraliza verticalmente os círculos */
 }
 
-/* Conteúdo que se move */
+/* Conteúdo que se.move */
 .marquee-content {
     flex-shrink: 0;
     display: flex;
@@ -591,17 +591,16 @@ html[data-theme="dark"] .logo-circle {
     border-color: var(--gf-teal);
 }
 
-.logo-circle.auto-hovered img {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
-}
+    .logo-circle.auto-hovered img {
+        filter: grayscale(0%) brightness(1);
+        opacity: 1;
+    }
 
 /* DARK MODE - Hover com glow */
 html[data-theme="dark"] .logo-circle.auto-hovered {
     transform: scale(1.15);
-    box-shadow: 
-        0 8px 24px rgba(0, 168, 157, 0.4), /* Shadow externo teal */
-        0 0 30px rgba(0, 168, 157, 0.3); /* NOVO: Glow teal ao redor do círculo */
+    box-shadow: 0 8px 24px rgba(0, 168, 157, 0.4), /* Shadow externo teal */
+    0 0 30px rgba(0, 168, 157, 0.3); /* NOVO: Glow teal ao redor do círculo */
     border-color: var(--gf-teal);
 }
 
@@ -610,6 +609,7 @@ html[data-theme="dark"] .logo-circle.auto-hovered {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -633,9 +633,9 @@ html[data-theme="dark"] .logo-circle.auto-hovered {
         padding: 15px;
     }
 
-    .logo-circle.auto-hovered {
-        transform: scale(1.12); /* Scale menor no mobile para não ultrapassar */
-    }
+        .logo-circle.auto-hovered {
+            transform: scale(1.12); /* Scale menor no mobile para não ultrapassar */
+        }
 }
 
 /* --- 1. CORREÇÃO DO SCROLL (Evita que o menu cubra o título) --- */
@@ -695,6 +695,7 @@ section[id], div[id] {
     border-color: var(--gf-teal);
     color: white !important;
 }
+
     .btn-nav-cta:hover {
         background-color: #e90c8d;
         border-color: #e90c8d;
@@ -711,6 +712,7 @@ section[id], div[id] {
     border-radius: 50px;
     transition: all 0.3s ease;
 }
+
     .btn-big-cta:hover {
         background: linear-gradient(45deg, var(--gf-teal) 0%, var(--gf-pink) 100%); /* Muda para rosa no hover */
         transform: translateY(-3px);
@@ -718,7 +720,7 @@ section[id], div[id] {
         color: white;
     }
 
-    /* --- Novo Hero Centralizado (Clean) --- */
+/* --- Novo Hero Centralizado (Clean) --- */
 .hero-section {
     background-color: var(--body-bg);
     transition: background-color 0.3s ease;
@@ -789,7 +791,7 @@ section[id], div[id] {
         color: white;
     }
 
-    /* IMAGEM HERO */
+/* IMAGEM HERO */
 .hero-img-wrapper {
     position: relative;
     text-align: center;
@@ -801,7 +803,7 @@ section[id], div[id] {
     height: auto;
     background-color: transparent;
     border: none;
-    /*border-radius: 24px;*/ 
+    /*border-radius: 24px;*/
     box-shadow: /*20px 20px 60px rgba(0,0,0,0.1);*/ none !important;
     transition: transform 0.5s ease;
 }
@@ -810,7 +812,7 @@ section[id], div[id] {
         transform: scale(1.02); /* Efeito de zoom muito leve */
     }
 
-    /* Responsividade (Celular) */
+/* Responsividade (Celular) */
 @media (max-width: 991px) {
     .hero-section {
         padding-top: 120px;
@@ -904,7 +906,7 @@ section[id], div[id] {
         color: #0d6efd; /* Ícone azul no hover */
     }
 
-    /* Setas decorativas (apenas visual) */
+/* Setas decorativas (apenas visual) */
 .step-arrow {
     display: block;
     font-size: 1.5rem;
@@ -966,10 +968,11 @@ section[id], div[id] {
         color: var(--gf-teal); /* Cor da marca */
         box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
     }
-        .custom-accordion .accordion-button:focus {
-            border-color: var(--gf-teal);
-            box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
-        }
+
+    .custom-accordion .accordion-button:focus {
+        border-color: var(--gf-teal);
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
+    }
 
 .custom-accordion .accordion-body {
     font-size: 0.95rem;
@@ -1306,10 +1309,10 @@ html[data-theme="dark"] .custom-accordion .accordion-button {
     background-color: var(--card-bg);
 }
 
-html[data-theme="dark"] .custom-accordion .accordion-button:not(.collapsed) {
-    background-color: rgba(0, 168, 157, 0.25);
-    color: var(--gf-teal);
-}
+    html[data-theme="dark"] .custom-accordion .accordion-button:not(.collapsed) {
+        background-color: rgba(0, 168, 157, 0.25);
+        color: var(--gf-teal);
+    }
 
 html[data-theme="dark"] .custom-accordion .accordion-body {
     color: rgba(230, 237, 243, 0.85);
@@ -1401,12 +1404,12 @@ html[data-theme="dark"] .bg-section-white {
     transition: all 0.4s ease;
 }
 
-.social-instagram:hover {
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-    color: #fff !important;
-    transform: translateY(-5px) rotate(5deg);
-    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
-}
+    .social-instagram:hover {
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(5deg);
+        box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+    }
 
 /* LinkedIn - Azul Profissional */
 .social-linkedin {
@@ -1415,12 +1418,12 @@ html[data-theme="dark"] .bg-section-white {
     transition: all 0.4s ease;
 }
 
-.social-linkedin:hover {
-    background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
-    color: #fff !important;
-    transform: translateY(-5px) rotate(-5deg);
-    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
-}
+    .social-linkedin:hover {
+        background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(-5deg);
+        box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
+    }
 
 /* Facebook - Azul Facebook */
 .social-facebook {
@@ -1429,12 +1432,12 @@ html[data-theme="dark"] .bg-section-white {
     transition: all 0.4s ease;
 }
 
-.social-facebook:hover {
-    background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
-    color: #fff !important;
-    transform: translateY(-5px) rotate(5deg);
-    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
-}
+    .social-facebook:hover {
+        background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(5deg);
+        box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+    }
 
 /* YouTube - Vermelho */
 .social-youtube {
@@ -1443,12 +1446,12 @@ html[data-theme="dark"] .bg-section-white {
     transition: all 0.4s ease;
 }
 
-.social-youtube:hover {
-    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-    color: #fff !important;
-    transform: translateY(-5px) rotate(-5deg);
-    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
-}
+    .social-youtube:hover {
+        background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(-5deg);
+        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+    }
 
 /* === BOTÃO "SOBRE O PROJETO" - TEXTO SEMPRE VISÍVEL (CORRIGIDO) === */
 .btn-about-project {
@@ -1469,44 +1472,44 @@ html[data-theme="dark"] .bg-section-white {
     z-index: 1; /* Define contexto de empilhamento */
 }
 
-/* Camada de gradiente que "desliza" no hover */
-.btn-about-project::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
-    transition: left 0.4s ease;
-    z-index: -1; /* CORRIGIDO: Fica ATRÁS do conteúdo */
-}
+    /* Camada de gradiente que "desliza" no hover */
+    .btn-about-project::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
+        transition: left 0.4s ease;
+        z-index: -1; /* CORRIGIDO: Fica ATRÁS do conteúdo */
+    }
 
-.btn-about-project:hover::before {
-    left: 0;
-}
+    .btn-about-project:hover::before {
+        left: 0;
+    }
 
-/* Garante que o texto e ícone fiquem SEMPRE VISÍVEIS */
-.btn-about-project i,
-.btn-about-project span,
-.btn-about-project {
-    position: relative;
-    z-index: 1; /* Fica acima do ::before */
-    color: white !important;
-}
+    /* Garante que o texto e ícone fiquem SEMPRE VISÍVEIS */
+    .btn-about-project i,
+    .btn-about-project span,
+    .btn-about-project {
+        position: relative;
+        z-index: 1; /* Fica acima do ::before */
+        color: white !important;
+    }
 
-/* Garante cor branca em todos os estados */
-.btn-about-project,
-.btn-about-project:hover,
-.btn-about-project:focus,
-.btn-about-project:active {
-    color: white !important;
-}
+        /* Garante cor branca em todos os estados */
+        .btn-about-project,
+        .btn-about-project:hover,
+        .btn-about-project:focus,
+        .btn-about-project:active {
+            color: white !important;
+        }
 
-.btn-about-project:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4);
-}
+            .btn-about-project:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4);
+            }
 
 /* === MODAL DA EQUIPE - DESIGN MODERNO E ELEGANTE === */
 
@@ -1536,11 +1539,11 @@ html[data-theme="dark"] .bg-section-white {
     letter-spacing: 0.5px;
 }
 
-.team-modal .modal-title i {
-    font-size: 2rem;
-    vertical-align: middle;
-    margin-right: 12px;
-}
+    .team-modal .modal-title i {
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 12px;
+    }
 
 /* Botão Fechar */
 .team-modal .btn-close {
@@ -1549,10 +1552,10 @@ html[data-theme="dark"] .bg-section-white {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.team-modal .btn-close:hover {
-    transform: rotate(90deg) scale(1.1);
-    opacity: 1;
-}
+    .team-modal .btn-close:hover {
+        transform: rotate(90deg) scale(1.1);
+        opacity: 1;
+    }
 
 /* Corpo do Modal */
 .team-modal .modal-body {
@@ -1560,9 +1563,9 @@ html[data-theme="dark"] .bg-section-white {
     background-color: var(--card-bg);
 }
 
-.team-modal .modal-body p {
-    color: var(--text-muted);
-}
+    .team-modal .modal-body p {
+        color: var(--text-muted);
+    }
 
 /* Cards dos Membros da Equipe */
 .team-card {
@@ -1577,29 +1580,29 @@ html[data-theme="dark"] .bg-section-white {
     overflow: hidden;
 }
 
-/* Efeito de Brilho no Hover (Similar aos Step Cards) */
-.team-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 168, 157, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-}
+    /* Efeito de Brilho no Hover (Similar aos Step Cards) */
+    .team-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 168, 157, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
 
-.team-card:hover::before {
-    opacity: 1;
-}
+    .team-card:hover::before {
+        opacity: 1;
+    }
 
-.team-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--gf-teal);
-    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.25);
-}
+    .team-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--gf-teal);
+        box-shadow: 0 15px 35px rgba(0,168,157,0.25);
+    }
 
 /* Avatar do Membro */
 .team-avatar {
@@ -1613,7 +1616,7 @@ html[data-theme="dark"] .bg-section-white {
     justify-content: center;
     font-size: 3.5rem;
     color: white;
-    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3);
+    box-shadow: 0 10px 25px rgba(0,168,157,0.3);
     transition: all 0.4s ease;
 }
 
@@ -1665,27 +1668,449 @@ html[data-theme="dark"] .bg-section-white {
     font-weight: 400;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .team-modal .modal-header {
-        padding: 25px 30px;
+/* Links Sociais (GitHub, LinkedIn) - VERSÃO APRIMORADA */
+.team-links {
+    display: flex;
+    gap: 18px; /* AUMENTADO: de 12px para 18px - mais espaço entre os ícones */
+    justify-content: center;
+}
+
+.team-social-link {
+    width: 45px; /* AUMENTADO: de 40px para 45px - ícones maiores */
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem; /* AUMENTADO: de 1.2rem para 1.4rem - ícone interno maior */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+    /* === GITHUB - PRETO (COR ORIGINAL) === */
+    .team-social-link[title="GitHub"] {
+        background-color: rgba(0, 0, 0, 0.05); /* Fundo cinza muito claro */
+        color: #181717; /* Preto GitHub oficial */
     }
 
-    .team-modal .modal-title {
-        font-size: 1.4rem;
+        .team-social-link[title="GitHub"]:hover {
+            background-color: #181717; /* Preto GitHub no hover */
+            color: white;
+            transform: translateY(-3px) rotate(-5deg);
+            box-shadow: 0 8px 20px rgba(24, 23, 23, 0.3);
+            border-color: #181717;
+        }
+
+    /* === LINKEDIN - AZUL (COR ORIGINAL) === */
+    .team-social-link[title="LinkedIn"] {
+        background-color: rgba(0, 119, 181, 0.1); /* Fundo azul claro */
+        color: #0077b5; /* Azul LinkedIn oficial */
     }
 
-    .team-modal .modal-body {
-        padding: 30px 20px;
+        .team-social-link[title="LinkedIn"]:hover {
+            background-color: #0077b5; /* Azul LinkedIn no hover */
+            color: white;
+            transform: translateY(-3px) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+        }
+
+/* === DARK MODE - Ajustes para GitHub === */
+html[data-theme="dark"] .team-social-link[title="GitHub"] {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo mais claro no dark mode */
+    color: #f0f6fc; /* Ícone branco/claro no dark mode */
+}
+
+    html[data-theme="dark"] .team-social-link[title="GitHub"]:hover {
+        background-color: #30363d; /* Cinza escuro GitHub no hover (dark mode) */
+        color: white;
     }
 
-    .team-card {
-        padding: 25px 15px;
+html[data-theme="dark"] .team-social-link[title="LinkedIn"] {
+    background-color: rgba(0, 119, 181, 0.15);
+    color: #0a66c2; /* Tom de azul mais vibrante no dark */
+}
+
+    html[data-theme="dark"] .team-social-link[title="LinkedIn"]:hover {
+        background-color: #0077b5;
+        color: white;
     }
 
-    .team-avatar {
-        width: 75px;
-        height: 75px;
-        font-size: 3rem;
+/* ==========================================================================
+   FORMULÁRIO DE INSCRIÇÃO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- CARD DE INSCRIÇÃO (Light Mode - Padrão) --- */
+.inscription-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.inscription-card-header {
+    background-color: rgba(0, 168, 157, 0.05);
+    border-bottom: 1px solid var(--card-border) !important;
+}
+
+.inscription-card-body {
+    background-color: var(--card-bg);
+}
+
+.inscription-title {
+    color: var(--text-main) !important;
+}
+
+.inscription-step-title,
+.inscription-label {
+    color: var(--text-main) !important;
+}
+
+.inscription-step-text {
+    color: var(--text-muted) !important;
+}
+
+/* Progress Bar */
+.inscription-progress-bar {
+    background: linear-gradient(90deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+}
+
+/* Info Box */
+.inscription-info-box {
+    background-color: rgba(0, 168, 157, 0.05);
+    border-color: var(--card-border) !important;
+}
+
+/* Input Group Addon */
+.inscription-input-addon {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-main) !important;
+}
+
+/* --- INPUTS & SELECTS (Light Mode) --- */
+.inscription-card input.form-control,
+.inscription-card select.form-select,
+.inscription-card textarea.form-control {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
+
+    .inscription-card input.form-control:focus,
+    .inscription-card select.form-select:focus,
+    .inscription-card textarea.form-control:focus {
+        background-color: #ffffff;
+        border-color: var(--gf-teal);
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
+        color: #212529;
     }
+
+/* Dropdown específico - Light Mode */
+select#Genero {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+    select#Genero option {
+        background-color: #ffffff;
+        color: #212529;
+    }
+
+/* --- DARK MODE: CARD DE INSCRIÇÃO --- */
+html[data-theme="dark"] .inscription-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .inscription-card-header {
+    background-color: rgba(0, 168, 157, 0.1) !important;
+    border-bottom-color: var(--card-border) !important;
+}
+
+html[data-theme="dark"] .inscription-card-body {
+    background-color: var(--card-bg) !important;
+}
+
+html[data-theme="dark"] .inscription-title,
+html[data-theme="dark"] .inscription-step-title,
+html[data-theme="dark"] .inscription-label {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .inscription-step-text,
+html[data-theme="dark"] .inscription-card .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* --- DARK MODE: INPUTS & SELECTS --- */
+html[data-theme="dark"] .inscription-card input.form-control,
+html[data-theme="dark"] .inscription-card select.form-select,
+html[data-theme="dark"] .inscription-card textarea.form-control {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+    html[data-theme="dark"] .inscription-card input.form-control:focus,
+    html[data-theme="dark"] .inscription-card select.form-select:focus,
+    html[data-theme="dark"] .inscription-card textarea.form-control:focus {
+        background-color: #0d1117 !important;
+        border-color: var(--gf-teal) !important;
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25) !important;
+        color: #e6edf3 !important;
+    }
+
+    html[data-theme="dark"] .inscription-card input.form-control::placeholder,
+    html[data-theme="dark"] .inscription-card select.form-select::placeholder,
+    html[data-theme="dark"] .inscription-card textarea.form-control::placeholder {
+        color: #8b949e !important;
+        opacity: 0.7;
+    }
+
+/* --- DARK MODE: DROPDOWN (GÊNERO) --- */
+html[data-theme="dark"] select#Genero {
+    background-color: #0d1117 !important;
+    color: #e6edf3 !important;
+    border: 1px solid #30363d !important;
+    /* Recria a seta branca do dropdown */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e6edf3' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+    html[data-theme="dark"] select#Genero option {
+        background-color: #0d1117 !important;
+        color: #e6edf3 !important;
+    }
+
+/* --- DARK MODE: INFO BOX --- */
+html[data-theme="dark"] .inscription-info-box {
+    background-color: rgba(0, 168, 157, 0.1) !important;
+    border-color: #30363d !important;
+}
+
+/* --- DARK MODE: FORM CHECKS (Switches) --- */
+html[data-theme="dark"] .inscription-card .form-check-label {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .inscription-card .form-check-input {
+    background-color: #21262d;
+    border-color: #30363d;
+}
+
+    html[data-theme="dark"] .inscription-card .form-check-input:checked {
+        background-color: var(--gf-teal);
+        border-color: var(--gf-teal);
+    }
+
+/* --- DARK MODE: INPUT GROUP ADDON --- */
+html[data-theme="dark"] .inscription-input-addon {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+/* ========================================================================
+   BOTÕES DO FORMULÁRIO - LIGHT MODE & DARK MODE (CORES DISTINTAS)
+   ======================================================================== */
+
+/* --- BOTÃO VOLTAR (#btn-prev) - LIGHT MODE: Cinza Elegante --- */
+#btn-prev {
+    background-color: transparent;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+#btn-prev::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* MUDOU: Gradiente roxo vibrante */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: -1;
+}
+
+#btn-prev:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#btn-prev:hover {
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* --- BOTÃO VOLTAR - DARK MODE: Laranja Neon com Efeito Ripple --- */
+html[data-theme="dark"] #btn-prev {
+    background-color: rgba(233, 107, 42, 0.15);
+    border: 2px solid var(--gf-orange);
+    color: var(--gf-orange);
+    box-shadow: 0 0 15px rgba(233, 107, 42, 0.2);
+}
+
+html[data-theme="dark"] #btn-prev::before {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); /* MUDOU: Gradiente vermelho-coral vibrante */
+}
+
+html[data-theme="dark"] #btn-prev:hover {
+    color: white !important;
+    border-color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5), 
+                0 0 30px rgba(255, 107, 107, 0.3);
+}
+
+/* --- BOTÃO PRÓXIMO (#btn-next) - LIGHT MODE: Azul Vibrante --- */
+#btn-next {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    border: none;
+    color: white !important;
+    font-weight: 700;
+    padding: 12px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho deslizante */
+#btn-next::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+#btn-next:hover::after {
+    left: 100%;
+}
+
+#btn-next:hover {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Gradiente cyan elétrico */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(79, 172, 254, 0.5);
+}
+
+/* --- BOTÃO PRÓXIMO - DARK MODE: Mesmo estilo do Light Mode --- */
+html[data-theme="dark"] #btn-next {
+    background: linear-gradient(135deg, var(--gf-purple) 0%, #005bea 100%);
+    box-shadow: 0 5px 15px rgba(122, 90, 216, 0.4);
+    /* REMOVIDO: animation gradient-shift */
+}
+
+/* Mesmo efeito de brilho deslizante do Light Mode */
+html[data-theme="dark"] #btn-next::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+html[data-theme="dark"] #btn-next:hover::after {
+    left: 100%;
+}
+
+html[data-theme="dark"] #btn-next:hover {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Mesma cor do Light Mode */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(79, 172, 254, 0.6),
+                0 0 40px rgba(79, 172, 254, 0.3);
+}
+
+/* --- BOTÃO FINALIZAR (#btn-submit) - LIGHT MODE: Simples e Direto --- */
+#btn-submit {
+    background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+    border: none;
+    color: white !important;
+    font-weight: 800;
+    padding: 12px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* REMOVIDO: Efeito de onda ::before */
+
+#btn-submit:hover {
+    background: linear-gradient(135deg, #157347 0%, #0f5132 100%); /* Tom mais escuro para CTA */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.5);
+    color: white !important;
+}
+
+/* Garante que o texto fique visível */
+#btn-submit i,
+#btn-submit span {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+}
+
+/* --- BOTÃO FINALIZAR - DARK MODE: Simples e Direto --- */
+html[data-theme="dark"] #btn-submit {
+    background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
+    box-shadow: 0 5px 15px rgba(236, 34, 98, 0.4);
+    /* REMOVIDO: animation pulse-glow */
+    position: relative;
+    overflow: hidden;
+}
+
+/* REMOVIDO: Efeito Ripple ::before */
+/* REMOVIDO: Animação pulse-glow */
+
+html[data-theme="dark"] #btn-submit:hover {
+    background: linear-gradient(135deg, #d01d54 0%, #c85920 100%); /* Tom mais escuro para CTA */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(236, 34, 98, 0.6);
+    color: white !important;
+}
+
+/* Garante que o texto e ícone fiquem visíveis */
+html[data-theme="dark"] #btn-submit,
+html[data-theme="dark"] #btn-submit:hover,
+html[data-theme="dark"] #btn-submit i,
+html[data-theme="dark"] #btn-submit span {
+    color: white !important;
+}
+
+html[data-theme="dark"] #btn-submit i,
+html[data-theme="dark"] #btn-submit span {
+    position: relative;
+    z-index: 1;
 }
