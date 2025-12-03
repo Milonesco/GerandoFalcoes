@@ -6,7 +6,7 @@ using Transformese.Desktop.Views; // Para ViewHome, ViewInscricoes, etc.
 
 namespace Transformese.Desktop
 {
-    public partial class Dashboard : Form
+    public partial class frmDashboard : Form
     {
         // Componentes Fixos da Estrutura (Usando Guna2)
         private Guna2GradientPanel panelSidebar; // Use GradientPanel para um visual mais moderno
@@ -17,7 +17,7 @@ namespace Transformese.Desktop
         private Guna2Button btnHome;
         private Guna2Button btnInscricoes;
 
-        public Dashboard()
+        public frmDashboard()
         {
             InitializeCustomComponents();
 
