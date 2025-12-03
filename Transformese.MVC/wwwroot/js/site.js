@@ -166,4 +166,150 @@
 
         animateLogos();
     }
+
+    // ========================================================================
+    // === ANIMAÇÕES DO FORMULÁRIO DE INSCRIÇÃO ===
+    // ========================================================================
+
+    const inscriptionCard = document.querySelector('.inscription-card');
+    
+    if (inscriptionCard) {
+        
+        // --- 1. FUNÇÃO PARA ANIMAR TRANSIÇÃO ENTRE PASSOS ---
+        function animateStepTransition(currentStepElement, nextStepElement, direction = 'forward') {
+            if (!currentStepElement || !nextStepElement) return;
+
+            // Adiciona animação de saída ao passo atual
+            currentStepElement.classList.add('inscription-step-exit');
+            
+            // Aguarda a animação de saída terminar
+            setTimeout(() => {
+                currentStepElement.style.display = 'none';
+                currentStepElement.classList.remove('inscription-step-exit');
+                
+                // Exibe e anima o próximo passo
+                nextStepElement.style.display = 'block';
+                nextStepElement.classList.add('inscription-step-enter');
+                
+                // Remove a classe após a animação
+                setTimeout(() => {
+                    nextStepElement.classList.remove('inscription-step-enter');
+                }, 500);
+            }, 300);
+        }
+
+        // --- 2. INTERCEPTAR CLIQUES NOS BOTÕES DE NAVEGAÇÃO ---
+        const btnNext = document.querySelectorAll('.btn-dark, .btn-success'); // Botões "Próximo" e "Finalizar"
+        const btnPrev = document.querySelectorAll('.btn-outline-secondary'); // Botões "Voltar"
+
+        // Detecta qual step está visível atualmente
+        function getCurrentStep() {
+            const steps = document.querySelectorAll('[id^="step"]');
+            for (let step of steps) {
+                if (step.style.display !== 'none' && window.getComputedStyle(step).display !== 'none') {
+                    return step;
+                }
+            }
+            return null;
+        }
+
+        // Adiciona listeners aos botões "Próximo"
+        btnNext.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Só anima se a validação passar (você pode adicionar lógica de validação aqui)
+                const currentStep = getCurrentStep();
+                
+                // Adiciona loading ao card
+                inscriptionCard.classList.add('inscription-card-loading', 'inscription-card-pulse');
+                
+                // Remove loading após a animação
+                setTimeout(() => {
+                    inscriptionCard.classList.remove('inscription-card-loading', 'inscription-card-pulse');
+                }, 1500);
+                
+                // A transição de passo será controlada pelo seu código existente
+                // Mas garantimos que a animação visual aconteça
+            });
+        });
+
+        // Adiciona listeners aos botões "Voltar"
+        btnPrev.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const currentStep = getCurrentStep();
+                
+                // Adiciona shimmer ao voltar também
+                inscriptionCard.classList.add('inscription-card-loading');
+                
+                setTimeout(() => {
+                    inscriptionCard.classList.remove('inscription-card-loading');
+                }, 1500);
+            });
+        });
+
+        // --- 3. ANIMAÇÃO INICIAL NO CARREGAMENTO DA PÁGINA ---
+        // Anima o card quando a página de inscrição carrega
+        setTimeout(() => {
+            inscriptionCard.classList.add('inscription-card-pulse');
+            setTimeout(() => {
+                inscriptionCard.classList.remove('inscription-card-pulse');
+            }, 1500);
+        }, 300);
+
+        // --- 4. ANIMAÇÃO QUANDO CAMPOS SÃO PREENCHIDOS (OPCIONAL) ---
+        const formInputs = document.querySelectorAll('.form-control, .form-select');
+        
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value !== '') {
+                    // Adiciona uma pequena animação de sucesso quando o campo é preenchido
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                }
+            });
+        });
+
+        // --- 5. OBSERVADOR PARA MUDANÇAS NA BARRA DE PROGRESSO ---
+        const progressBar = document.querySelector('.inscription-progress-bar');
+        
+        if (progressBar) {
+            // Observa mudanças no estilo (quando a largura muda)
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'style') {
+                        // Adiciona pulse ao card quando o progresso muda
+                        inscriptionCard.classList.add('inscription-card-pulse');
+                        setTimeout(() => {
+                            inscriptionCard.classList.remove('inscription-card-pulse');
+                        }, 1500);
+                    }
+                });
+            });
+            
+            observer.observe(progressBar, { attributes: true });
+        }
+
+        // --- 6. LOADING SPINNER AO SUBMETER O FORMULÁRIO ---
+        const form = document.querySelector('form');
+        
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // Cria e adiciona o spinner
+                const submitBtn = this.querySelector('.btn-success');
+                if (submitBtn) {
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="inscription-loading-spinner me-2"></span>Enviando...';
+                    
+                    // Adiciona animação de loading ao card
+                    inscriptionCard.classList.add('inscription-card-loading', 'inscription-card-pulse');
+                }
+            });
+        }
+    }
 });
