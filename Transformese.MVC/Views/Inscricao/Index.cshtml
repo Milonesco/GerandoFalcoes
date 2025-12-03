@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Ficha de Inscrição";
+    ViewData["HideNavMenu"] = true; // NOVO: Flag para esconder menus extras na navbar
 }
 
 @section Scripts {
@@ -17,19 +18,13 @@
 
         // LÓGICA DO WIZARD (Passo a Passo)
         let currentStep = 1;
-        const totalSteps = 3; // Ajustado para os campos que temos no banco
+        const totalSteps = 3;
 
         function changeStep(n) {
-            // Se for avançar (n=1), valida o passo atual
             if (n === 1 && !validateStep(currentStep)) return;
 
-            // Esconde passo atual
             document.getElementById(`step-${currentStep}`).classList.add('d-none');
-
-            // Calcula novo passo
             currentStep += n;
-
-            // Mostra novo passo
             document.getElementById(`step-${currentStep}`).classList.remove('d-none');
 
             updateUI();
@@ -37,8 +32,6 @@
 
         function validateStep(step) {
             const container = document.getElementById(`step-${step}`);
-            // Pega todos os inputs visíveis que têm o atributo data-val="true" (gerado pelo ASP.NET)
-            // Ou inputs manuais que queremos validar
             const inputs = container.querySelectorAll('input, select');
             let valid = true;
 
@@ -52,33 +45,27 @@
             });
 
             if (!valid) {
-                // Força o formulário a mostrar mensagens de erro padrão do browser/bootstrap
                 container.closest('form').reportValidity();
             }
             return valid;
         }
 
         function updateUI() {
-            // Atualiza Barra de Progresso
             const percentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
             const progressBar = document.getElementById('progress-bar-fill');
             progressBar.style.width = `${percentage}%`;
             progressBar.setAttribute('aria-valuenow', percentage);
 
-            // Atualiza Texto do Passo
             const stepTitles = ["Dados Pessoais", "Contato & Localização", "Conectividade & Perfil"];
             document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep-1]}`;
 
-            // Controle dos Botões
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
             const btnSubmit = document.getElementById('btn-submit');
 
-            // Botão Voltar
             if (currentStep === 1) btnPrev.classList.add('d-none');
             else btnPrev.classList.remove('d-none');
 
-            // Botão Próximo/Enviar
             if (currentStep === totalSteps) {
                 btnNext.classList.add('d-none');
                 btnSubmit.classList.remove('d-none');
@@ -87,7 +74,6 @@
                 btnSubmit.classList.add('d-none');
             }
 
-            // Rola para o topo do form suavemente
             document.getElementById('form-top').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -95,7 +81,7 @@
         function buscarCep(cep) {
             cep = cep.replace(/\D/g, '');
             if (cep.length === 8) {
-                // Mostra loading ou algo visual se quiser
+                const loadingHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Buscando...';
                 document.getElementById('Cidade').value = "...";
                 document.getElementById('Estado').value = "...";
 
@@ -111,7 +97,11 @@
                             document.getElementById('Estado').value = "";
                         }
                     })
-                    .catch(() => alert("Erro ao buscar CEP."));
+                    .catch(() => {
+                        alert("Erro ao buscar CEP.");
+                        document.getElementById('Cidade').value = "";
+                        document.getElementById('Estado').value = "";
+                    });
             }
         }
     </script>
@@ -122,23 +112,23 @@
         <div class="col-lg-8">
 
             <div class="text-center mb-5">
-                <h2 class="fw-bold display-6">Vamos começar sua jornada 🚀</h2>
+                <h2 class="fw-bold display-6 inscription-title">Vamos começar sua jornada 🚀</h2>
                 <p class="text-muted">Preencha os dados abaixo para se candidatar às bolsas do Transformese.</p>
             </div>
 
-            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <div class="card inscription-card shadow-lg border-0 rounded-4 overflow-hidden">
 
-                <div class="bg-light p-4 border-bottom">
+                <div class="inscription-card-header p-4 border-bottom">
                     <div class="d-flex justify-content-between mb-2">
-                        <span class="fw-bold text-uppercase small text-muted" id="step-title">Passo 1: Dados Pessoais</span>
-                        <span class="fw-bold small text-muted" id="step-count"></span>
+                        <span class="fw-bold text-uppercase small inscription-step-text" id="step-title">Passo 1: Dados Pessoais</span>
+                        <span class="fw-bold small inscription-step-text" id="step-count"></span>
                     </div>
                     <div class="progress" style="height: 8px;">
-                        <div id="progress-bar-fill" class="progress-bar bg-dark" role="progressbar" style="width: 0%; transition: width 0.5s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div id="progress-bar-fill" class="progress-bar inscription-progress-bar" role="progressbar" style="width: 0%; transition: width 0.5s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
-                <div class="card-body p-4 p-md-5">
+                <div class="card-body inscription-card-body p-4 p-md-5">
 
                     @if (!ViewData.ModelState.IsValid)
                     {
@@ -150,40 +140,55 @@
 
                     <form asp-action="Criar" method="post" id="wizard-form">
 
+                        <!-- PASSO 1: Dados Pessoais -->
                         <div id="step-1" class="step-content">
-                            <h4 class="mb-4 fw-bold">Quem é você?</h4>
+                            <h4 class="mb-4 fw-bold inscription-step-title">Quem é você?</h4>
 
                             <div class="mb-4">
-                                <label asp-for="NomeCompleto" class="form-label fw-semibold">Nome Completo</label>
+                                <label asp-for="NomeCompleto" class="form-label fw-semibold inscription-label">Nome Completo</label>
                                 <input asp-for="NomeCompleto" class="form-control form-control-lg" placeholder="Digite seu nome completo" required />
                                 <span asp-validation-for="NomeCompleto" class="text-danger small"></span>
                             </div>
 
-                            <div class="row g-3">
+                            <div class="row g-3 mb-4">
                                 <div class="col-md-6">
-                                    <label asp-for="CPF" class="form-label fw-semibold">CPF</label>
+                                    <label asp-for="CPF" class="form-label fw-semibold inscription-label">CPF</label>
                                     <input asp-for="CPF" class="form-control form-control-lg" placeholder="000.000.000-00" required />
                                     <span asp-validation-for="CPF" class="text-danger small"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="DataNascimento" class="form-label fw-semibold">Data de Nascimento</label>
+                                    <label asp-for="DataNascimento" class="form-label fw-semibold inscription-label">Data de Nascimento</label>
                                     <input asp-for="DataNascimento" type="date" class="form-control form-control-lg" required />
                                     <span asp-validation-for="DataNascimento" class="text-danger small"></span>
                                 </div>
                             </div>
+
+                            <!-- MOVIDO DO PASSO 2: Campo de Gênero -->
+                            <div class="mb-4">
+                                <label for="Genero" class="form-label fw-semibold inscription-label">Identidade de Gênero</label>
+                                <select id="Genero" name="Genero" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione sua identidade de gênero</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="NaoBinario">Não-binário</option>
+                                    <option value="Outro">Outro</option>
+                                    <option value="PreferNaoInformar">Prefiro não informar</option>
+                                </select>
+                            </div>
                         </div>
 
+                        <!-- PASSO 2: Contato & Localização -->
                         <div id="step-2" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold">Como te encontramos?</h4>
+                            <h4 class="mb-4 fw-bold inscription-step-title">Como te encontramos?</h4>
 
-                            <div class="row g-3 mb-3">
+                            <div class="row g-3 mb-4">
                                 <div class="col-md-6">
-                                    <label asp-for="Email" class="form-label fw-semibold">E-mail Principal</label>
+                                    <label asp-for="Email" class="form-label fw-semibold inscription-label">E-mail Principal</label>
                                     <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="seu@email.com" required />
                                     <span asp-validation-for="Email" class="text-danger small"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Telefone" class="form-label fw-semibold">Celular / WhatsApp</label>
+                                    <label asp-for="Telefone" class="form-label fw-semibold inscription-label">Celular / WhatsApp</label>
                                     <input asp-for="Telefone" class="form-control form-control-lg" placeholder="(00) 00000-0000" required />
                                     <span asp-validation-for="Telefone" class="text-danger small"></span>
                                 </div>
@@ -193,50 +198,51 @@
 
                             <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label class="form-label fw-semibold">CEP</label>
+                                    <label class="form-label fw-semibold inscription-label">CEP</label>
                                     <input type="text" id="Cep" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Cidade" class="form-label fw-semibold">Cidade</label>
+                                    <label asp-for="Cidade" class="form-label fw-semibold inscription-label">Cidade</label>
                                     <input asp-for="Cidade" class="form-control form-control-lg" required />
                                     <span asp-validation-for="Cidade" class="text-danger small"></span>
                                 </div>
                                 <div class="col-md-2">
-                                    <label asp-for="Estado" class="form-label fw-semibold">UF</label>
+                                    <label asp-for="Estado" class="form-label fw-semibold inscription-label">UF</label>
                                     <input asp-for="Estado" class="form-control form-control-lg" maxlength="2" required />
                                     <span asp-validation-for="Estado" class="text-danger small"></span>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- PASSO 3: Conectividade & Perfil -->
                         <div id="step-3" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold">Perfil & Conectividade</h4>
+                            <h4 class="mb-4 fw-bold inscription-step-title">Perfil & Conectividade</h4>
 
-                            <div class="p-4 bg-light rounded-3 mb-4 border">
-                                <p class="fw-semibold mb-3">Quais recursos você possui em casa?</p>
+                            <div class="p-4 inscription-info-box rounded-3 mb-4 border">
+                                <p class="fw-semibold mb-3 inscription-label">Quais recursos você possui em casa?</p>
 
                                 <div class="form-check form-switch mb-2">
                                     <input class="form-check-input" type="checkbox" asp-for="PossuiComputador" id="pcSwitch">
-                                    <label class="form-check-label" for="pcSwitch">Tenho Computador ou Notebook</label>
+                                    <label class="form-check-label inscription-label" for="pcSwitch">Tenho Computador ou Notebook</label>
                                 </div>
 
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" asp-for="PossuiInternet" id="netSwitch">
-                                    <label class="form-check-label" for="netSwitch">Tenho Acesso à Internet</label>
+                                    <label class="form-check-label inscription-label" for="netSwitch">Tenho Acesso à Internet</label>
                                 </div>
                             </div>
 
                             <div class="mb-4">
-                                <label asp-for="PerfilLinkedin" class="form-label fw-semibold">LinkedIn (Opcional)</label>
+                                <label asp-for="PerfilLinkedin" class="form-label fw-semibold inscription-label">LinkedIn (Opcional)</label>
                                 <div class="input-group">
-                                    <span class="input-group-text bg-white"><i class="bi bi-linkedin text-primary"></i></span>
+                                    <span class="input-group-text bg-white inscription-input-addon"><i class="bi bi-linkedin text-primary"></i></span>
                                     <input asp-for="PerfilLinkedin" class="form-control form-control-lg" placeholder="https://linkedin.com/in/voce" />
                                 </div>
                             </div>
 
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="checkbox" required id="termos">
-                                <label class="form-check-label small" for="termos">
+                                <label class="form-check-label small inscription-label" for="termos">
                                     Declaro que li e aceito os termos do programa Transformese e que todas as informações prestadas aqui são verdadeiras.
                                 </label>
                             </div>
