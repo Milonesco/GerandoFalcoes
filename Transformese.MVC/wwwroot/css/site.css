@@ -496,24 +496,24 @@ a#btn-ongs.btn {
         color: #fff;
     }
 
-/* --- Seção de Investidores (Loop Infinito com Auto-Hover) --- */
+/* --- Seção de Investidores (Loop Infinito com Círculos Elegantes) --- */
 .investors-section {
     background-color: var(--card-bg);
     transition: background-color 0.3s ease;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 80px 0; /* Aumentado de 60px para 80px */
 }
 
 .investors-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* Aumentado de 40px para 60px - mais espaço entre título e círculos */
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-main) !important;
     transition: color 0.3s ease;
 }
 
-/* Container do carrossel */
+/* Container do carrossel - ALTURA AUMENTADA */
 .marquee-container {
     display: flex;
     overflow: hidden;
@@ -522,6 +522,8 @@ a#btn-ongs.btn {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     position: relative;
     width: 100%;
+    min-height: 180px; /* NOVO: Garante espaço vertical suficiente (120px círculo + 30px margem superior + 30px inferior) */
+    align-items: center; /* NOVO: Centraliza verticalmente os círculos */
 }
 
 /* Conteúdo que se move */
@@ -530,28 +532,66 @@ a#btn-ongs.btn {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 4rem; /* Espaço entre logos */
+    gap: 3rem; /* Espaço entre os círculos */
     animation: scroll 40s linear infinite;
-    padding: 0 2rem;
+    padding: 30px 2rem; /* AUMENTADO: padding vertical de 0 para 30px - garante espaço para o hover */
     will-change: transform;
 }
 
-/* Estilo das logos */
-.marquee-content img {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
+/* Círculo que envolve cada logo */
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow singelo */
+    padding: 20px;
+}
+
+/* Dark mode para os círculos */
+html[data-theme="dark"] .logo-circle {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo das logos dentro dos círculos */
+.logo-circle img {
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     transition: all 0.3s ease;
     filter: grayscale(100%) brightness(0.95);
     opacity: 0.6;
 }
 
-/* Classe aplicada via JavaScript quando a logo está sob o cursor */
-.marquee-content img.auto-hovered {
+/* Classe aplicada via JavaScript quando a logo está sob o cursor - LIGHT MODE */
+.logo-circle.auto-hovered {
+    transform: scale(1.15); /* Aumentado de 1.1 para 1.15 - mais destaque */
+    box-shadow: 0 8px 24px rgba(0, 168, 157, 0.35); /* Shadow colorido e mais intenso */
+    border-color: var(--gf-teal);
+}
+
+.logo-circle.auto-hovered img {
     filter: grayscale(0%) brightness(1);
     opacity: 1;
+}
+
+/* DARK MODE - Hover com glow */
+html[data-theme="dark"] .logo-circle.auto-hovered {
     transform: scale(1.15);
+    box-shadow: 
+        0 8px 24px rgba(0, 168, 157, 0.4), /* Shadow externo teal */
+        0 0 30px rgba(0, 168, 157, 0.3); /* NOVO: Glow teal ao redor do círculo */
+    border-color: var(--gf-teal);
 }
 
 /* ANIMAÇÃO para loop infinito suave */
@@ -566,19 +606,30 @@ a#btn-ongs.btn {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .marquee-content {
-        gap: 3rem;
-        animation-duration: 30s; /* Mais rápido no mobile */
+    .marquee-container {
+        min-height: 140px; /* Ajustado para mobile */
     }
 
-    .marquee-content img {
-        height: 50px;
+    .marquee-content {
+        gap: 2rem;
+        animation-duration: 30s; /* Mais rápido no mobile */
+        padding: 20px 2rem; /* Padding menor no mobile */
+    }
+
+    .logo-circle {
+        width: 90px;
+        height: 90px;
+        padding: 15px;
+    }
+
+    .logo-circle.auto-hovered {
+        transform: scale(1.12); /* Scale menor no mobile para não ultrapassar */
     }
 }
 
 /* --- 1. CORREÇÃO DO SCROLL (Evita que o menu cubra o título) --- */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 
 /* Aplica margem no topo de QUALQUER elemento que tenha ID */
@@ -656,7 +707,7 @@ section[id], div[id] {
         color: white;
     }
 
-/* --- Novo Hero Centralizado (Clean) --- */
+    /* --- Novo Hero Centralizado (Clean) --- */
 .hero-section {
     background-color: var(--body-bg);
     transition: background-color 0.3s ease;
@@ -727,7 +778,7 @@ section[id], div[id] {
         color: white;
     }
 
-/* IMAGEM HERO */
+    /* IMAGEM HERO */
 .hero-img-wrapper {
     position: relative;
     text-align: center;
@@ -748,7 +799,7 @@ section[id], div[id] {
         transform: scale(1.02); /* Efeito de zoom muito leve */
     }
 
-/* Responsividade (Celular) */
+    /* Responsividade (Celular) */
 @media (max-width: 991px) {
     .hero-section {
         padding-top: 120px;
@@ -842,7 +893,7 @@ section[id], div[id] {
         color: #0d6efd; /* Ícone azul no hover */
     }
 
-/* Setas decorativas (apenas visual) */
+    /* Setas decorativas (apenas visual) */
 .step-arrow {
     display: block;
     font-size: 1.5rem;
@@ -909,7 +960,6 @@ section[id], div[id] {
             box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
         }
 
-/* Corpo do texto */
 .custom-accordion .accordion-body {
     font-size: 0.95rem;
     border-top: 1px solid var(--card-border);
