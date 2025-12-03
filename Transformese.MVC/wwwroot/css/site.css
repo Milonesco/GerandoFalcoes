@@ -117,11 +117,27 @@ a {
     font-size: 0.9rem;
 }
 
+/* Responsividade do Footer */
+@media (max-width: 991px) {
+    .footer-custom .row > div {
+        text-align: center !important;
+    }
+
+    .footer-logos-container {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .btn-about-project {
+        margin-top: 20px;
+    }
+}
+
 /* Organização das Logos */
 .footer-logos-container {
     display: flex;
     align-items: center;
-    gap: 40px; /* Espaço entre logos */
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -151,10 +167,19 @@ a {
         opacity: 1;
     }
 
+/* === REDES SOCIAIS - CONTAINER COM ALINHAMENTO CORRIGIDO === */
+.footer-social-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CORRIGIDO: Centraliza o label e os ícones */
+    gap: 10px;
+}
+
 /* Redes Sociais */
 .footer-social {
     display: flex;
     gap: 15px;
+    justify-content: center; /* CORRIGIDO: Garante que os ícones fiquem centralizados */
 }
 
 .social-icon {
@@ -177,7 +202,7 @@ a {
         transform: translateY(-3px);
     }
 
-/* Linha divisória final */
+/* Línea divisória final */
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
     margin-top: 40px;
@@ -185,20 +210,6 @@ a {
     text-align: center;
     color: #666;
     font-size: 0.8rem;
-}
-
-/* Responsivo para celular */
-@media (max-width: 768px) {
-    .footer-logos-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-    }
-
-    .footer-content-wrapper {
-        flex-direction: column;
-        gap: 40px;
-    }
 }
 
 /* ==========================
@@ -576,7 +587,7 @@ html[data-theme="dark"] .logo-circle {
 /* Classe aplicada via JavaScript quando a logo está sob o cursor - LIGHT MODE */
 .logo-circle.auto-hovered {
     transform: scale(1.15); /* Aumentado de 1.1 para 1.15 - mais destaque */
-    box-shadow: 0 8px 24px rgba(0, 168, 157, 0.35); /* Shadow colorido e mais intenso */
+    box-shadow: 0 8px 24px rgba(0,168,157,0.35); /* Shadow colorido e mais intenso */
     border-color: var(--gf-teal);
 }
 
@@ -1363,4 +1374,318 @@ html[data-theme="dark"] .bg-section-gray {
 
 html[data-theme="dark"] .bg-section-white {
     background-color: var(--body-bg);
+}
+
+/* ==========================
+   FOOTER APRIMORADO COM CORES DAS REDES SOCIAIS
+   ========================== */
+
+/* Reorganização do Footer em 3 colunas */
+.footer-custom .row {
+    margin-bottom: 30px;
+}
+
+.footer-logos-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* === REDES SOCIAIS COM CORES ESPECÍFICAS === */
+
+/* Instagram - Gradiente Rosa/Roxo/Laranja */
+.social-instagram {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+.social-instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: #fff !important;
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+}
+
+/* LinkedIn - Azul Profissional */
+.social-linkedin {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+.social-linkedin:hover {
+    background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    color: #fff !important;
+    transform: translateY(-5px) rotate(-5deg);
+    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
+}
+
+/* Facebook - Azul Facebook */
+.social-facebook {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+.social-facebook:hover {
+    background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+    color: #fff !important;
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+}
+
+/* YouTube - Vermelho */
+.social-youtube {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+.social-youtube:hover {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: #fff !important;
+    transform: translateY(-5px) rotate(-5deg);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* === BOTÃO "SOBRE O PROJETO" - TEXTO SEMPRE VISÍVEL (CORRIGIDO) === */
+.btn-about-project {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    color: white !important;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(0, 168, 157, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Define contexto de empilhamento */
+}
+
+/* Camada de gradiente que "desliza" no hover */
+.btn-about-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
+    transition: left 0.4s ease;
+    z-index: -1; /* CORRIGIDO: Fica ATRÁS do conteúdo */
+}
+
+.btn-about-project:hover::before {
+    left: 0;
+}
+
+/* Garante que o texto e ícone fiquem SEMPRE VISÍVEIS */
+.btn-about-project i,
+.btn-about-project span,
+.btn-about-project {
+    position: relative;
+    z-index: 1; /* Fica acima do ::before */
+    color: white !important;
+}
+
+/* Garante cor branca em todos os estados */
+.btn-about-project,
+.btn-about-project:hover,
+.btn-about-project:focus,
+.btn-about-project:active {
+    color: white !important;
+}
+
+.btn-about-project:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4);
+}
+
+/* === MODAL DA EQUIPE - DESIGN MODERNO E ELEGANTE === */
+
+/* Container do Modal */
+.team-modal .modal-content {
+    border-radius: 24px; /* Bordas bem arredondadas como os outros cards */
+    border: none;
+    background-color: var(--card-bg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); /* Sombra profunda */
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho do Modal */
+.team-modal .modal-header {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    color: white;
+    padding: 30px 40px;
+    border-bottom: none;
+}
+
+.team-modal .modal-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-modal .modal-title i {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* Botão Fechar */
+.team-modal .btn-close {
+    filter: brightness(0) invert(1); /* Torna o X branco */
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-modal .btn-close:hover {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 1;
+}
+
+/* Corpo do Modal */
+.team-modal .modal-body {
+    padding: 40px;
+    background-color: var(--card-bg);
+}
+
+.team-modal .modal-body p {
+    color: var(--text-muted);
+}
+
+/* Cards dos Membros da Equipe */
+.team-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de Brilho no Hover (Similar aos Step Cards) */
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 168, 157, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--gf-teal);
+    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.25);
+}
+
+/* Avatar do Membro */
+.team-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3);
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.5);
+}
+
+/* === AVATAR COM IMAGEM REAL === */
+
+.team-avatar-img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 3px solid transparent;
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    padding: 3px; /* Cria o efeito de borda gradiente */
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+/* Hover na imagem */
+.team-card:hover .team-avatar-img {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.5);
+}
+
+.team-card:hover .team-photo {
+    transform: scale(1.05);
+}
+
+/* Subtítulo secundário (para a segunda linha do cargo) */
+.team-role-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .team-modal .modal-header {
+        padding: 25px 30px;
+    }
+
+    .team-modal .modal-title {
+        font-size: 1.4rem;
+    }
+
+    .team-modal .modal-body {
+        padding: 30px 20px;
+    }
+
+    .team-card {
+        padding: 25px 15px;
+    }
+
+    .team-avatar {
+        width: 75px;
+        height: 75px;
+        font-size: 3rem;
+    }
 }
