@@ -16,5 +16,15 @@ namespace Transformese.Desktop.Views
         {
             InitializeComponent();
         }
+
+        private void lblTituloPagina_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Transformese.Desktop
 {
-    partial class Dashboard
+    partial class frmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -133,11 +133,11 @@
             // lblTituloDashboard
             // 
             lblTituloDashboard.BackColor = System.Drawing.Color.Transparent;
-            lblTituloDashboard.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloDashboard.Font = new System.Drawing.Font("Montserrat", 17.9999981F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloDashboard.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
             lblTituloDashboard.Location = new System.Drawing.Point(20, 5);
             lblTituloDashboard.Name = "lblTituloDashboard";
-            lblTituloDashboard.Size = new System.Drawing.Size(157, 44);
+            lblTituloDashboard.Size = new System.Drawing.Size(169, 40);
             lblTituloDashboard.TabIndex = 4;
             lblTituloDashboard.Text = "DASHBOARD";
             // 
@@ -165,7 +165,7 @@
             lblCargoUsuario.BackColor = System.Drawing.Color.Transparent;
             lblCargoUsuario.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             lblCargoUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblCargoUsuario.Location = new System.Drawing.Point(15, 25);
+            lblCargoUsuario.Location = new System.Drawing.Point(15, 22);
             lblCargoUsuario.MaximumSize = new System.Drawing.Size(160, 0);
             lblCargoUsuario.Name = "lblCargoUsuario";
             lblCargoUsuario.Size = new System.Drawing.Size(107, 21);
@@ -190,7 +190,7 @@
             lblNomeUsuario.BackColor = System.Drawing.Color.Transparent;
             lblNomeUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblNomeUsuario.Location = new System.Drawing.Point(15, 5);
+            lblNomeUsuario.Location = new System.Drawing.Point(15, 3);
             lblNomeUsuario.MaximumSize = new System.Drawing.Size(160, 0);
             lblNomeUsuario.Name = "lblNomeUsuario";
             lblNomeUsuario.Size = new System.Drawing.Size(129, 25);
@@ -412,7 +412,7 @@
             lblSubTitulo.BackColor = System.Drawing.Color.Transparent;
             lblSubTitulo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             lblSubTitulo.ForeColor = System.Drawing.Color.White;
-            lblSubTitulo.Location = new System.Drawing.Point(7, 55);
+            lblSubTitulo.Location = new System.Drawing.Point(7, 56);
             lblSubTitulo.Name = "lblSubTitulo";
             lblSubTitulo.Size = new System.Drawing.Size(145, 24);
             lblSubTitulo.TabIndex = 5;
@@ -421,15 +421,15 @@
             // lblTituloLogo
             // 
             lblTituloLogo.BackColor = System.Drawing.Color.Transparent;
-            lblTituloLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloLogo.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloLogo.ForeColor = System.Drawing.Color.White;
             lblTituloLogo.Location = new System.Drawing.Point(7, 30);
             lblTituloLogo.Name = "lblTituloLogo";
-            lblTituloLogo.Size = new System.Drawing.Size(206, 26);
+            lblTituloLogo.Size = new System.Drawing.Size(205, 32);
             lblTituloLogo.TabIndex = 4;
             lblTituloLogo.Text = "GERANDO FALCÕES";
             // 
-            // Dashboard
+            // frmDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,7 +437,7 @@
             ClientSize = new System.Drawing.Size(1200, 800);
             Controls.Add(pnlContent);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Name = "Dashboard";
+            Name = "frmDashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
             pnlContent.ResumeLayout(false);

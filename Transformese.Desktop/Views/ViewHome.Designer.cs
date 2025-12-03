@@ -997,6 +997,7 @@
             Controls.Add(pnlWidgetsLaterais);
             Controls.Add(pnlAlerta);
             Controls.Add(flowKpiCards);
+            Margin = new System.Windows.Forms.Padding(0);
             Name = "ViewHome";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);

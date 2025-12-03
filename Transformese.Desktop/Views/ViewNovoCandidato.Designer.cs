@@ -34,7 +34,9 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Margin = new System.Windows.Forms.Padding(0);
             Name = "ViewNovoCandidato";
+            Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
             ResumeLayout(false);
         }
