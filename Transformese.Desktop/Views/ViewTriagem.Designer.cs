@@ -495,7 +495,7 @@
             cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboStatus.FocusedColor = System.Drawing.Color.FromArgb(0, 168, 157);
             cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            cboStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            cboStatus.Font = new System.Drawing.Font("Poppins", 9F);
             cboStatus.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
             cboStatus.ItemHeight = 30;
             cboStatus.Items.AddRange(new object[] { "Aprovado(a)", "Reprovado(a)", "Em Lista de Espera" });
@@ -528,7 +528,7 @@
             cboONG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboONG.FocusedColor = System.Drawing.Color.FromArgb(0, 168, 157);
             cboONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            cboONG.Font = new System.Drawing.Font("Segoe UI", 10F);
+            cboONG.Font = new System.Drawing.Font("Poppins", 9F);
             cboONG.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
             cboONG.ItemHeight = 30;
             cboONG.Location = new System.Drawing.Point(20, 300);
@@ -556,7 +556,7 @@
             numPontuacao.BackColor = System.Drawing.Color.Transparent;
             numPontuacao.BorderRadius = 10;
             numPontuacao.CustomizableEdges = customizableEdges23;
-            numPontuacao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            numPontuacao.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             numPontuacao.Location = new System.Drawing.Point(20, 225);
             numPontuacao.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numPontuacao.Name = "numPontuacao";
@@ -579,9 +579,10 @@
             txtAnotacoesRH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtAnotacoesRH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtAnotacoesRH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtAnotacoesRH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtAnotacoesRH.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtAnotacoesRH.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtAnotacoesRH.Location = new System.Drawing.Point(20, 50);
+            txtAnotacoesRH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtAnotacoesRH.Multiline = true;
             txtAnotacoesRH.Name = "txtAnotacoesRH";
             txtAnotacoesRH.PlaceholderText = "Insira observações e o motivo da pontuação.";

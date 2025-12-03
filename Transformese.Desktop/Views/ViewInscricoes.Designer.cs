@@ -130,9 +130,10 @@
             txtPesquisa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtPesquisa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtPesquisa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPesquisa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtPesquisa.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtPesquisa.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new System.Drawing.Point(600, 20);
+            txtPesquisa.Location = new System.Drawing.Point(599, 20);
+            txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Buscar por nome ou CPF...";
             txtPesquisa.SelectedText = "";

@@ -734,9 +734,10 @@
             txtBuscaCPF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtBuscaCPF.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             txtBuscaCPF.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtBuscaCPF.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtBuscaCPF.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtBuscaCPF.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtBuscaCPF.Location = new System.Drawing.Point(15, 50);
+            txtBuscaCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtBuscaCPF.Name = "txtBuscaCPF";
             txtBuscaCPF.PlaceholderText = "Digite o CPF do candidato...";
             txtBuscaCPF.SelectedText = "";
@@ -899,7 +900,7 @@
             lblTituloTabela.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
             lblTituloTabela.Location = new System.Drawing.Point(3, 7);
             lblTituloTabela.Name = "lblTituloTabela";
-            lblTituloTabela.Size = new System.Drawing.Size(202, 36);
+            lblTituloTabela.Size = new System.Drawing.Size(192, 36);
             lblTituloTabela.TabIndex = 1;
             lblTituloTabela.Text = "ÚLTIMAS INCRIÇÕES";
             lblTituloTabela.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -972,7 +973,7 @@
             lblMensagemAlerta.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
             lblMensagemAlerta.Location = new System.Drawing.Point(66, 19);
             lblMensagemAlerta.Name = "lblMensagemAlerta";
-            lblMensagemAlerta.Size = new System.Drawing.Size(410, 47);
+            lblMensagemAlerta.Size = new System.Drawing.Size(401, 47);
             lblMensagemAlerta.TabIndex = 1;
             lblMensagemAlerta.Text = "<b>Sincronização Pendente</b><br><span style=\"color: #666666; font-size: 9pt\">Existem <b>8 candidatos</b> aprovados aguardando envio para o Asana.</span>";
             // 
