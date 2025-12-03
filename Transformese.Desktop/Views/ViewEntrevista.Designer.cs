@@ -28,19 +28,497 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
+            dtpFiltroData = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            btnAgendar = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            flpEntrevistas = new System.Windows.Forms.FlowLayoutPanel();
+            pnlCardModelo = new Guna.UI2.WinForms.Guna2Panel();
+            btnIniciarEntrevista1 = new Guna.UI2.WinForms.Guna2Button();
+            lblVagaCandidato1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeCandidato1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblDataEntrevista1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblHorario1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlStatusIndicator1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btnIniciarEntrevista2 = new Guna.UI2.WinForms.Guna2Button();
+            lblVagaCandidato2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeCandidato2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblDataEntrevista2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblHorario2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlStatusIndicator2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            btnIniciarEntrevista3 = new Guna.UI2.WinForms.Guna2Button();
+            lblVagaCandidato3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeCandidato3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblDataEntrevista3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblHorario3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlStatusIndicator3 = new Guna.UI2.WinForms.Guna2Panel();
+            pnlHeader.SuspendLayout();
+            flpEntrevistas.SuspendLayout();
+            pnlCardModelo.SuspendLayout();
+            guna2Panel1.SuspendLayout();
+            guna2Panel3.SuspendLayout();
             SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.Controls.Add(dtpFiltroData);
+            pnlHeader.Controls.Add(btnAgendar);
+            pnlHeader.Controls.Add(guna2HtmlLabel2);
+            pnlHeader.Controls.Add(guna2HtmlLabel1);
+            pnlHeader.CustomizableEdges = customizableEdges5;
+            pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            pnlHeader.Location = new System.Drawing.Point(20, 20);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnlHeader.Size = new System.Drawing.Size(940, 70);
+            pnlHeader.TabIndex = 0;
+            // 
+            // dtpFiltroData
+            // 
+            dtpFiltroData.BackColor = System.Drawing.Color.Transparent;
+            dtpFiltroData.BorderRadius = 10;
+            dtpFiltroData.Checked = true;
+            dtpFiltroData.CustomizableEdges = customizableEdges1;
+            dtpFiltroData.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            dtpFiltroData.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            dtpFiltroData.ForeColor = System.Drawing.Color.White;
+            dtpFiltroData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dtpFiltroData.Location = new System.Drawing.Point(655, 15);
+            dtpFiltroData.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpFiltroData.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpFiltroData.Name = "dtpFiltroData";
+            dtpFiltroData.ShadowDecoration.BorderRadius = 10;
+            dtpFiltroData.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            dtpFiltroData.ShadowDecoration.Depth = 5;
+            dtpFiltroData.ShadowDecoration.Enabled = true;
+            dtpFiltroData.Size = new System.Drawing.Size(130, 40);
+            dtpFiltroData.TabIndex = 0;
+            dtpFiltroData.Value = new System.DateTime(2025, 12, 3, 12, 3, 48, 921);
+            // 
+            // btnAgendar
+            // 
+            btnAgendar.BackColor = System.Drawing.Color.Transparent;
+            btnAgendar.BorderRadius = 10;
+            btnAgendar.CustomizableEdges = customizableEdges3;
+            btnAgendar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnAgendar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnAgendar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnAgendar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnAgendar.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnAgendar.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAgendar.ForeColor = System.Drawing.Color.White;
+            btnAgendar.Location = new System.Drawing.Point(800, 15);
+            btnAgendar.Name = "btnAgendar";
+            btnAgendar.ShadowDecoration.BorderRadius = 10;
+            btnAgendar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnAgendar.ShadowDecoration.Depth = 5;
+            btnAgendar.ShadowDecoration.Enabled = true;
+            btnAgendar.Size = new System.Drawing.Size(140, 40);
+            btnAgendar.TabIndex = 2;
+            btnAgendar.Text = "+ Agendar";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel2.Location = new System.Drawing.Point(0, 40);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new System.Drawing.Size(129, 24);
+            guna2HtmlLabel2.TabIndex = 1;
+            guna2HtmlLabel2.Text = "Gestão de Entrevistas";
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            guna2HtmlLabel1.Location = new System.Drawing.Point(0, 10);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new System.Drawing.Size(213, 36);
+            guna2HtmlLabel1.TabIndex = 0;
+            guna2HtmlLabel1.Text = "Gestão de Entrevistas";
+            // 
+            // flpEntrevistas
+            // 
+            flpEntrevistas.AutoScroll = true;
+            flpEntrevistas.Controls.Add(pnlCardModelo);
+            flpEntrevistas.Controls.Add(guna2Panel1);
+            flpEntrevistas.Controls.Add(guna2Panel3);
+            flpEntrevistas.Dock = System.Windows.Forms.DockStyle.Fill;
+            flpEntrevistas.Location = new System.Drawing.Point(20, 90);
+            flpEntrevistas.Name = "flpEntrevistas";
+            flpEntrevistas.Size = new System.Drawing.Size(940, 630);
+            flpEntrevistas.TabIndex = 1;
+            // 
+            // pnlCardModelo
+            // 
+            pnlCardModelo.BackColor = System.Drawing.Color.Transparent;
+            pnlCardModelo.BorderRadius = 10;
+            pnlCardModelo.Controls.Add(btnIniciarEntrevista1);
+            pnlCardModelo.Controls.Add(lblVagaCandidato1);
+            pnlCardModelo.Controls.Add(lblNomeCandidato1);
+            pnlCardModelo.Controls.Add(lblDataEntrevista1);
+            pnlCardModelo.Controls.Add(lblHorario1);
+            pnlCardModelo.Controls.Add(pnlStatusIndicator1);
+            pnlCardModelo.CustomizableEdges = customizableEdges11;
+            pnlCardModelo.FillColor = System.Drawing.Color.White;
+            pnlCardModelo.Location = new System.Drawing.Point(0, 0);
+            pnlCardModelo.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
+            pnlCardModelo.Name = "pnlCardModelo";
+            pnlCardModelo.ShadowDecoration.BorderRadius = 10;
+            pnlCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            pnlCardModelo.ShadowDecoration.Depth = 10;
+            pnlCardModelo.ShadowDecoration.Enabled = true;
+            pnlCardModelo.Size = new System.Drawing.Size(300, 160);
+            pnlCardModelo.TabIndex = 0;
+            // 
+            // btnIniciarEntrevista1
+            // 
+            btnIniciarEntrevista1.BorderRadius = 5;
+            btnIniciarEntrevista1.CustomizableEdges = customizableEdges7;
+            btnIniciarEntrevista1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnIniciarEntrevista1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnIniciarEntrevista1.FillColor = System.Drawing.Color.FromArgb(240, 242, 245);
+            btnIniciarEntrevista1.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnIniciarEntrevista1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            btnIniciarEntrevista1.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnIniciarEntrevista1.HoverState.ForeColor = System.Drawing.Color.White;
+            btnIniciarEntrevista1.Location = new System.Drawing.Point(20, 115);
+            btnIniciarEntrevista1.Name = "btnIniciarEntrevista1";
+            btnIniciarEntrevista1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnIniciarEntrevista1.Size = new System.Drawing.Size(260, 35);
+            btnIniciarEntrevista1.TabIndex = 8;
+            btnIniciarEntrevista1.Text = "Iniciar Avaliação";
+            // 
+            // lblVagaCandidato1
+            // 
+            lblVagaCandidato1.BackColor = System.Drawing.Color.Transparent;
+            lblVagaCandidato1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblVagaCandidato1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblVagaCandidato1.Location = new System.Drawing.Point(20, 95);
+            lblVagaCandidato1.Name = "lblVagaCandidato1";
+            lblVagaCandidato1.Size = new System.Drawing.Size(174, 24);
+            lblVagaCandidato1.TabIndex = 7;
+            lblVagaCandidato1.Text = "Vaga: Desenvolvimento Web";
+            // 
+            // lblNomeCandidato1
+            // 
+            lblNomeCandidato1.BackColor = System.Drawing.Color.Transparent;
+            lblNomeCandidato1.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNomeCandidato1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblNomeCandidato1.Location = new System.Drawing.Point(20, 70);
+            lblNomeCandidato1.Name = "lblNomeCandidato1";
+            lblNomeCandidato1.Size = new System.Drawing.Size(133, 28);
+            lblNomeCandidato1.TabIndex = 6;
+            lblNomeCandidato1.Text = "Maryana Oliveira";
+            // 
+            // lblDataEntrevista1
+            // 
+            lblDataEntrevista1.BackColor = System.Drawing.Color.Transparent;
+            lblDataEntrevista1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblDataEntrevista1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblDataEntrevista1.Location = new System.Drawing.Point(20, 45);
+            lblDataEntrevista1.Name = "lblDataEntrevista1";
+            lblDataEntrevista1.Size = new System.Drawing.Size(72, 24);
+            lblDataEntrevista1.TabIndex = 5;
+            lblDataEntrevista1.Text = "Hoje, 03 Dez";
+            // 
+            // lblHorario1
+            // 
+            lblHorario1.BackColor = System.Drawing.Color.Transparent;
+            lblHorario1.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblHorario1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblHorario1.Location = new System.Drawing.Point(20, 15);
+            lblHorario1.Name = "lblHorario1";
+            lblHorario1.Size = new System.Drawing.Size(58, 39);
+            lblHorario1.TabIndex = 4;
+            lblHorario1.Text = "14:30";
+            // 
+            // pnlStatusIndicator1
+            // 
+            pnlStatusIndicator1.CustomizableEdges = customizableEdges9;
+            pnlStatusIndicator1.Dock = System.Windows.Forms.DockStyle.Left;
+            pnlStatusIndicator1.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            pnlStatusIndicator1.Location = new System.Drawing.Point(0, 0);
+            pnlStatusIndicator1.Name = "pnlStatusIndicator1";
+            pnlStatusIndicator1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            pnlStatusIndicator1.Size = new System.Drawing.Size(6, 160);
+            pnlStatusIndicator1.TabIndex = 3;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            guna2Panel1.BorderRadius = 10;
+            guna2Panel1.Controls.Add(btnIniciarEntrevista2);
+            guna2Panel1.Controls.Add(lblVagaCandidato2);
+            guna2Panel1.Controls.Add(lblNomeCandidato2);
+            guna2Panel1.Controls.Add(lblDataEntrevista2);
+            guna2Panel1.Controls.Add(lblHorario2);
+            guna2Panel1.Controls.Add(pnlStatusIndicator2);
+            guna2Panel1.CustomizableEdges = customizableEdges17;
+            guna2Panel1.FillColor = System.Drawing.Color.White;
+            guna2Panel1.Location = new System.Drawing.Point(320, 0);
+            guna2Panel1.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.BorderRadius = 10;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2Panel1.ShadowDecoration.Depth = 10;
+            guna2Panel1.ShadowDecoration.Enabled = true;
+            guna2Panel1.Size = new System.Drawing.Size(300, 160);
+            guna2Panel1.TabIndex = 1;
+            // 
+            // btnIniciarEntrevista2
+            // 
+            btnIniciarEntrevista2.BorderRadius = 5;
+            btnIniciarEntrevista2.CustomizableEdges = customizableEdges13;
+            btnIniciarEntrevista2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista2.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnIniciarEntrevista2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnIniciarEntrevista2.FillColor = System.Drawing.Color.FromArgb(240, 242, 245);
+            btnIniciarEntrevista2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnIniciarEntrevista2.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            btnIniciarEntrevista2.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnIniciarEntrevista2.HoverState.ForeColor = System.Drawing.Color.White;
+            btnIniciarEntrevista2.Location = new System.Drawing.Point(20, 115);
+            btnIniciarEntrevista2.Name = "btnIniciarEntrevista2";
+            btnIniciarEntrevista2.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnIniciarEntrevista2.Size = new System.Drawing.Size(260, 35);
+            btnIniciarEntrevista2.TabIndex = 8;
+            btnIniciarEntrevista2.Text = "Iniciar Avaliação";
+            // 
+            // lblVagaCandidato2
+            // 
+            lblVagaCandidato2.BackColor = System.Drawing.Color.Transparent;
+            lblVagaCandidato2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblVagaCandidato2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblVagaCandidato2.Location = new System.Drawing.Point(20, 95);
+            lblVagaCandidato2.Name = "lblVagaCandidato2";
+            lblVagaCandidato2.Size = new System.Drawing.Size(174, 24);
+            lblVagaCandidato2.TabIndex = 7;
+            lblVagaCandidato2.Text = "Vaga: Desenvolvimento Web";
+            // 
+            // lblNomeCandidato2
+            // 
+            lblNomeCandidato2.BackColor = System.Drawing.Color.Transparent;
+            lblNomeCandidato2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNomeCandidato2.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblNomeCandidato2.Location = new System.Drawing.Point(20, 70);
+            lblNomeCandidato2.Name = "lblNomeCandidato2";
+            lblNomeCandidato2.Size = new System.Drawing.Size(133, 28);
+            lblNomeCandidato2.TabIndex = 6;
+            lblNomeCandidato2.Text = "Maryana Oliveira";
+            // 
+            // lblDataEntrevista2
+            // 
+            lblDataEntrevista2.BackColor = System.Drawing.Color.Transparent;
+            lblDataEntrevista2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblDataEntrevista2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblDataEntrevista2.Location = new System.Drawing.Point(20, 45);
+            lblDataEntrevista2.Name = "lblDataEntrevista2";
+            lblDataEntrevista2.Size = new System.Drawing.Size(72, 24);
+            lblDataEntrevista2.TabIndex = 5;
+            lblDataEntrevista2.Text = "Hoje, 03 Dez";
+            // 
+            // lblHorario2
+            // 
+            lblHorario2.BackColor = System.Drawing.Color.Transparent;
+            lblHorario2.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblHorario2.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblHorario2.Location = new System.Drawing.Point(20, 15);
+            lblHorario2.Name = "lblHorario2";
+            lblHorario2.Size = new System.Drawing.Size(58, 39);
+            lblHorario2.TabIndex = 4;
+            lblHorario2.Text = "14:30";
+            // 
+            // pnlStatusIndicator2
+            // 
+            pnlStatusIndicator2.CustomizableEdges = customizableEdges15;
+            pnlStatusIndicator2.Dock = System.Windows.Forms.DockStyle.Left;
+            pnlStatusIndicator2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            pnlStatusIndicator2.Location = new System.Drawing.Point(0, 0);
+            pnlStatusIndicator2.Name = "pnlStatusIndicator2";
+            pnlStatusIndicator2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnlStatusIndicator2.Size = new System.Drawing.Size(6, 160);
+            pnlStatusIndicator2.TabIndex = 3;
+            // 
+            // guna2Panel3
+            // 
+            guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            guna2Panel3.BorderRadius = 10;
+            guna2Panel3.Controls.Add(btnIniciarEntrevista3);
+            guna2Panel3.Controls.Add(lblVagaCandidato3);
+            guna2Panel3.Controls.Add(lblNomeCandidato3);
+            guna2Panel3.Controls.Add(lblDataEntrevista3);
+            guna2Panel3.Controls.Add(lblHorario3);
+            guna2Panel3.Controls.Add(pnlStatusIndicator3);
+            guna2Panel3.CustomizableEdges = customizableEdges23;
+            guna2Panel3.FillColor = System.Drawing.Color.White;
+            guna2Panel3.Location = new System.Drawing.Point(640, 0);
+            guna2Panel3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.BorderRadius = 10;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Panel3.ShadowDecoration.Depth = 10;
+            guna2Panel3.ShadowDecoration.Enabled = true;
+            guna2Panel3.Size = new System.Drawing.Size(300, 160);
+            guna2Panel3.TabIndex = 2;
+            // 
+            // btnIniciarEntrevista3
+            // 
+            btnIniciarEntrevista3.BorderRadius = 5;
+            btnIniciarEntrevista3.CustomizableEdges = customizableEdges19;
+            btnIniciarEntrevista3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarEntrevista3.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnIniciarEntrevista3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnIniciarEntrevista3.FillColor = System.Drawing.Color.FromArgb(240, 242, 245);
+            btnIniciarEntrevista3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnIniciarEntrevista3.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            btnIniciarEntrevista3.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnIniciarEntrevista3.HoverState.ForeColor = System.Drawing.Color.White;
+            btnIniciarEntrevista3.Location = new System.Drawing.Point(20, 115);
+            btnIniciarEntrevista3.Name = "btnIniciarEntrevista3";
+            btnIniciarEntrevista3.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnIniciarEntrevista3.Size = new System.Drawing.Size(260, 35);
+            btnIniciarEntrevista3.TabIndex = 8;
+            btnIniciarEntrevista3.Text = "Iniciar Avaliação";
+            // 
+            // lblVagaCandidato3
+            // 
+            lblVagaCandidato3.BackColor = System.Drawing.Color.Transparent;
+            lblVagaCandidato3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblVagaCandidato3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblVagaCandidato3.Location = new System.Drawing.Point(20, 95);
+            lblVagaCandidato3.Name = "lblVagaCandidato3";
+            lblVagaCandidato3.Size = new System.Drawing.Size(174, 24);
+            lblVagaCandidato3.TabIndex = 7;
+            lblVagaCandidato3.Text = "Vaga: Desenvolvimento Web";
+            // 
+            // lblNomeCandidato3
+            // 
+            lblNomeCandidato3.BackColor = System.Drawing.Color.Transparent;
+            lblNomeCandidato3.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNomeCandidato3.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblNomeCandidato3.Location = new System.Drawing.Point(20, 70);
+            lblNomeCandidato3.Name = "lblNomeCandidato3";
+            lblNomeCandidato3.Size = new System.Drawing.Size(133, 28);
+            lblNomeCandidato3.TabIndex = 6;
+            lblNomeCandidato3.Text = "Maryana Oliveira";
+            // 
+            // lblDataEntrevista3
+            // 
+            lblDataEntrevista3.BackColor = System.Drawing.Color.Transparent;
+            lblDataEntrevista3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblDataEntrevista3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            lblDataEntrevista3.Location = new System.Drawing.Point(20, 45);
+            lblDataEntrevista3.Name = "lblDataEntrevista3";
+            lblDataEntrevista3.Size = new System.Drawing.Size(72, 24);
+            lblDataEntrevista3.TabIndex = 5;
+            lblDataEntrevista3.Text = "Hoje, 03 Dez";
+            // 
+            // lblHorario3
+            // 
+            lblHorario3.BackColor = System.Drawing.Color.Transparent;
+            lblHorario3.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblHorario3.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblHorario3.Location = new System.Drawing.Point(20, 15);
+            lblHorario3.Name = "lblHorario3";
+            lblHorario3.Size = new System.Drawing.Size(58, 39);
+            lblHorario3.TabIndex = 4;
+            lblHorario3.Text = "14:30";
+            // 
+            // pnlStatusIndicator3
+            // 
+            pnlStatusIndicator3.CustomizableEdges = customizableEdges21;
+            pnlStatusIndicator3.Dock = System.Windows.Forms.DockStyle.Left;
+            pnlStatusIndicator3.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            pnlStatusIndicator3.Location = new System.Drawing.Point(0, 0);
+            pnlStatusIndicator3.Name = "pnlStatusIndicator3";
+            pnlStatusIndicator3.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            pnlStatusIndicator3.Size = new System.Drawing.Size(6, 160);
+            pnlStatusIndicator3.TabIndex = 3;
             // 
             // ViewEntrevista
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(flpEntrevistas);
+            Controls.Add(pnlHeader);
             Margin = new System.Windows.Forms.Padding(0);
             Name = "ViewEntrevista";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            flpEntrevistas.ResumeLayout(false);
+            pnlCardModelo.ResumeLayout(false);
+            pnlCardModelo.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
+            guna2Panel3.ResumeLayout(false);
+            guna2Panel3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2Panel pnlHeader;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2Button btnAgendar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFiltroData;
+        private System.Windows.Forms.FlowLayoutPanel flpEntrevistas;
+        private Guna.UI2.WinForms.Guna2Panel pnlCardModelo;
+        private Guna.UI2.WinForms.Guna2Panel pnlStatusIndicator1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario1;
+        private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario2;
+        private Guna.UI2.WinForms.Guna2Panel pnlStatusIndicator2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario3;
+        private Guna.UI2.WinForms.Guna2Panel pnlStatusIndicator3;
     }
 }

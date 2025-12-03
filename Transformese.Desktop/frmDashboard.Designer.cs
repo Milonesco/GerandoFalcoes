@@ -256,8 +256,10 @@
             // 
             // btnRelatorios
             // 
+            btnRelatorios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnRelatorios.Checked = true;
             btnRelatorios.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnRelatorios.CheckedState.ForeColor = System.Drawing.Color.White;
             btnRelatorios.CustomizableEdges = customizableEdges8;
             btnRelatorios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnRelatorios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -276,8 +278,10 @@
             // 
             // btnGestaoOngs
             // 
+            btnGestaoOngs.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnGestaoOngs.Checked = true;
             btnGestaoOngs.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnGestaoOngs.CheckedState.ForeColor = System.Drawing.Color.White;
             btnGestaoOngs.CustomizableEdges = customizableEdges10;
             btnGestaoOngs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnGestaoOngs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -296,8 +300,10 @@
             // 
             // btnNovoCandidato
             // 
+            btnNovoCandidato.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnNovoCandidato.Checked = true;
             btnNovoCandidato.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnNovoCandidato.CheckedState.ForeColor = System.Drawing.Color.White;
             btnNovoCandidato.CustomizableEdges = customizableEdges12;
             btnNovoCandidato.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnNovoCandidato.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -316,8 +322,10 @@
             // 
             // btnEntrevistas
             // 
+            btnEntrevistas.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnEntrevistas.Checked = true;
             btnEntrevistas.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnEntrevistas.CheckedState.ForeColor = System.Drawing.Color.White;
             btnEntrevistas.CustomizableEdges = customizableEdges14;
             btnEntrevistas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnEntrevistas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -336,8 +344,10 @@
             // 
             // btnTriagem
             // 
+            btnTriagem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnTriagem.Checked = true;
             btnTriagem.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnTriagem.CheckedState.ForeColor = System.Drawing.Color.White;
             btnTriagem.CustomizableEdges = customizableEdges16;
             btnTriagem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnTriagem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -356,8 +366,10 @@
             // 
             // btnIncricoes
             // 
+            btnIncricoes.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnIncricoes.Checked = true;
             btnIncricoes.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnIncricoes.CheckedState.ForeColor = System.Drawing.Color.White;
             btnIncricoes.CustomizableEdges = customizableEdges18;
             btnIncricoes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnIncricoes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -377,8 +389,10 @@
             // 
             // btnDashboard
             // 
+            btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnDashboard.Checked = true;
             btnDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnDashboard.CheckedState.ForeColor = System.Drawing.Color.White;
             btnDashboard.CustomizableEdges = customizableEdges20;
             btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

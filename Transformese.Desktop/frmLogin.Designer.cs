@@ -82,10 +82,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Poppins Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.Location = new System.Drawing.Point(720, 98);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(344, 96);
+            label1.Size = new System.Drawing.Size(330, 96);
             label1.TabIndex = 1;
             label1.Text = "Bem-vindo(a) ao seu\r\nPortal Administrativo!";
             // 
