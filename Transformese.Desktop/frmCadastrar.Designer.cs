@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrar));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrar));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             btnSair = new Guna.UI2.WinForms.Guna2Button();
@@ -68,7 +68,6 @@
             label6 = new System.Windows.Forms.Label();
             txtSobrenome = new Guna.UI2.WinForms.Guna2TextBox();
             label9 = new System.Windows.Forms.Label();
-            txtCPF = new Guna.UI2.WinForms.Guna2TextBox();
             label10 = new System.Windows.Forms.Label();
             txtConfirmacaoSenha = new Guna.UI2.WinForms.Guna2TextBox();
             chkTermos = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -76,8 +75,9 @@
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             Sexo = new System.Windows.Forms.Label();
             cboSexo = new Guna.UI2.WinForms.Guna2ComboBox();
-            dtpData = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtpDataCadastro = new Guna.UI2.WinForms.Guna2DateTimePicker();
             label8 = new System.Windows.Forms.Label();
+            dtpDataNascimento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             // btnSair
             // 
             btnSair.BorderRadius = 8;
-            btnSair.CustomizableEdges = customizableEdges21;
+            btnSair.CustomizableEdges = customizableEdges27;
             btnSair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -106,15 +106,16 @@
             btnSair.ForeColor = System.Drawing.Color.White;
             btnSair.Location = new System.Drawing.Point(889, 642);
             btnSair.Name = "btnSair";
-            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnSair.Size = new System.Drawing.Size(209, 45);
             btnSair.TabIndex = 17;
             btnSair.Text = "Sair";
+            btnSair.Click += btnSair_Click;
             // 
             // btnCadastrar
             // 
             btnCadastrar.BorderRadius = 8;
-            btnCadastrar.CustomizableEdges = customizableEdges23;
+            btnCadastrar.CustomizableEdges = customizableEdges29;
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -124,11 +125,11 @@
             btnCadastrar.ForeColor = System.Drawing.Color.White;
             btnCadastrar.Location = new System.Drawing.Point(674, 642);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCadastrar.Size = new System.Drawing.Size(209, 45);
             btnCadastrar.TabIndex = 18;
             btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.Click += btnCadastrar_Click;
+            btnCadastrar.Click += btnCadastrar_ClickAsync;
             // 
             // chkSenha
             // 
@@ -153,7 +154,7 @@
             // txtSenha
             // 
             txtSenha.BorderRadius = 8;
-            txtSenha.CustomizableEdges = customizableEdges25;
+            txtSenha.CustomizableEdges = customizableEdges33;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -167,7 +168,7 @@
             txtSenha.PasswordChar = '•';
             txtSenha.PlaceholderText = "Digite sua senha";
             txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges34;
             txtSenha.Size = new System.Drawing.Size(209, 36);
             txtSenha.TabIndex = 14;
             // 
@@ -226,7 +227,7 @@
             // txtNome
             // 
             txtNome.BorderRadius = 8;
-            txtNome.CustomizableEdges = customizableEdges27;
+            txtNome.CustomizableEdges = customizableEdges39;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -239,7 +240,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Digite seu nome";
             txtNome.SelectedText = "";
-            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges40;
             txtNome.Size = new System.Drawing.Size(209, 36);
             txtNome.TabIndex = 15;
             // 
@@ -266,7 +267,7 @@
             // txtEmail
             // 
             txtEmail.BorderRadius = 8;
-            txtEmail.CustomizableEdges = customizableEdges29;
+            txtEmail.CustomizableEdges = customizableEdges37;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -279,7 +280,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example@gerandofalcoes.com";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges38;
             txtEmail.Size = new System.Drawing.Size(209, 36);
             txtEmail.TabIndex = 15;
             // 
@@ -296,7 +297,7 @@
             // txtSobrenome
             // 
             txtSobrenome.BorderRadius = 8;
-            txtSobrenome.CustomizableEdges = customizableEdges31;
+            txtSobrenome.CustomizableEdges = customizableEdges35;
             txtSobrenome.DefaultText = "";
             txtSobrenome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSobrenome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -309,7 +310,7 @@
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.PlaceholderText = "Digite seu sobrenome";
             txtSobrenome.SelectedText = "";
-            txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtSobrenome.Size = new System.Drawing.Size(209, 36);
             txtSobrenome.TabIndex = 15;
             // 
@@ -317,31 +318,11 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label9.Location = new System.Drawing.Point(889, 273);
+            label9.Location = new System.Drawing.Point(889, 343);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(44, 28);
+            label9.Size = new System.Drawing.Size(158, 28);
             label9.TabIndex = 11;
-            label9.Text = "CPF:";
-            // 
-            // txtCPF
-            // 
-            txtCPF.BorderRadius = 8;
-            txtCPF.CustomizableEdges = customizableEdges33;
-            txtCPF.DefaultText = "";
-            txtCPF.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtCPF.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtCPF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtCPF.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtCPF.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtCPF.Font = new System.Drawing.Font("Segoe UI", 9F);
-            txtCPF.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtCPF.Location = new System.Drawing.Point(889, 304);
-            txtCPF.Name = "txtCPF";
-            txtCPF.PlaceholderText = "XXX.XXX.XXX-XX";
-            txtCPF.SelectedText = "";
-            txtCPF.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            txtCPF.Size = new System.Drawing.Size(209, 36);
-            txtCPF.TabIndex = 15;
+            label9.Text = "Data de Cadastro:";
             // 
             // label10
             // 
@@ -356,7 +337,7 @@
             // txtConfirmacaoSenha
             // 
             txtConfirmacaoSenha.BorderRadius = 8;
-            txtConfirmacaoSenha.CustomizableEdges = customizableEdges35;
+            txtConfirmacaoSenha.CustomizableEdges = customizableEdges31;
             txtConfirmacaoSenha.DefaultText = "";
             txtConfirmacaoSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtConfirmacaoSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -370,7 +351,7 @@
             txtConfirmacaoSenha.PasswordChar = '•';
             txtConfirmacaoSenha.PlaceholderText = "Digite sua senha novamente";
             txtConfirmacaoSenha.SelectedText = "";
-            txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtConfirmacaoSenha.Size = new System.Drawing.Size(209, 36);
             txtConfirmacaoSenha.TabIndex = 14;
             // 
@@ -425,7 +406,7 @@
             // cboSexo
             // 
             cboSexo.BackColor = System.Drawing.Color.Transparent;
-            cboSexo.CustomizableEdges = customizableEdges37;
+            cboSexo.CustomizableEdges = customizableEdges25;
             cboSexo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboSexo.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -435,42 +416,59 @@
             cboSexo.ItemHeight = 30;
             cboSexo.Location = new System.Drawing.Point(674, 374);
             cboSexo.Name = "cboSexo";
-            cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges26;
             cboSexo.Size = new System.Drawing.Size(209, 36);
             cboSexo.TabIndex = 19;
             // 
-            // dtpData
+            // dtpDataCadastro
             // 
-            dtpData.Checked = true;
-            dtpData.CustomizableEdges = customizableEdges39;
-            dtpData.FillColor = System.Drawing.Color.White;
-            dtpData.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            dtpData.Location = new System.Drawing.Point(889, 374);
-            dtpData.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpData.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpData.Name = "dtpData";
-            dtpData.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            dtpData.Size = new System.Drawing.Size(209, 36);
-            dtpData.TabIndex = 20;
-            dtpData.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
+            dtpDataCadastro.Checked = true;
+            dtpDataCadastro.CustomizableEdges = customizableEdges23;
+            dtpDataCadastro.FillColor = System.Drawing.Color.White;
+            dtpDataCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dtpDataCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            dtpDataCadastro.Location = new System.Drawing.Point(889, 374);
+            dtpDataCadastro.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpDataCadastro.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpDataCadastro.Name = "dtpDataCadastro";
+            dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            dtpDataCadastro.Size = new System.Drawing.Size(209, 36);
+            dtpDataCadastro.TabIndex = 20;
+            dtpDataCadastro.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label8.Location = new System.Drawing.Point(889, 343);
+            label8.Location = new System.Drawing.Point(889, 273);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(178, 28);
             label8.TabIndex = 11;
             label8.Text = "Data de nascimento:";
+            // 
+            // dtpDataNascimento
+            // 
+            dtpDataNascimento.Checked = true;
+            dtpDataNascimento.CustomizableEdges = customizableEdges21;
+            dtpDataNascimento.FillColor = System.Drawing.Color.White;
+            dtpDataNascimento.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            dtpDataNascimento.Location = new System.Drawing.Point(889, 304);
+            dtpDataNascimento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpDataNascimento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpDataNascimento.Name = "dtpDataNascimento";
+            dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            dtpDataNascimento.Size = new System.Drawing.Size(209, 36);
+            dtpDataNascimento.TabIndex = 20;
+            dtpDataNascimento.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
             // 
             // frmCadastrar
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1184, 761);
-            Controls.Add(dtpData);
+            Controls.Add(dtpDataNascimento);
+            Controls.Add(dtpDataCadastro);
             Controls.Add(cboSexo);
             Controls.Add(btnSair);
             Controls.Add(btnCadastrar);
@@ -479,7 +477,6 @@
             Controls.Add(txtConfirmacaoSenha);
             Controls.Add(txtSenha);
             Controls.Add(txtSobrenome);
-            Controls.Add(txtCPF);
             Controls.Add(txtEmail);
             Controls.Add(txtNome);
             Controls.Add(label10);
@@ -517,7 +514,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
         private Guna.UI2.WinForms.Guna2TextBox txtSobrenome;
-        private Guna.UI2.WinForms.Guna2TextBox txtCPF;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
@@ -528,9 +524,10 @@
         private Guna.UI2.WinForms.Guna2CheckBox chkTermos;
         private Guna.UI2.WinForms.Guna2MessageDialog mdTermos;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpData;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataCadastro;
         private Guna.UI2.WinForms.Guna2ComboBox cboSexo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Sexo;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataNascimento;
     }
 }

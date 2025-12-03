@@ -7,8 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Transformese.Data\Transformese.Data.csproj" />
     <ProjectReference Include="..\Transformese.Domain\Transformese.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>

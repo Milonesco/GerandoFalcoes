@@ -1,17 +1,23 @@
-﻿using System.Diagnostics;
-using System;
+﻿using System;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Windows.Forms;
+using Transformese.Domain.Entities;
 
 namespace Transformese.Desktop
 {
     public partial class frmCadastrar : Form
     {
+        private readonly HttpClient _client;
         public frmCadastrar()
         {
             InitializeComponent();
+            _client = new HttpClient();
+            _client.BaseAddress = new Uri("https://localhost:5001/");
         }
 
-        private void btnCadastrar_Click(object sender, System.EventArgs e)
+        private async void btnCadastrar_ClickAsync(object sender, System.EventArgs e)
         {
             if (!chkTermos.Checked)
             {
@@ -41,6 +47,48 @@ namespace Transformese.Desktop
 
                 return;
             }
+
+            try
+            {
+                var novoFuncionario = new Funcionario
+                {
+                    Nome = txtNome.Text,
+                    Sobrenome = txtSobrenome.Text,
+                    Email = txtEmail.Text,
+                    Senha = txtSenha.Text,
+                    Sexo = cboSexo.Text,
+                    DataCadastro = DateTime.Now,
+                    DataNascimento = dtpDataNascimento.Value,
+                    Ativo = true
+                };
+                // Enviamos para a API (O endereço "api/funcionarios" depende do seu Controller na API)
+                HttpResponseMessage response = await _client.PostAsJsonAsync("api/funcionarios", novoFuncionario);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    mdNotifica.Show("Funcionário cadastrado com sucesso!");
+                    LimparCampos();
+                }
+                else
+                {
+                    // Mostra o erro que a API retornou (caso tenha dado erro lá no servidor)
+                    mdNotifica.Show($"Erro na API: {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Erro de conexão (ex: API desligada)
+                mdNotifica.Show($"Erro ao conectar na API: {ex.Message}");
+            }
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Text = "";
+            txtEmail.Text = "";
+            txtSenha.Text = "";
+            cboSexo.Text = "";
+            // Resetar radio buttons, etc.
         }
 
         private void lblGerandoFalcoes_Click(object sender, System.EventArgs e)
@@ -63,6 +111,11 @@ namespace Transformese.Desktop
         private void chkTermos_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
