@@ -11,96 +11,159 @@
         });
     }
 
-    // --- NOVO: LÓGICA DO DARK MODE ---
+    // --- FUNÇÃO DE SMOOTH SCROLL PERSONALIZADA (GARANTIDA) ---
+    function smoothScrollTo(targetPosition, duration = 800) {
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        // Função de easing para suavizar a animação (ease-in-out)
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // --- SMOOTH SCROLL PARA OS LINKS DA NAVBAR ---
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const additionalOffset = 30;
+                const targetPosition = targetSection.offsetTop - navbarHeight - additionalOffset;
+                
+                // USA A FUNÇÃO PERSONALIZADA
+                smoothScrollTo(targetPosition, 1000); // 1000ms = 1 segundo de duração
+                
+                // Fecha o menu mobile
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    bsCollapse.hide();
+                }
+            }
+        });
+    });
+
+    // --- SMOOTH SCROLL PARA O LOGO (VOLTA AO TOPO) ---
+    const brandLink = document.querySelector('.navbar-brand[href="#inicio"]');
+    if (brandLink) {
+        brandLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // USA A FUNÇÃO PERSONALIZADA PARA VOLTAR AO TOPO
+            smoothScrollTo(0, 1000);
+            
+            // Fecha menu mobile se aberto
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                bsCollapse.hide();
+            }
+        });
+    }
+
+    // --- LÓGICA DO DARK MODE ---
     const toggleBtn = document.getElementById('darkModeToggle');
     const htmlElement = document.documentElement;
     const icon = toggleBtn ? toggleBtn.querySelector('i') : null;
 
-    // 1. Verifica se já existe preferência salva
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-theme', savedTheme);
     updateIcon(savedTheme);
 
-    // 2. Ação do Clique
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-            // Aplica e Salva
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateIcon(newTheme);
         });
     }
 
-    // 3. Função para trocar o ícone (Lua <-> Sol)
     function updateIcon(theme) {
         if (!icon) return;
 
         if (theme === 'dark') {
             icon.classList.remove('bi-moon-fill');
             icon.classList.add('bi-sun-fill');
-            icon.style.color = "#ffd700"; // Amarelo (Sol)
+            icon.style.color = "#ffd700";
         } else {
             icon.classList.remove('bi-sun-fill');
             icon.classList.add('bi-moon-fill');
-            icon.style.color = ""; // Volta para a cor original (definida no CSS)
+            icon.style.color = "";
         }
     }
 
-    // Auto-hover nas logos do carrossel (detecta logos passando sob o cursor)
+    // --- AUTO-HOVER NOS CÍRCULOS DE LOGOS DO CARROSSEL ---
     const marqueeContainer = document.querySelector('.marquee-container');
     
-    if (!marqueeContainer) return; // Sai se não encontrar o container
+    if (marqueeContainer) {
+        const logoCircles = marqueeContainer.querySelectorAll('.logo-circle');
+        let mouseX = null;
+        let mouseY = null;
 
-    const logos = marqueeContainer.querySelectorAll('.marquee-content img');
-    let mouseX = null;
-    let mouseY = null;
-
-    // Captura a posição do mouse no container
-    marqueeContainer.addEventListener('mousemove', function (e) {
-        const rect = marqueeContainer.getBoundingClientRect();
-        mouseX = e.clientX;
-        mouseY = e.clientY - rect.top;
-    });
-
-    // Remove a posição quando o mouse sai do container
-    marqueeContainer.addEventListener('mouseleave', function () {
-        mouseX = null;
-        mouseY = null;
-        // Remove hover de todas as logos
-        logos.forEach(logo => logo.classList.remove('auto-hovered'));
-    });
-
-    // Função que verifica continuamente quais logos estão sob o cursor
-    function checkLogosUnderMouse() {
-        if (mouseX === null || mouseY === null) return;
-
-        logos.forEach(logo => {
-            const rect = logo.getBoundingClientRect();
-            
-            // Verifica se o mouse está sobre a logo
-            const isUnderMouse = (
-                mouseX >= rect.left &&
-                mouseX <= rect.right &&
-                mouseY >= 0 &&
-                mouseY <= marqueeContainer.clientHeight
-            );
-
-            if (isUnderMouse) {
-                logo.classList.add('auto-hovered');
-            } else {
-                logo.classList.remove('auto-hovered');
-            }
+        marqueeContainer.addEventListener('mousemove', function (e) {
+            const rect = marqueeContainer.getBoundingClientRect();
+            mouseX = e.clientX;
+            mouseY = e.clientY - rect.top;
         });
-    }
 
-    // Executa a verificação a cada frame (60 vezes por segundo)
-    function animate() {
-        checkLogosUnderMouse();
-        requestAnimationFrame(animate);
-    }
+        marqueeContainer.addEventListener('mouseleave', function () {
+            mouseX = null;
+            mouseY = null;
+            logoCircles.forEach(circle => circle.classList.remove('auto-hovered'));
+        });
 
-    animate();
+        function checkCirclesUnderMouse() {
+            if (mouseX === null || mouseY === null) return;
+
+            logoCircles.forEach(circle => {
+                const rect = circle.getBoundingClientRect();
+                
+                const isUnderMouse = (
+                    mouseX >= rect.left &&
+                    mouseX <= rect.right &&
+                    mouseY >= 0 &&
+                    mouseY <= marqueeContainer.clientHeight
+                );
+
+                if (isUnderMouse) {
+                    circle.classList.add('auto-hovered');
+                } else {
+                    circle.classList.remove('auto-hovered');
+                }
+            });
+        }
+
+        function animateLogos() {
+            checkCirclesUnderMouse();
+            requestAnimationFrame(animateLogos);
+        }
+
+        animateLogos();
+    }
 });
