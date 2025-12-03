@@ -1206,3 +1206,111 @@ html[data-theme="dark"] .navbar-brand.brand-text span {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* ==========================
+   DARK MODE: TEXTOS EM DESTAQUE NAS SEÇÕES SOBRE E VANTAGENS
+   ========================== */
+
+/* Seção Sobre - Textos em Branco no Dark Mode */
+html[data-theme="dark"] .island-section h2,
+html[data-theme="dark"] .island-section .text-dark {
+    color: var(--text-main) !important; /* Branco/Claro no dark mode */
+}
+
+html[data-theme="dark"] .island-section .lead,
+html[data-theme="dark"] .island-section .text-muted {
+    color: rgba(230, 237, 243, 0.85) !important; /* Branco levemente transparente */
+}
+
+html[data-theme="dark"] .island-section .text-primary {
+    background: -webkit-linear-gradient(45deg, #00a89D, #ec2262);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Seção Vantagens - Textos em Branco no Dark Mode */
+html[data-theme="dark"] .why-section h2,
+html[data-theme="dark"] .why-section .section-title {
+    color: var(--text-main) !important; /* Branco/Claro no dark mode */
+}
+
+html[data-theme="dark"] .why-section .text-muted,
+html[data-theme="dark"] .why-section p {
+    color: rgba(230, 237, 243, 0.85) !important; /* Branco levemente transparente */
+}
+
+/* Accordion no Dark Mode */
+html[data-theme="dark"] .custom-accordion .accordion-button {
+    color: var(--text-main);
+    background-color: var(--card-bg);
+}
+
+html[data-theme="dark"] .custom-accordion .accordion-button:not(.collapsed) {
+    background-color: rgba(0, 168, 157, 0.25);
+    color: var(--gf-teal);
+}
+
+html[data-theme="dark"] .custom-accordion .accordion-body {
+    color: rgba(230, 237, 243, 0.85);
+    background-color: var(--card-bg);
+}
+
+/* Island Card (Card da seção Sobre) no Dark Mode */
+html[data-theme="dark"] .island-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+/* Step Cards no Dark Mode */
+html[data-theme="dark"] .step-title {
+    color: var(--text-main);
+}
+
+html[data-theme="dark"] .step-desc {
+    color: var(--text-muted);
+}
+
+/* Island Card - Fundo transparente para se mesclar com a section */
+.island-card {
+    background-color: transparent !important;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* No dark mode, mantém transparente */
+html[data-theme="dark"] .island-card {
+    background-color: transparent !important;
+}
+
+/* Island Card - Completamente transparente e invisível */
+.island-card {
+    background-color: transparent !important;
+    padding: 40px;
+    border-radius: 20px;
+    border: none !important; /* Remove qualquer borda */
+    box-shadow: none !important; /* Remove qualquer sombra */
+}
+
+/* No dark mode, mantém completamente invisível */
+html[data-theme="dark"] .island-card {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Classes auxiliares para backgrounds das seções */
+.bg-section-gray {
+    background-color: #f8f9fb;
+}
+
+html[data-theme="dark"] .bg-section-gray {
+    background-color: var(--body-bg);
+}
+
+.bg-section-white {
+    background-color: #ffffff;
+}
+
+html[data-theme="dark"] .bg-section-white {
+    background-color: var(--body-bg);
+}
