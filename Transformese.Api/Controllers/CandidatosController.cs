@@ -31,15 +31,39 @@ namespace Transformese.Api.Controllers
             var candidato = new Candidato
             {
                 NomeCompleto = dto.NomeCompleto,
+                NomeSocial = dto.NomeSocial ?? string.Empty, // Trata null
                 CPF = cpfLimpo,
+                DataNascimento = dto.DataNascimento,
                 Email = dto.Email,
                 Telefone = dto.Telefone,
-                DataNascimento = dto.DataNascimento,
+                CEP = dto.CEP,
                 Cidade = dto.Cidade,
                 Estado = dto.Estado,
+
+                RaçaEtnia = dto.RaçaEtnia,
+                IdentidadeGenero = dto.IdentidadeGenero,
+                PessoaTransgenero = dto.PessoaTransgenero,
+                OrientacaoSexual = dto.OrientacaoSexual,
+
+                Escolaridade = dto.Escolaridade,
+                TrabalhaAtualmente = dto.TrabalhaAtualmente,
+                RendaFamiliar = dto.RendaFamiliar,
+                PessoasNoDomicilio = dto.PessoasNoDomicilio,
+                PossuiDeficiencia = dto.PossuiDeficiencia,
+                DescricaoDeficiencia = dto.DescricaoDeficiencia,
+
+                CursoDesejado = dto.CursoDesejado,
+                TurnoPreferencial = dto.TurnoPreferencial,
+                JaEstudouAntes = dto.JaEstudouAntes,
+                IndicadoPor = dto.IndicadoPor,
+
+                ConcordaPrograma = dto.ConcordaPrograma,
+                AceitaNovidades = dto.AceitaNovidades,
+
                 PossuiComputador = dto.PossuiComputador,
                 PossuiInternet = dto.PossuiInternet,
                 PerfilLinkedin = dto.PerfilLinkedin,
+
                 Status = StatusCandidato.Inscrito,
                 DataCadastro = DateTime.Now
             };
@@ -47,19 +71,47 @@ namespace Transformese.Api.Controllers
             _context.Candidatos.Add(candidato);
             await _context.SaveChangesAsync();
 
-            // ✅ CORREÇÃO: Adicionei o retorno de sucesso aqui
-            return Ok(new { message = "Inscrição realizada com sucesso!", id = candidato.Id });
+            return Ok(new { message = "Inscrição realizada!", id = candidato.Id });
         }
 
         public class CandidatoInscricaoDto
         {
-            public string NomeCompleto { get; set; }
-            public string CPF { get; set; }
-            public string Email { get; set; }
-            public string Telefone { get; set; }
+            // Dados Pessoais
+            public string NomeCompleto { get; set; } = string.Empty;
+            public string? NomeSocial { get; set; } // ✅ AGORA É NULLABLE
             public DateTime DataNascimento { get; set; }
-            public string Cidade { get; set; }
-            public string Estado { get; set; }
+            public string CPF { get; set; } = string.Empty;
+            public string RaçaEtnia { get; set; } = string.Empty;
+            public string IdentidadeGenero { get; set; } = string.Empty;
+            public bool PessoaTransgenero { get; set; }
+            public string OrientacaoSexual { get; set; } = string.Empty;
+
+            // Contato e Endereço
+            public string Email { get; set; } = string.Empty;
+            public string Telefone { get; set; } = string.Empty;
+            public string CEP { get; set; } = string.Empty;
+            public string Estado { get; set; } = string.Empty;
+            public string Cidade { get; set; } = string.Empty;
+
+            // Dados Socioeconômicos
+            public string Escolaridade { get; set; } = string.Empty;
+            public bool TrabalhaAtualmente { get; set; }
+            public string RendaFamiliar { get; set; } = string.Empty;
+            public int PessoasNoDomicilio { get; set; }
+            public bool PossuiDeficiencia { get; set; }
+            public string? DescricaoDeficiencia { get; set; }
+
+            // Dados do Curso/Programa
+            public string CursoDesejado { get; set; } = string.Empty;
+            public string TurnoPreferencial { get; set; } = string.Empty;
+            public bool JaEstudouAntes { get; set; }
+            public string? IndicadoPor { get; set; }
+
+            // Termos
+            public bool ConcordaPrograma { get; set; }
+            public bool AceitaNovidades { get; set; }
+
+            // Campos Legados
             public bool PossuiComputador { get; set; }
             public bool PossuiInternet { get; set; }
             public string? PerfilLinkedin { get; set; }
