@@ -85,6 +85,10 @@ namespace Transformese.Desktop
 
             try
             {
+                // Desabilita o botão para evitar clique duplo
+                btnLogin.Enabled = false;
+                btnLogin.Text = "Entrando...";
+
                 var loginData = new
                 {
                     Email = txtEmail.Text,
@@ -95,12 +99,17 @@ namespace Transformese.Desktop
 
                 if (response.IsSuccessStatusCode)
                 {
-                    mdNotifica.Show("Bem-vindo ao Painel Administrativo da Gerando Falcões!");
+                    // 1. Tenta ler o funcionário que a API devolveu
+                    // (Certifique-se que sua API retorna o objeto Funcionario no login)
+                    var funcionarioLogado = await response.Content.ReadFromJsonAsync<Transformese.Domain.Entities.Funcionario>();
 
-                    var dashboard = new frmDashboard();
+                    mdNotifica.Show($"Bem-vindo, {funcionarioLogado.Nome}!");
+
+                    // 2. Passa o funcionário para o Dashboard
+                    var dashboard = new frmDashboard(funcionarioLogado);
                     this.Hide();
                     dashboard.Show();
-                    this.Close();
+                    // Não damos Close() aqui para manter a app rodando, usamos o Hide
                 }
                 else
                 {
@@ -110,6 +119,11 @@ namespace Transformese.Desktop
             catch (Exception ex)
             {
                 mdNotifica.Show("Erro de conexão com a API: " + ex.Message);
+            }
+            finally
+            {
+                btnLogin.Enabled = true;
+                btnLogin.Text = "ENTRAR";
             }
         }
     }

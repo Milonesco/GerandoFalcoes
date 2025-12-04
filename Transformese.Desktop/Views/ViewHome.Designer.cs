@@ -121,7 +121,7 @@
             btnNovoCandidato = new Guna.UI2.WinForms.Guna2Button();
             pnlBuscaRapida = new Guna.UI2.WinForms.Guna2Panel();
             btnBuscar = new Guna.UI2.WinForms.Guna2Button();
-            txtBuscaCPF = new Guna.UI2.WinForms.Guna2TextBox();
+            txtBusca = new Guna.UI2.WinForms.Guna2TextBox();
             lblBuscaTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlConteudoPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             pnlTabelaInscricoes = new Guna.UI2.WinForms.Guna2Panel();
@@ -133,10 +133,9 @@
             colAcoes = new System.Windows.Forms.DataGridViewButtonColumn();
             pnlHeaderTabela = new Guna.UI2.WinForms.Guna2Panel();
             lblTituloTabela = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblVerTodas = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlEspacador = new Guna.UI2.WinForms.Guna2Panel();
             pnlAlerta = new Guna.UI2.WinForms.Guna2Panel();
-            brnSincronizar = new Guna.UI2.WinForms.Guna2Button();
+            btnSincronizar = new Guna.UI2.WinForms.Guna2Button();
             lblMensagemAlerta = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pbNuvem = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             flowKpiCards.SuspendLayout();
@@ -686,13 +685,14 @@
             btnNovoCandidato.Size = new System.Drawing.Size(270, 60);
             btnNovoCandidato.TabIndex = 0;
             btnNovoCandidato.Text = "+ Novo Candidato";
+            btnNovoCandidato.Click += btnNovoCandidato_Click;
             // 
             // pnlBuscaRapida
             // 
             pnlBuscaRapida.BackColor = System.Drawing.Color.Transparent;
             pnlBuscaRapida.BorderRadius = 10;
             pnlBuscaRapida.Controls.Add(btnBuscar);
-            pnlBuscaRapida.Controls.Add(txtBuscaCPF);
+            pnlBuscaRapida.Controls.Add(txtBusca);
             pnlBuscaRapida.Controls.Add(lblBuscaTitulo);
             pnlBuscaRapida.CustomizableEdges = customizableEdges33;
             pnlBuscaRapida.Dock = System.Windows.Forms.DockStyle.Top;
@@ -725,27 +725,29 @@
             btnBuscar.Size = new System.Drawing.Size(35, 35);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "🔍︎";
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // txtBuscaCPF
+            // txtBusca
             // 
-            txtBuscaCPF.BorderRadius = 10;
-            txtBuscaCPF.CustomizableEdges = customizableEdges31;
-            txtBuscaCPF.DefaultText = "";
-            txtBuscaCPF.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtBuscaCPF.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtBuscaCPF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtBuscaCPF.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtBuscaCPF.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtBuscaCPF.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtBuscaCPF.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtBuscaCPF.Location = new System.Drawing.Point(15, 50);
-            txtBuscaCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtBuscaCPF.Name = "txtBuscaCPF";
-            txtBuscaCPF.PlaceholderText = "Digite o CPF do candidato...";
-            txtBuscaCPF.SelectedText = "";
-            txtBuscaCPF.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            txtBuscaCPF.Size = new System.Drawing.Size(205, 35);
-            txtBuscaCPF.TabIndex = 1;
+            txtBusca.BorderRadius = 10;
+            txtBusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            txtBusca.CustomizableEdges = customizableEdges31;
+            txtBusca.DefaultText = "";
+            txtBusca.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtBusca.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtBusca.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtBusca.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtBusca.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtBusca.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtBusca.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtBusca.Location = new System.Drawing.Point(15, 50);
+            txtBusca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtBusca.Name = "txtBusca";
+            txtBusca.PlaceholderText = "Digite o Nome do candidato...";
+            txtBusca.SelectedText = "";
+            txtBusca.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            txtBusca.Size = new System.Drawing.Size(205, 35);
+            txtBusca.TabIndex = 1;
             // 
             // lblBuscaTitulo
             // 
@@ -806,6 +808,7 @@
             dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvInscricoes.ColumnHeadersHeight = 30;
             dgvInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colNome, colCidade, colStatus, colOng, colAcoes });
+            dgvInscricoes.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
@@ -883,7 +886,6 @@
             // pnlHeaderTabela
             // 
             pnlHeaderTabela.Controls.Add(lblTituloTabela);
-            pnlHeaderTabela.Controls.Add(lblVerTodas);
             pnlHeaderTabela.CustomizableEdges = customizableEdges37;
             pnlHeaderTabela.Dock = System.Windows.Forms.DockStyle.Top;
             pnlHeaderTabela.FillColor = System.Drawing.Color.Transparent;
@@ -907,19 +909,6 @@
             lblTituloTabela.Text = "ÚLTIMAS INCRIÇÕES";
             lblTituloTabela.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblVerTodas
-            // 
-            lblVerTodas.BackColor = System.Drawing.Color.Transparent;
-            lblVerTodas.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
-            lblVerTodas.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
-            lblVerTodas.Location = new System.Drawing.Point(547, 16);
-            lblVerTodas.Name = "lblVerTodas";
-            lblVerTodas.Size = new System.Drawing.Size(66, 25);
-            lblVerTodas.TabIndex = 2;
-            lblVerTodas.Text = "Ver todas";
-            lblVerTodas.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            lblVerTodas.Click += lblVerTodas_Click;
-            // 
             // pnlEspacador
             // 
             pnlEspacador.CustomizableEdges = customizableEdges41;
@@ -932,43 +921,47 @@
             // 
             // pnlAlerta
             // 
-            pnlAlerta.BackColor = System.Drawing.SystemColors.Control;
-            pnlAlerta.BorderColor = System.Drawing.Color.Navy;
+            pnlAlerta.BackColor = System.Drawing.Color.Transparent;
+            pnlAlerta.BorderColor = System.Drawing.Color.FromArgb(122, 90, 216);
             pnlAlerta.BorderRadius = 10;
-            pnlAlerta.Controls.Add(brnSincronizar);
+            pnlAlerta.BorderThickness = 1;
+            pnlAlerta.Controls.Add(btnSincronizar);
             pnlAlerta.Controls.Add(lblMensagemAlerta);
             pnlAlerta.Controls.Add(pbNuvem);
             pnlAlerta.CustomizableEdges = customizableEdges48;
             pnlAlerta.Dock = System.Windows.Forms.DockStyle.Bottom;
-            pnlAlerta.FillColor = System.Drawing.Color.FromArgb(230, 240, 255);
+            pnlAlerta.FillColor = System.Drawing.Color.FromArgb(237, 233, 250);
             pnlAlerta.Location = new System.Drawing.Point(20, 640);
             pnlAlerta.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             pnlAlerta.Name = "pnlAlerta";
             pnlAlerta.Padding = new System.Windows.Forms.Padding(20, 10, 20, 0);
             pnlAlerta.ShadowDecoration.BorderRadius = 10;
             pnlAlerta.ShadowDecoration.CustomizableEdges = customizableEdges49;
+            pnlAlerta.ShadowDecoration.Depth = 10;
+            pnlAlerta.ShadowDecoration.Enabled = true;
             pnlAlerta.Size = new System.Drawing.Size(940, 80);
             pnlAlerta.TabIndex = 1;
             // 
-            // brnSincronizar
+            // btnSincronizar
             // 
-            brnSincronizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            brnSincronizar.BorderRadius = 6;
-            brnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            brnSincronizar.CustomizableEdges = customizableEdges45;
-            brnSincronizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            brnSincronizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            brnSincronizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            brnSincronizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            brnSincronizar.FillColor = System.Drawing.Color.MidnightBlue;
-            brnSincronizar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            brnSincronizar.ForeColor = System.Drawing.Color.White;
-            brnSincronizar.Location = new System.Drawing.Point(770, 20);
-            brnSincronizar.Name = "brnSincronizar";
-            brnSincronizar.ShadowDecoration.CustomizableEdges = customizableEdges46;
-            brnSincronizar.Size = new System.Drawing.Size(151, 40);
-            brnSincronizar.TabIndex = 2;
-            brnSincronizar.Text = "Sincronizar agora";
+            btnSincronizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnSincronizar.BorderRadius = 6;
+            btnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSincronizar.CustomizableEdges = customizableEdges45;
+            btnSincronizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnSincronizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnSincronizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnSincronizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnSincronizar.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
+            btnSincronizar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSincronizar.ForeColor = System.Drawing.Color.White;
+            btnSincronizar.Location = new System.Drawing.Point(770, 20);
+            btnSincronizar.Name = "btnSincronizar";
+            btnSincronizar.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            btnSincronizar.Size = new System.Drawing.Size(151, 40);
+            btnSincronizar.TabIndex = 2;
+            btnSincronizar.Text = "Sincronizar agora";
+            btnSincronizar.Click += btnSincronizar_Click;
             // 
             // lblMensagemAlerta
             // 
@@ -984,7 +977,7 @@
             // pbNuvem
             // 
             pbNuvem.BackColor = System.Drawing.Color.FromArgb(230, 240, 255);
-            pbNuvem.FillColor = System.Drawing.Color.MidnightBlue;
+            pbNuvem.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
             pbNuvem.ImageRotate = 0F;
             pbNuvem.Location = new System.Drawing.Point(20, 20);
             pbNuvem.Name = "pbNuvem";
@@ -1070,7 +1063,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnlConteudoPrincipal;
         private Guna.UI2.WinForms.Guna2Panel pnlTabelaInscricoes;
         private Guna.UI2.WinForms.Guna2DataGridView dgvInscricoes;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblVerTodas;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloTabela;
         private Guna.UI2.WinForms.Guna2Panel pnlHeaderTabela;
         private Guna.UI2.WinForms.Guna2Panel pnlAlerta;
@@ -1081,12 +1073,12 @@
         private System.Windows.Forms.DataGridViewButtonColumn colAcoes;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbNuvem;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMensagemAlerta;
-        private Guna.UI2.WinForms.Guna2Button brnSincronizar;
+        private Guna.UI2.WinForms.Guna2Button btnSincronizar;
         private Guna.UI2.WinForms.Guna2Panel pnlEspacador;
         private Guna.UI2.WinForms.Guna2Panel pnlBuscaRapida;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblBuscaTitulo;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
-        private Guna.UI2.WinForms.Guna2TextBox txtBuscaCPF;
+        private Guna.UI2.WinForms.Guna2TextBox txtBusca;
         private Guna.UI2.WinForms.Guna2Panel pnlAcaoRapida;
         private Guna.UI2.WinForms.Guna2Button btnNovoCandidato;
         private Guna.UI2.WinForms.Guna2Panel pnlFluxoProcesso;

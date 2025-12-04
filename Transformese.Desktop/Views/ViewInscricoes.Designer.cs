@@ -40,7 +40,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -60,12 +59,7 @@
             lblTituloPagina = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlSeparator = new Guna.UI2.WinForms.Guna2Panel();
             pnlGridContainer = new Guna.UI2.WinForms.Guna2Panel();
-            dgvTotalInscricoes = new Guna.UI2.WinForms.Guna2DataGridView();
-            clnCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clnOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clnAcao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dgvInscricoes = new Guna.UI2.WinForms.Guna2DataGridView();
             pnlPaginacao = new Guna.UI2.WinForms.Guna2Panel();
             flpPaginacao = new System.Windows.Forms.FlowLayoutPanel();
             btnAnterior = new Guna.UI2.WinForms.Guna2Button();
@@ -73,9 +67,14 @@
             btnPag2 = new Guna.UI2.WinForms.Guna2Button();
             btnPag3 = new Guna.UI2.WinForms.Guna2Button();
             btnProximo = new Guna.UI2.WinForms.Guna2Button();
+            colCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colAcao = new System.Windows.Forms.DataGridViewButtonColumn();
             pnlTopoFiltros.SuspendLayout();
             pnlGridContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvTotalInscricoes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInscricoes).BeginInit();
             pnlPaginacao.SuspendLayout();
             flpPaginacao.SuspendLayout();
             SuspendLayout();
@@ -155,7 +154,6 @@
             lblTituloPagina.Size = new System.Drawing.Size(231, 39);
             lblTituloPagina.TabIndex = 0;
             lblTituloPagina.Text = "Inscrições Recebidas";
-            lblTituloPagina.Click += lblTituloPagina_Click;
             // 
             // pnlSeparator
             // 
@@ -171,7 +169,7 @@
             // 
             pnlGridContainer.BackColor = System.Drawing.Color.Transparent;
             pnlGridContainer.BorderRadius = 10;
-            pnlGridContainer.Controls.Add(dgvTotalInscricoes);
+            pnlGridContainer.Controls.Add(dgvInscricoes);
             pnlGridContainer.Controls.Add(pnlPaginacao);
             pnlGridContainer.CustomizableEdges = customizableEdges21;
             pnlGridContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -186,10 +184,10 @@
             pnlGridContainer.Size = new System.Drawing.Size(940, 620);
             pnlGridContainer.TabIndex = 2;
             // 
-            // dgvTotalInscricoes
+            // dgvInscricoes
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dgvTotalInscricoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvInscricoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins ExtraBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
@@ -197,74 +195,46 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dgvTotalInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvTotalInscricoes.ColumnHeadersHeight = 24;
-            dgvTotalInscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTotalInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clnCandidato, clnCidade, clnStatus, clnOng, clnAcao });
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dgvTotalInscricoes.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvTotalInscricoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            dgvTotalInscricoes.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
-            dgvTotalInscricoes.Location = new System.Drawing.Point(20, 20);
-            dgvTotalInscricoes.Name = "dgvTotalInscricoes";
-            dgvTotalInscricoes.RowHeadersVisible = false;
-            dgvTotalInscricoes.Size = new System.Drawing.Size(900, 540);
-            dgvTotalInscricoes.TabIndex = 0;
-            dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            dgvTotalInscricoes.ThemeStyle.BackColor = System.Drawing.Color.White;
-            dgvTotalInscricoes.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(100, 88, 255);
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTotalInscricoes.ThemeStyle.HeaderStyle.Height = 24;
-            dgvTotalInscricoes.ThemeStyle.ReadOnly = false;
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.Height = 25;
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
-            dgvTotalInscricoes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            // 
-            // clnCandidato
-            // 
-            clnCandidato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            clnCandidato.HeaderText = "CANDIDATO";
-            clnCandidato.Name = "clnCandidato";
-            // 
-            // clnCidade
-            // 
-            clnCidade.HeaderText = "CIDADE";
-            clnCidade.Name = "clnCidade";
-            // 
-            // clnStatus
-            // 
-            clnStatus.HeaderText = "STATUS";
-            clnStatus.Name = "clnStatus";
-            // 
-            // clnOng
-            // 
-            clnOng.HeaderText = "ONG RESP.";
-            clnOng.Name = "clnOng";
-            // 
-            // clnAcao
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            clnAcao.DefaultCellStyle = dataGridViewCellStyle3;
-            clnAcao.HeaderText = "AÇÃO";
-            clnAcao.Name = "clnAcao";
+            dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvInscricoes.ColumnHeadersHeight = 24;
+            dgvInscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colCandidato, colCidade, colStatus, colOng, colAcao });
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgvInscricoes.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvInscricoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvInscricoes.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            dgvInscricoes.Location = new System.Drawing.Point(20, 20);
+            dgvInscricoes.Name = "dgvInscricoes";
+            dgvInscricoes.RowHeadersVisible = false;
+            dgvInscricoes.Size = new System.Drawing.Size(900, 540);
+            dgvInscricoes.TabIndex = 0;
+            dgvInscricoes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            dgvInscricoes.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvInscricoes.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            dgvInscricoes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            dgvInscricoes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            dgvInscricoes.ThemeStyle.BackColor = System.Drawing.Color.White;
+            dgvInscricoes.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            dgvInscricoes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(100, 88, 255);
+            dgvInscricoes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvInscricoes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dgvInscricoes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            dgvInscricoes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvInscricoes.ThemeStyle.HeaderStyle.Height = 24;
+            dgvInscricoes.ThemeStyle.ReadOnly = false;
+            dgvInscricoes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            dgvInscricoes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvInscricoes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dgvInscricoes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            dgvInscricoes.ThemeStyle.RowsStyle.Height = 25;
+            dgvInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            dgvInscricoes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
             // 
             // pnlPaginacao
             // 
@@ -433,6 +403,36 @@
             btnProximo.TabIndex = 6;
             btnProximo.Text = ">";
             // 
+            // colCandidato
+            // 
+            colCandidato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colCandidato.HeaderText = "CANDIDATO";
+            colCandidato.Name = "colCandidato";
+            // 
+            // colCidade
+            // 
+            colCidade.HeaderText = "CIDADE";
+            colCidade.Name = "colCidade";
+            // 
+            // colStatus
+            // 
+            colStatus.HeaderText = "STATUS";
+            colStatus.Name = "colStatus";
+            // 
+            // colOng
+            // 
+            colOng.HeaderText = "ONG RESP.";
+            colOng.Name = "colOng";
+            // 
+            // colAcao
+            // 
+            colAcao.HeaderText = "AÇÃO";
+            colAcao.Name = "colAcao";
+            colAcao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            colAcao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            colAcao.Text = "Ver Detalhes";
+            colAcao.UseColumnTextForButtonValue = true;
+            // 
             // ViewInscricoes
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -448,7 +448,7 @@
             pnlTopoFiltros.ResumeLayout(false);
             pnlTopoFiltros.PerformLayout();
             pnlGridContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvTotalInscricoes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInscricoes).EndInit();
             pnlPaginacao.ResumeLayout(false);
             pnlPaginacao.PerformLayout();
             flpPaginacao.ResumeLayout(false);
@@ -462,12 +462,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloPagina;
         private Guna.UI2.WinForms.Guna2Panel pnlSeparator;
         private Guna.UI2.WinForms.Guna2Panel pnlGridContainer;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvTotalInscricoes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnCandidato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnCidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnOng;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnAcao;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvInscricoes;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
         private Guna.UI2.WinForms.Guna2Panel pnlPaginacao;
         private System.Windows.Forms.FlowLayoutPanel flpPaginacao;
@@ -476,5 +471,10 @@
         private Guna.UI2.WinForms.Guna2Button btnPag1;
         private Guna.UI2.WinForms.Guna2Button btnPag2;
         private Guna.UI2.WinForms.Guna2Button btnProximo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCandidato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOng;
+        private System.Windows.Forms.DataGridViewButtonColumn colAcao;
     }
 }
