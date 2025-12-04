@@ -113,12 +113,8 @@
             // 
             // btnSair
             // 
-            btnSair.BorderRadius = 8;
-            btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnSair.CustomizableEdges = customizableEdges7;
             btnSair.BackColor = System.Drawing.Color.Transparent;
             btnSair.BorderRadius = 10;
-            btnSair.CustomizableEdges = customizableEdges27;
             btnSair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -130,7 +126,6 @@
             btnSair.Name = "btnSair";
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSair.ShadowDecoration.BorderRadius = 10;
-            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnSair.ShadowDecoration.Depth = 5;
             btnSair.ShadowDecoration.Enabled = true;
             btnSair.Size = new System.Drawing.Size(209, 45);
@@ -145,7 +140,6 @@
             btnCadastrar.CustomizableEdges = customizableEdges9;
             btnCadastrar.BackColor = System.Drawing.Color.Transparent;
             btnCadastrar.BorderRadius = 10;
-            btnCadastrar.CustomizableEdges = customizableEdges29;
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -157,7 +151,6 @@
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnCadastrar.ShadowDecoration.BorderRadius = 10;
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCadastrar.ShadowDecoration.Depth = 5;
             btnCadastrar.ShadowDecoration.Enabled = true;
             btnCadastrar.Size = new System.Drawing.Size(209, 45);
@@ -194,7 +187,6 @@
             txtSenha.CustomizableEdges = customizableEdges13;
             txtSenha.BackColor = System.Drawing.Color.Transparent;
             txtSenha.BorderRadius = 10;
-            txtSenha.CustomizableEdges = customizableEdges33;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -209,7 +201,6 @@
             txtSenha.SelectedText = "";
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtSenha.ShadowDecoration.BorderRadius = 10;
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges34;
             txtSenha.ShadowDecoration.Depth = 5;
             txtSenha.ShadowDecoration.Enabled = true;
             txtSenha.Size = new System.Drawing.Size(209, 36);
@@ -277,7 +268,6 @@
             txtNome.CustomizableEdges = customizableEdges19;
             txtNome.BackColor = System.Drawing.Color.Transparent;
             txtNome.BorderRadius = 10;
-            txtNome.CustomizableEdges = customizableEdges39;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -292,7 +282,6 @@
             txtNome.SelectedText = "";
             txtNome.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtNome.ShadowDecoration.BorderRadius = 10;
-            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges40;
             txtNome.ShadowDecoration.Depth = 5;
             txtNome.ShadowDecoration.Enabled = true;
             txtNome.Size = new System.Drawing.Size(209, 36);
@@ -325,7 +314,6 @@
             txtEmail.CustomizableEdges = customizableEdges17;
             txtEmail.BackColor = System.Drawing.Color.Transparent;
             txtEmail.BorderRadius = 10;
-            txtEmail.CustomizableEdges = customizableEdges37;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -340,7 +328,6 @@
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtEmail.ShadowDecoration.BorderRadius = 10;
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges38;
             txtEmail.ShadowDecoration.Depth = 5;
             txtEmail.ShadowDecoration.Enabled = true;
             txtEmail.Size = new System.Drawing.Size(209, 36);
@@ -363,7 +350,6 @@
             txtSobrenome.CustomizableEdges = customizableEdges15;
             txtSobrenome.BackColor = System.Drawing.Color.Transparent;
             txtSobrenome.BorderRadius = 10;
-            txtSobrenome.CustomizableEdges = customizableEdges35;
             txtSobrenome.DefaultText = "";
             txtSobrenome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSobrenome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -378,7 +364,6 @@
             txtSobrenome.SelectedText = "";
             txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtSobrenome.ShadowDecoration.BorderRadius = 10;
-            txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtSobrenome.ShadowDecoration.Depth = 5;
             txtSobrenome.ShadowDecoration.Enabled = true;
             txtSobrenome.Size = new System.Drawing.Size(209, 36);
@@ -411,7 +396,6 @@
             txtConfirmacaoSenha.CustomizableEdges = customizableEdges11;
             txtConfirmacaoSenha.BackColor = System.Drawing.Color.Transparent;
             txtConfirmacaoSenha.BorderRadius = 10;
-            txtConfirmacaoSenha.CustomizableEdges = customizableEdges31;
             txtConfirmacaoSenha.DefaultText = "";
             txtConfirmacaoSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtConfirmacaoSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -426,7 +410,6 @@
             txtConfirmacaoSenha.SelectedText = "";
             txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtConfirmacaoSenha.ShadowDecoration.BorderRadius = 10;
-            txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtConfirmacaoSenha.ShadowDecoration.Depth = 5;
             txtConfirmacaoSenha.ShadowDecoration.Enabled = true;
             txtConfirmacaoSenha.Size = new System.Drawing.Size(209, 36);
@@ -489,7 +472,6 @@
             cboSexo.Cursor = System.Windows.Forms.Cursors.IBeam;
             cboSexo.CustomizableEdges = customizableEdges5;
             cboSexo.BorderRadius = 10;
-            cboSexo.CustomizableEdges = customizableEdges25;
             cboSexo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboSexo.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -501,7 +483,6 @@
             cboSexo.Name = "cboSexo";
             cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cboSexo.ShadowDecoration.BorderRadius = 10;
-            cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges26;
             cboSexo.ShadowDecoration.Depth = 5;
             cboSexo.ShadowDecoration.Enabled = true;
             cboSexo.Size = new System.Drawing.Size(209, 36);
@@ -522,7 +503,6 @@
             dtpDataCadastro.Name = "dtpDataCadastro";
             dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpDataCadastro.ShadowDecoration.BorderRadius = 10;
-            dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges24;
             dtpDataCadastro.ShadowDecoration.Depth = 5;
             dtpDataCadastro.Size = new System.Drawing.Size(209, 36);
             dtpDataCadastro.TabIndex = 20;
@@ -553,7 +533,6 @@
             dtpDataNascimento.Name = "dtpDataNascimento";
             dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges2;
             dtpDataNascimento.ShadowDecoration.BorderRadius = 10;
-            dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges22;
             dtpDataNascimento.ShadowDecoration.Depth = 5;
             dtpDataNascimento.Size = new System.Drawing.Size(209, 36);
             dtpDataNascimento.TabIndex = 20;

@@ -1,125 +1,145 @@
 ﻿using System;
-using System.Drawing;
+using System.Drawing; // Necessário para cores
 using System.Windows.Forms;
-using Guna.UI2.WinForms; // Componentes Guna2
-using Transformese.Desktop.Views; // Para ViewHome, ViewInscricoes, etc.
+using Transformese.Desktop.Views;
+using Transformese.Domain.Entities;
 
 namespace Transformese.Desktop
 {
     public partial class frmDashboard : Form
     {
-        // Componentes Fixos da Estrutura (Usando Guna2)
-        private Guna2GradientPanel panelSidebar; // Use GradientPanel para um visual mais moderno
-        private Guna2Panel panelHeader;
-        private Guna2Panel panelContent;
+        private Funcionario _usuarioLogado;
 
-        // Exemplo de botões de navegação
-        private Guna2Button btnHome;
-        private Guna2Button btnInscricoes;
+        // --- CONSTRUTOR PRINCIPAL (COM LOGIN) ---
+        public frmDashboard(Funcionario funcionario)
+        {
+            InitializeComponent();
+            _usuarioLogado = funcionario;
+            ConfigurarDashboard();
+        }
 
+        // --- CONSTRUTOR DE TESTE (SEM LOGIN) ---
         public frmDashboard()
         {
-            InitializeCustomComponents();
-
-            // Conecta eventos de navegação
-            btnHome.Click += (sender, e) => LoadView(new ViewHome());
-            btnInscricoes.Click += (sender, e) => LoadView(new ViewInscricoes());
-
-            // Carrega a primeira View ao iniciar
-            this.Load += (sender, e) => LoadView(new ViewHome());
+            InitializeComponent();
+            // Usuário Fake para evitar erros visuais durante testes
+            _usuarioLogado = new Funcionario { Nome = "Usuário", Sobrenome = "Teste" };
+            ConfigurarDashboard();
         }
 
-        private void InitializeCustomComponents()
+        // --- CONFIGURAÇÃO INICIAL DA TELA ---
+        private void ConfigurarDashboard()
         {
-            this.AutoScaleMode = AutoScaleMode.None;
+            try
+            {
+                // 1. Saudação (Cabeçalho Esquerdo)
+                // O sinal '?' evita erro se o label não existir (Null Check)
+                if (lblBoasVindas != null)
+                    lblBoasVindas.Text = $"Bem-vindo(a), {_usuarioLogado.Nome}!";
 
-            // --- 1. Configuração do Formulário Principal ---
-            this.Text = "Transformese - Backoffice";
-            this.Size = new Size(1600, 900);
-            this.WindowState = FormWindowState.Maximized;
-            this.BackColor = Color.FromArgb(240, 240, 240); // Cinza claro para o fundo
+                // 2. Painel de Usuário (Canto Superior Direito)
+                if (lblNomeUsuario != null)
+                    lblNomeUsuario.Text = $"{_usuarioLogado.Nome} {_usuarioLogado.Sobrenome}";
 
-            // --- 2. Painel Content (Área Dinâmica) ---
-            // É melhor adicionar o Content primeiro para que ele seja preenchido após a Sidebar e Header
-            panelContent = new Guna2Panel();
-            panelContent.BackColor = AppTheme.Branco; // Fundo branco para o conteúdo
-            panelContent.Dock = DockStyle.Fill;
-            this.Controls.Add(panelContent);
+                if (lblCargoUsuario != null)
+                    lblCargoUsuario.Text = "Administrador"; // Valor fixo por enquanto
 
-            // --- 3. Painel Header (Topo) ---
-            panelHeader = new Guna2Panel();
-            panelHeader.BackColor = AppTheme.Branco;
-            panelHeader.Dock = DockStyle.Top;
-            panelHeader.Height = 60;
-            // O Guna2Panel pode ser arredondado/ter sombra, mas mantemos o design flat aqui
-            this.Controls.Add(panelHeader);
+                // 3. Foto de Perfil (Bolinha Colorida)
+                if (pbPerfil != null)
+                {
+                    pbPerfil.Image = null; // Limpa imagem anterior
+                    pbPerfil.FillColor = Color.FromArgb(0, 168, 150); // Verde Turquesa do Logo
+                }
 
-            // Exemplo: Adicionar Título ao Header
-            Label lblHeaderTitle = new Label();
-            lblHeaderTitle.Text = "DASHBOARD DE GESTÃO";
-            lblHeaderTitle.Font = new Font("Poppins", 14, FontStyle.Bold);
-            lblHeaderTitle.Location = new Point(20, 15);
-            lblHeaderTitle.AutoSize = true;
-            panelHeader.Controls.Add(lblHeaderTitle);
+                // 4. Carrega a Home
+                NavegarPara(new ViewHome());
 
-            // --- 4. Painel Sidebar (Esquerda) ---
-            // Usando Guna2GradientPanel para potencializar o estilo
-            panelSidebar = new Guna2GradientPanel();
-            panelSidebar.FillColor = AppTheme.CinzaEscuro;
-            panelSidebar.FillColor2 = AppTheme.CinzaEscuro; // Cor sólida para o exemplo
-            panelSidebar.Dock = DockStyle.Left;
-            panelSidebar.Width = 220;
-            this.Controls.Add(panelSidebar);
-
-            // --- 5. Componentes da Sidebar (Navegação) ---
-
-            // Botão Home
-            btnHome = CreateSidebarButton("🏠 HOME", 100);
-            panelSidebar.Controls.Add(btnHome);
-
-            // Botão Inscrições
-            btnInscricoes = CreateSidebarButton("📝 INSCRIÇÕES", 160);
-            panelSidebar.Controls.Add(btnInscricoes);
-
-            // Garante que a Sidebar fique por cima do Content
-            panelSidebar.BringToFront();
+                // 5. Marca o botão visualmente
+                if (btnDashboard != null) btnDashboard.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao configurar dashboard: {ex.Message}");
+            }
         }
 
-        // Método utilitário para criar botões de Sidebar (Guna2Button)
-        private Guna2Button CreateSidebarButton(string text, int top)
+        // --- O CÉREBRO DA NAVEGAÇÃO ---
+        private void NavegarPara(UserControl view)
         {
-            Guna2Button btn = new Guna2Button();
-            btn.Text = text;
-            btn.FillColor = AppTheme.CinzaEscuro; // Cor de fundo da Sidebar
-            btn.ForeColor = AppTheme.Branco;
-            btn.Size = new Size(panelSidebar.Width, 50);
-            btn.Location = new Point(0, top);
-            btn.Font = new Font("Poppins", 10, FontStyle.Regular);
-            btn.TextAlign = HorizontalAlignment.Left;
-            btn.Padding = new Padding(15, 0, 0, 0);
-            btn.HoverState.FillColor = Color.FromArgb(40, 40, 40); // Efeito hover
-            return btn;
+            // Verifica se o painel existe antes de tentar usar
+            if (pnlContent == null) return;
+
+            try
+            {
+                view.Dock = DockStyle.Fill;
+                pnlContent.Controls.Clear(); // Limpa a tela anterior
+                pnlContent.Controls.Add(view); // Adiciona a nova tela
+                view.BringToFront(); // Garante que fique na frente de tudo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao navegar: {ex.Message}");
+            }
         }
 
-        // Método principal para carregar o conteúdo dinâmico
-        public void LoadView(UserControl newView)
-        {
-            if (newView == null) return;
+        // --- EVENTOS DOS BOTÕES (CLICKS) ---
+        // IMPORTANTE: Verifique se o "Raiozinho" ⚡ nas Propriedades está ligado a estes métodos!
 
-            panelContent.Controls.Clear();
-            newView.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(newView);
-            newView.BringToFront();
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            NavegarPara(new ViewHome());
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        private void btnInscricoes_Click(object sender, EventArgs e)
         {
-
+            NavegarPara(new ViewInscricoes());
         }
 
-        private void btnIncricoes_Click(object sender, EventArgs e)
+        private void btnTriagem_Click(object sender, EventArgs e)
         {
+            NavegarPara(new ViewTriagem());
+        }
 
+        private void btnEntrevistas_Click(object sender, EventArgs e)
+        {
+            NavegarPara(new ViewEntrevista());
+        }
+
+        private void btnNovoCandidato_Click(object sender, EventArgs e)
+        {
+            NavegarPara(new ViewNovoCandidato());
+        }
+
+        private void btnGestaoOngs_Click(object sender, EventArgs e)
+        {
+            NavegarPara(new ViewGestaoOngs());
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            NavegarPara(new ViewRelatorios());
+        }
+
+        // --- BOTÃO SAIR ---
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            var confirmacao = MessageBox.Show("Deseja realmente sair?", "Sair",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmacao == DialogResult.Yes)
+            {
+                frmLogin login = new frmLogin();
+                login.Show();
+                this.Close();
+            }
+        }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            // this.WindowState = FormWindowState.Maximized; // Comentei para não maximizar
+
+            // Opcional: Se quiser que abra no meio da tela
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Transformese.MVC.ViewModels
 {
     public class CandidatoInscricaoViewModel
     {
-        // ===== Dados Pessoais =====
-        [Required(ErrorMessage = "Nome completo é obrigatório")]
-        [Display(Name = "Nome Completo")]
-        public string NomeCompleto { get; set; } = string.Empty;
+        // --- DADOS PESSOAIS ---
+        [Required(ErrorMessage = "Nome é obrigatório")]
+        public string NomeCompleto { get; set; }
 
         [Display(Name = "Nome Social")]
         public string? NomeSocial { get; set; } = string.Empty;
@@ -85,27 +85,59 @@ namespace Transformese.MVC.ViewModels
         [Display(Name = "Curso Desejado")]
         public string CursoDesejado { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Turno preferencial é obrigatório")]
-        [Display(Name = "Turno Preferencial")]
-        public string TurnoPreferencial { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Data de nascimento é obrigatória")]
+        [DataType(DataType.Date)]
+        public DateTime DataNascimento { get; set; }
 
-        [Display(Name = "Já estudou antes?")]
-        public bool JaEstudouAntes { get; set; }
+        // Novos campos de Diversidade
+        public string IdentidadeGenero { get; set; }
+        public string OrientacaoSexual { get; set; }
+        public string RacaCor { get; set; }
+        public string Deficiencia { get; set; }
 
-        [Display(Name = "Indicado Por")]
-        public string? IndicadoPor { get; set; }
+        // --- CONTATO E LOCALIZAÇÃO ---
+        [Required(ErrorMessage = "Email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Digite um e-mail válido")]
+        public string Email { get; set; }
 
-        // ===== Termos =====
-        [Required(ErrorMessage = "É necessário concordar com os termos do programa")]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "É necessário concordar com os termos")]
-        [Display(Name = "Concordo com os termos do programa")]
-        public bool ConcordaPrograma { get; set; }
+        [Required(ErrorMessage = "Telefone é obrigatório")]
+        public string Telefone { get; set; }
 
-        [Display(Name = "Aceito receber novidades")]
-        public bool AceitaNovidades { get; set; }
+        public string CEP { get; set; } // Novo
 
-        // ===== Campos Legados (mantidos para compatibilidade) =====
-        [Display(Name = "Possui Computador?")]
+        [Required(ErrorMessage = "Cidade é obrigatória")]
+        public string Cidade { get; set; }
+
+        [Required(ErrorMessage = "Estado é obrigatório")]
+        public string Estado { get; set; }
+
+        // --- SOCIOECONÔMICO (NOVOS) ---
+        public string Escolaridade { get; set; }
+
+        public bool TrabalhaAtualmente { get; set; }
+
+        public decimal RendaFamiliar { get; set; }
+
+        public int PessoasNaCasa { get; set; }
+
+        // --- INSTITUCIONAL / CURSO (NOVOS) ---
+        [Required(ErrorMessage = "Selecione o curso de interesse")]
+        public string CursoInteresse { get; set; }
+
+        public string TurnoPreferido { get; set; }
+
+        public bool JaEstudouNaGF { get; set; }
+
+        public string? NomeIndicacao { get; set; } // Pode ser nulo
+
+        // --- TERMOS E CONTROLE ---
+        // O Range obriga o checkbox a ser marcado (True)
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Você precisa aceitar os termos.")]
+        public bool AceitouTermos { get; set; }
+
+        public bool AceitouNovidades { get; set; }
+
+        // --- LEGADO (MANTIDOS) ---
         public bool PossuiComputador { get; set; }
 
         [Display(Name = "Possui Internet?")]

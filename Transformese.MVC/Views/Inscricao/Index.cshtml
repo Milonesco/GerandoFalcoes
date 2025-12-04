@@ -12,11 +12,14 @@
         $(document).ready(function () {
             $('#CPF').mask('000.000.000-00');
             $('#Telefone').mask('(00) 00000-0000');
-            $('#CEP').mask('00000-000');
+            $('#Cep').mask('00000-000');
+
+            // Máscara de Moeda Simples
+            $('#RendaFamiliar').mask('000.000.000,00', {reverse: true});
         });
 
         let currentStep = 1;
-        const totalSteps = 6;
+        const totalSteps = 4; // AUMENTAMOS PARA 4 PASSOS
 
         function changeStep(n) {
             if (n === 1 && !validateStep(currentStep)) return;
@@ -30,12 +33,13 @@
 
         function validateStep(step) {
             const container = document.getElementById(`step-${step}`);
-            const inputs = container.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]), select');
+            // Valida inputs normais e selects
+            const inputs = container.querySelectorAll('input, select');
             let valid = true;
 
             inputs.forEach(input => {
-                // Pula validação de campos opcionais
-                if (input.hasAttribute('data-optional')) return;
+                // Ignora campos opcionais se estiverem vazios
+                if (!input.hasAttribute('required') && input.value === '') return;
 
                 if (!input.checkValidity()) {
                     input.classList.add('is-invalid');
@@ -65,17 +69,15 @@
             const percentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
             const progressBar = document.getElementById('progress-bar-fill');
             progressBar.style.width = `${percentage}%`;
-            progressBar.setAttribute('aria-valuenow', percentage);
 
+            // Atualiza Texto do Passo
             const stepTitles = [
                 "Dados Pessoais",
-                "Identidade e Diversidade",
                 "Contato & Localização",
-                "Situação Socioeconômica",
-                "Curso & Disponibilidade",
-                "Conectividade & Finalização"
+                "Perfil Socioeconômico", // Novo Passo
+                "Curso & Termos"
             ];
-            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep - 1]}`;
+            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep-1]}`;
 
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
@@ -143,8 +145,8 @@
         <div class="col-lg-8">
 
             <div class="text-center mb-5">
-                <h2 class="fw-bold display-6 inscription-title">Vamos começar sua jornada 🚀</h2>
-                <p class="text-muted">Preencha os dados abaixo para se candidatar às bolsas do Transformese.</p>
+                <h2 class="fw-bold display-6">Vamos começar sua jornada 🚀</h2>
+                <p class="text-muted">Preencha os dados completos para concorrer às bolsas.</p>
             </div>
 
             <div class="card inscription-card shadow-lg border-0 rounded-4 overflow-hidden">
@@ -155,7 +157,7 @@
                         <span class="fw-bold small inscription-step-text" id="step-count"></span>
                     </div>
                     <div class="progress" style="height: 8px;">
-                        <div id="progress-bar-fill" class="progress-bar inscription-progress-bar" role="progressbar" style="width: 0%; transition: width 0.5s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div id="progress-bar-fill" class="progress-bar bg-success" role="progressbar" style="width: 0%; transition: width 0.5s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
@@ -164,48 +166,79 @@
                     @if (!ViewData.ModelState.IsValid)
                     {
                         <div class="alert alert-danger rounded-3 mb-4">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i> Ocorreu um erro no envio. Verifique os dados abaixo.
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i> Verifique os erros abaixo.
                             <div asp-validation-summary="All" class="small mt-2"></div>
                         </div>
                     }
 
-                    <form asp-action="Criar" method="post" id="wizard-form">
+                    <form asp-action="Sucesso" method="post" id="wizard-form">
 
                         <!-- PASSO 1: Dados Pessoais -->
                         <div id="step-1" class="step-content">
-                            <h4 class="mb-4 fw-bold inscription-step-title">Quem é você?</h4>
+                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-person-circle me-2"></i>Quem é você?</h4>
 
-                            <div class="mb-4">
-                                <label asp-for="NomeCompleto" class="form-label fw-semibold inscription-label">Nome Completo</label>
+                            <div class="mb-3">
+                                <label asp-for="NomeCompleto" class="form-label fw-semibold">Nome Completo</label>
                                 <input asp-for="NomeCompleto" class="form-control form-control-lg" placeholder="Digite seu nome completo" required />
                                 <span asp-validation-for="NomeCompleto" class="text-danger small"></span>
                             </div>
 
-                            <div class="mb-4">
-                                <label asp-for="NomeSocial" class="form-label fw-semibold inscription-label">Nome Social (Opcional)</label>
-                                <input asp-for="NomeSocial" class="form-control form-control-lg" placeholder="Se você usa um nome social, informe aqui" data-optional />
-                                <span asp-validation-for="NomeSocial" class="text-danger small"></span>
-                                <small class="form-text text-muted">Campo opcional - preencha apenas se desejar.</small>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CPF" class="form-label fw-semibold">CPF</label>
+                                    <input asp-for="CPF" class="form-control" placeholder="000.000.000-00" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="DataNascimento" class="form-label fw-semibold">Data de Nascimento</label>
+                                    <input asp-for="DataNascimento" type="date" class="form-control" required />
+                                </div>
                             </div>
 
-                            <div class="row g-3 mb-4">
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
-                                    <label asp-for="CPF" class="form-label fw-semibold inscription-label">CPF</label>
-                                    <input asp-for="CPF" class="form-control form-control-lg" placeholder="000.000.000-00" required />
-                                    <span asp-validation-for="CPF" class="text-danger small"></span>
+                                    <label asp-for="IdentidadeGenero" class="form-label fw-semibold">Identidade de Gênero</label>
+                                    <select asp-for="IdentidadeGenero" class="form-select">
+                                        <option value="">Selecione...</option>
+                                        <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                                        <option value="Homem Cisgênero">Homem Cisgênero</option>
+                                        <option value="Mulher Transgênero">Mulher Transgênero</option>
+                                        <option value="Homem Transgênero">Homem Transgênero</option>
+                                        <option value="Não-binário">Não-binário</option>
+                                        <option value="Prefiro não responder">Prefiro não responder</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="DataNascimento" class="form-label fw-semibold inscription-label">Data de Nascimento</label>
-                                    <input asp-for="DataNascimento" type="date" class="form-control form-control-lg" required />
-                                    <span asp-validation-for="DataNascimento" class="text-danger small"></span>
+                                    <label asp-for="OrientacaoSexual" class="form-label fw-semibold">Orientação Sexual</label>
+                                    <select asp-for="OrientacaoSexual" class="form-select">
+                                        <option value="">Selecione...</option>
+                                        <option value="Heterossexual">Heterossexual</option>
+                                        <option value="Homossexual">Homossexual</option>
+                                        <option value="Bissexual">Bissexual</option>
+                                        <option value="Outro">Outro / Prefiro não responder</option>
+                                    </select>
                                 </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="RacaCor" class="form-label fw-semibold">Raça / Cor</label>
+                                <select asp-for="RacaCor" class="form-select">
+                                    <option value="">Selecione...</option>
+                                    <option value="Branca">Branca</option>
+                                    <option value="Preta">Preta</option>
+                                    <option value="Parda">Parda</option>
+                                    <option value="Amarela">Amarela</option>
+                                    <option value="Indígena">Indígena</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Deficiencia" class="form-label fw-semibold">Possui Deficiência?</label>
+                                <input asp-for="Deficiencia" class="form-control" placeholder="Descreva ou digite 'Não possui'" />
                             </div>
                         </div>
 
-                        <!-- PASSO 2: Identidade e Diversidade -->
                         <div id="step-2" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold inscription-step-title">Sua Identidade</h4>
-                            <p class="text-muted mb-4">Essas informações nos ajudam a promover diversidade e inclusão no programa.</p>
+                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-geo-alt-fill me-2"></i>Onde te encontramos?</h4>
 
                             <div class="mb-4">
                                 <label asp-for="RaçaEtnia" class="form-label fw-semibold inscription-label">Raça/Etnia</label>
@@ -265,14 +298,12 @@
 
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
-                                    <label asp-for="Email" class="form-label fw-semibold inscription-label">E-mail Principal</label>
-                                    <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="seu@email.com" required />
-                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                    <label asp-for="Email" class="form-label fw-semibold">E-mail Principal</label>
+                                    <input asp-for="Email" type="email" class="form-control" placeholder="seu@email.com" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Telefone" class="form-label fw-semibold inscription-label">Celular / WhatsApp</label>
-                                    <input asp-for="Telefone" class="form-control form-control-lg" placeholder="(00) 00000-0000" required />
-                                    <span asp-validation-for="Telefone" class="text-danger small"></span>
+                                    <label asp-for="Telefone" class="form-label fw-semibold">Celular / WhatsApp</label>
+                                    <input asp-for="Telefone" class="form-control" placeholder="(00) 00000-0000" required />
                                 </div>
                             </div>
 
@@ -280,19 +311,21 @@
 
                             <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label asp-for="CEP" class="form-label fw-semibold inscription-label">CEP</label>
-                                    <input asp-for="CEP" type="text" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)" required>
-                                    <span asp-validation-for="CEP" class="text-danger small"></span>
+                                    <label asp-for="CEP" class="form-label fw-semibold">CEP</label>
+                                    <input asp-for="CEP" id="Cep" class="form-control" placeholder="00000-000" onblur="buscarCep(this.value)" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Cidade" class="form-label fw-semibold inscription-label">Cidade</label>
-                                    <input asp-for="Cidade" class="form-control form-control-lg" required />
-                                    <span asp-validation-for="Cidade" class="text-danger small"></span>
+                                    <label asp-for="Cidade" class="form-label fw-semibold">Cidade</label>
+                                    <input asp-for="Cidade" id="Cidade" class="form-control" required />
                                 </div>
                                 <div class="col-md-2">
-                                    <label asp-for="Estado" class="form-label fw-semibold inscription-label">UF</label>
-                                    <input asp-for="Estado" class="form-control form-control-lg" maxlength="2" required />
-                                    <span asp-validation-for="Estado" class="text-danger small"></span>
+                                    <label asp-for="Estado" class="form-label fw-semibold">UF</label>
+                                    <select asp-for="Estado" id="Estado" class="form-select" required>
+                                        <option value="">UF</option>
+                                        <option value="SP">SP</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="MG">MG</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -417,52 +450,87 @@
                             </div>
                         </div>
 
-                        <!-- PASSO 6: Conectividade & Finalização -->
-                        <div id="step-6" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold inscription-step-title">Conectividade & Finalização</h4>
+                        <div id="step-3" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-graph-up-arrow me-2"></i>Perfil Socioeconômico</h4>
+                            <p class="text-muted small mb-4">Essas informações são confidenciais e usadas apenas para critérios de bolsa.</p>
 
-                            <div class="p-4 inscription-info-box rounded-3 mb-4 border">
-                                <p class="fw-semibold mb-3 inscription-label">Quais recursos você possui em casa?</p>
-
-                                <div class="form-check form-switch mb-2">
-                                    <input class="form-check-input" type="checkbox" asp-for="PossuiComputador" id="pcSwitch">
-                                    <label class="form-check-label inscription-label" for="pcSwitch">Tenho Computador ou Notebook</label>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Escolaridade" class="form-label fw-semibold">Escolaridade</label>
+                                    <select asp-for="Escolaridade" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Ensino Fundamental">Ensino Fundamental</option>
+                                        <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                                        <option value="Superior Incompleto">Superior Incompleto</option>
+                                        <option value="Superior Completo">Superior Completo</option>
+                                    </select>
                                 </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" asp-for="PossuiInternet" id="netSwitch">
-                                    <label class="form-check-label inscription-label" for="netSwitch">Tenho Acesso à Internet</label>
+                                <div class="col-md-6">
+                                    <label asp-for="TrabalhaAtualmente" class="form-label fw-semibold">Trabalha Atualmente?</label>
+                                    <select asp-for="TrabalhaAtualmente" class="form-select" required>
+                                        <option value="false">Não</option>
+                                        <option value="true">Sim</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label asp-for="PerfilLinkedin" class="form-label fw-semibold inscription-label">LinkedIn (Opcional)</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white inscription-input-addon"><i class="bi bi-linkedin text-primary"></i></span>
-                                    <input asp-for="PerfilLinkedin" class="form-control form-control-lg" placeholder="https://linkedin.com/in/voce" data-optional />
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="RendaFamiliar" class="form-label fw-semibold">Renda Familiar (R$)</label>
+                                    <input asp-for="RendaFamiliar" id="RendaFamiliar" class="form-control" placeholder="Ex: 1.500,00" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="PessoasNaCasa" class="form-label fw-semibold">Pessoas na Casa</label>
+                                    <input asp-for="PessoasNaCasa" type="number" class="form-control" min="1" placeholder="Incluindo você" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="step-4" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-mortarboard-fill me-2"></i>Seu Futuro</h4>
+
+                            <div class="mb-3">
+                                <label asp-for="CursoInteresse" class="form-label fw-semibold">Qual curso deseja fazer?</label>
+                                <select asp-for="CursoInteresse" class="form-select form-select-lg" required>
+                                    <option value="">Selecione o curso...</option>
+                                    <option value="Desenvolvimento Web Fullstack">Desenvolvimento Web Fullstack</option>
+                                    <option value="Data Analytics">Data Analytics (Dados)</option>
+                                    <option value="Marketing Digital">Marketing Digital</option>
+                                    <option value="Design UX/UI">Design UX/UI</option>
+                                </select>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label asp-for="TurnoPreferido" class="form-label fw-semibold">Turno de Preferência</label>
+                                    <select asp-for="TurnoPreferido" class="form-select">
+                                        <option value="Manhã">Manhã</option>
+                                        <option value="Tarde">Tarde</option>
+                                        <option value="Noite">Noite</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="NomeIndicacao" class="form-label fw-semibold">Indicado por alguém? (Opcional)</label>
+                                    <input asp-for="NomeIndicacao" class="form-control" placeholder="Nome do aluno" />
                                 </div>
                             </div>
 
-                            <hr class="my-4">
-
-                            <div class="form-check mb-3">
-                                <input asp-for="ConcordaPrograma" class="form-check-input" type="checkbox" required id="ConcordaPrograma">
-                                <label class="form-check-label small inscription-label" for="ConcordaPrograma">
-                                    <strong>Declaro que li e aceito os termos do programa Transformese</strong> e que todas as informações prestadas aqui são verdadeiras.
-                                </label>
-                                <span asp-validation-for="ConcordaPrograma" class="text-danger small d-block"></span>
-                            </div>
-
-                            <div class="form-check mb-4">
-                                <input asp-for="AceitaNovidades" class="form-check-input" type="checkbox" id="AceitaNovidades">
-                                <label class="form-check-label small inscription-label" for="AceitaNovidades">
-                                    Aceito receber novidades, informações sobre novos cursos e oportunidades por e-mail.
-                                </label>
-                            </div>
-
-                            <div class="alert alert-info rounded-3">
-                                <i class="bi bi-info-circle-fill me-2"></i>
-                                <strong>Quase lá!</strong> Revise suas informações e clique em "Finalizar Inscrição" para concluir.
+                            <div class="card bg-light border-0 mb-3">
+                                <div class="card-body">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" asp-for="AceitouTermos" id="termos" required>
+                                        <label class="form-check-label small" for="termos">
+                                            Declaro que li e aceito os termos do programa Transformese e que todas as informações prestadas aqui são verdadeiras.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" asp-for="AceitouNovidades" id="news">
+                                        <label class="form-check-label small" for="news">
+                                            Aceito receber novidades e comunicações da Gerando Falcões.
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
