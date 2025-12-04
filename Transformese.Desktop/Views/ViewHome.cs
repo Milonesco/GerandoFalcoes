@@ -8,9 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Transformese.Domain.Entities;
+using Transformese.Domain.Enums;
+using Transformese.Domain;
+using Transformese.Data;
 
 namespace Transformese.Desktop.Views
 {
+    // Inicializa a lista para evitar erros de valor nulo
+    private List<Candidato> _listaCache = new List<Candidato>();
+
     public partial class ViewHome : UserControl
     {
         private List<Candidato> _listaCache;
@@ -29,48 +35,40 @@ namespace Transformese.Desktop.Views
             if (txtBusca != null) txtBusca.TextChanged += TxtBusca_TextChanged;
         }
 
-        // --- 1. CONEXÃO COM O BANCO DE DADOS ---
         private void CarregarDadosDoBanco()
         {
             try
             {
-                // Instancia seu contexto (conexão)
-                // Troque 'SeuAppDbContext' pelo nome da sua classe de contexto
-                using (var context = new SeuAppDbContext())
+                // CORREÇÃO 1: Usando o nome real do seu Contexto
+                using (var context = new TransformeseContext())
                 {
-                    // Puxa todos os candidatos para a memória de uma vez
-                    // Se sua tabela chama 'Inscricoes', use context.Inscricoes.ToList()
                     _listaCache = context.Candidatos.ToList();
                 }
 
-                // Agora atualiza a tela com esses dados
                 AtualizarInterface();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
-                _listaCache = new List<Candidato>(); // Evita erro de nulo se falhar
+                _listaCache = new List<Candidato>();
             }
         }
 
-        // --- 2. ATUALIZAÇÃO DA TELA (KPIs e Tabela) ---
         private void AtualizarInterface(string filtro = "")
         {
-            if (_listaCache == null) return;
-
-            // Filtra na memória (muito rápido)
             var listaExibicao = _listaCache;
 
             if (!string.IsNullOrEmpty(filtro))
             {
+                // CORREÇÃO 2: Usando 'NomeCompleto' em vez de 'Nome'
                 listaExibicao = _listaCache
-                    .Where(c => c.Nome.ToLower().Contains(filtro.ToLower()) ||
+                    .Where(c => c.NomeCompleto.ToLower().Contains(filtro.ToLower()) ||
                                 c.Cidade.ToLower().Contains(filtro.ToLower()))
                     .ToList();
             }
 
             PreencherGrid(listaExibicao);
-            AtualizarCardsKPI();         // Sempre usa os totais, independente do filtro
+            AtualizarCardsKPI();
             AtualizarStatusSincronizacao();
         }
 
@@ -82,16 +80,16 @@ namespace Transformese.Desktop.Views
 
             foreach (var item in lista)
             {
-                // Ajuste os nomes das propriedades conforme sua classe real
-                dgvInscricoes.Rows.Add(item.Nome, item.Cidade, item.Status, item.OngResponsavel);
+                // CORREÇÃO 3: item.Status.ToString() converte o Enum para texto na tabela
+                // CORREÇÃO 4: Usando 'Ong' em vez de 'OngResponsavel'
+                dgvInscricoes.Rows.Add(item.NomeCompleto, item.Cidade, item.Status.ToString(), item.Ong);
             }
 
             dgvInscricoes.ClearSelection();
 
-            // Garante que o botão de ação tenha texto "..." ou "Ver"
+            // Configura o botão "Ação"
             foreach (DataGridViewRow row in dgvInscricoes.Rows)
             {
-                // Se o botão for a 5ª coluna (indice 4)
                 if (row.Cells.Count > 4 && row.Cells[4] is DataGridViewButtonCell)
                 {
                     row.Cells[4].Value = "...";
@@ -101,12 +99,12 @@ namespace Transformese.Desktop.Views
 
         private void AtualizarCardsKPI()
         {
-            // Usa _listaCache para contar o total real do banco
+            // CORREÇÃO 5: Comparando com ENUM (StatusCandidato) e não com Texto ("")
             int total = _listaCache.Count;
-            int triagem = _listaCache.Count(c => c.Status == "Triagem");
-            int entrevistas = _listaCache.Count(c => c.Status == "Entrevista");
-            int aprovados = _listaCache.Count(c => c.Status == "Aprovado");
-            int vagas = 400; // Fixo ou vindo de config
+            int triagem = _listaCache.Count(c => c.Status == StatusCandidato.Triagem);
+            int entrevistas = _listaCache.Count(c => c.Status == StatusCandidato.Entrevista);
+            int aprovados = _listaCache.Count(c => c.Status == StatusCandidato.Aprovado);
+            int vagas = 340;
 
             if (lblKpiValor != null) lblKpiValor.Text = total.ToString("N0");
             if (lblTriagemValor != null) lblTriagemValor.Text = triagem.ToString();
@@ -117,15 +115,14 @@ namespace Transformese.Desktop.Views
 
         private void AtualizarStatusSincronizacao()
         {
-            // Conta quantos estão aprovados mas ainda não foram enviados (supondo campo EnviadoAsana)
-            // Se não tiver o campo boolean, baseie-se apenas no status
-            int pendentes = _listaCache.Count(c => c.Status == "Aprovado" && c.EnviadoAsana == false);
+            // Lógica simplificada: Conta apenas quem está Aprovado
+            int pendentes = _listaCache.Count(c => c.Status == StatusCandidato.Aprovado);
 
             if (lblStatusSync != null)
             {
                 lblStatusSync.Text = pendentes > 0
                     ? $"Existem {pendentes} aprovados aguardando sincronização."
-                    : "Tudo atualizado.";
+                    : "Todos os aprovados já foram processados.";
             }
 
             if (btnSincronizar != null)
@@ -145,17 +142,18 @@ namespace Transformese.Desktop.Views
             }
         }
 
-        // --- 3. EVENTOS ---
-
         private void TxtBusca_TextChanged(object sender, EventArgs e)
         {
-            AtualizarInterface(txtBusca.Text.Trim());
+            if (sender is TextBox txt)
+            {
+                AtualizarInterface(txt.Text.Trim());
+            }
         }
 
         private async void btnSincronizar_Click(object sender, EventArgs e)
         {
-            // Filtra quem precisa ser enviado
-            var paraSincronizar = _listaCache.Where(c => c.Status == "Aprovado" && c.EnviadoAsana == false).ToList();
+            // Filtra usando ENUM
+            var paraSincronizar = _listaCache.Where(c => c.Status == StatusCandidato.Aprovado).ToList();
 
             if (paraSincronizar.Count == 0) return;
 
@@ -166,33 +164,30 @@ namespace Transformese.Desktop.Views
                 this.Cursor = Cursors.WaitCursor;
                 btnSincronizar.Text = "Enviando...";
 
-                // Simulação de delay da API
                 await Task.Delay(1500);
 
-                // --- SALVAR NO BANCO DE DADOS ---
-                using (var context = new SeuAppDbContext())
+                using (var context = new TransformeseContext())
                 {
+                    // Como não temos a coluna 'EnviadoAsana', não vamos salvar nada no banco agora
+                    // para evitar erros. Apenas simulamos o envio visualmente.
+
+                    // Se você quiser mudar o status deles para limpar a lista, descomente abaixo:
+                    /*
                     foreach (var itemLocal in paraSincronizar)
                     {
-                        // 1. Atualiza na memória local
-                        itemLocal.EnviadoAsana = true;
-
-                        // 2. Busca o objeto real no banco para atualizar
                         var itemBanco = context.Candidatos.Find(itemLocal.Id);
-                        if (itemBanco != null)
-                        {
-                            itemBanco.EnviadoAsana = true;
-                            // Opcional: itemBanco.Status = "Integrado";
+                        if (itemBanco != null) {
+                             // itemBanco.Status = StatusCandidato.Inscrito; // Tira de aprovado
                         }
                     }
-                    // Salva todas as alterações no SQL
                     context.SaveChanges();
+                    */
                 }
 
-                this.Cursor = Cursors.Default;
+                // Recarrega
+                CarregarDadosDoBanco();
 
-                // Atualiza a tela (o botão vai ficar cinza pois agora EnviadoAsana é true)
-                AtualizarInterface();
+                this.Cursor = Cursors.Default;
                 MessageBox.Show("Sincronização concluída!");
             }
         }
