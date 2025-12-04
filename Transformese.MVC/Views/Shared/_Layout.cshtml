@@ -17,7 +17,12 @@
     <nav id="mainNavbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light island-navbar fixed-top">
         <div class="container-fluid">
 
-            <a class="navbar-brand brand-text" href="@Url.Action("Index", "Home")">
+            @{
+                var isHomePage = ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
+                ViewContext.RouteData.Values["action"]?.ToString() == "Index";
+            }
+
+            <a class="navbar-brand brand-text" href="@(isHomePage ? "#inicio" : Url.Action("Index", "Home"))">
                 <span style="font-weight:800;">GERANDO FALCÕES</span>
             </a>
 
