@@ -80,7 +80,6 @@
             // 
             // btnLiberarAcesso
             // 
-<<<<<<< HEAD
             btnLiberarAcesso.BorderRadius = 8;
             btnLiberarAcesso.CustomizableEdges = customizableEdges4;
             btnLiberarAcesso.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -97,23 +96,21 @@
             btnLiberarAcesso.TabIndex = 10;
             btnLiberarAcesso.Text = "Liberar Acesso";
             btnLiberarAcesso.Click += btnLiberarAcesso_Click;
-=======
-            btnLogin.BorderRadius = 8;
-            btnLogin.CustomizableEdges = customizableEdges4;
-            btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnLogin.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnLogin.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = System.Drawing.Color.White;
-            btnLogin.Location = new System.Drawing.Point(31, 408);
-            btnLogin.Name = "btnLogin";
-            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            btnLogin.Size = new System.Drawing.Size(335, 45);
-            btnLogin.TabIndex = 10;
-            btnLogin.Text = "Login";
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
+            btnLiberarAcesso.BorderRadius = 8;
+            btnLiberarAcesso.CustomizableEdges = customizableEdges4;
+            btnLiberarAcesso.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnLiberarAcesso.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnLiberarAcesso.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnLiberarAcesso.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnLiberarAcesso.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnLiberarAcesso.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnLiberarAcesso.ForeColor = System.Drawing.Color.White;
+            btnLiberarAcesso.Location = new System.Drawing.Point(31, 408);
+            btnLiberarAcesso.Name = "btnLiberarAcesso";
+            btnLiberarAcesso.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnLiberarAcesso.Size = new System.Drawing.Size(335, 45);
+            btnLiberarAcesso.TabIndex = 10;
+            btnLiberarAcesso.Text = "Liberar Acesso";
             // 
             // chkSenha
             // 
@@ -136,7 +133,6 @@
             // 
             // txtSenhaAdmin
             // 
-<<<<<<< HEAD
             txtSenhaAdmin.BorderRadius = 8;
             txtSenhaAdmin.CustomizableEdges = customizableEdges6;
             txtSenhaAdmin.DefaultText = "";
@@ -154,29 +150,26 @@
             txtSenhaAdmin.ShadowDecoration.CustomizableEdges = customizableEdges7;
             txtSenhaAdmin.Size = new System.Drawing.Size(331, 36);
             txtSenhaAdmin.TabIndex = 7;
-=======
-            txtSenha.BorderRadius = 8;
-            txtSenha.CustomizableEdges = customizableEdges6;
-            txtSenha.DefaultText = "";
-            txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtSenha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtSenha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtSenha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtSenha.Font = new System.Drawing.Font("Segoe UI", 9F);
-            txtSenha.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtSenha.Location = new System.Drawing.Point(31, 313);
-            txtSenha.Name = "txtSenha";
-            txtSenha.PlaceholderText = "Digite sua senha";
-            txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtSenha.Size = new System.Drawing.Size(331, 36);
-            txtSenha.TabIndex = 7;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
+            txtSenhaAdmin.BorderRadius = 8;
+            txtSenhaAdmin.CustomizableEdges = customizableEdges6;
+            txtSenhaAdmin.DefaultText = "";
+            txtSenhaAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtSenhaAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtSenhaAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtSenhaAdmin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtSenhaAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtSenhaAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtSenhaAdmin.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtSenhaAdmin.Location = new System.Drawing.Point(31, 313);
+            txtSenhaAdmin.Name = "txtSenhaAdmin";
+            txtSenhaAdmin.PlaceholderText = "Digite sua senha";
+            txtSenhaAdmin.SelectedText = "";
+            txtSenhaAdmin.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            txtSenhaAdmin.Size = new System.Drawing.Size(331, 36);
+            txtSenhaAdmin.TabIndex = 7;
             // 
             // txtEmailAdmin
             // 
-<<<<<<< HEAD
             txtEmailAdmin.BorderRadius = 8;
             txtEmailAdmin.CustomizableEdges = customizableEdges8;
             txtEmailAdmin.DefaultText = "";
@@ -194,25 +187,23 @@
             txtEmailAdmin.ShadowDecoration.CustomizableEdges = customizableEdges9;
             txtEmailAdmin.Size = new System.Drawing.Size(335, 36);
             txtEmailAdmin.TabIndex = 8;
-=======
-            txtEmail.BorderRadius = 8;
-            txtEmail.CustomizableEdges = customizableEdges8;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new System.Drawing.Point(31, 246);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "example@example.com";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            txtEmail.Size = new System.Drawing.Size(335, 36);
-            txtEmail.TabIndex = 8;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
+            txtEmailAdmin.BorderRadius = 8;
+            txtEmailAdmin.CustomizableEdges = customizableEdges8;
+            txtEmailAdmin.DefaultText = "";
+            txtEmailAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtEmailAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtEmailAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtEmailAdmin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtEmailAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtEmailAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtEmailAdmin.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtEmailAdmin.Location = new System.Drawing.Point(31, 246);
+            txtEmailAdmin.Name = "txtEmail";
+            txtEmailAdmin.PlaceholderText = "example@example.com";
+            txtEmailAdmin.SelectedText = "";
+            txtEmailAdmin.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            txtEmailAdmin.Size = new System.Drawing.Size(335, 36);
+            txtEmailAdmin.TabIndex = 8;
             // 
             // label3
             // 
