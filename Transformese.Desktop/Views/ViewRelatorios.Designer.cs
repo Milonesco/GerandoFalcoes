@@ -32,14 +32,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,26 +50,26 @@
             pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlExportar = new Guna.UI2.WinForms.Guna2Panel();
-            pnlAsana = new Guna.UI2.WinForms.Guna2Panel();
-            pnlSync = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnExportar = new Guna.UI2.WinForms.Guna2Button();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblStatusAsana = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlAsana = new Guna.UI2.WinForms.Guna2Panel();
             btnTesteAsana = new Guna.UI2.WinForms.Guna2Button();
+            lblStatusAsana = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlSync = new Guna.UI2.WinForms.Guna2Panel();
             btnSync = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlHistorico = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             dgvLogs = new Guna.UI2.WinForms.Guna2DataGridView();
             colDataHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             colAcao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlHeader.SuspendLayout();
             pnlExportar.SuspendLayout();
             pnlAsana.SuspendLayout();
@@ -119,6 +119,51 @@
             pnlExportar.Size = new System.Drawing.Size(300, 250);
             pnlExportar.TabIndex = 0;
             // 
+            // btnExportar
+            // 
+            btnExportar.BackColor = System.Drawing.Color.Transparent;
+            btnExportar.BorderRadius = 10;
+            btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnExportar.CustomizableEdges = customizableEdges3;
+            btnExportar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnExportar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnExportar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnExportar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnExportar.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            btnExportar.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnExportar.ForeColor = System.Drawing.Color.White;
+            btnExportar.Location = new System.Drawing.Point(20, 190);
+            btnExportar.Name = "btnExportar";
+            btnExportar.ShadowDecoration.BorderRadius = 10;
+            btnExportar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnExportar.ShadowDecoration.Depth = 5;
+            btnExportar.ShadowDecoration.Enabled = true;
+            btnExportar.Size = new System.Drawing.Size(260, 40);
+            btnExportar.TabIndex = 2;
+            btnExportar.Text = "Baixar Excel";
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel3.Location = new System.Drawing.Point(20, 60);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new System.Drawing.Size(228, 46);
+            guna2HtmlLabel3.TabIndex = 1;
+            guna2HtmlLabel3.Text = "Baixe a lista completa de candidatos<br>em formato .xlsx ou .csv.";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            guna2HtmlLabel2.Location = new System.Drawing.Point(20, 20);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new System.Drawing.Size(151, 36);
+            guna2HtmlLabel2.TabIndex = 0;
+            guna2HtmlLabel2.Text = "Exportar Dados";
+            // 
             // pnlAsana
             // 
             pnlAsana.BackColor = System.Drawing.Color.Transparent;
@@ -139,6 +184,62 @@
             pnlAsana.Size = new System.Drawing.Size(300, 250);
             pnlAsana.TabIndex = 1;
             // 
+            // btnTesteAsana
+            // 
+            btnTesteAsana.BackColor = System.Drawing.Color.Transparent;
+            btnTesteAsana.BorderRadius = 10;
+            btnTesteAsana.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnTesteAsana.CustomizableEdges = customizableEdges7;
+            btnTesteAsana.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnTesteAsana.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnTesteAsana.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnTesteAsana.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnTesteAsana.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnTesteAsana.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnTesteAsana.ForeColor = System.Drawing.Color.White;
+            btnTesteAsana.Location = new System.Drawing.Point(20, 190);
+            btnTesteAsana.Name = "btnTesteAsana";
+            btnTesteAsana.ShadowDecoration.BorderRadius = 10;
+            btnTesteAsana.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnTesteAsana.ShadowDecoration.Depth = 5;
+            btnTesteAsana.ShadowDecoration.Enabled = true;
+            btnTesteAsana.Size = new System.Drawing.Size(260, 40);
+            btnTesteAsana.TabIndex = 4;
+            btnTesteAsana.Text = "Testar Conexão";
+            // 
+            // lblStatusAsana
+            // 
+            lblStatusAsana.BackColor = System.Drawing.Color.Transparent;
+            lblStatusAsana.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblStatusAsana.ForeColor = System.Drawing.Color.FromArgb(236, 34, 98);
+            lblStatusAsana.Location = new System.Drawing.Point(20, 80);
+            lblStatusAsana.Name = "lblStatusAsana";
+            lblStatusAsana.Size = new System.Drawing.Size(135, 30);
+            lblStatusAsana.TabIndex = 3;
+            lblStatusAsana.Text = "DESCONECTADO";
+            // 
+            // guna2HtmlLabel6
+            // 
+            guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel6.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel6.Location = new System.Drawing.Point(20, 60);
+            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            guna2HtmlLabel6.Size = new System.Drawing.Size(122, 24);
+            guna2HtmlLabel6.TabIndex = 2;
+            guna2HtmlLabel6.Text = "Status da Conexão:";
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel5.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            guna2HtmlLabel5.Location = new System.Drawing.Point(20, 20);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new System.Drawing.Size(178, 36);
+            guna2HtmlLabel5.TabIndex = 1;
+            guna2HtmlLabel5.Text = "Integração Asana";
+            // 
             // pnlSync
             // 
             pnlSync.BackColor = System.Drawing.Color.Transparent;
@@ -158,128 +259,11 @@
             pnlSync.Size = new System.Drawing.Size(300, 250);
             pnlSync.TabIndex = 2;
             // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            guna2HtmlLabel2.Location = new System.Drawing.Point(20, 20);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new System.Drawing.Size(151, 36);
-            guna2HtmlLabel2.TabIndex = 0;
-            guna2HtmlLabel2.Text = "Exportar Dados";
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel3.Location = new System.Drawing.Point(20, 60);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new System.Drawing.Size(228, 46);
-            guna2HtmlLabel3.TabIndex = 1;
-            guna2HtmlLabel3.Text = "Baixe a lista completa de candidatos<br>em formato .xlsx ou .csv.";
-            // 
-            // btnExportar
-            // 
-            btnExportar.BorderRadius = 10;
-            btnExportar.CustomizableEdges = customizableEdges3;
-            btnExportar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnExportar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnExportar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnExportar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnExportar.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            btnExportar.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnExportar.ForeColor = System.Drawing.Color.White;
-            btnExportar.Location = new System.Drawing.Point(20, 190);
-            btnExportar.Name = "btnExportar";
-            btnExportar.ShadowDecoration.BorderRadius = 10;
-            btnExportar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnExportar.ShadowDecoration.Depth = 5;
-            btnExportar.ShadowDecoration.Enabled = true;
-            btnExportar.Size = new System.Drawing.Size(260, 40);
-            btnExportar.TabIndex = 2;
-            btnExportar.Text = "Baixar Excel";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel4.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
-            guna2HtmlLabel4.Location = new System.Drawing.Point(20, 20);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new System.Drawing.Size(140, 36);
-            guna2HtmlLabel4.TabIndex = 1;
-            guna2HtmlLabel4.Text = "Sincronização";
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel5.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            guna2HtmlLabel5.Location = new System.Drawing.Point(20, 20);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new System.Drawing.Size(178, 36);
-            guna2HtmlLabel5.TabIndex = 1;
-            guna2HtmlLabel5.Text = "Integração Asana";
-            // 
-            // guna2HtmlLabel6
-            // 
-            guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel6.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel6.Location = new System.Drawing.Point(20, 60);
-            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new System.Drawing.Size(122, 24);
-            guna2HtmlLabel6.TabIndex = 2;
-            guna2HtmlLabel6.Text = "Status da Conexão:";
-            // 
-            // guna2HtmlLabel7
-            // 
-            guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel7.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel7.Location = new System.Drawing.Point(20, 60);
-            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new System.Drawing.Size(197, 46);
-            guna2HtmlLabel7.TabIndex = 2;
-            guna2HtmlLabel7.Text = "Envie os candidatos aprovados<br>pendentes para o Asana agora.\r\n";
-            // 
-            // lblStatusAsana
-            // 
-            lblStatusAsana.BackColor = System.Drawing.Color.Transparent;
-            lblStatusAsana.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblStatusAsana.ForeColor = System.Drawing.Color.FromArgb(236, 34, 98);
-            lblStatusAsana.Location = new System.Drawing.Point(20, 80);
-            lblStatusAsana.Name = "lblStatusAsana";
-            lblStatusAsana.Size = new System.Drawing.Size(135, 30);
-            lblStatusAsana.TabIndex = 3;
-            lblStatusAsana.Text = "DESCONECTADO";
-            // 
-            // btnTesteAsana
-            // 
-            btnTesteAsana.BorderRadius = 10;
-            btnTesteAsana.CustomizableEdges = customizableEdges7;
-            btnTesteAsana.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnTesteAsana.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnTesteAsana.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnTesteAsana.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnTesteAsana.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnTesteAsana.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnTesteAsana.ForeColor = System.Drawing.Color.White;
-            btnTesteAsana.Location = new System.Drawing.Point(20, 190);
-            btnTesteAsana.Name = "btnTesteAsana";
-            btnTesteAsana.ShadowDecoration.BorderRadius = 10;
-            btnTesteAsana.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnTesteAsana.ShadowDecoration.Depth = 5;
-            btnTesteAsana.ShadowDecoration.Enabled = true;
-            btnTesteAsana.Size = new System.Drawing.Size(260, 40);
-            btnTesteAsana.TabIndex = 4;
-            btnTesteAsana.Text = "Testar Conexão";
-            // 
             // btnSync
             // 
+            btnSync.BackColor = System.Drawing.Color.Transparent;
             btnSync.BorderRadius = 10;
+            btnSync.Cursor = System.Windows.Forms.Cursors.Hand;
             btnSync.CustomizableEdges = customizableEdges11;
             btnSync.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSync.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -298,6 +282,28 @@
             btnSync.TabIndex = 3;
             btnSync.Text = "Sincronizar Agora";
             // 
+            // guna2HtmlLabel7
+            // 
+            guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel7.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel7.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel7.Location = new System.Drawing.Point(20, 60);
+            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            guna2HtmlLabel7.Size = new System.Drawing.Size(197, 46);
+            guna2HtmlLabel7.TabIndex = 2;
+            guna2HtmlLabel7.Text = "Envie os candidatos aprovados<br>pendentes para o Asana agora.\r\n";
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel4.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
+            guna2HtmlLabel4.Location = new System.Drawing.Point(20, 20);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new System.Drawing.Size(140, 36);
+            guna2HtmlLabel4.TabIndex = 1;
+            guna2HtmlLabel4.Text = "Sincronização";
+            // 
             // pnlHistorico
             // 
             pnlHistorico.BackColor = System.Drawing.Color.Transparent;
@@ -315,26 +321,6 @@
             pnlHistorico.ShadowDecoration.Enabled = true;
             pnlHistorico.Size = new System.Drawing.Size(940, 330);
             pnlHistorico.TabIndex = 3;
-            // 
-            // guna2HtmlLabel8
-            // 
-            guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            guna2HtmlLabel8.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2HtmlLabel8.ForeColor = System.Drawing.Color.FromArgb(169, 15, 64);
-            guna2HtmlLabel8.Location = new System.Drawing.Point(20, 20);
-            guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            guna2HtmlLabel8.Size = new System.Drawing.Size(223, 36);
-            guna2HtmlLabel8.TabIndex = 1;
-            guna2HtmlLabel8.Text = "Histórico de Execuções";
-            // 
-            // guna2Separator1
-            // 
-            guna2Separator1.FillColor = System.Drawing.Color.FromArgb(169, 15, 64);
-            guna2Separator1.FillThickness = 2;
-            guna2Separator1.Location = new System.Drawing.Point(20, 50);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new System.Drawing.Size(900, 10);
-            guna2Separator1.TabIndex = 2;
             // 
             // dgvLogs
             // 
@@ -415,6 +401,26 @@
             colStatus.HeaderText = "Status";
             colStatus.Name = "colStatus";
             colStatus.ReadOnly = true;
+            // 
+            // guna2Separator1
+            // 
+            guna2Separator1.FillColor = System.Drawing.Color.FromArgb(169, 15, 64);
+            guna2Separator1.FillThickness = 2;
+            guna2Separator1.Location = new System.Drawing.Point(20, 50);
+            guna2Separator1.Name = "guna2Separator1";
+            guna2Separator1.Size = new System.Drawing.Size(900, 10);
+            guna2Separator1.TabIndex = 2;
+            // 
+            // guna2HtmlLabel8
+            // 
+            guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel8.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel8.ForeColor = System.Drawing.Color.FromArgb(169, 15, 64);
+            guna2HtmlLabel8.Location = new System.Drawing.Point(20, 20);
+            guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            guna2HtmlLabel8.Size = new System.Drawing.Size(223, 36);
+            guna2HtmlLabel8.TabIndex = 1;
+            guna2HtmlLabel8.Text = "Histórico de Execuções";
             // 
             // ViewRelatorios
             // 

@@ -95,7 +95,8 @@
             // 
             // btnSair
             // 
-            btnSair.BorderRadius = 8;
+            btnSair.BackColor = System.Drawing.Color.Transparent;
+            btnSair.BorderRadius = 10;
             btnSair.CustomizableEdges = customizableEdges27;
             btnSair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -106,7 +107,10 @@
             btnSair.ForeColor = System.Drawing.Color.White;
             btnSair.Location = new System.Drawing.Point(889, 642);
             btnSair.Name = "btnSair";
+            btnSair.ShadowDecoration.BorderRadius = 10;
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnSair.ShadowDecoration.Depth = 5;
+            btnSair.ShadowDecoration.Enabled = true;
             btnSair.Size = new System.Drawing.Size(209, 45);
             btnSair.TabIndex = 17;
             btnSair.Text = "Sair";
@@ -114,7 +118,8 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.BorderRadius = 8;
+            btnCadastrar.BackColor = System.Drawing.Color.Transparent;
+            btnCadastrar.BorderRadius = 10;
             btnCadastrar.CustomizableEdges = customizableEdges29;
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -125,7 +130,10 @@
             btnCadastrar.ForeColor = System.Drawing.Color.White;
             btnCadastrar.Location = new System.Drawing.Point(674, 642);
             btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.ShadowDecoration.BorderRadius = 10;
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btnCadastrar.ShadowDecoration.Depth = 5;
+            btnCadastrar.ShadowDecoration.Enabled = true;
             btnCadastrar.Size = new System.Drawing.Size(209, 45);
             btnCadastrar.TabIndex = 18;
             btnCadastrar.Text = "Cadastrar";
@@ -153,7 +161,8 @@
             // 
             // txtSenha
             // 
-            txtSenha.BorderRadius = 8;
+            txtSenha.BackColor = System.Drawing.Color.Transparent;
+            txtSenha.BorderRadius = 10;
             txtSenha.CustomizableEdges = customizableEdges33;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -168,7 +177,10 @@
             txtSenha.PasswordChar = '•';
             txtSenha.PlaceholderText = "Digite sua senha";
             txtSenha.SelectedText = "";
+            txtSenha.ShadowDecoration.BorderRadius = 10;
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            txtSenha.ShadowDecoration.Depth = 5;
+            txtSenha.ShadowDecoration.Enabled = true;
             txtSenha.Size = new System.Drawing.Size(209, 36);
             txtSenha.TabIndex = 14;
             // 
@@ -197,12 +209,13 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Poppins Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             label2.Location = new System.Drawing.Point(674, 135);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(394, 68);
+            label2.Size = new System.Drawing.Size(440, 22);
             label2.TabIndex = 12;
-            label2.Text = "Lembre-se de solicitar um administrador\r\nantes de realizar o cadastro.";
+            label2.Text = "Lembre-se de solicitar um administrador antes de realizar o cadastro.";
             // 
             // label1
             // 
@@ -226,7 +239,8 @@
             // 
             // txtNome
             // 
-            txtNome.BorderRadius = 8;
+            txtNome.BackColor = System.Drawing.Color.Transparent;
+            txtNome.BorderRadius = 10;
             txtNome.CustomizableEdges = customizableEdges39;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -240,7 +254,10 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Digite seu nome";
             txtNome.SelectedText = "";
+            txtNome.ShadowDecoration.BorderRadius = 10;
             txtNome.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            txtNome.ShadowDecoration.Depth = 5;
+            txtNome.ShadowDecoration.Enabled = true;
             txtNome.Size = new System.Drawing.Size(209, 36);
             txtNome.TabIndex = 15;
             // 
@@ -266,7 +283,8 @@
             // 
             // txtEmail
             // 
-            txtEmail.BorderRadius = 8;
+            txtEmail.BackColor = System.Drawing.Color.Transparent;
+            txtEmail.BorderRadius = 10;
             txtEmail.CustomizableEdges = customizableEdges37;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -280,7 +298,10 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example@gerandofalcoes.com";
             txtEmail.SelectedText = "";
+            txtEmail.ShadowDecoration.BorderRadius = 10;
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            txtEmail.ShadowDecoration.Depth = 5;
+            txtEmail.ShadowDecoration.Enabled = true;
             txtEmail.Size = new System.Drawing.Size(209, 36);
             txtEmail.TabIndex = 15;
             // 
@@ -296,7 +317,8 @@
             // 
             // txtSobrenome
             // 
-            txtSobrenome.BorderRadius = 8;
+            txtSobrenome.BackColor = System.Drawing.Color.Transparent;
+            txtSobrenome.BorderRadius = 10;
             txtSobrenome.CustomizableEdges = customizableEdges35;
             txtSobrenome.DefaultText = "";
             txtSobrenome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -310,7 +332,10 @@
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.PlaceholderText = "Digite seu sobrenome";
             txtSobrenome.SelectedText = "";
+            txtSobrenome.ShadowDecoration.BorderRadius = 10;
             txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            txtSobrenome.ShadowDecoration.Depth = 5;
+            txtSobrenome.ShadowDecoration.Enabled = true;
             txtSobrenome.Size = new System.Drawing.Size(209, 36);
             txtSobrenome.TabIndex = 15;
             // 
@@ -336,7 +361,8 @@
             // 
             // txtConfirmacaoSenha
             // 
-            txtConfirmacaoSenha.BorderRadius = 8;
+            txtConfirmacaoSenha.BackColor = System.Drawing.Color.Transparent;
+            txtConfirmacaoSenha.BorderRadius = 10;
             txtConfirmacaoSenha.CustomizableEdges = customizableEdges31;
             txtConfirmacaoSenha.DefaultText = "";
             txtConfirmacaoSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -351,7 +377,10 @@
             txtConfirmacaoSenha.PasswordChar = '•';
             txtConfirmacaoSenha.PlaceholderText = "Digite sua senha novamente";
             txtConfirmacaoSenha.SelectedText = "";
+            txtConfirmacaoSenha.ShadowDecoration.BorderRadius = 10;
             txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            txtConfirmacaoSenha.ShadowDecoration.Depth = 5;
+            txtConfirmacaoSenha.ShadowDecoration.Enabled = true;
             txtConfirmacaoSenha.Size = new System.Drawing.Size(209, 36);
             txtConfirmacaoSenha.TabIndex = 14;
             // 
@@ -406,6 +435,7 @@
             // cboSexo
             // 
             cboSexo.BackColor = System.Drawing.Color.Transparent;
+            cboSexo.BorderRadius = 10;
             cboSexo.CustomizableEdges = customizableEdges25;
             cboSexo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -416,12 +446,16 @@
             cboSexo.ItemHeight = 30;
             cboSexo.Location = new System.Drawing.Point(674, 374);
             cboSexo.Name = "cboSexo";
+            cboSexo.ShadowDecoration.BorderRadius = 10;
             cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            cboSexo.ShadowDecoration.Depth = 5;
+            cboSexo.ShadowDecoration.Enabled = true;
             cboSexo.Size = new System.Drawing.Size(209, 36);
             cboSexo.TabIndex = 19;
             // 
             // dtpDataCadastro
             // 
+            dtpDataCadastro.BorderRadius = 10;
             dtpDataCadastro.Checked = true;
             dtpDataCadastro.CustomizableEdges = customizableEdges23;
             dtpDataCadastro.FillColor = System.Drawing.Color.White;
@@ -431,7 +465,9 @@
             dtpDataCadastro.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDataCadastro.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDataCadastro.Name = "dtpDataCadastro";
+            dtpDataCadastro.ShadowDecoration.BorderRadius = 10;
             dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            dtpDataCadastro.ShadowDecoration.Depth = 5;
             dtpDataCadastro.Size = new System.Drawing.Size(209, 36);
             dtpDataCadastro.TabIndex = 20;
             dtpDataCadastro.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
@@ -448,6 +484,7 @@
             // 
             // dtpDataNascimento
             // 
+            dtpDataNascimento.BorderRadius = 10;
             dtpDataNascimento.Checked = true;
             dtpDataNascimento.CustomizableEdges = customizableEdges21;
             dtpDataNascimento.FillColor = System.Drawing.Color.White;
@@ -457,7 +494,9 @@
             dtpDataNascimento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDataNascimento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDataNascimento.Name = "dtpDataNascimento";
+            dtpDataNascimento.ShadowDecoration.BorderRadius = 10;
             dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            dtpDataNascimento.ShadowDecoration.Depth = 5;
             dtpDataNascimento.Size = new System.Drawing.Size(209, 36);
             dtpDataNascimento.TabIndex = 20;
             dtpDataNascimento.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);

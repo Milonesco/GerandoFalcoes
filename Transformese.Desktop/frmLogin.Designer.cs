@@ -92,12 +92,13 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Poppins Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             label2.Location = new System.Drawing.Point(725, 194);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(317, 68);
+            label2.Size = new System.Drawing.Size(397, 23);
             label2.TabIndex = 1;
-            label2.Text = "Acesse sua área restrita\r\n(Administrador ou ONG Parceira).";
+            label2.Text = "Acesse sua área restrita (Administrador ou ONG Parceira).";
             // 
             // txtEmail
             // 

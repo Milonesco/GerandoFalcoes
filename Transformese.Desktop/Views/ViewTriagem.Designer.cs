@@ -444,7 +444,7 @@
             // 
             lblTituloPessoal.BackColor = System.Drawing.Color.Transparent;
             lblTituloPessoal.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            lblTituloPessoal.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloPessoal.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
             lblTituloPessoal.Location = new System.Drawing.Point(20, 10);
             lblTituloPessoal.Name = "lblTituloPessoal";
             lblTituloPessoal.Size = new System.Drawing.Size(215, 30);
@@ -555,6 +555,7 @@
             // 
             numPontuacao.BackColor = System.Drawing.Color.Transparent;
             numPontuacao.BorderRadius = 10;
+            numPontuacao.Cursor = System.Windows.Forms.Cursors.Hand;
             numPontuacao.CustomizableEdges = customizableEdges23;
             numPontuacao.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             numPontuacao.Location = new System.Drawing.Point(20, 225);
@@ -598,7 +599,7 @@
             // 
             lblTituloAvaliacao.BackColor = System.Drawing.Color.Transparent;
             lblTituloAvaliacao.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            lblTituloAvaliacao.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloAvaliacao.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
             lblTituloAvaliacao.Location = new System.Drawing.Point(20, 10);
             lblTituloAvaliacao.Name = "lblTituloAvaliacao";
             lblTituloAvaliacao.Size = new System.Drawing.Size(290, 30);
@@ -673,18 +674,20 @@
             // 
             // btnBadgeStatus
             // 
-            btnBadgeStatus.BorderRadius = 10;
+            btnBadgeStatus.BorderRadius = 7;
+            btnBadgeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             btnBadgeStatus.CustomizableEdges = customizableEdges31;
             btnBadgeStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnBadgeStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnBadgeStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             btnBadgeStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnBadgeStatus.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnBadgeStatus.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
             btnBadgeStatus.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnBadgeStatus.ForeColor = System.Drawing.Color.White;
             btnBadgeStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnBadgeStatus.Location = new System.Drawing.Point(3, 103);
             btnBadgeStatus.Name = "btnBadgeStatus";
+            btnBadgeStatus.ShadowDecoration.BorderRadius = 7;
             btnBadgeStatus.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnBadgeStatus.Size = new System.Drawing.Size(100, 25);
             btnBadgeStatus.TabIndex = 1;
@@ -694,7 +697,7 @@
             // 
             lblTituloHistorico.BackColor = System.Drawing.Color.Transparent;
             lblTituloHistorico.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            lblTituloHistorico.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloHistorico.ForeColor = System.Drawing.Color.FromArgb(233, 107, 42);
             lblTituloHistorico.Location = new System.Drawing.Point(20, 10);
             lblTituloHistorico.Name = "lblTituloHistorico";
             lblTituloHistorico.Size = new System.Drawing.Size(271, 30);

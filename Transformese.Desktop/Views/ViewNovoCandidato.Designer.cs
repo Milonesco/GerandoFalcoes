@@ -74,10 +74,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlFormulario = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             btnSalvarCadastro = new Guna.UI2.WinForms.Guna2Button();
             chkNovidades = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -126,9 +131,7 @@
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
+            pnlSeparator = new Guna.UI2.WinForms.Guna2Panel();
             pnlHeader.SuspendLayout();
             pnlFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMoradores).BeginInit();
@@ -136,13 +139,19 @@
             // 
             // pnlHeader
             // 
+            pnlHeader.BackColor = System.Drawing.Color.Transparent;
+            pnlHeader.BorderRadius = 10;
             pnlHeader.Controls.Add(guna2HtmlLabel2);
             pnlHeader.Controls.Add(guna2HtmlLabel1);
             pnlHeader.CustomizableEdges = customizableEdges1;
             pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            pnlHeader.FillColor = System.Drawing.Color.White;
             pnlHeader.Location = new System.Drawing.Point(20, 20);
             pnlHeader.Name = "pnlHeader";
+            pnlHeader.ShadowDecoration.BorderRadius = 10;
             pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            pnlHeader.ShadowDecoration.Depth = 10;
+            pnlHeader.ShadowDecoration.Enabled = true;
             pnlHeader.Size = new System.Drawing.Size(940, 60);
             pnlHeader.TabIndex = 0;
             // 
@@ -151,7 +160,7 @@
             guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel2.Location = new System.Drawing.Point(0, 27);
+            guna2HtmlLabel2.Location = new System.Drawing.Point(20, 35);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new System.Drawing.Size(265, 24);
             guna2HtmlLabel2.TabIndex = 1;
@@ -162,7 +171,7 @@
             guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            guna2HtmlLabel1.Location = new System.Drawing.Point(0, -3);
+            guna2HtmlLabel1.Location = new System.Drawing.Point(20, 5);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new System.Drawing.Size(176, 39);
             guna2HtmlLabel1.TabIndex = 0;
@@ -228,14 +237,41 @@
             pnlFormulario.CustomizableEdges = customizableEdges45;
             pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             pnlFormulario.FillColor = System.Drawing.Color.White;
-            pnlFormulario.Location = new System.Drawing.Point(20, 80);
+            pnlFormulario.Location = new System.Drawing.Point(20, 100);
             pnlFormulario.Name = "pnlFormulario";
             pnlFormulario.ShadowDecoration.BorderRadius = 10;
             pnlFormulario.ShadowDecoration.CustomizableEdges = customizableEdges46;
             pnlFormulario.ShadowDecoration.Depth = 10;
             pnlFormulario.ShadowDecoration.Enabled = true;
-            pnlFormulario.Size = new System.Drawing.Size(940, 640);
+            pnlFormulario.Size = new System.Drawing.Size(940, 620);
             pnlFormulario.TabIndex = 1;
+            // 
+            // guna2Separator4
+            // 
+            guna2Separator4.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
+            guna2Separator4.FillThickness = 2;
+            guna2Separator4.Location = new System.Drawing.Point(30, 630);
+            guna2Separator4.Name = "guna2Separator4";
+            guna2Separator4.Size = new System.Drawing.Size(880, 10);
+            guna2Separator4.TabIndex = 52;
+            // 
+            // guna2Separator3
+            // 
+            guna2Separator3.FillColor = System.Drawing.Color.FromArgb(92, 196, 84);
+            guna2Separator3.FillThickness = 2;
+            guna2Separator3.Location = new System.Drawing.Point(30, 850);
+            guna2Separator3.Name = "guna2Separator3";
+            guna2Separator3.Size = new System.Drawing.Size(880, 10);
+            guna2Separator3.TabIndex = 51;
+            // 
+            // guna2Separator2
+            // 
+            guna2Separator2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            guna2Separator2.FillThickness = 2;
+            guna2Separator2.Location = new System.Drawing.Point(30, 420);
+            guna2Separator2.Name = "guna2Separator2";
+            guna2Separator2.Size = new System.Drawing.Size(880, 10);
+            guna2Separator2.TabIndex = 50;
             // 
             // guna2Separator1
             // 
@@ -828,8 +864,9 @@
             guna2DateTimePicker1.BorderRadius = 10;
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.CustomizableEdges = customizableEdges35;
-            guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
+            guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             guna2DateTimePicker1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             guna2DateTimePicker1.Location = new System.Drawing.Point(490, 140);
             guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -1027,38 +1064,22 @@
             guna2HtmlLabel3.TabIndex = 2;
             guna2HtmlLabel3.Text = "Nome Completo";
             // 
-            // guna2Separator2
+            // pnlSeparator
             // 
-            guna2Separator2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            guna2Separator2.FillThickness = 2;
-            guna2Separator2.Location = new System.Drawing.Point(30, 420);
-            guna2Separator2.Name = "guna2Separator2";
-            guna2Separator2.Size = new System.Drawing.Size(880, 10);
-            guna2Separator2.TabIndex = 50;
-            // 
-            // guna2Separator3
-            // 
-            guna2Separator3.FillColor = System.Drawing.Color.FromArgb(92, 196, 84);
-            guna2Separator3.FillThickness = 2;
-            guna2Separator3.Location = new System.Drawing.Point(30, 850);
-            guna2Separator3.Name = "guna2Separator3";
-            guna2Separator3.Size = new System.Drawing.Size(880, 10);
-            guna2Separator3.TabIndex = 51;
-            // 
-            // guna2Separator4
-            // 
-            guna2Separator4.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
-            guna2Separator4.FillThickness = 2;
-            guna2Separator4.Location = new System.Drawing.Point(30, 630);
-            guna2Separator4.Name = "guna2Separator4";
-            guna2Separator4.Size = new System.Drawing.Size(880, 10);
-            guna2Separator4.TabIndex = 52;
+            pnlSeparator.CustomizableEdges = customizableEdges47;
+            pnlSeparator.Dock = System.Windows.Forms.DockStyle.Top;
+            pnlSeparator.Location = new System.Drawing.Point(20, 80);
+            pnlSeparator.Name = "pnlSeparator";
+            pnlSeparator.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            pnlSeparator.Size = new System.Drawing.Size(940, 20);
+            pnlSeparator.TabIndex = 2;
             // 
             // ViewNovoCandidato
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(pnlFormulario);
+            Controls.Add(pnlSeparator);
             Controls.Add(pnlHeader);
             Margin = new System.Windows.Forms.Padding(0);
             Name = "ViewNovoCandidato";
@@ -1129,5 +1150,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator4;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private Guna.UI2.WinForms.Guna2Panel pnlSeparator;
     }
 }

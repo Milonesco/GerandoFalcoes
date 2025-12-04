@@ -292,6 +292,7 @@
             btnNovaOng.BorderColor = System.Drawing.Color.FromArgb(217, 221, 226);
             btnNovaOng.BorderRadius = 10;
             btnNovaOng.BorderThickness = 1;
+            btnNovaOng.Cursor = System.Windows.Forms.Cursors.Hand;
             btnNovaOng.CustomizableEdges = customizableEdges7;
             btnNovaOng.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnNovaOng.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -316,6 +317,7 @@
             btnSalvarOng.BorderColor = System.Drawing.Color.FromArgb(217, 221, 226);
             btnSalvarOng.BorderRadius = 10;
             btnSalvarOng.BorderThickness = 1;
+            btnSalvarOng.Cursor = System.Windows.Forms.Cursors.Hand;
             btnSalvarOng.CustomizableEdges = customizableEdges9;
             btnSalvarOng.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSalvarOng.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -338,6 +340,7 @@
             // 
             numVagas.BackColor = System.Drawing.Color.Transparent;
             numVagas.BorderRadius = 10;
+            numVagas.Cursor = System.Windows.Forms.Cursors.Hand;
             numVagas.CustomizableEdges = customizableEdges11;
             numVagas.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             numVagas.Location = new System.Drawing.Point(20, 470);
