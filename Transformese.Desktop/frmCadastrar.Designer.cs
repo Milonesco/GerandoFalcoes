@@ -50,6 +50,24 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             btnSair = new Guna.UI2.WinForms.Guna2Button();
@@ -95,15 +113,12 @@
             // 
             // btnSair
             // 
-<<<<<<< HEAD
             btnSair.BorderRadius = 8;
             btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             btnSair.CustomizableEdges = customizableEdges7;
-=======
             btnSair.BackColor = System.Drawing.Color.Transparent;
             btnSair.BorderRadius = 10;
             btnSair.CustomizableEdges = customizableEdges27;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             btnSair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnSair.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -113,14 +128,11 @@
             btnSair.ForeColor = System.Drawing.Color.White;
             btnSair.Location = new System.Drawing.Point(889, 642);
             btnSair.Name = "btnSair";
-<<<<<<< HEAD
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges8;
-=======
             btnSair.ShadowDecoration.BorderRadius = 10;
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnSair.ShadowDecoration.Depth = 5;
             btnSair.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             btnSair.Size = new System.Drawing.Size(209, 45);
             btnSair.TabIndex = 17;
             btnSair.Text = "Sair";
@@ -128,15 +140,12 @@
             // 
             // btnCadastrar
             // 
-<<<<<<< HEAD
             btnCadastrar.BorderRadius = 8;
             btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnCadastrar.CustomizableEdges = customizableEdges9;
-=======
             btnCadastrar.BackColor = System.Drawing.Color.Transparent;
             btnCadastrar.BorderRadius = 10;
             btnCadastrar.CustomizableEdges = customizableEdges29;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -146,14 +155,11 @@
             btnCadastrar.ForeColor = System.Drawing.Color.White;
             btnCadastrar.Location = new System.Drawing.Point(674, 642);
             btnCadastrar.Name = "btnCadastrar";
-<<<<<<< HEAD
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-=======
             btnCadastrar.ShadowDecoration.BorderRadius = 10;
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCadastrar.ShadowDecoration.Depth = 5;
             btnCadastrar.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             btnCadastrar.Size = new System.Drawing.Size(209, 45);
             btnCadastrar.TabIndex = 18;
             btnCadastrar.Text = "Cadastrar";
@@ -183,15 +189,12 @@
             // 
             // txtSenha
             // 
-<<<<<<< HEAD
             txtSenha.BorderRadius = 8;
             txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtSenha.CustomizableEdges = customizableEdges13;
-=======
             txtSenha.BackColor = System.Drawing.Color.Transparent;
             txtSenha.BorderRadius = 10;
             txtSenha.CustomizableEdges = customizableEdges33;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -204,14 +207,11 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Digite sua senha";
             txtSenha.SelectedText = "";
-<<<<<<< HEAD
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges14;
-=======
             txtSenha.ShadowDecoration.BorderRadius = 10;
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges34;
             txtSenha.ShadowDecoration.Depth = 5;
             txtSenha.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtSenha.Size = new System.Drawing.Size(209, 36);
             txtSenha.TabIndex = 14;
             txtSenha.UseSystemPasswordChar = true;
@@ -272,15 +272,12 @@
             // 
             // txtNome
             // 
-<<<<<<< HEAD
             txtNome.BorderRadius = 8;
             txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtNome.CustomizableEdges = customizableEdges19;
-=======
             txtNome.BackColor = System.Drawing.Color.Transparent;
             txtNome.BorderRadius = 10;
             txtNome.CustomizableEdges = customizableEdges39;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -293,14 +290,11 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Digite seu nome";
             txtNome.SelectedText = "";
-<<<<<<< HEAD
             txtNome.ShadowDecoration.CustomizableEdges = customizableEdges20;
-=======
             txtNome.ShadowDecoration.BorderRadius = 10;
             txtNome.ShadowDecoration.CustomizableEdges = customizableEdges40;
             txtNome.ShadowDecoration.Depth = 5;
             txtNome.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtNome.Size = new System.Drawing.Size(209, 36);
             txtNome.TabIndex = 15;
             // 
@@ -326,15 +320,12 @@
             // 
             // txtEmail
             // 
-<<<<<<< HEAD
             txtEmail.BorderRadius = 8;
             txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtEmail.CustomizableEdges = customizableEdges17;
-=======
             txtEmail.BackColor = System.Drawing.Color.Transparent;
             txtEmail.BorderRadius = 10;
             txtEmail.CustomizableEdges = customizableEdges37;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -347,14 +338,11 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example@gerandofalcoes.com";
             txtEmail.SelectedText = "";
-<<<<<<< HEAD
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges18;
-=======
             txtEmail.ShadowDecoration.BorderRadius = 10;
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges38;
             txtEmail.ShadowDecoration.Depth = 5;
             txtEmail.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtEmail.Size = new System.Drawing.Size(209, 36);
             txtEmail.TabIndex = 15;
             // 
@@ -370,15 +358,12 @@
             // 
             // txtSobrenome
             // 
-<<<<<<< HEAD
             txtSobrenome.BorderRadius = 8;
             txtSobrenome.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtSobrenome.CustomizableEdges = customizableEdges15;
-=======
             txtSobrenome.BackColor = System.Drawing.Color.Transparent;
             txtSobrenome.BorderRadius = 10;
             txtSobrenome.CustomizableEdges = customizableEdges35;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtSobrenome.DefaultText = "";
             txtSobrenome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSobrenome.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -391,14 +376,11 @@
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.PlaceholderText = "Digite seu sobrenome";
             txtSobrenome.SelectedText = "";
-<<<<<<< HEAD
             txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges16;
-=======
             txtSobrenome.ShadowDecoration.BorderRadius = 10;
             txtSobrenome.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtSobrenome.ShadowDecoration.Depth = 5;
             txtSobrenome.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtSobrenome.Size = new System.Drawing.Size(209, 36);
             txtSobrenome.TabIndex = 15;
             // 
@@ -424,15 +406,12 @@
             // 
             // txtConfirmacaoSenha
             // 
-<<<<<<< HEAD
             txtConfirmacaoSenha.BorderRadius = 8;
             txtConfirmacaoSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtConfirmacaoSenha.CustomizableEdges = customizableEdges11;
-=======
             txtConfirmacaoSenha.BackColor = System.Drawing.Color.Transparent;
             txtConfirmacaoSenha.BorderRadius = 10;
             txtConfirmacaoSenha.CustomizableEdges = customizableEdges31;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtConfirmacaoSenha.DefaultText = "";
             txtConfirmacaoSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtConfirmacaoSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -445,14 +424,11 @@
             txtConfirmacaoSenha.Name = "txtConfirmacaoSenha";
             txtConfirmacaoSenha.PlaceholderText = "Digite sua senha novamente";
             txtConfirmacaoSenha.SelectedText = "";
-<<<<<<< HEAD
             txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges12;
-=======
             txtConfirmacaoSenha.ShadowDecoration.BorderRadius = 10;
             txtConfirmacaoSenha.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtConfirmacaoSenha.ShadowDecoration.Depth = 5;
             txtConfirmacaoSenha.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             txtConfirmacaoSenha.Size = new System.Drawing.Size(209, 36);
             txtConfirmacaoSenha.TabIndex = 14;
             txtConfirmacaoSenha.UseSystemPasswordChar = true;
@@ -510,13 +486,10 @@
             // cboSexo
             // 
             cboSexo.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
             cboSexo.Cursor = System.Windows.Forms.Cursors.IBeam;
             cboSexo.CustomizableEdges = customizableEdges5;
-=======
             cboSexo.BorderRadius = 10;
             cboSexo.CustomizableEdges = customizableEdges25;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             cboSexo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboSexo.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -526,14 +499,11 @@
             cboSexo.ItemHeight = 30;
             cboSexo.Location = new System.Drawing.Point(674, 374);
             cboSexo.Name = "cboSexo";
-<<<<<<< HEAD
             cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges6;
-=======
             cboSexo.ShadowDecoration.BorderRadius = 10;
             cboSexo.ShadowDecoration.CustomizableEdges = customizableEdges26;
             cboSexo.ShadowDecoration.Depth = 5;
             cboSexo.ShadowDecoration.Enabled = true;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             cboSexo.Size = new System.Drawing.Size(209, 36);
             cboSexo.TabIndex = 19;
             // 
@@ -550,13 +520,10 @@
             dtpDataCadastro.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDataCadastro.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDataCadastro.Name = "dtpDataCadastro";
-<<<<<<< HEAD
             dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges4;
-=======
             dtpDataCadastro.ShadowDecoration.BorderRadius = 10;
             dtpDataCadastro.ShadowDecoration.CustomizableEdges = customizableEdges24;
             dtpDataCadastro.ShadowDecoration.Depth = 5;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             dtpDataCadastro.Size = new System.Drawing.Size(209, 36);
             dtpDataCadastro.TabIndex = 20;
             dtpDataCadastro.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
@@ -584,13 +551,10 @@
             dtpDataNascimento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDataNascimento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDataNascimento.Name = "dtpDataNascimento";
-<<<<<<< HEAD
             dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges2;
-=======
             dtpDataNascimento.ShadowDecoration.BorderRadius = 10;
             dtpDataNascimento.ShadowDecoration.CustomizableEdges = customizableEdges22;
             dtpDataNascimento.ShadowDecoration.Depth = 5;
->>>>>>> 7dd6d1bc93e03679a4310dae33b6545db2396797
             dtpDataNascimento.Size = new System.Drawing.Size(209, 36);
             dtpDataNascimento.TabIndex = 20;
             dtpDataNascimento.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
