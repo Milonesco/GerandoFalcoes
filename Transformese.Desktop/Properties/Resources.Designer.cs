@@ -113,6 +113,16 @@ namespace Transformese.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconLupaCiano {
+            get {
+                object obj = ResourceManager.GetObject("iconLupaCiano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_quemsomos_favela_GerandoFalcoes__1_ {
             get {
                 object obj = ResourceManager.GetObject("img-quemsomos-favela-GerandoFalcoes (1)", resourceCulture);
