@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Windows.Forms;
@@ -33,18 +32,19 @@ namespace Transformese.Desktop
             if (chkSenha.Checked)
             {
                 txtSenha.UseSystemPasswordChar = false;
-                chkSenha.Text = "Ocultar";
+                chkSenha.Text = "Ocultar senha";
             }
             else
             {
                 txtSenha.UseSystemPasswordChar = true;
-                chkSenha.Text = "Exibir";
+                chkSenha.Text = "Exibir senha";
             }
         }
 
         private void lblEsqueciSenha_Click(object sender, EventArgs e)
         {
-
+            frmEsqueciSenha frmEsqueciSenha = new();
+            frmEsqueciSenha.Show();
         }
 
         private void lblGerandoFalcoes_Click(object sender, EventArgs e)
@@ -54,19 +54,12 @@ namespace Transformese.Desktop
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            try
-            {
                 var confirmacao = mdSair.Show("Deseja realmente sair?");
 
                 if (confirmacao == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
-            }
-            catch (Exception ex)
-            {
-                mdNotifica.Show($"Erro no sistema: {ex.Message}");
-            }
         }
 
         private void AbrirLink(string url)
@@ -86,7 +79,7 @@ namespace Transformese.Desktop
         {
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSenha.Text))
             {
-                MessageBox.Show("Preencha email e senha!");
+                mdNotifica.Show("Preencha email e senha!");
                 return;
             }
 
@@ -104,7 +97,7 @@ namespace Transformese.Desktop
                 {
                     mdNotifica.Show("Bem-vindo ao Painel Administrativo da Gerando Falcões!");
 
-                    var dashboard = new Dashboard();
+                    var dashboard = new frmDashboard();
                     this.Hide();
                     dashboard.Show();
                     this.Close();

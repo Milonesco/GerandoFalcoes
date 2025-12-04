@@ -102,6 +102,7 @@
             // txtEmail
             // 
             txtEmail.BorderRadius = 8;
+            txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtEmail.CustomizableEdges = customizableEdges8;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -142,6 +143,7 @@
             // txtSenha
             // 
             txtSenha.BorderRadius = 8;
+            txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtSenha.CustomizableEdges = customizableEdges6;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
@@ -158,6 +160,7 @@
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges7;
             txtSenha.Size = new System.Drawing.Size(378, 36);
             txtSenha.TabIndex = 2;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // chkSenha
             // 
@@ -166,6 +169,7 @@
             chkSenha.CheckedState.BorderRadius = 0;
             chkSenha.CheckedState.BorderThickness = 0;
             chkSenha.CheckedState.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            chkSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             chkSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             chkSenha.Location = new System.Drawing.Point(720, 443);
             chkSenha.Name = "chkSenha";
@@ -182,6 +186,7 @@
             // lblEsqueciSenha
             // 
             lblEsqueciSenha.AutoSize = true;
+            lblEsqueciSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             lblEsqueciSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             lblEsqueciSenha.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
             lblEsqueciSenha.Location = new System.Drawing.Point(974, 443);
@@ -194,6 +199,7 @@
             // btnLogin
             // 
             btnLogin.BorderRadius = 8;
+            btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             btnLogin.CustomizableEdges = customizableEdges4;
             btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -213,6 +219,7 @@
             // btnCadastrar
             // 
             btnCadastrar.BorderRadius = 8;
+            btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnCadastrar.CustomizableEdges = customizableEdges2;
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -232,6 +239,7 @@
             // lblGerandoFalcoes
             // 
             lblGerandoFalcoes.AutoSize = true;
+            lblGerandoFalcoes.Cursor = System.Windows.Forms.Cursors.Hand;
             lblGerandoFalcoes.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             lblGerandoFalcoes.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             lblGerandoFalcoes.Location = new System.Drawing.Point(803, 705);
@@ -347,6 +355,7 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "frmLogin";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

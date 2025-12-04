@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transformese.Data;
 
@@ -11,9 +12,11 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251203231057_MelhoriasTabelaFuncionarios")]
+    partial class MelhoriasTabelaFuncionarios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,9 +102,6 @@ namespace Transformese.Data.Migrations
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("EhAdministrador")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -120,21 +120,6 @@ namespace Transformese.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Funcionarios");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Ativo = true,
-                            DataCadastro = new DateTime(2025, 12, 3, 22, 6, 41, 172, DateTimeKind.Local).AddTicks(1221),
-                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EhAdministrador = true,
-                            Email = "admin@admingerando.falcoes",
-                            Nome = "Admin",
-                            Senha = "$2a$11$cJF494NlbMcjL0r4bhKsuuO3rCu65V4YIC1iv0IDUzONu3lCNCxdu",
-                            Sexo = "Outro",
-                            Sobrenome = "Geral"
-                        });
                 });
 #pragma warning restore 612, 618
         }

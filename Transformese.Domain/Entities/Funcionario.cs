@@ -14,5 +14,6 @@ namespace Transformese.Domain.Entities
         public DateTime DataCadastro { get; set; } = DateTime.Now;
         public bool Ativo { get; set; } = true;
         public DateTime DataNascimento { get; set; }
+        public bool EhAdministrador { get; set; }
     }
 }

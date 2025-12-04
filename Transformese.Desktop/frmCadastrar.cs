@@ -39,13 +39,14 @@ namespace Transformese.Desktop
 
             if (senha != confirmacaoSenha)
             {
-                mdNotifica.Show("As senhas digitadas não conferem. Por favor, verifique e tente novamente.");
+                if (txtSenha.Text != txtConfirmacaoSenha.Text)
+                {
+                    mdNotifica.Show("As senhas não conferem. Verifique o campo de confirmação.");
 
-                txtSenha.Clear();
-                txtConfirmacaoSenha.Clear();
-                txtSenha.Focus();
-
-                return;
+                    txtConfirmacaoSenha.Clear();
+                    txtConfirmacaoSenha.Focus(); 
+                    return;
+                }
             }
 
             try
@@ -116,6 +117,51 @@ namespace Transformese.Desktop
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void chkSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSenha.Checked)
+            {
+                txtSenha.UseSystemPasswordChar = false;
+                txtConfirmacaoSenha.UseSystemPasswordChar = false;
+                chkSenha.Text = "Ocultar senha";
+            }
+            else
+            {
+                txtSenha.UseSystemPasswordChar = true;
+                txtConfirmacaoSenha.UseSystemPasswordChar = true;
+                chkSenha.Text = "Exibir senha";
+            }
+        }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+            cboSexo.Items.Add("Homem Cisgênero");
+            cboSexo.Items.Add("Mulher Cisgênero");
+            cboSexo.Items.Add("Homem Transgênero");
+            cboSexo.Items.Add("Mulher Transgênero");
+            cboSexo.Items.Add("Não-binário");
+            cboSexo.Items.Add("Prefiro não informar");
+            cboSexo.Items.Add("Outro");
+        }
+
+        private void txtConfirmacaoSenha_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtConfirmacaoSenha.Text))
+            {
+                txtConfirmacaoSenha.ForeColor = System.Drawing.Color.Black;
+                return;
+            }
+
+            if (txtConfirmacaoSenha.Text == txtSenha.Text)
+            {
+                txtConfirmacaoSenha.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                txtConfirmacaoSenha.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }

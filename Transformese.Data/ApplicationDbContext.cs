@@ -1,3 +1,4 @@
+using System;
 using Microsoft.EntityFrameworkCore;
 using Transformese.Domain.Entities;
 using Transformese.Domain.Enums;
@@ -27,6 +28,19 @@ namespace Transformese.Data
                 .Property(c => c.CPF)
                 .IsRequired()
                 .HasMaxLength(14);
+
+            modelBuilder.Entity<Funcionario>().HasData(new Funcionario
+            {
+                Id = 1,
+                Nome = "Admin",
+                Sobrenome = "Geral",
+                Email = "admin@admingerando.falcoes",
+                Senha = BCrypt.Net.BCrypt.HashPassword("admingf123"),
+                EhAdministrador = true,
+                Ativo = true,
+                DataCadastro = DateTime.Now,
+                Sexo = "Outro"
+            });
         }
     }
 }
