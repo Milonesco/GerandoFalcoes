@@ -667,6 +667,7 @@
             // 
             btnNovoCandidato.BackColor = System.Drawing.Color.Transparent;
             btnNovoCandidato.BorderRadius = 10;
+            btnNovoCandidato.Cursor = System.Windows.Forms.Cursors.Hand;
             btnNovoCandidato.CustomizableEdges = customizableEdges25;
             btnNovoCandidato.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnNovoCandidato.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -709,6 +710,7 @@
             // btnBuscar
             // 
             btnBuscar.BorderRadius = 10;
+            btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnBuscar.CustomizableEdges = customizableEdges29;
             btnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -897,7 +899,7 @@
             lblTituloTabela.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             lblTituloTabela.BackColor = System.Drawing.Color.Transparent;
             lblTituloTabela.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblTituloTabela.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloTabela.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
             lblTituloTabela.Location = new System.Drawing.Point(3, 7);
             lblTituloTabela.Name = "lblTituloTabela";
             lblTituloTabela.Size = new System.Drawing.Size(192, 36);
@@ -909,13 +911,14 @@
             // 
             lblVerTodas.BackColor = System.Drawing.Color.Transparent;
             lblVerTodas.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
-            lblVerTodas.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            lblVerTodas.ForeColor = System.Drawing.Color.FromArgb(122, 90, 216);
             lblVerTodas.Location = new System.Drawing.Point(547, 16);
             lblVerTodas.Name = "lblVerTodas";
             lblVerTodas.Size = new System.Drawing.Size(66, 25);
             lblVerTodas.TabIndex = 2;
             lblVerTodas.Text = "Ver todas";
             lblVerTodas.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            lblVerTodas.Click += lblVerTodas_Click;
             // 
             // pnlEspacador
             // 
@@ -951,6 +954,7 @@
             // 
             brnSincronizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             brnSincronizar.BorderRadius = 6;
+            brnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand;
             brnSincronizar.CustomizableEdges = customizableEdges45;
             brnSincronizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             brnSincronizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

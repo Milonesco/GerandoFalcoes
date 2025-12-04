@@ -97,13 +97,14 @@
             pnlTopoFiltros.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pnlTopoFiltros.ShadowDecoration.Depth = 10;
             pnlTopoFiltros.ShadowDecoration.Enabled = true;
-            pnlTopoFiltros.Size = new System.Drawing.Size(940, 80);
+            pnlTopoFiltros.Size = new System.Drawing.Size(940, 60);
             pnlTopoFiltros.TabIndex = 0;
             // 
             // btnBuscar
             // 
             btnBuscar.BackColor = System.Drawing.Color.White;
             btnBuscar.BorderRadius = 10;
+            btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnBuscar.CustomizableEdges = customizableEdges1;
             btnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -112,7 +113,7 @@
             btnBuscar.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             btnBuscar.ForeColor = System.Drawing.Color.White;
-            btnBuscar.Location = new System.Drawing.Point(865, 25);
+            btnBuscar.Location = new System.Drawing.Point(885, 18);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnBuscar.Size = new System.Drawing.Size(30, 30);
@@ -132,7 +133,7 @@
             txtPesquisa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtPesquisa.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new System.Drawing.Point(599, 20);
+            txtPesquisa.Location = new System.Drawing.Point(620, 13);
             txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Buscar por nome ou CPF...";
@@ -148,8 +149,8 @@
             // 
             lblTituloPagina.BackColor = System.Drawing.Color.Transparent;
             lblTituloPagina.Font = new System.Drawing.Font("Poppins ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblTituloPagina.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            lblTituloPagina.Location = new System.Drawing.Point(25, 25);
+            lblTituloPagina.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
+            lblTituloPagina.Location = new System.Drawing.Point(20, 5);
             lblTituloPagina.Name = "lblTituloPagina";
             lblTituloPagina.Size = new System.Drawing.Size(231, 39);
             lblTituloPagina.TabIndex = 0;
@@ -160,7 +161,7 @@
             // 
             pnlSeparator.CustomizableEdges = customizableEdges7;
             pnlSeparator.Dock = System.Windows.Forms.DockStyle.Top;
-            pnlSeparator.Location = new System.Drawing.Point(20, 100);
+            pnlSeparator.Location = new System.Drawing.Point(20, 80);
             pnlSeparator.Name = "pnlSeparator";
             pnlSeparator.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnlSeparator.Size = new System.Drawing.Size(940, 20);
@@ -175,14 +176,14 @@
             pnlGridContainer.CustomizableEdges = customizableEdges21;
             pnlGridContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             pnlGridContainer.FillColor = System.Drawing.Color.White;
-            pnlGridContainer.Location = new System.Drawing.Point(20, 120);
+            pnlGridContainer.Location = new System.Drawing.Point(20, 100);
             pnlGridContainer.Name = "pnlGridContainer";
             pnlGridContainer.Padding = new System.Windows.Forms.Padding(20);
             pnlGridContainer.ShadowDecoration.BorderRadius = 10;
             pnlGridContainer.ShadowDecoration.CustomizableEdges = customizableEdges22;
             pnlGridContainer.ShadowDecoration.Depth = 10;
             pnlGridContainer.ShadowDecoration.Enabled = true;
-            pnlGridContainer.Size = new System.Drawing.Size(940, 600);
+            pnlGridContainer.Size = new System.Drawing.Size(940, 620);
             pnlGridContainer.TabIndex = 2;
             // 
             // dgvTotalInscricoes
@@ -213,7 +214,7 @@
             dgvTotalInscricoes.Location = new System.Drawing.Point(20, 20);
             dgvTotalInscricoes.Name = "dgvTotalInscricoes";
             dgvTotalInscricoes.RowHeadersVisible = false;
-            dgvTotalInscricoes.Size = new System.Drawing.Size(900, 520);
+            dgvTotalInscricoes.Size = new System.Drawing.Size(900, 540);
             dgvTotalInscricoes.TabIndex = 0;
             dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             dgvTotalInscricoes.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -270,7 +271,7 @@
             pnlPaginacao.Controls.Add(flpPaginacao);
             pnlPaginacao.CustomizableEdges = customizableEdges19;
             pnlPaginacao.Dock = System.Windows.Forms.DockStyle.Bottom;
-            pnlPaginacao.Location = new System.Drawing.Point(20, 540);
+            pnlPaginacao.Location = new System.Drawing.Point(20, 560);
             pnlPaginacao.Name = "pnlPaginacao";
             pnlPaginacao.Padding = new System.Windows.Forms.Padding(10);
             pnlPaginacao.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -298,6 +299,7 @@
             btnAnterior.BorderColor = System.Drawing.Color.LightGray;
             btnAnterior.BorderRadius = 5;
             btnAnterior.BorderThickness = 1;
+            btnAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
             btnAnterior.CustomizableEdges = customizableEdges9;
             btnAnterior.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnAnterior.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -325,6 +327,7 @@
             btnPag1.BorderColor = System.Drawing.Color.LightGray;
             btnPag1.BorderRadius = 5;
             btnPag1.BorderThickness = 1;
+            btnPag1.Cursor = System.Windows.Forms.Cursors.Hand;
             btnPag1.CustomizableEdges = customizableEdges11;
             btnPag1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnPag1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -352,6 +355,7 @@
             btnPag2.BorderColor = System.Drawing.Color.LightGray;
             btnPag2.BorderRadius = 5;
             btnPag2.BorderThickness = 1;
+            btnPag2.Cursor = System.Windows.Forms.Cursors.Hand;
             btnPag2.CustomizableEdges = customizableEdges13;
             btnPag2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnPag2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -379,6 +383,7 @@
             btnPag3.BorderColor = System.Drawing.Color.LightGray;
             btnPag3.BorderRadius = 5;
             btnPag3.BorderThickness = 1;
+            btnPag3.Cursor = System.Windows.Forms.Cursors.Hand;
             btnPag3.CustomizableEdges = customizableEdges15;
             btnPag3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnPag3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -406,6 +411,7 @@
             btnProximo.BorderColor = System.Drawing.Color.LightGray;
             btnProximo.BorderRadius = 5;
             btnProximo.BorderThickness = 1;
+            btnProximo.Cursor = System.Windows.Forms.Cursors.Hand;
             btnProximo.CustomizableEdges = customizableEdges17;
             btnProximo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnProximo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

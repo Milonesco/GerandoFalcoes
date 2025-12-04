@@ -16,5 +16,10 @@ namespace Transformese.Desktop.Views
         {
             InitializeComponent();
         }
+
+        private void guna2Separator2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

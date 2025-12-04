@@ -118,11 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fotosenacgemini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fotosenacgemini.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="senacfoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\senacfoto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logoGerandoFalcoesBranco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoGerandoFalcoesBranco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoGerandoFalcoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoGerandoFalcoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo-gerando-falcoes-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-gerando-falcoes-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gf-logo-preto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gf-logo-preto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,31 +136,28 @@
   <data name="gerando-falcoes2-optimized-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gerando-falcoes2-optimized-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gf-logo-branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gf-logo-branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sao-miguel_jardim-noite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sao-miguel_jardim-noite1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="senacfoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\senacfoto1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="0e556992-bdd2-43ae-843e-573600d85ccf_rw_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0e556992-bdd2-43ae-843e-573600d85ccf_rw_1920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="senacfoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\senacfoto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sao-miguel_jardim-noite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sao-miguel_jardim-noite1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gf-logo-branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gf-logo-branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="telhados-da-antiga-cidade-catala-cardona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\telhados-da-antiga-cidade-catala-cardona.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img-quemsomos-favela-GerandoFalcoes (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img-quemsomos-favela-GerandoFalcoes (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo-gerando-falcoes-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-gerando-falcoes-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoGerandoFalcoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoGerandoFalcoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="senacfoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\senacfoto1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fotosenacgemini" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fotosenacgemini.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="telhados-da-antiga-cidade-catala-cardona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\telhados-da-antiga-cidade-catala-cardona.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconLupaCiano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconLupaCiano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
