@@ -12,11 +12,11 @@
         $(document).ready(function () {
             $('#CPF').mask('000.000.000-00');
             $('#Telefone').mask('(00) 00000-0000');
-            $('#Cep').mask('00000-000');
+            $('#CEP').mask('00000-000');
         });
 
         let currentStep = 1;
-        const totalSteps = 3;
+        const totalSteps = 6;
 
         function changeStep(n) {
             if (n === 1 && !validateStep(currentStep)) return;
@@ -30,10 +30,13 @@
 
         function validateStep(step) {
             const container = document.getElementById(`step-${step}`);
-            const inputs = container.querySelectorAll('input, select');
+            const inputs = container.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]), select');
             let valid = true;
 
             inputs.forEach(input => {
+                // Pula validação de campos opcionais
+                if (input.hasAttribute('data-optional')) return;
+
                 if (!input.checkValidity()) {
                     input.classList.add('is-invalid');
                     valid = false;
@@ -41,6 +44,16 @@
                     input.classList.remove('is-invalid');
                 }
             });
+
+            // Validação especial para campos condicionais
+            if (step === 4) {
+                const possuiDeficiencia = document.getElementById('PossuiDeficiencia').checked;
+                const descricaoDeficiencia = document.getElementById('DescricaoDeficiencia');
+                if (possuiDeficiencia && !descricaoDeficiencia.value.trim()) {
+                    descricaoDeficiencia.classList.add('is-invalid');
+                    valid = false;
+                }
+            }
 
             if (!valid) {
                 container.closest('form').reportValidity();
@@ -54,8 +67,15 @@
             progressBar.style.width = `${percentage}%`;
             progressBar.setAttribute('aria-valuenow', percentage);
 
-            const stepTitles = ["Dados Pessoais", "Contato & Localização", "Conectividade & Perfil"];
-            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep-1]}`;
+            const stepTitles = [
+                "Dados Pessoais",
+                "Identidade e Diversidade",
+                "Contato & Localização",
+                "Situação Socioeconômica",
+                "Curso & Disponibilidade",
+                "Conectividade & Finalização"
+            ];
+            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep - 1]}`;
 
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
@@ -78,7 +98,6 @@
         function buscarCep(cep) {
             cep = cep.replace(/\D/g, '');
             if (cep.length === 8) {
-                const loadingHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Buscando...';
                 document.getElementById('Cidade').value = "...";
                 document.getElementById('Estado').value = "...";
 
@@ -99,6 +118,21 @@
                         document.getElementById('Cidade').value = "";
                         document.getElementById('Estado').value = "";
                     });
+            }
+        }
+
+        function toggleDeficienciaDescricao() {
+            const checkbox = document.getElementById('PossuiDeficiencia');
+            const descricaoContainer = document.getElementById('descricao-deficiencia-container');
+            const descricaoInput = document.getElementById('DescricaoDeficiencia');
+
+            if (checkbox.checked) {
+                descricaoContainer.classList.remove('d-none');
+                descricaoInput.setAttribute('required', 'required');
+            } else {
+                descricaoContainer.classList.add('d-none');
+                descricaoInput.removeAttribute('required');
+                descricaoInput.value = '';
             }
         }
     </script>
@@ -147,6 +181,13 @@
                                 <span asp-validation-for="NomeCompleto" class="text-danger small"></span>
                             </div>
 
+                            <div class="mb-4">
+                                <label asp-for="NomeSocial" class="form-label fw-semibold inscription-label">Nome Social (Opcional)</label>
+                                <input asp-for="NomeSocial" class="form-control form-control-lg" placeholder="Se você usa um nome social, informe aqui" data-optional />
+                                <span asp-validation-for="NomeSocial" class="text-danger small"></span>
+                                <small class="form-text text-muted">Campo opcional - preencha apenas se desejar.</small>
+                            </div>
+
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label asp-for="CPF" class="form-label fw-semibold inscription-label">CPF</label>
@@ -159,11 +200,30 @@
                                     <span asp-validation-for="DataNascimento" class="text-danger small"></span>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- MOVIDO DO PASSO 2: Campo de Gênero -->
+                        <!-- PASSO 2: Identidade e Diversidade -->
+                        <div id="step-2" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold inscription-step-title">Sua Identidade</h4>
+                            <p class="text-muted mb-4">Essas informações nos ajudam a promover diversidade e inclusão no programa.</p>
+
                             <div class="mb-4">
-                                <label for="Genero" class="form-label fw-semibold inscription-label">Identidade de Gênero</label>
-                                <select id="Genero" name="Genero" class="form-select form-select-lg" required>
+                                <label asp-for="RaçaEtnia" class="form-label fw-semibold inscription-label">Raça/Etnia</label>
+                                <select asp-for="RaçaEtnia" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="Branca">Branca</option>
+                                    <option value="Preta">Preta</option>
+                                    <option value="Parda">Parda</option>
+                                    <option value="Amarela">Amarela</option>
+                                    <option value="Indígena">Indígena</option>
+                                    <option value="PreferNaoInformar">Prefiro não informar</option>
+                                </select>
+                                <span asp-validation-for="RaçaEtnia" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="IdentidadeGenero" class="form-label fw-semibold inscription-label">Identidade de Gênero</label>
+                                <select asp-for="IdentidadeGenero" class="form-select form-select-lg" required>
                                     <option value="" selected disabled>Selecione sua identidade de gênero</option>
                                     <option value="Feminino">Feminino</option>
                                     <option value="Masculino">Masculino</option>
@@ -171,11 +231,36 @@
                                     <option value="Outro">Outro</option>
                                     <option value="PreferNaoInformar">Prefiro não informar</option>
                                 </select>
+                                <span asp-validation-for="IdentidadeGenero" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input asp-for="PessoaTransgenero" class="form-check-input" type="checkbox" id="PessoaTransgenero">
+                                    <label class="form-check-label inscription-label" for="PessoaTransgenero">
+                                        Sou uma pessoa transgênero
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="OrientacaoSexual" class="form-label fw-semibold inscription-label">Orientação Sexual</label>
+                                <select asp-for="OrientacaoSexual" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="Heterossexual">Heterossexual</option>
+                                    <option value="Homossexual">Homossexual</option>
+                                    <option value="Bissexual">Bissexual</option>
+                                    <option value="Pansexual">Pansexual</option>
+                                    <option value="Assexual">Assexual</option>
+                                    <option value="Outra">Outra</option>
+                                    <option value="PreferNaoInformar">Prefiro não informar</option>
+                                </select>
+                                <span asp-validation-for="OrientacaoSexual" class="text-danger small"></span>
                             </div>
                         </div>
 
-                        <!-- PASSO 2: Contato & Localização -->
-                        <div id="step-2" class="step-content d-none">
+                        <!-- PASSO 3: Contato & Localização -->
+                        <div id="step-3" class="step-content d-none">
                             <h4 class="mb-4 fw-bold inscription-step-title">Como te encontramos?</h4>
 
                             <div class="row g-3 mb-4">
@@ -195,8 +280,9 @@
 
                             <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label class="form-label fw-semibold inscription-label">CEP</label>
-                                    <input type="text" id="Cep" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)" required>
+                                    <label asp-for="CEP" class="form-label fw-semibold inscription-label">CEP</label>
+                                    <input asp-for="CEP" type="text" class="form-control form-control-lg" placeholder="00000-000" onblur="buscarCep(this.value)" required>
+                                    <span asp-validation-for="CEP" class="text-danger small"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label asp-for="Cidade" class="form-label fw-semibold inscription-label">Cidade</label>
@@ -211,9 +297,129 @@
                             </div>
                         </div>
 
-                        <!-- PASSO 3: Conectividade & Perfil -->
-                        <div id="step-3" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold inscription-step-title">Perfil & Conectividade</h4>
+                        <!-- PASSO 4: Situação Socioeconômica -->
+                        <div id="step-4" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold inscription-step-title">Situação Socioeconômica</h4>
+
+                            <div class="mb-4">
+                                <label asp-for="Escolaridade" class="form-label fw-semibold inscription-label">Escolaridade</label>
+                                <select asp-for="Escolaridade" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione sua escolaridade</option>
+                                    <option value="FundamentalIncompleto">Ensino Fundamental Incompleto</option>
+                                    <option value="FundamentalCompleto">Ensino Fundamental Completo</option>
+                                    <option value="MedioIncompleto">Ensino Médio Incompleto</option>
+                                    <option value="MedioCompleto">Ensino Médio Completo</option>
+                                    <option value="SuperiorIncompleto">Ensino Superior Incompleto</option>
+                                    <option value="SuperiorCompleto">Ensino Superior Completo</option>
+                                    <option value="PosGraduacao">Pós-graduação</option>
+                                </select>
+                                <span asp-validation-for="Escolaridade" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input asp-for="TrabalhaAtualmente" class="form-check-input" type="checkbox" id="TrabalhaAtualmente">
+                                    <label class="form-check-label inscription-label" for="TrabalhaAtualmente">
+                                        Trabalho atualmente
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label asp-for="RendaFamiliar" class="form-label fw-semibold inscription-label">Renda Familiar Mensal</label>
+                                    <select asp-for="RendaFamiliar" class="form-select form-select-lg" required>
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="Ate1Salario">Até 1 salário mínimo</option>
+                                        <option value="De1a2Salarios">De 1 a 2 salários mínimos</option>
+                                        <option value="De2a3Salarios">De 2 a 3 salários mínimos</option>
+                                        <option value="De3a5Salarios">De 3 a 5 salários mínimos</option>
+                                        <option value="Acima5Salarios">Acima de 5 salários mínimos</option>
+                                    </select>
+                                    <span asp-validation-for="RendaFamiliar" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="PessoasNoDomicilio" class="form-label fw-semibold inscription-label">Pessoas no Domicílio</label>
+                                    <select asp-for="PessoasNoDomicilio" class="form-select form-select-lg" required>
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2-3 pessoas</option>
+                                        <option value="4">4-5 pessoas</option>
+                                        <option value="6">5+ pessoas</option>
+                                    </select>
+                                    <span asp-validation-for="PessoasNoDomicilio" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input asp-for="PossuiDeficiencia" class="form-check-input" type="checkbox" id="PossuiDeficiencia" onchange="toggleDeficienciaDescricao()">
+                                    <label class="form-check-label inscription-label" for="PossuiDeficiencia">
+                                        Possuo alguma deficiência
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="descricao-deficiencia-container" class="mb-4 d-none">
+                                <label asp-for="DescricaoDeficiencia" class="form-label fw-semibold inscription-label">Qual deficiência?</label>
+                                <textarea asp-for="DescricaoDeficiencia" class="form-control" rows="3" placeholder="Descreva brevemente sua deficiência"></textarea>
+                                <span asp-validation-for="DescricaoDeficiencia" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <!-- PASSO 5: Curso & Disponibilidade -->
+                        <div id="step-5" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold inscription-step-title">Sobre o Curso</h4>
+
+                            <div class="mb-4">
+                                <label asp-for="CursoDesejado" class="form-label fw-semibold inscription-label">Curso Desejado</label>
+                                <select asp-for="CursoDesejado" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione o curso de interesse</option>
+                                    <option value="ProgramadorDeSistemas">Programador de Sistemas</option>
+                                    <option value="AssistenteDeTI">Assistente de TI (Zona Oeste)</option>
+                                </select>
+                                <span asp-validation-for="CursoDesejado" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="TurnoPreferencial" class="form-label fw-semibold inscription-label">Turno Preferencial</label>
+                                <select asp-for="TurnoPreferencial" class="form-select form-select-lg" required>
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="Tarde">Tarde</option>
+                                    <option value="Noite">Noite</option>
+                                </select>
+                                <span asp-validation-for="TurnoPreferencial" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input asp-for="JaEstudouAntes" class="form-check-input" type="checkbox" id="JaEstudouAntes">
+                                    <label class="form-check-label inscription-label" for="JaEstudouAntes">
+                                        Já estudei essa área antes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="IndicadoPor" class="form-label fw-semibold inscription-label">Como conheceu o programa? (Opcional)</label>
+                                <select asp-for="IndicadoPor" class="form-select form-select-lg" data-optional>
+                                    <option value="">Selecione</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Amigo">Indicação de amigo/familiar</option>
+                                    <option value="Escola">Escola/Universidade</option>
+                                    <option value="Google">Busca no Google</option>
+                                    <option value="GerandoFalcoes">Site Gerando Falcões</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                                <span asp-validation-for="IndicadoPor" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <!-- PASSO 6: Conectividade & Finalização -->
+                        <div id="step-6" class="step-content d-none">
+                            <h4 class="mb-4 fw-bold inscription-step-title">Conectividade & Finalização</h4>
 
                             <div class="p-4 inscription-info-box rounded-3 mb-4 border">
                                 <p class="fw-semibold mb-3 inscription-label">Quais recursos você possui em casa?</p>
@@ -233,15 +439,30 @@
                                 <label asp-for="PerfilLinkedin" class="form-label fw-semibold inscription-label">LinkedIn (Opcional)</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-white inscription-input-addon"><i class="bi bi-linkedin text-primary"></i></span>
-                                    <input asp-for="PerfilLinkedin" class="form-control form-control-lg" placeholder="https://linkedin.com/in/voce" />
+                                    <input asp-for="PerfilLinkedin" class="form-control form-control-lg" placeholder="https://linkedin.com/in/voce" data-optional />
                                 </div>
                             </div>
 
-                            <div class="form-check mb-4">
-                                <input class="form-check-input" type="checkbox" required id="termos">
-                                <label class="form-check-label small inscription-label" for="termos">
-                                    Declaro que li e aceito os termos do programa Transformese e que todas as informações prestadas aqui são verdadeiras.
+                            <hr class="my-4">
+
+                            <div class="form-check mb-3">
+                                <input asp-for="ConcordaPrograma" class="form-check-input" type="checkbox" required id="ConcordaPrograma">
+                                <label class="form-check-label small inscription-label" for="ConcordaPrograma">
+                                    <strong>Declaro que li e aceito os termos do programa Transformese</strong> e que todas as informações prestadas aqui são verdadeiras.
                                 </label>
+                                <span asp-validation-for="ConcordaPrograma" class="text-danger small d-block"></span>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input asp-for="AceitaNovidades" class="form-check-input" type="checkbox" id="AceitaNovidades">
+                                <label class="form-check-label small inscription-label" for="AceitaNovidades">
+                                    Aceito receber novidades, informações sobre novos cursos e oportunidades por e-mail.
+                                </label>
+                            </div>
+
+                            <div class="alert alert-info rounded-3">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                <strong>Quase lá!</strong> Revise suas informações e clique em "Finalizar Inscrição" para concluir.
                             </div>
                         </div>
 
