@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Ficha de Inscrição";
-    ViewData["HideNavMenu"] = true; // NOVO: Flag para esconder menus extras na navbar
+    ViewData["HideNavMenu"] = true;
 }
 
 @section Scripts {
@@ -10,13 +10,11 @@
 
     <script>
         $(document).ready(function () {
-            // Máscaras de input
             $('#CPF').mask('000.000.000-00');
             $('#Telefone').mask('(00) 00000-0000');
             $('#Cep').mask('00000-000');
         });
 
-        // LÓGICA DO WIZARD (Passo a Passo)
         let currentStep = 1;
         const totalSteps = 3;
 
@@ -77,7 +75,6 @@
             document.getElementById('form-top').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // API VIACEP
         function buscarCep(cep) {
             cep = cep.replace(/\D/g, '');
             if (cep.length === 8) {
