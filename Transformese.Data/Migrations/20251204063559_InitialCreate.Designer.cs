@@ -12,8 +12,8 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251127235453_RefactAGAIN")]
-    partial class RefactAGAIN
+    [Migration("20251204063559_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,12 @@ namespace Transformese.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("AceitaNovidades")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CEP")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasMaxLength(14)
@@ -41,38 +47,71 @@ namespace Transformese.Data.Migrations
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
+                    b.Property<bool>("ConcordaPrograma")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTime?>("DataEntrevista")
+                    b.Property<string>("CursoDesejado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DescricaoDeficiencia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Escolaridade")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentidadeGenero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IndicadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("JaEstudouAntes")
+                        .HasColumnType("bit");
+
                     b.Property<string>("NomeCompleto")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ObservacoesGF")
+                    b.Property<string>("NomeSocial")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ObservacoesONG")
+                    b.Property<string>("OrientacaoSexual")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PerfilLinkedin")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("PessoaTransgenero")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PessoasNoDomicilio")
+                        .HasColumnType("int");
+
                     b.Property<bool>("PossuiComputador")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PossuiDeficiencia")
                         .HasColumnType("bit");
 
                     b.Property<bool>("PossuiInternet")
                         .HasColumnType("bit");
+
+                    b.Property<string>("RaçaEtnia")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RendaFamiliar")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -80,8 +119,11 @@ namespace Transformese.Data.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UnidadeId")
-                        .HasColumnType("int");
+                    b.Property<bool>("TrabalhaAtualmente")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TurnoPreferencial")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
