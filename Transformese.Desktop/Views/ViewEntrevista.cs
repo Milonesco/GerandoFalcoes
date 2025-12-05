@@ -24,11 +24,46 @@ namespace Transformese.Desktop.Views
             _client = new HttpClient(handler) { BaseAddress = new Uri("https://localhost:5001/") };
         }
 
-        private void ViewEntrevista_Load(object sender, EventArgs e)
+        private void ViewEntrevista_Load_1(object sender, EventArgs e)
         {
             if (dtpFiltroData != null) dtpFiltroData.Value = DateTime.Now;
             CarregarDadosDaApi();
         }
+
+        // ==============================================================
+        // MÉTODOS AUXILIARES PARA CENTRALIZAR OS DIÁLOGOS
+        // ==============================================================
+
+        private void ExibirNotificacao(string mensagem)
+        {
+            if (mdNotifica != null)
+            {
+                // Define o Formulário Principal como Pai para centralizar na tela inteira
+                if (this.ParentForm != null) mdNotifica.Parent = this.ParentForm;
+                mdNotifica.Show(mensagem);
+            }
+            else
+            {
+                MessageBox.Show(mensagem);
+            }
+        }
+
+        private DialogResult ExibirPergunta(string mensagem)
+        {
+            if (mdIniciarTriagem != null)
+            {
+                if (this.ParentForm != null) mdIniciarTriagem.Parent = this.ParentForm;
+                return mdIniciarTriagem.Show(mensagem);
+            }
+            else
+            {
+                return MessageBox.Show(mensagem, "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+        }
+
+        // ==============================================================
+        // CÓDIGO DA TELA
+        // ==============================================================
 
         private async void CarregarDadosDaApi()
         {
@@ -44,11 +79,11 @@ namespace Transformese.Desktop.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                ExibirNotificacao("Erro ao carregar dados: " + ex.Message); // USANDO O MÉTODO CENTRALIZADO
             }
         }
 
-        private void dtpFiltroData_ValueChanged(object sender, EventArgs e)
+        private void dtpFiltroData_ValueChanged_1(object sender, EventArgs e)
         {
             FiltrarLista();
         }
@@ -59,7 +94,6 @@ namespace Transformese.Desktop.Views
 
             DateTime dataSelecionada = dtpFiltroData.Value.Date;
 
-            // Filtra pela data. Se quiser ver TODOS independente da data para testar, comente o .Where da data
             var listaFiltrada = _todosCandidatos
                 .Where(c => c.DataCadastro.Date == dataSelecionada)
                 .OrderByDescending(c => c.DataCadastro)
@@ -81,46 +115,53 @@ namespace Transformese.Desktop.Views
             }
         }
 
-        // ==============================================================
-        // MÁQUINA DE CORES E STATUS
-        // ==============================================================
         private Panel CriarCardDinamico(Candidato c)
         {
-            // 1. Definição das Cores e Textos baseados no Status
             Color corStatus;
             string textoBotao;
             bool botaoHabilitado = true;
 
             switch (c.Status)
             {
-                case StatusCandidato.Inscrito: // 1
+                case StatusCandidato.Inscrito:
                     corStatus = Color.FromArgb(235, 100, 50); // Laranja
                     textoBotao = "Iniciar Triagem";
                     break;
 
-                case StatusCandidato.Triagem: // 2
-                    corStatus = Color.FromArgb(233, 30, 99); // Rosa (Pink)
-                    textoBotao = "Ver Detalhes"; // Ainda abre a triagem para editar
+                case StatusCandidato.Triagem:
+                    corStatus = Color.FromArgb(233, 30, 99); // Rosa
+                    textoBotao = "Ver Detalhes";
                     break;
 
-                // Assumindo que "EncaminhadoONG" ou "Entrevista" seja o verde que você quer
-                // Se no seu enum "Aprovado" for o status 5, use ele aqui.
-                case StatusCandidato.Entrevista: // 4 (Ou Aprovado na Triagem)
-                case StatusCandidato.Aprovado:   // 5
-                    corStatus = Color.FromArgb(25, 160, 90); // Verde
-                    textoBotao = "Agendar Entrevista";
+                // --- AJUSTE: VERDE MAIS CLARO PARA ENTREVISTA ---
+                case StatusCandidato.Entrevista:
+                    corStatus = Color.MediumSeaGreen; // Verde Suave
+
+                    // Lógica inteligente: Já tem data?
+                    if (c.DataEntrevista.HasValue)
+                    {
+                        textoBotao = "Ver Detalhes Contato"; // Já agendado -> Ver ficha
+                    }
+                    else
+                    {
+                        textoBotao = "Agendar Entrevista"; // Pendente -> Agendar
+                    }
                     break;
 
-                case StatusCandidato.Reprovado: // 6
+                case StatusCandidato.Aprovado:
+                    corStatus = Color.FromArgb(25, 160, 90); // Verde Escuro
+                    textoBotao = "Ver Detalhes Contato";
+                    break;
+
+                // --- AJUSTE: SEGUNDA CHANCE (Permitir ver dados) ---
+                case StatusCandidato.Reprovado:
                     corStatus = Color.FromArgb(220, 53, 69); // Vermelho
-                    textoBotao = "Reprovado";
-                    botaoHabilitado = false; // Bloqueia clique? Ou deixa abrir pra ver motivo?
+                    textoBotao = "Ver Dados / Reavaliar";
                     break;
 
-                case StatusCandidato.Desistente: // 7
+                case StatusCandidato.Desistente:
                     corStatus = Color.Gray; // Cinza
-                    textoBotao = "Desistente";
-                    botaoHabilitado = false;
+                    textoBotao = "Ver Dados / Reavaliar";
                     break;
 
                 default:
@@ -129,30 +170,36 @@ namespace Transformese.Desktop.Views
                     break;
             }
 
-            // 2. Construção do Card
+            // ... (Criação visual do painel continua igual) ...
             Panel pnlCard = new Panel();
             pnlCard.Size = new Size(280, 160);
             pnlCard.BackColor = Color.White;
             pnlCard.Margin = new Padding(10);
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
 
-            // Faixa Lateral (Usa a cor definida no switch)
             Panel pnlFaixa = new Panel();
             pnlFaixa.Dock = DockStyle.Left;
             pnlFaixa.Width = 6;
             pnlFaixa.BackColor = corStatus;
             pnlCard.Controls.Add(pnlFaixa);
 
-            // Data
             Label lblData = new Label();
-            lblData.Text = c.DataCadastro.ToString("dd MMM");
+            // Se tiver data de entrevista, mostra ela em destaque
+            if (c.Status == StatusCandidato.Entrevista && c.DataEntrevista.HasValue)
+            {
+                lblData.Text = "Agendado: " + c.DataEntrevista.Value.ToString("dd/MM HH:mm");
+                lblData.ForeColor = corStatus;
+            }
+            else
+            {
+                lblData.Text = "Cadastro: " + c.DataCadastro.ToString("dd MMM");
+                lblData.ForeColor = Color.Gray;
+            }
             lblData.Location = new Point(15, 30);
             lblData.AutoSize = true;
-            lblData.ForeColor = Color.Gray;
             lblData.Font = new Font("Segoe UI", 8, FontStyle.Regular);
             pnlCard.Controls.Add(lblData);
 
-            // Hora
             Label lblHora = new Label();
             lblHora.Text = c.DataCadastro.ToString("HH:mm");
             lblHora.Location = new Point(12, 10);
@@ -160,7 +207,6 @@ namespace Transformese.Desktop.Views
             lblHora.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             pnlCard.Controls.Add(lblHora);
 
-            // Nome
             Label lblNome = new Label();
             lblNome.Text = c.NomeCompleto;
             lblNome.Location = new Point(12, 55);
@@ -168,7 +214,6 @@ namespace Transformese.Desktop.Views
             lblNome.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             pnlCard.Controls.Add(lblNome);
 
-            // Vaga
             Label lblVaga = new Label();
             string vaga = string.IsNullOrEmpty(c.CursoInteresse) ? "Geral" : c.CursoInteresse;
             lblVaga.Text = "Vaga: " + vaga;
@@ -178,7 +223,6 @@ namespace Transformese.Desktop.Views
             lblVaga.Font = new Font("Segoe UI", 8, FontStyle.Regular);
             pnlCard.Controls.Add(lblVaga);
 
-            // Botão (Usa a cor e texto definidos no switch)
             Button btnAcao = new Button();
             btnAcao.Text = textoBotao;
             btnAcao.Size = new Size(250, 35);
@@ -191,55 +235,54 @@ namespace Transformese.Desktop.Views
             btnAcao.Cursor = Cursors.Hand;
             btnAcao.Enabled = botaoHabilitado;
 
-            // Se estiver desabilitado, deixa visualmente mais claro
-            if (!botaoHabilitado) btnAcao.BackColor = ControlPaint.Light(corStatus);
-
-            btnAcao.Tag = c; // Guarda o candidato
-            btnAcao.Click += BtnAcao_Click; // Evento único que decide o que fazer
+            btnAcao.Tag = c;
+            btnAcao.Click += BtnAcao_Click;
 
             pnlCard.Controls.Add(btnAcao);
 
             return pnlCard;
         }
 
-        // ==============================================================
-        // CENTRAL DE CLIQUES
-        // ==============================================================
         private async void BtnAcao_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             if (btn == null || !(btn.Tag is Candidato candidato)) return;
 
-            // Lógica baseada no Status Atual
             switch (candidato.Status)
             {
                 case StatusCandidato.Inscrito:
-                    // 1. De Inscrito -> Triagem (Muda cor para Rosa)
-                    var confirm = MessageBox.Show($"Iniciar a triagem de {candidato.NomeCompleto}?", "Confirmar", MessageBoxButtons.YesNo);
+                    var confirm = ExibirPergunta($"Iniciar a triagem de {candidato.NomeCompleto}?");
                     if (confirm == DialogResult.Yes)
                     {
                         candidato.Status = StatusCandidato.Triagem;
-
-                        // Salva no Banco
                         await _client.PutAsJsonAsync($"api/candidatos/{candidato.Id}", candidato);
-
-                        // Atualiza a tela (O card vai ficar Rosa automaticamente)
-                        FiltrarLista();
+                        CarregarDadosDaApi();
                     }
                     break;
 
                 case StatusCandidato.Triagem:
-                    // 2. De Triagem -> Abre Tela de Detalhes
+                case StatusCandidato.Reprovado:  // Segunda chance -> Abre Triagem
+                case StatusCandidato.Desistente: // Segunda chance -> Abre Triagem
+                case StatusCandidato.Aprovado:   // Ver Detalhes -> Abre Triagem
                     AbrirTelaTriagem(candidato);
                     break;
 
-                case StatusCandidato.Entrevista: // Ou Aprovado
-                    // 3. De Aprovado -> Agendar Entrevista
-                    MessageBox.Show($"Abrir calendário para agendar com {candidato.NomeCompleto}...\n(Funcionalidade futura)");
+                // --- AJUSTE AQUI: ENTREVISTA ---
+                case StatusCandidato.Entrevista:
+                    if (candidato.DataEntrevista.HasValue)
+                    {
+                        // Se JÁ tem data, o botão diz "Ver Detalhes", então abrimos a ficha
+                        AbrirTelaTriagem(candidato);
+                    }
+                    else
+                    {
+                        // Se NÃO tem data, abrimos o agendamento
+                        AbrirTelaAgendamento(candidato);
+                    }
                     break;
 
                 default:
-                    MessageBox.Show($"Ação para status {candidato.Status} não implementada.");
+                    ExibirNotificacao("Ação não implementada.");
                     break;
             }
         }
@@ -249,32 +292,45 @@ namespace Transformese.Desktop.Views
             var telaTriagem = new ViewTriagem();
             telaTriagem.CarregarDadosDoCandidato(c);
 
+            telaTriagem.AoFechar = () =>
+            {
+                if (this.Parent != null) this.Parent.Controls.Remove(telaTriagem);
+                CarregarDadosDaApi();
+            };
+
+            ExibirTelaFilha(telaTriagem);
+        }
+
+        private void AbrirTelaAgendamento(Candidato c)
+        {
+            using (var frm = new frmAgendarEntrevista(c))
+            {
+                var resultado = frm.ShowDialog();
+
+                if (resultado == DialogResult.OK)
+                {
+                    CarregarDadosDaApi();
+                }
+            }
+        }
+
+        private void ExibirTelaFilha(UserControl tela)
+        {
             if (this.Parent != null)
             {
-                telaTriagem.Dock = DockStyle.Fill;
-                this.Parent.Controls.Add(telaTriagem);
-                telaTriagem.BringToFront();
+                tela.Dock = DockStyle.Fill;
+                this.Parent.Controls.Add(tela);
+                tela.BringToFront();
             }
             else
             {
-                // Fallback para testes
                 Form f = new Form();
                 f.Size = new Size(1000, 700);
-                telaTriagem.Dock = DockStyle.Fill;
-                f.Controls.Add(telaTriagem);
+                tela.Dock = DockStyle.Fill;
+                f.Controls.Add(tela);
                 f.ShowDialog();
+                CarregarDadosDaApi();
             }
-        }
-
-        private void ViewEntrevista_Load_1(object sender, EventArgs e)
-        {
-            if (dtpFiltroData != null) dtpFiltroData.Value = DateTime.Now;
-            CarregarDadosDaApi();
-        }
-
-        private void dtpFiltroData_ValueChanged_1(object sender, EventArgs e)
-        {
-            FiltrarLista();
         }
     }
 }

@@ -20,7 +20,8 @@ namespace Transformese.Desktop
         public frmDashboard()
         {
             InitializeComponent();
-            _usuarioLogado = new Funcionario { Nome = "Usuário", Sobrenome = "Teste" };
+            // Usuário padrão para testes (Sem admin)
+            _usuarioLogado = new Funcionario { Nome = "Usuário", Sobrenome = "Teste", EhAdministrador = false };
             ConfigurarDashboard();
         }
 
@@ -30,7 +31,13 @@ namespace Transformese.Desktop
             {
                 if (lblBoasVindas != null) lblBoasVindas.Text = $"Bem-vindo(a), {_usuarioLogado.Nome}!";
                 if (lblNomeUsuario != null) lblNomeUsuario.Text = $"{_usuarioLogado.Nome} {_usuarioLogado.Sobrenome}";
-                if (lblCargoUsuario != null) lblCargoUsuario.Text = "Administrador";
+
+                // --- LÓGICA DE CARGO AQUI ---
+                if (lblCargoUsuario != null)
+                {
+                    // Se for true -> Administrador, Se for false -> Funcionário
+                    lblCargoUsuario.Text = _usuarioLogado.EhAdministrador ? "Administrador" : "Funcionário";
+                }
 
                 if (pbPerfil != null)
                 {
@@ -43,25 +50,22 @@ namespace Transformese.Desktop
             }
             catch (Exception ex)
             {
+                // Se o mdNotifica não estiver visível neste contexto, usa MessageBox
                 mdNotifica.Show($"Erro ao configurar dashboard: {ex.Message}");
             }
         }
 
-        // --- NOVO MÉTODO: Gerencia visualmente os botões ---
-        // Recebe o botão que deve ficar "aceso" e apaga os outros
+        // --- MÉTODOS DE NAVEGAÇÃO E BOTÕES (IGUAIS AO SEU CÓDIGO) ---
+
         private void AtualizarBotoes(object botaoAtivo)
         {
-            // 1. Desmarca TODOS primeiro (Reset)
-            // O 'dynamic' permite acessar a propriedade Checked sem saber o tipo exato (GunaButton, etc)
             if (btnDashboard != null) ((dynamic)btnDashboard).Checked = false;
             if (btnNovoCandidato != null) ((dynamic)btnNovoCandidato).Checked = false;
             if (btnTriagem != null) ((dynamic)btnTriagem).Checked = false;
             if (btnEntrevistas != null) ((dynamic)btnEntrevistas).Checked = false;
-            if (btnNovoCandidato != null) ((dynamic)btnNovoCandidato).Checked = false;
             if (btnGestaoOngs != null) ((dynamic)btnGestaoOngs).Checked = false;
             if (btnRelatorios != null) ((dynamic)btnRelatorios).Checked = false;
 
-            // 2. Marca APENAS o botão que recebeu como parâmetro
             if (botaoAtivo != null)
             {
                 ((dynamic)botaoAtivo).Checked = true;
@@ -71,16 +75,12 @@ namespace Transformese.Desktop
         private void CarregarHome()
         {
             var viewHome = new ViewHome();
-
-            // Assina o evento
             viewHome.OnSolicitarNovoCandidato += (sender, e) =>
             {
                 CarregarNovoCandidato();
             };
 
             NavegarPara(viewHome);
-
-            // ATUALIZAÇÃO VISUAL: Marca o botão Dashboard
             AtualizarBotoes(btnDashboard);
         }
 
@@ -88,8 +88,6 @@ namespace Transformese.Desktop
         {
             var viewNovo = new ViewNovoCandidato();
             NavegarPara(viewNovo);
-
-            // ATUALIZAÇÃO VISUAL: Marca o botão Novo Candidato automaticamente!
             AtualizarBotoes(btnNovoCandidato);
         }
 
@@ -109,22 +107,22 @@ namespace Transformese.Desktop
             }
         }
 
-        // --- EVENTOS DE CLICK DO MENU ---
-        // Agora todos chamam o AtualizarBotoes para garantir consistência
+        // --- EVENTOS DE CLICK ---
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             CarregarHome();
-            // Não precisa chamar AtualizarBotoes aqui pq o método CarregarHome já chama
         }
 
         private void btnNovoCandidato_Click(object sender, EventArgs e)
         {
             CarregarNovoCandidato();
-            // Não precisa chamar AtualizarBotoes aqui pq CarregarNovoCandidato já chama
         }
+
         private void btnTriagem_Click(object sender, EventArgs e)
         {
+            // Atenção: A ViewTriagem precisa ser instanciada sem parâmetros aqui, 
+            // pois ela começa vazia esperando o botão "Nova Triagem"
             NavegarPara(new ViewTriagem());
             AtualizarBotoes(sender);
         }
@@ -149,7 +147,9 @@ namespace Transformese.Desktop
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            var confirmacao = mdNotifica.Show("Deseja realmente sair?");
+            // Usando MessageBox padrão pois o mdNotifica pode não retornar DialogResult diretamente
+            var confirmacao = mdSair.Show("Deseja realmente sair?");
+
             if (confirmacao == DialogResult.Yes)
             {
                 frmLogin login = new frmLogin();

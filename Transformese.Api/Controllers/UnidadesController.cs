@@ -30,5 +30,20 @@ namespace Transformese.Api.Controllers
         {
             return _repository.ObterTodas();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult PutUnidade(int id, UnidadeParceira unidade)
+        {
+            if (id != unidade.Id) return BadRequest();
+            _repository.Atualizar(unidade); // Supondo que você injetou o repository
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUnidade(int id)
+        {
+            _repository.Remover(id);
+            return NoContent();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transformese.Data;
 
@@ -11,9 +12,11 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251205201336_AdicionandoDataEntrevista")]
+    partial class AdicionandoDataEntrevista
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,40 +183,15 @@ namespace Transformese.Data.Migrations
                         {
                             Id = 1,
                             Ativo = true,
-                            DataCadastro = new DateTime(2025, 12, 5, 18, 44, 55, 792, DateTimeKind.Local).AddTicks(2048),
+                            DataCadastro = new DateTime(2025, 12, 5, 17, 13, 35, 955, DateTimeKind.Local).AddTicks(5277),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EhAdministrador = true,
                             Email = "admin@admingerando.falcoes",
                             Nome = "Admin",
-                            Senha = "$2a$11$zdarzW9NNAKMM/M4d8zYSecdQR2U48ElffJWS6rLvsf6L4npJMqAW",
+                            Senha = "$2a$11$CCx9vV92mcmHrkU7JvspIOCQV8Uh51BP77Jqlq2e9r/9ZW7MBzuIu",
                             Sexo = "Outro",
                             Sobrenome = "Geral"
                         });
-                });
-
-            modelBuilder.Entity("Transformese.Domain.Entities.LogSistema", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Acao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Detalhes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Usuario")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("LogsSistema");
                 });
 
             modelBuilder.Entity("Transformese.Domain.Entities.UnidadeParceira", b =>

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Windows.Forms;
+using Transformese.Domain.Entities; // Certifique-se que o namespace do Funcionario está aqui
 
 namespace Transformese.Desktop
 {
@@ -14,13 +15,18 @@ namespace Transformese.Desktop
         {
             InitializeComponent();
             _client = new HttpClient();
-            _client.BaseAddress = new Uri("https://localhost:5001/");
+            // Ignora SSL para localhost (opcional, mas evita erros em dev)
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (m, c, ch, e) => true;
+            _client = new HttpClient(handler) { BaseAddress = new Uri("https://localhost:5001/") };
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            // Foco inicial no campo de email
+            if (txtEmail != null) txtEmail.Focus();
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmCadastrar formulario = new();
@@ -54,24 +60,23 @@ namespace Transformese.Desktop
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-                var confirmacao = mdSair.Show("Deseja realmente sair?");
+            var confirmacao = mdSair.Show("Deseja realmente sair?");
 
-                if (confirmacao == DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
+            if (confirmacao == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void AbrirLink(string url)
         {
             try
             {
-                Process.Start(new ProcessStartInfo(url)
-                { UseShellExecute = true });
+                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
             }
             catch (Exception ex)
             {
-                mdNotifica.Show("Erro", $"erro: {ex.Message}");
+                mdNotifica.Show($"Erro ao abrir link: {ex.Message}");
             }
         }
 
@@ -85,7 +90,6 @@ namespace Transformese.Desktop
 
             try
             {
-                // Desabilita o botão para evitar clique duplo
                 btnLogin.Enabled = false;
                 btnLogin.Text = "Entrando...";
 
@@ -95,25 +99,36 @@ namespace Transformese.Desktop
                     Senha = txtSenha.Text
                 };
 
+                // Envia para a API
                 HttpResponseMessage response = await _client.PostAsJsonAsync("api/funcionarios/login", loginData);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // 1. Tenta ler o funcionário que a API devolveu
-                    // (Certifique-se que sua API retorna o objeto Funcionario no login)
-                    var funcionarioLogado = await response.Content.ReadFromJsonAsync<Transformese.Domain.Entities.Funcionario>();
+                    // Lê o objeto Funcionário retornado pela API
+                    var funcionarioLogado = await response.Content.ReadFromJsonAsync<Funcionario>();
 
-                    mdNotifica.Show($"Bem-vindo, {funcionarioLogado.Nome}!");
+                    if (funcionarioLogado != null)
+                    {
+                        // 1. SALVA NA SESSÃO GLOBAL (Importante para os Logs)
+                        SessaoSistema.UsuarioLogado = funcionarioLogado;
 
-                    // 2. Passa o funcionário para o Dashboard
-                    var dashboard = new frmDashboard(funcionarioLogado);
-                    this.Hide();
-                    dashboard.Show();
-                    // Não damos Close() aqui para manter a app rodando, usamos o Hide
+                        mdNotifica.Show($"Bem-vindo, {funcionarioLogado.Nome}!");
+
+                        // 2. Abre o Dashboard
+                        var dashboard = new frmDashboard(funcionarioLogado);
+                        this.Hide();
+                        dashboard.Show();
+                    }
+                    else
+                    {
+                        mdNotifica.Show("Erro ao ler dados do usuário.");
+                    }
                 }
                 else
                 {
-                    mdNotifica.Show("Email ou senha incorretos.");
+                    // Lê a mensagem de erro da API (ex: "Senha inválida")
+                    var erro = await response.Content.ReadAsStringAsync();
+                    mdNotifica.Show($"Falha no login: {erro}");
                 }
             }
             catch (Exception ex)

@@ -83,7 +83,6 @@ namespace Transformese.Api.Controllers
             {
                 // Dados Pessoais
                 NomeCompleto = dto.NomeCompleto,
-                NomeSocial = dto.NomeSocial ?? string.Empty,
                 CPF = cpfLimpo,
                 DataNascimento = dto.DataNascimento,
                 IdentidadeGenero = dto.IdentidadeGenero,
@@ -174,6 +173,44 @@ namespace Transformese.Api.Controllers
             public bool PossuiComputador { get; set; }
             public bool PossuiInternet { get; set; }
             public string? PerfilLinkedin { get; set; }
+        }
+        // ============================================================
+        // 5. PUT: ATUALIZAR (Usado na Triagem para salvar Status/ONG/Pontos)
+        // ============================================================
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCandidato(int id, Candidato candidato)
+        {
+            if (id != candidato.Id)
+            {
+                return BadRequest("O ID da URL não bate com o ID do objeto.");
+            }
+
+            // Avisa o Entity Framework que esse objeto foi modificado
+            _context.Entry(candidato).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CandidatoExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent(); // Retorna 204 (Sucesso sem conteúdo)
+        }
+
+        // Método auxiliar para verificar se existe (usado no try/catch acima)
+        private bool CandidatoExists(int id)
+        {
+            return _context.Candidatos.Any(e => e.Id == id);
         }
     }
 }

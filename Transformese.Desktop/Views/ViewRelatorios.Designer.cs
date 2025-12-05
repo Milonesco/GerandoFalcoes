@@ -70,6 +70,7 @@
             colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             pnlHeader.SuspendLayout();
             pnlExportar.SuspendLayout();
             pnlAsana.SuspendLayout();
@@ -141,6 +142,7 @@
             btnExportar.Size = new System.Drawing.Size(260, 40);
             btnExportar.TabIndex = 2;
             btnExportar.Text = "Baixar Excel";
+            btnExportar.Click += btnExportar_Click;
             // 
             // guna2HtmlLabel3
             // 
@@ -422,6 +424,15 @@
             guna2HtmlLabel8.TabIndex = 1;
             guna2HtmlLabel8.Text = "Histórico de Execuções";
             // 
+            // mdNotifica
+            // 
+            mdNotifica.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            mdNotifica.Caption = "Exportação";
+            mdNotifica.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            mdNotifica.Parent = null;
+            mdNotifica.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            mdNotifica.Text = null;
+            // 
             // ViewRelatorios
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -435,6 +446,7 @@
             Name = "ViewRelatorios";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
+            Load += ViewRelatorios_Load_1;
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
             pnlExportar.ResumeLayout(false);
@@ -474,5 +486,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAcao;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http; // Necessário para conectar na API
-using System.Net.Http.Json; // Necessário para ler o JSON da API
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Transformese.Domain.Entities;
@@ -15,13 +15,16 @@ namespace Transformese.Desktop.Views
     {
         private readonly HttpClient _client;
         private List<Candidato> _listaCache = new List<Candidato>();
+
+        // NOVA VARIÁVEL: Guarda o total de vagas somadas das ONGs
+        private int _totalVagasDoBanco = 0;
+
         public event EventHandler OnSolicitarNovoCandidato;
 
         public ViewHome()
         {
             InitializeComponent();
 
-            // 1. Configura o HttpClient (Ignorando SSL para localhost)
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = (m, c, ch, e) => true;
             _client = new HttpClient(handler) { BaseAddress = new Uri("https://localhost:5001/") };
@@ -29,7 +32,6 @@ namespace Transformese.Desktop.Views
             ConfigurarEventosManuais();
         }
 
-        // Evento Load: É aqui que carregamos os dados, não no construtor
         private void ViewHome_Load(object sender, EventArgs e)
         {
             CarregarDadosDaApi();
@@ -37,35 +39,47 @@ namespace Transformese.Desktop.Views
 
         private void ConfigurarEventosManuais()
         {
-            // Vincula o evento de digitação
             if (txtBusca != null)
                 txtBusca.TextChanged += TxtBusca_TextChanged;
 
-            // Vincula o Load do UserControl (caso não esteja feito pelo Designer)
             this.Load += ViewHome_Load;
         }
 
         // ==========================================
-        // PARTE 1: CONEXÃO COM A API
+        // PARTE 1: CONEXÃO COM A API (ALTERADO)
         // ==========================================
         private async void CarregarDadosDaApi()
         {
             try
             {
-                // UI: Mostra um cursor de espera se quiser
-                // this.Cursor = Cursors.WaitCursor;
+                // --- 1. BUSCA CANDIDATOS ---
+                var resultadoCandidatos = await _client.GetFromJsonAsync<List<Candidato>>("api/candidatos");
 
-                // Chama a API: GET api/candidatos (ou api/inscricoes dependendo do seu controller)
-                var resultado = await _client.GetFromJsonAsync<List<Candidato>>("api/candidatos");
-                // Obs: Ajuste a rota "api/funcionarios/candidatos" para a rota real do seu Controller
-
-                if (resultado != null)
+                if (resultadoCandidatos != null)
                 {
-                    _listaCache = resultado;
+                    _listaCache = resultadoCandidatos;
                 }
                 else
                 {
                     _listaCache = new List<Candidato>();
+                }
+
+                // --- 2. BUSCA UNIDADES E SOMA VAGAS (NOVO) ---
+                // Tenta buscar as unidades para saber quantas vagas existem no total
+                try
+                {
+                    var resultadoUnidades = await _client.GetFromJsonAsync<List<UnidadeParceira>>("api/unidades");
+
+                    if (resultadoUnidades != null)
+                    {
+                        // Soma o campo QuantidadeVagas de todas as unidades cadastradas
+                        _totalVagasDoBanco = resultadoUnidades.Sum(u => u.QuantidadeVagas);
+                    }
+                }
+                catch
+                {
+                    // Se falhar (tabela vazia ou erro), assume 0 ou mantém valor anterior
+                    _totalVagasDoBanco = 0;
                 }
 
                 // Atualiza a tela com os dados novos
@@ -73,13 +87,9 @@ namespace Transformese.Desktop.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível buscar os dados da API.\nVerifique se ela está rodando.\n\nErro: " + ex.Message);
-                _listaCache = new List<Candidato>(); // Evita tela travada com lista nula
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                _listaCache = new List<Candidato>();
                 AtualizarInterface();
-            }
-            finally
-            {
-                this.Cursor = Cursors.Default;
             }
         }
 
@@ -119,42 +129,42 @@ namespace Transformese.Desktop.Views
 
             foreach (var item in lista)
             {
-                // Adiciona linha no Grid. O Status converte Enum pra String automaticamente.
-                dgvInscricoes.Rows.Add(item.NomeCompleto, item.Cidade, item.Status.ToString(), "...", "...");
+                dgvInscricoes.Rows.Add(item.NomeCompleto, item.Cidade, item.Status.ToString(), item.NomeOngResponsavel);
             }
 
             dgvInscricoes.ClearSelection();
         }
 
         private void AtualizarCardsKPI()
-        {// 1. Cálculos Gerais
+        {
+            // 1. Cálculos Gerais
             int total = _listaCache.Count;
             int triagem = _listaCache.Count(c => c.Status == StatusCandidato.Triagem);
             int entrevistas = _listaCache.Count(c => c.Status == StatusCandidato.Entrevista);
             int aprovados = _listaCache.Count(c => c.Status == StatusCandidato.Aprovado);
-            int vagasRestantes = 340 - aprovados;
 
-            // 2. NOVO CÁLCULO: Filtra quem se cadastrou HOJE
-            // DateTime.Today pega a data de hoje à meia-noite (00:00:00)
-            // .Date remove o horário do cadastro para comparar apenas o dia
+            // LÓGICA DINÂMICA: Total do Banco - Total Aprovados
+            // Se não tiver vagas cadastradas no banco, mostra 0 ou apenas os aprovados negativos? 
+            // Vamos assumir que se _totalVagasDoBanco for 0, mostramos 0 para não ficar negativo.
+            int vagasRestantes = (_totalVagasDoBanco > 0) ? _totalVagasDoBanco - aprovados : 0;
+
             int novosHoje = _listaCache.Count(c => c.DataCadastro.Date == DateTime.Today);
 
-            // 3. Atualiza as Labels Principais (com proteção de thread e nulo)
+            // 3. Atualiza as Labels Principais
             lblKpiValor?.Invoke((MethodInvoker)(() => lblKpiValor.Text = total.ToString("N0")));
             lblTriagemValor?.Invoke((MethodInvoker)(() => lblTriagemValor.Text = triagem.ToString()));
             lblEntrevistasValor?.Invoke((MethodInvoker)(() => lblEntrevistasValor.Text = entrevistas.ToString()));
             lblAprovadosValor?.Invoke((MethodInvoker)(() => lblAprovadosValor.Text = aprovados.ToString()));
+
+            // ATUALIZADO: Mostra as vagas calculadas dinamicamente
             lblVagasValor?.Invoke((MethodInvoker)(() => lblVagasValor.Text = vagasRestantes.ToString()));
 
-            // 4. ATUALIZA A LABEL "+12 hoje" (lblKpiStatus)
+            // 4. ATUALIZA A LABEL "+12 hoje"
             if (lblKpiStatus != null)
             {
                 lblKpiStatus.Invoke((MethodInvoker)(() =>
                 {
-                    // Atualiza o texto: "+5 hoje" ou "+0 hoje"
                     lblKpiStatus.Text = $"+{novosHoje} hoje";
-
-                    // Opcional: Se quiser deixar verde quando tiver gente nova e cinza quando for zero
                     lblKpiStatus.ForeColor = novosHoje > 0 ? Color.FromArgb(0, 168, 150) : Color.Gray;
                 }));
             }
@@ -162,8 +172,6 @@ namespace Transformese.Desktop.Views
             if (lblEntrevistasStatus != null)
             {
                 lblEntrevistasStatus.Text = $"{entrevistas} agendados";
-
-                // Lógica de cor: Se tiver entrevista pendente, fica Laranja ou Roxo, senão Cinza
                 lblEntrevistasStatus.ForeColor = entrevistas > 0 ? Color.Purple : Color.Gray;
             }
         }
@@ -177,8 +185,6 @@ namespace Transformese.Desktop.Views
             if (pendentes > 0)
             {
                 lblStatusSync.Text = $"Existem {pendentes} aprovados aguardando sincronização.";
-
-                // Botão Roxo e Ativo
                 btnSincronizar.Text = "Sincronizar Asana";
                 btnSincronizar.BackColor = Color.FromArgb(108, 92, 231);
                 btnSincronizar.Enabled = true;
@@ -186,17 +192,12 @@ namespace Transformese.Desktop.Views
             else
             {
                 lblStatusSync.Text = "Todos os aprovados já foram processados.";
-
-                // Botão Cinza e Desativado
                 btnSincronizar.Text = "Sincronizado!";
                 btnSincronizar.BackColor = Color.Gray;
                 btnSincronizar.Enabled = false;
             }
         }
 
-        // ==========================================
-        // PARTE 4: AÇÕES (BOTÃO SINCRONIZAR)
-        // ==========================================
         private async void btnSincronizar_Click(object sender, EventArgs e)
         {
             var paraSincronizar = _listaCache.Where(c => c.Status == StatusCandidato.Aprovado).ToList();
@@ -211,13 +212,11 @@ namespace Transformese.Desktop.Views
                 btnSincronizar.Text = "Enviando...";
                 btnSincronizar.Enabled = false;
 
-                // Simulação de delay (Futuramente aqui você chamaria: await _client.PostAsJsonAsync("api/sync", paraSincronizar))
                 await Task.Delay(1500);
 
                 this.Cursor = Cursors.Default;
                 MessageBox.Show("Sincronização concluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Recarrega os dados da API para garantir que está tudo atualizado
                 CarregarDadosDaApi();
             }
         }

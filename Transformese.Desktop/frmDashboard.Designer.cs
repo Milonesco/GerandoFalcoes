@@ -77,6 +77,7 @@
             lblSubTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTituloLogo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
+            mdSair = new Guna.UI2.WinForms.Guna2MessageDialog();
             pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
             pnlHeader.SuspendLayout();
@@ -435,6 +436,15 @@
             mdNotifica.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             mdNotifica.Text = null;
             // 
+            // mdSair
+            // 
+            mdSair.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            mdSair.Caption = "Logout";
+            mdSair.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            mdSair.Parent = this;
+            mdSair.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            mdSair.Text = null;
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -484,5 +494,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloDashboard;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblBoasVindas;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
+        private Guna.UI2.WinForms.Guna2MessageDialog mdSair;
     }
 }

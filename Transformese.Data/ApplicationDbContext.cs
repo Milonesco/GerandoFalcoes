@@ -15,6 +15,7 @@ namespace Transformese.Data
 
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<UnidadeParceira> UnidadesParceiras { get; set; }
+        public DbSet<LogSistema> LogsSistema { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

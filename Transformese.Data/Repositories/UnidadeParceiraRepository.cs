@@ -25,5 +25,21 @@ namespace Transformese.Data.Repositories
         {
             return _context.UnidadesParceiras.AsNoTracking().ToList();
         }
+        // Adicione esses dois métodos na classe UnidadeParceiraRepository
+        public void Atualizar(UnidadeParceira unidade)
+        {
+            _context.Entry(unidade).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void Remover(int id)
+        {
+            var unidade = _context.UnidadesParceiras.Find(id);
+            if (unidade != null)
+            {
+                _context.UnidadesParceiras.Remove(unidade);
+                _context.SaveChanges();
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transformese.Data;
 
@@ -11,9 +12,11 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251205175951_AdicionandoTabelasParaONGS")]
+    partial class AdicionandoTabelasParaONGS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,9 +54,6 @@ namespace Transformese.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DataEntrevista")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataNascimento")
@@ -180,40 +180,15 @@ namespace Transformese.Data.Migrations
                         {
                             Id = 1,
                             Ativo = true,
-                            DataCadastro = new DateTime(2025, 12, 5, 18, 44, 55, 792, DateTimeKind.Local).AddTicks(2048),
+                            DataCadastro = new DateTime(2025, 12, 5, 14, 59, 50, 939, DateTimeKind.Local).AddTicks(275),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EhAdministrador = true,
                             Email = "admin@admingerando.falcoes",
                             Nome = "Admin",
-                            Senha = "$2a$11$zdarzW9NNAKMM/M4d8zYSecdQR2U48ElffJWS6rLvsf6L4npJMqAW",
+                            Senha = "$2a$11$95VISpjCryBcR.A3zjtfae1nPFEVUxfNbBy9Ky5Zhsycc3F04nkPi",
                             Sexo = "Outro",
                             Sobrenome = "Geral"
                         });
-                });
-
-            modelBuilder.Entity("Transformese.Domain.Entities.LogSistema", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Acao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Detalhes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Usuario")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("LogsSistema");
                 });
 
             modelBuilder.Entity("Transformese.Domain.Entities.UnidadeParceira", b =>

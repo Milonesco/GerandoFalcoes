@@ -9,7 +9,7 @@ namespace Transformese.Domain.Entities
 
         // --- Dados Pessoais ---
         public string NomeCompleto { get; set; } = string.Empty;
-        public string NomeSocial { get; set; } = string.Empty; // Novo
+        public string CPF { get; set; } = string.Empty; // Novo
         public DateTime DataNascimento { get; set; }
         public string IdentidadeGenero { get; set; } = string.Empty;
         public string OrientacaoSexual { get; set; } = string.Empty;
@@ -54,5 +54,7 @@ namespace Transformese.Domain.Entities
         // --- CAMPO FALTANTE (Opcional) ---
         // Adicione este se quiser salvar o valor do numPontuacao
         public int? Pontuacao { get; set; }
+        public DateTime? DataEntrevista { get; set; }
+
     }
 }

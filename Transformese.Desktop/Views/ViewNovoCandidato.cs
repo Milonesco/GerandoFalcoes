@@ -25,6 +25,26 @@ namespace Transformese.Desktop.Views
             CarregarCombos();
         }
 
+        private async void RegistrarLog(string acao, string detalhes)
+        {
+            try
+            {
+                string nomeUsuario = "Sistema";
+                if (SessaoSistema.UsuarioLogado != null)
+                    nomeUsuario = SessaoSistema.UsuarioLogado.Nome;
+
+                var log = new LogSistema
+                {
+                    Usuario = nomeUsuario,
+                    Acao = acao,
+                    Detalhes = detalhes,
+                    DataHora = DateTime.Now
+                };
+                // Fire-and-forget (não espera resposta pra não travar tela)
+                await _client.PostAsJsonAsync("api/logs", log);
+            }
+            catch { /* Falha silenciosa no log */ }
+        }
         private void CarregarCombos()
         {
             // Limpa os itens existentes
