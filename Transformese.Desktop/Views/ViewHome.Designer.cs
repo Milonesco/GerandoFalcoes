@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges72 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges73 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges61 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges75 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges76 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges74 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges78 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges79 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges77 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges81 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges82 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges80 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges84 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges85 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges83 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges65 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges70 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges71 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges66 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges67 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges68 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges69 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges92 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges93 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges88 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges89 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges86 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges87 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges90 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges91 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges97 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges98 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges94 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges95 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges96 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowKpiCards = new System.Windows.Forms.FlowLayoutPanel();
             pnlKpiCardModelo = new Guna.UI2.WinForms.Guna2Panel();
             lblKpiStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -182,12 +182,12 @@
             pnlKpiCardModelo.Controls.Add(lblKpiStatus);
             pnlKpiCardModelo.Controls.Add(lblKpiValor);
             pnlKpiCardModelo.Controls.Add(lblKpiTitulo);
-            pnlKpiCardModelo.CustomizableEdges = customizableEdges50;
+            pnlKpiCardModelo.CustomizableEdges = customizableEdges1;
             pnlKpiCardModelo.FillColor = System.Drawing.Color.White;
             pnlKpiCardModelo.Location = new System.Drawing.Point(0, 0);
             pnlKpiCardModelo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             pnlKpiCardModelo.Name = "pnlKpiCardModelo";
-            pnlKpiCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges51;
+            pnlKpiCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             pnlKpiCardModelo.ShadowDecoration.Depth = 10;
             pnlKpiCardModelo.ShadowDecoration.Enabled = true;
             pnlKpiCardModelo.Size = new System.Drawing.Size(180, 130);
@@ -196,34 +196,34 @@
             // lblKpiStatus
             // 
             lblKpiStatus.BackColor = System.Drawing.Color.Transparent;
-            lblKpiStatus.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblKpiStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             lblKpiStatus.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
             lblKpiStatus.Location = new System.Drawing.Point(10, 85);
             lblKpiStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblKpiStatus.Name = "lblKpiStatus";
-            lblKpiStatus.Size = new System.Drawing.Size(48, 19);
+            lblKpiStatus.Size = new System.Drawing.Size(52, 15);
             lblKpiStatus.TabIndex = 2;
             lblKpiStatus.Text = "+12 hoje";
             // 
             // lblKpiValor
             // 
             lblKpiValor.BackColor = System.Drawing.Color.Transparent;
-            lblKpiValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
+            lblKpiValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             lblKpiValor.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
             lblKpiValor.Location = new System.Drawing.Point(10, 35);
             lblKpiValor.Name = "lblKpiValor";
-            lblKpiValor.Size = new System.Drawing.Size(85, 58);
+            lblKpiValor.Size = new System.Drawing.Size(87, 39);
             lblKpiValor.TabIndex = 1;
             lblKpiValor.Text = "1.250";
             // 
             // lblKpiTitulo
             // 
             lblKpiTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblKpiTitulo.Font = new System.Drawing.Font("Poppins ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblKpiTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblKpiTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblKpiTitulo.Location = new System.Drawing.Point(10, 10);
             lblKpiTitulo.Name = "lblKpiTitulo";
-            lblKpiTitulo.Size = new System.Drawing.Size(118, 25);
+            lblKpiTitulo.Size = new System.Drawing.Size(137, 18);
             lblKpiTitulo.TabIndex = 0;
             lblKpiTitulo.Text = "TOTAL INSCRITOS";
             // 
@@ -234,12 +234,12 @@
             pnlKpiTriagem.Controls.Add(lblTriagemStatus);
             pnlKpiTriagem.Controls.Add(lblTriagemValor);
             pnlKpiTriagem.Controls.Add(lblTriagemTitulo);
-            pnlKpiTriagem.CustomizableEdges = customizableEdges52;
+            pnlKpiTriagem.CustomizableEdges = customizableEdges3;
             pnlKpiTriagem.FillColor = System.Drawing.Color.White;
             pnlKpiTriagem.Location = new System.Drawing.Point(190, 0);
             pnlKpiTriagem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             pnlKpiTriagem.Name = "pnlKpiTriagem";
-            pnlKpiTriagem.ShadowDecoration.CustomizableEdges = customizableEdges53;
+            pnlKpiTriagem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             pnlKpiTriagem.ShadowDecoration.Depth = 10;
             pnlKpiTriagem.ShadowDecoration.Enabled = true;
             pnlKpiTriagem.Size = new System.Drawing.Size(180, 130);
@@ -248,34 +248,34 @@
             // lblTriagemStatus
             // 
             lblTriagemStatus.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemStatus.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblTriagemStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             lblTriagemStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblTriagemStatus.Location = new System.Drawing.Point(10, 85);
             lblTriagemStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblTriagemStatus.Name = "lblTriagemStatus";
-            lblTriagemStatus.Size = new System.Drawing.Size(121, 19);
+            lblTriagemStatus.Size = new System.Drawing.Size(115, 15);
             lblTriagemStatus.TabIndex = 2;
             lblTriagemStatus.Text = "Aguardando análise";
             // 
             // lblTriagemValor
             // 
             lblTriagemValor.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
+            lblTriagemValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             lblTriagemValor.ForeColor = System.Drawing.Color.FromArgb(233, 107, 42);
             lblTriagemValor.Location = new System.Drawing.Point(10, 35);
             lblTriagemValor.Name = "lblTriagemValor";
-            lblTriagemValor.Size = new System.Drawing.Size(57, 58);
+            lblTriagemValor.Size = new System.Drawing.Size(58, 39);
             lblTriagemValor.TabIndex = 1;
             lblTriagemValor.Text = "150";
             // 
             // lblTriagemTitulo
             // 
             lblTriagemTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemTitulo.Font = new System.Drawing.Font("Poppins ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblTriagemTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             lblTriagemTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblTriagemTitulo.Location = new System.Drawing.Point(10, 10);
             lblTriagemTitulo.Name = "lblTriagemTitulo";
-            lblTriagemTitulo.Size = new System.Drawing.Size(84, 25);
+            lblTriagemTitulo.Size = new System.Drawing.Size(97, 18);
             lblTriagemTitulo.TabIndex = 0;
             lblTriagemTitulo.Text = "EM TRIAGEM";
             // 
@@ -286,12 +286,12 @@
             pnlKpiEntrevistas.Controls.Add(lblEntrevistasStatus);
             pnlKpiEntrevistas.Controls.Add(lblEntrevistasValor);
             pnlKpiEntrevistas.Controls.Add(lblEntrevistasTitulo);
-            pnlKpiEntrevistas.CustomizableEdges = customizableEdges54;
+            pnlKpiEntrevistas.CustomizableEdges = customizableEdges5;
             pnlKpiEntrevistas.FillColor = System.Drawing.Color.White;
             pnlKpiEntrevistas.Location = new System.Drawing.Point(380, 0);
             pnlKpiEntrevistas.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             pnlKpiEntrevistas.Name = "pnlKpiEntrevistas";
-            pnlKpiEntrevistas.ShadowDecoration.CustomizableEdges = customizableEdges55;
+            pnlKpiEntrevistas.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pnlKpiEntrevistas.ShadowDecoration.Depth = 10;
             pnlKpiEntrevistas.ShadowDecoration.Enabled = true;
             pnlKpiEntrevistas.Size = new System.Drawing.Size(180, 130);
@@ -300,34 +300,34 @@
             // lblEntrevistasStatus
             // 
             lblEntrevistasStatus.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasStatus.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             lblEntrevistasStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblEntrevistasStatus.Location = new System.Drawing.Point(10, 85);
             lblEntrevistasStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblEntrevistasStatus.Name = "lblEntrevistasStatus";
-            lblEntrevistasStatus.Size = new System.Drawing.Size(114, 19);
+            lblEntrevistasStatus.Size = new System.Drawing.Size(110, 15);
             lblEntrevistasStatus.TabIndex = 2;
             lblEntrevistasStatus.Text = "+15 agendamentos";
             // 
             // lblEntrevistasValor
             // 
             lblEntrevistasValor.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             lblEntrevistasValor.ForeColor = System.Drawing.Color.FromArgb(236, 34, 98);
             lblEntrevistasValor.Location = new System.Drawing.Point(10, 35);
             lblEntrevistasValor.Name = "lblEntrevistasValor";
-            lblEntrevistasValor.Size = new System.Drawing.Size(45, 58);
+            lblEntrevistasValor.Size = new System.Drawing.Size(41, 39);
             lblEntrevistasValor.TabIndex = 1;
             lblEntrevistasValor.Text = "80";
             // 
             // lblEntrevistasTitulo
             // 
             lblEntrevistasTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasTitulo.Font = new System.Drawing.Font("Poppins ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             lblEntrevistasTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblEntrevistasTitulo.Location = new System.Drawing.Point(10, 10);
             lblEntrevistasTitulo.Name = "lblEntrevistasTitulo";
-            lblEntrevistasTitulo.Size = new System.Drawing.Size(92, 25);
+            lblEntrevistasTitulo.Size = new System.Drawing.Size(109, 18);
             lblEntrevistasTitulo.TabIndex = 0;
             lblEntrevistasTitulo.Text = "ENTREVISTAS";
             // 
@@ -338,12 +338,12 @@
             pnlKpiAprovados.Controls.Add(lblAprovadosStatus);
             pnlKpiAprovados.Controls.Add(lblAprovadosValor);
             pnlKpiAprovados.Controls.Add(lblAprovadosTitulo);
-            pnlKpiAprovados.CustomizableEdges = customizableEdges56;
+            pnlKpiAprovados.CustomizableEdges = customizableEdges7;
             pnlKpiAprovados.FillColor = System.Drawing.Color.White;
             pnlKpiAprovados.Location = new System.Drawing.Point(570, 0);
             pnlKpiAprovados.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             pnlKpiAprovados.Name = "pnlKpiAprovados";
-            pnlKpiAprovados.ShadowDecoration.CustomizableEdges = customizableEdges57;
+            pnlKpiAprovados.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnlKpiAprovados.ShadowDecoration.Depth = 10;
             pnlKpiAprovados.ShadowDecoration.Enabled = true;
             pnlKpiAprovados.Size = new System.Drawing.Size(180, 130);
@@ -352,34 +352,34 @@
             // lblAprovadosStatus
             // 
             lblAprovadosStatus.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosStatus.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblAprovadosStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             lblAprovadosStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblAprovadosStatus.Location = new System.Drawing.Point(10, 85);
             lblAprovadosStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblAprovadosStatus.Name = "lblAprovadosStatus";
-            lblAprovadosStatus.Size = new System.Drawing.Size(128, 19);
+            lblAprovadosStatus.Size = new System.Drawing.Size(125, 15);
             lblAprovadosStatus.TabIndex = 2;
             lblAprovadosStatus.Text = "Prontos para o Asana";
             // 
             // lblAprovadosValor
             // 
             lblAprovadosValor.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
+            lblAprovadosValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             lblAprovadosValor.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
             lblAprovadosValor.Location = new System.Drawing.Point(10, 35);
             lblAprovadosValor.Name = "lblAprovadosValor";
-            lblAprovadosValor.Size = new System.Drawing.Size(44, 58);
+            lblAprovadosValor.Size = new System.Drawing.Size(41, 39);
             lblAprovadosValor.TabIndex = 1;
             lblAprovadosValor.Text = "60";
             // 
             // lblAprovadosTitulo
             // 
             lblAprovadosTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosTitulo.Font = new System.Drawing.Font("Poppins ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblAprovadosTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             lblAprovadosTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblAprovadosTitulo.Location = new System.Drawing.Point(10, 10);
             lblAprovadosTitulo.Name = "lblAprovadosTitulo";
-            lblAprovadosTitulo.Size = new System.Drawing.Size(88, 25);
+            lblAprovadosTitulo.Size = new System.Drawing.Size(97, 18);
             lblAprovadosTitulo.TabIndex = 0;
             lblAprovadosTitulo.Text = "APROVADOS";
             // 
@@ -390,12 +390,12 @@
             pnlKpiVagas.Controls.Add(lblVagasStatus);
             pnlKpiVagas.Controls.Add(lblVagasValor);
             pnlKpiVagas.Controls.Add(lblVagasTitulo);
-            pnlKpiVagas.CustomizableEdges = customizableEdges58;
+            pnlKpiVagas.CustomizableEdges = customizableEdges9;
             pnlKpiVagas.FillColor = System.Drawing.Color.White;
             pnlKpiVagas.Location = new System.Drawing.Point(760, 0);
             pnlKpiVagas.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             pnlKpiVagas.Name = "pnlKpiVagas";
-            pnlKpiVagas.ShadowDecoration.CustomizableEdges = customizableEdges59;
+            pnlKpiVagas.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnlKpiVagas.ShadowDecoration.Depth = 10;
             pnlKpiVagas.ShadowDecoration.Enabled = true;
             pnlKpiVagas.Size = new System.Drawing.Size(180, 130);
@@ -404,34 +404,34 @@
             // lblVagasStatus
             // 
             lblVagasStatus.BackColor = System.Drawing.Color.Transparent;
-            lblVagasStatus.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblVagasStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             lblVagasStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasStatus.Location = new System.Drawing.Point(10, 85);
             lblVagasStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblVagasStatus.Name = "lblVagasStatus";
-            lblVagasStatus.Size = new System.Drawing.Size(108, 19);
+            lblVagasStatus.Size = new System.Drawing.Size(107, 15);
             lblVagasStatus.TabIndex = 2;
             lblVagasStatus.Text = "Vagas disponíveis";
             // 
             // lblVagasValor
             // 
             lblVagasValor.BackColor = System.Drawing.Color.Transparent;
-            lblVagasValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
+            lblVagasValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             lblVagasValor.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasValor.Location = new System.Drawing.Point(10, 35);
             lblVagasValor.Name = "lblVagasValor";
-            lblVagasValor.Size = new System.Drawing.Size(66, 58);
+            lblVagasValor.Size = new System.Drawing.Size(60, 39);
             lblVagasValor.TabIndex = 1;
             lblVagasValor.Text = "340";
             // 
             // lblVagasTitulo
             // 
             lblVagasTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblVagasTitulo.Font = new System.Drawing.Font("Poppins ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblVagasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             lblVagasTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasTitulo.Location = new System.Drawing.Point(10, 10);
             lblVagasTitulo.Name = "lblVagasTitulo";
-            lblVagasTitulo.Size = new System.Drawing.Size(128, 25);
+            lblVagasTitulo.Size = new System.Drawing.Size(150, 18);
             lblVagasTitulo.TabIndex = 0;
             lblVagasTitulo.Text = "VAGAS RESTANTES";
             // 
@@ -442,13 +442,13 @@
             pnlWidgetsLaterais.Controls.Add(pnlFluxoProcesso);
             pnlWidgetsLaterais.Controls.Add(pnlAcaoRapida);
             pnlWidgetsLaterais.Controls.Add(pnlBuscaRapida);
-            pnlWidgetsLaterais.CustomizableEdges = customizableEdges72;
+            pnlWidgetsLaterais.CustomizableEdges = customizableEdges35;
             pnlWidgetsLaterais.Dock = System.Windows.Forms.DockStyle.Right;
             pnlWidgetsLaterais.Location = new System.Drawing.Point(680, 170);
             pnlWidgetsLaterais.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             pnlWidgetsLaterais.Name = "pnlWidgetsLaterais";
             pnlWidgetsLaterais.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            pnlWidgetsLaterais.ShadowDecoration.CustomizableEdges = customizableEdges73;
+            pnlWidgetsLaterais.ShadowDecoration.CustomizableEdges = customizableEdges36;
             pnlWidgetsLaterais.Size = new System.Drawing.Size(280, 470);
             pnlWidgetsLaterais.TabIndex = 1;
             // 
@@ -458,12 +458,12 @@
             pnlFluxoProcesso.BorderRadius = 10;
             pnlFluxoProcesso.Controls.Add(flpPassos);
             pnlFluxoProcesso.Controls.Add(lblTituloFluxo);
-            pnlFluxoProcesso.CustomizableEdges = customizableEdges60;
+            pnlFluxoProcesso.CustomizableEdges = customizableEdges23;
             pnlFluxoProcesso.FillColor = System.Drawing.Color.White;
             pnlFluxoProcesso.Location = new System.Drawing.Point(10, 183);
             pnlFluxoProcesso.Name = "pnlFluxoProcesso";
             pnlFluxoProcesso.ShadowDecoration.BorderRadius = 10;
-            pnlFluxoProcesso.ShadowDecoration.CustomizableEdges = customizableEdges61;
+            pnlFluxoProcesso.ShadowDecoration.CustomizableEdges = customizableEdges24;
             pnlFluxoProcesso.ShadowDecoration.Depth = 10;
             pnlFluxoProcesso.ShadowDecoration.Enabled = true;
             pnlFluxoProcesso.Size = new System.Drawing.Size(270, 267);
@@ -485,11 +485,11 @@
             // 
             guna2Panel1.Controls.Add(guna2HtmlLabel1);
             guna2Panel1.Controls.Add(guna2CircleButton1);
-            guna2Panel1.CustomizableEdges = customizableEdges75;
+            guna2Panel1.CustomizableEdges = customizableEdges12;
             guna2Panel1.FillColor = System.Drawing.Color.Transparent;
             guna2Panel1.Location = new System.Drawing.Point(3, 3);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges76;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             guna2Panel1.Size = new System.Drawing.Size(251, 40);
             guna2Panel1.TabIndex = 0;
             // 
@@ -510,11 +510,11 @@
             guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            guna2CircleButton1.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2CircleButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             guna2CircleButton1.Location = new System.Drawing.Point(0, 5);
             guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges74;
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton1.Size = new System.Drawing.Size(30, 30);
             guna2CircleButton1.TabIndex = 1;
@@ -524,11 +524,11 @@
             // 
             guna2Panel2.Controls.Add(guna2HtmlLabel2);
             guna2Panel2.Controls.Add(guna2CircleButton2);
-            guna2Panel2.CustomizableEdges = customizableEdges78;
+            guna2Panel2.CustomizableEdges = customizableEdges15;
             guna2Panel2.FillColor = System.Drawing.Color.Transparent;
             guna2Panel2.Location = new System.Drawing.Point(3, 49);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges79;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Panel2.Size = new System.Drawing.Size(251, 40);
             guna2Panel2.TabIndex = 1;
             // 
@@ -549,11 +549,11 @@
             guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            guna2CircleButton2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2CircleButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             guna2CircleButton2.Location = new System.Drawing.Point(0, 5);
             guna2CircleButton2.Name = "guna2CircleButton2";
-            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges77;
+            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new System.Drawing.Size(30, 30);
             guna2CircleButton2.TabIndex = 1;
@@ -563,11 +563,11 @@
             // 
             guna2Panel3.Controls.Add(guna2HtmlLabel3);
             guna2Panel3.Controls.Add(guna2CircleButton3);
-            guna2Panel3.CustomizableEdges = customizableEdges81;
+            guna2Panel3.CustomizableEdges = customizableEdges18;
             guna2Panel3.FillColor = System.Drawing.Color.Transparent;
             guna2Panel3.Location = new System.Drawing.Point(3, 95);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges82;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2Panel3.Size = new System.Drawing.Size(252, 40);
             guna2Panel3.TabIndex = 2;
             // 
@@ -588,11 +588,11 @@
             guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
-            guna2CircleButton3.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2CircleButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2CircleButton3.ForeColor = System.Drawing.Color.White;
             guna2CircleButton3.Location = new System.Drawing.Point(0, 5);
             guna2CircleButton3.Name = "guna2CircleButton3";
-            guna2CircleButton3.ShadowDecoration.CustomizableEdges = customizableEdges80;
+            guna2CircleButton3.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton3.Size = new System.Drawing.Size(30, 30);
             guna2CircleButton3.TabIndex = 1;
@@ -602,11 +602,11 @@
             // 
             guna2Panel4.Controls.Add(guna2HtmlLabel4);
             guna2Panel4.Controls.Add(guna2CircleButton4);
-            guna2Panel4.CustomizableEdges = customizableEdges84;
+            guna2Panel4.CustomizableEdges = customizableEdges21;
             guna2Panel4.FillColor = System.Drawing.Color.Transparent;
             guna2Panel4.Location = new System.Drawing.Point(3, 141);
             guna2Panel4.Name = "guna2Panel4";
-            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges85;
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel4.Size = new System.Drawing.Size(252, 40);
             guna2Panel4.TabIndex = 3;
             // 
@@ -627,11 +627,11 @@
             guna2CircleButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             guna2CircleButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             guna2CircleButton4.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
-            guna2CircleButton4.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2CircleButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2CircleButton4.ForeColor = System.Drawing.Color.White;
             guna2CircleButton4.Location = new System.Drawing.Point(0, 5);
             guna2CircleButton4.Name = "guna2CircleButton4";
-            guna2CircleButton4.ShadowDecoration.CustomizableEdges = customizableEdges83;
+            guna2CircleButton4.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton4.Size = new System.Drawing.Size(30, 30);
             guna2CircleButton4.TabIndex = 1;
@@ -650,7 +650,7 @@
             // pnlAcaoRapida
             // 
             pnlAcaoRapida.Controls.Add(btnNovoCandidato);
-            pnlAcaoRapida.CustomizableEdges = customizableEdges64;
+            pnlAcaoRapida.CustomizableEdges = customizableEdges27;
             pnlAcaoRapida.Dock = System.Windows.Forms.DockStyle.Top;
             pnlAcaoRapida.FillColor = System.Drawing.Color.Transparent;
             pnlAcaoRapida.ForeColor = System.Drawing.Color.White;
@@ -658,7 +658,7 @@
             pnlAcaoRapida.Margin = new System.Windows.Forms.Padding(0);
             pnlAcaoRapida.Name = "pnlAcaoRapida";
             pnlAcaoRapida.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            pnlAcaoRapida.ShadowDecoration.CustomizableEdges = customizableEdges65;
+            pnlAcaoRapida.ShadowDecoration.CustomizableEdges = customizableEdges28;
             pnlAcaoRapida.Size = new System.Drawing.Size(270, 80);
             pnlAcaoRapida.TabIndex = 1;
             // 
@@ -667,7 +667,7 @@
             btnNovoCandidato.BackColor = System.Drawing.Color.Transparent;
             btnNovoCandidato.BorderRadius = 10;
             btnNovoCandidato.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnNovoCandidato.CustomizableEdges = customizableEdges62;
+            btnNovoCandidato.CustomizableEdges = customizableEdges25;
             btnNovoCandidato.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnNovoCandidato.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnNovoCandidato.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -679,12 +679,13 @@
             btnNovoCandidato.Location = new System.Drawing.Point(0, 10);
             btnNovoCandidato.Name = "btnNovoCandidato";
             btnNovoCandidato.ShadowDecoration.BorderRadius = 10;
-            btnNovoCandidato.ShadowDecoration.CustomizableEdges = customizableEdges63;
+            btnNovoCandidato.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnNovoCandidato.ShadowDecoration.Depth = 10;
             btnNovoCandidato.ShadowDecoration.Enabled = true;
             btnNovoCandidato.Size = new System.Drawing.Size(270, 60);
             btnNovoCandidato.TabIndex = 0;
             btnNovoCandidato.Text = "+ Novo Candidato";
+            btnNovoCandidato.Click += btnNovoCandidato_Click;
             // 
             // pnlBuscaRapida
             // 
@@ -693,14 +694,14 @@
             pnlBuscaRapida.Controls.Add(btnBuscar);
             pnlBuscaRapida.Controls.Add(txtBusca);
             pnlBuscaRapida.Controls.Add(lblBuscaTitulo);
-            pnlBuscaRapida.CustomizableEdges = customizableEdges70;
+            pnlBuscaRapida.CustomizableEdges = customizableEdges33;
             pnlBuscaRapida.Dock = System.Windows.Forms.DockStyle.Top;
             pnlBuscaRapida.FillColor = System.Drawing.Color.White;
             pnlBuscaRapida.Location = new System.Drawing.Point(10, 0);
             pnlBuscaRapida.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             pnlBuscaRapida.Name = "pnlBuscaRapida";
             pnlBuscaRapida.ShadowDecoration.BorderRadius = 10;
-            pnlBuscaRapida.ShadowDecoration.CustomizableEdges = customizableEdges71;
+            pnlBuscaRapida.ShadowDecoration.CustomizableEdges = customizableEdges34;
             pnlBuscaRapida.ShadowDecoration.Depth = 10;
             pnlBuscaRapida.ShadowDecoration.Enabled = true;
             pnlBuscaRapida.Size = new System.Drawing.Size(270, 100);
@@ -710,7 +711,7 @@
             // 
             btnBuscar.BorderRadius = 10;
             btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnBuscar.CustomizableEdges = customizableEdges66;
+            btnBuscar.CustomizableEdges = customizableEdges29;
             btnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -720,7 +721,7 @@
             btnBuscar.ForeColor = System.Drawing.Color.White;
             btnBuscar.Location = new System.Drawing.Point(230, 50);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges67;
+            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnBuscar.Size = new System.Drawing.Size(35, 35);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "🔍︎";
@@ -729,7 +730,7 @@
             // 
             txtBusca.BorderRadius = 10;
             txtBusca.Cursor = System.Windows.Forms.Cursors.Hand;
-            txtBusca.CustomizableEdges = customizableEdges68;
+            txtBusca.CustomizableEdges = customizableEdges31;
             txtBusca.DefaultText = "";
             txtBusca.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtBusca.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -743,7 +744,7 @@
             txtBusca.Name = "txtBusca";
             txtBusca.PlaceholderText = "Digite o Nome do candidato...";
             txtBusca.SelectedText = "";
-            txtBusca.ShadowDecoration.CustomizableEdges = customizableEdges69;
+            txtBusca.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtBusca.Size = new System.Drawing.Size(205, 35);
             txtBusca.TabIndex = 1;
             // 
@@ -762,12 +763,12 @@
             // 
             pnlConteudoPrincipal.Controls.Add(pnlTabelaInscricoes);
             pnlConteudoPrincipal.Controls.Add(pnlEspacador);
-            pnlConteudoPrincipal.CustomizableEdges = customizableEdges92;
+            pnlConteudoPrincipal.CustomizableEdges = customizableEdges43;
             pnlConteudoPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             pnlConteudoPrincipal.Location = new System.Drawing.Point(20, 170);
             pnlConteudoPrincipal.Margin = new System.Windows.Forms.Padding(0);
             pnlConteudoPrincipal.Name = "pnlConteudoPrincipal";
-            pnlConteudoPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges93;
+            pnlConteudoPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges44;
             pnlConteudoPrincipal.Size = new System.Drawing.Size(660, 470);
             pnlConteudoPrincipal.TabIndex = 2;
             // 
@@ -777,7 +778,7 @@
             pnlTabelaInscricoes.BorderRadius = 10;
             pnlTabelaInscricoes.Controls.Add(dgvInscricoes);
             pnlTabelaInscricoes.Controls.Add(pnlHeaderTabela);
-            pnlTabelaInscricoes.CustomizableEdges = customizableEdges88;
+            pnlTabelaInscricoes.CustomizableEdges = customizableEdges39;
             pnlTabelaInscricoes.Dock = System.Windows.Forms.DockStyle.Fill;
             pnlTabelaInscricoes.FillColor = System.Drawing.Color.White;
             pnlTabelaInscricoes.Location = new System.Drawing.Point(0, 0);
@@ -785,7 +786,7 @@
             pnlTabelaInscricoes.Name = "pnlTabelaInscricoes";
             pnlTabelaInscricoes.Padding = new System.Windows.Forms.Padding(20, 0, 20, 20);
             pnlTabelaInscricoes.ShadowDecoration.BorderRadius = 10;
-            pnlTabelaInscricoes.ShadowDecoration.CustomizableEdges = customizableEdges89;
+            pnlTabelaInscricoes.ShadowDecoration.CustomizableEdges = customizableEdges40;
             pnlTabelaInscricoes.ShadowDecoration.Depth = 10;
             pnlTabelaInscricoes.ShadowDecoration.Enabled = true;
             pnlTabelaInscricoes.Size = new System.Drawing.Size(660, 450);
@@ -794,27 +795,27 @@
             // dgvInscricoes
             // 
             dgvInscricoes.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dgvInscricoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins ExtraBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dgvInscricoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvInscricoes.ColumnHeadersHeight = 30;
             dgvInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colNome, colCidade, colStatus, colOng, colAcoes });
             dgvInscricoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dgvInscricoes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgvInscricoes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvInscricoes.Dock = System.Windows.Forms.DockStyle.Fill;
             dgvInscricoes.GridColor = System.Drawing.Color.White;
             dgvInscricoes.Location = new System.Drawing.Point(20, 50);
@@ -884,13 +885,13 @@
             // pnlHeaderTabela
             // 
             pnlHeaderTabela.Controls.Add(lblTituloTabela);
-            pnlHeaderTabela.CustomizableEdges = customizableEdges86;
+            pnlHeaderTabela.CustomizableEdges = customizableEdges37;
             pnlHeaderTabela.Dock = System.Windows.Forms.DockStyle.Top;
             pnlHeaderTabela.FillColor = System.Drawing.Color.Transparent;
             pnlHeaderTabela.Location = new System.Drawing.Point(20, 0);
             pnlHeaderTabela.Name = "pnlHeaderTabela";
             pnlHeaderTabela.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            pnlHeaderTabela.ShadowDecoration.CustomizableEdges = customizableEdges87;
+            pnlHeaderTabela.ShadowDecoration.CustomizableEdges = customizableEdges38;
             pnlHeaderTabela.Size = new System.Drawing.Size(620, 50);
             pnlHeaderTabela.TabIndex = 3;
             // 
@@ -909,11 +910,11 @@
             // 
             // pnlEspacador
             // 
-            pnlEspacador.CustomizableEdges = customizableEdges90;
+            pnlEspacador.CustomizableEdges = customizableEdges41;
             pnlEspacador.Dock = System.Windows.Forms.DockStyle.Bottom;
             pnlEspacador.Location = new System.Drawing.Point(0, 450);
             pnlEspacador.Name = "pnlEspacador";
-            pnlEspacador.ShadowDecoration.CustomizableEdges = customizableEdges91;
+            pnlEspacador.ShadowDecoration.CustomizableEdges = customizableEdges42;
             pnlEspacador.Size = new System.Drawing.Size(660, 20);
             pnlEspacador.TabIndex = 2;
             // 
@@ -926,7 +927,7 @@
             pnlAlerta.Controls.Add(btnSincronizar);
             pnlAlerta.Controls.Add(lblStatusSync);
             pnlAlerta.Controls.Add(pbNuvem);
-            pnlAlerta.CustomizableEdges = customizableEdges97;
+            pnlAlerta.CustomizableEdges = customizableEdges48;
             pnlAlerta.Dock = System.Windows.Forms.DockStyle.Bottom;
             pnlAlerta.FillColor = System.Drawing.Color.FromArgb(237, 233, 250);
             pnlAlerta.Location = new System.Drawing.Point(20, 640);
@@ -934,7 +935,7 @@
             pnlAlerta.Name = "pnlAlerta";
             pnlAlerta.Padding = new System.Windows.Forms.Padding(20, 10, 20, 0);
             pnlAlerta.ShadowDecoration.BorderRadius = 10;
-            pnlAlerta.ShadowDecoration.CustomizableEdges = customizableEdges98;
+            pnlAlerta.ShadowDecoration.CustomizableEdges = customizableEdges49;
             pnlAlerta.ShadowDecoration.Depth = 10;
             pnlAlerta.ShadowDecoration.Enabled = true;
             pnlAlerta.Size = new System.Drawing.Size(940, 80);
@@ -945,7 +946,7 @@
             btnSincronizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             btnSincronizar.BorderRadius = 6;
             btnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnSincronizar.CustomizableEdges = customizableEdges94;
+            btnSincronizar.CustomizableEdges = customizableEdges45;
             btnSincronizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnSincronizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnSincronizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -955,7 +956,7 @@
             btnSincronizar.ForeColor = System.Drawing.Color.White;
             btnSincronizar.Location = new System.Drawing.Point(770, 20);
             btnSincronizar.Name = "btnSincronizar";
-            btnSincronizar.ShadowDecoration.CustomizableEdges = customizableEdges95;
+            btnSincronizar.ShadowDecoration.CustomizableEdges = customizableEdges46;
             btnSincronizar.Size = new System.Drawing.Size(151, 40);
             btnSincronizar.TabIndex = 2;
             btnSincronizar.Text = "Sincronizar agora";
@@ -979,7 +980,7 @@
             pbNuvem.ImageRotate = 0F;
             pbNuvem.Location = new System.Drawing.Point(20, 20);
             pbNuvem.Name = "pbNuvem";
-            pbNuvem.ShadowDecoration.CustomizableEdges = customizableEdges96;
+            pbNuvem.ShadowDecoration.CustomizableEdges = customizableEdges47;
             pbNuvem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pbNuvem.Size = new System.Drawing.Size(40, 40);
             pbNuvem.TabIndex = 0;
@@ -997,6 +998,7 @@
             Name = "ViewHome";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
+            Load += ViewHome_Load_1;
             flowKpiCards.ResumeLayout(false);
             pnlKpiCardModelo.ResumeLayout(false);
             pnlKpiCardModelo.PerformLayout();

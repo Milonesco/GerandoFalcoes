@@ -79,6 +79,7 @@
             pnlLogo = new Guna.UI2.WinForms.Guna2Panel();
             lblSubTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTituloLogo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
             pnlHeader.SuspendLayout();
@@ -186,11 +187,11 @@
             // lblTituloDashboard
             // 
             lblTituloDashboard.BackColor = System.Drawing.Color.Transparent;
-            lblTituloDashboard.Font = new System.Drawing.Font("Montserrat", 17.9999981F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.9999981F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloDashboard.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
             lblTituloDashboard.Location = new System.Drawing.Point(20, 5);
             lblTituloDashboard.Name = "lblTituloDashboard";
-            lblTituloDashboard.Size = new System.Drawing.Size(169, 40);
+            lblTituloDashboard.Size = new System.Drawing.Size(161, 31);
             lblTituloDashboard.TabIndex = 4;
             lblTituloDashboard.Text = "DASHBOARD";
             // 
@@ -241,7 +242,6 @@
             btnSair.Size = new System.Drawing.Size(220, 50);
             btnSair.TabIndex = 9;
             btnSair.Text = "Sair do Sistema";
-            btnSair.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnSair.Click += btnSair_Click;
             // 
             // guna2Separator1
@@ -446,13 +446,22 @@
             // lblTituloLogo
             // 
             lblTituloLogo.BackColor = System.Drawing.Color.Transparent;
-            lblTituloLogo.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloLogo.ForeColor = System.Drawing.Color.White;
             lblTituloLogo.Location = new System.Drawing.Point(7, 30);
             lblTituloLogo.Name = "lblTituloLogo";
-            lblTituloLogo.Size = new System.Drawing.Size(205, 32);
+            lblTituloLogo.Size = new System.Drawing.Size(206, 26);
             lblTituloLogo.TabIndex = 4;
             lblTituloLogo.Text = "GERANDO FALCÕES";
+            // 
+            // mdNotifica
+            // 
+            mdNotifica.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            mdNotifica.Caption = "Aviso";
+            mdNotifica.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            mdNotifica.Parent = this;
+            mdNotifica.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            mdNotifica.Text = null;
             // 
             // frmDashboard
             // 
@@ -467,7 +476,6 @@
             Name = "frmDashboard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Dashboard";
-            Load += frmDashboard_Load;
             pnlUserInfo.ResumeLayout(false);
             pnlUserInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();
@@ -504,5 +512,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloLogo;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloDashboard;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblBoasVindas;
+        private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
     }
 }

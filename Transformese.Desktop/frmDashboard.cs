@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing; // Necessário para cores
+using System.Drawing;
 using System.Windows.Forms;
 using Transformese.Desktop.Views;
 using Transformese.Domain.Entities;
@@ -10,7 +10,6 @@ namespace Transformese.Desktop
     {
         private Funcionario _usuarioLogado;
 
-        // --- CONSTRUTOR PRINCIPAL (COM LOGIN) ---
         public frmDashboard(Funcionario funcionario)
         {
             InitializeComponent();
@@ -18,128 +17,152 @@ namespace Transformese.Desktop
             ConfigurarDashboard();
         }
 
-        // --- CONSTRUTOR DE TESTE (SEM LOGIN) ---
         public frmDashboard()
         {
             InitializeComponent();
-            // Usuário Fake para evitar erros visuais durante testes
             _usuarioLogado = new Funcionario { Nome = "Usuário", Sobrenome = "Teste" };
             ConfigurarDashboard();
         }
 
-        // --- CONFIGURAÇÃO INICIAL DA TELA ---
         private void ConfigurarDashboard()
         {
             try
             {
-                // 1. Saudação (Cabeçalho Esquerdo)
-                // O sinal '?' evita erro se o label não existir (Null Check)
-                if (lblBoasVindas != null)
-                    lblBoasVindas.Text = $"Bem-vindo(a), {_usuarioLogado.Nome}!";
+                if (lblBoasVindas != null) lblBoasVindas.Text = $"Bem-vindo(a), {_usuarioLogado.Nome}!";
+                if (lblNomeUsuario != null) lblNomeUsuario.Text = $"{_usuarioLogado.Nome} {_usuarioLogado.Sobrenome}";
+                if (lblCargoUsuario != null) lblCargoUsuario.Text = "Administrador";
 
-                // 2. Painel de Usuário (Canto Superior Direito)
-                if (lblNomeUsuario != null)
-                    lblNomeUsuario.Text = $"{_usuarioLogado.Nome} {_usuarioLogado.Sobrenome}";
-
-                if (lblCargoUsuario != null)
-                    lblCargoUsuario.Text = "Administrador"; // Valor fixo por enquanto
-
-                // 3. Foto de Perfil (Bolinha Colorida)
                 if (pbPerfil != null)
                 {
-                    pbPerfil.Image = null; // Limpa imagem anterior
-                    pbPerfil.FillColor = Color.FromArgb(0, 168, 150); // Verde Turquesa do Logo
+                    pbPerfil.Image = null;
+                    pbPerfil.FillColor = Color.FromArgb(0, 168, 150);
                 }
 
-                // 4. Carrega a Home
-                NavegarPara(new ViewHome());
-
-                // 5. Marca o botão visualmente
-                if (btnDashboard != null) btnDashboard.Checked = true;
+                // Carrega a Home e já marca o botão certo
+                CarregarHome();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao configurar dashboard: {ex.Message}");
+                mdNotifica.Show($"Erro ao configurar dashboard: {ex.Message}");
             }
         }
 
-        // --- O CÉREBRO DA NAVEGAÇÃO ---
+        // --- NOVO MÉTODO: Gerencia visualmente os botões ---
+        // Recebe o botão que deve ficar "aceso" e apaga os outros
+        private void AtualizarBotoes(object botaoAtivo)
+        {
+            // 1. Desmarca TODOS primeiro (Reset)
+            // O 'dynamic' permite acessar a propriedade Checked sem saber o tipo exato (GunaButton, etc)
+            if (btnDashboard != null) ((dynamic)btnDashboard).Checked = false;
+            if (btnNovoCandidato != null) ((dynamic)btnNovoCandidato).Checked = false;
+            if (btnTriagem != null) ((dynamic)btnTriagem).Checked = false;
+            if (btnEntrevistas != null) ((dynamic)btnEntrevistas).Checked = false;
+            if (btnNovoCandidato != null) ((dynamic)btnNovoCandidato).Checked = false;
+            if (btnGestaoOngs != null) ((dynamic)btnGestaoOngs).Checked = false;
+            if (btnRelatorios != null) ((dynamic)btnRelatorios).Checked = false;
+
+            // 2. Marca APENAS o botão que recebeu como parâmetro
+            if (botaoAtivo != null)
+            {
+                ((dynamic)botaoAtivo).Checked = true;
+            }
+        }
+
+        private void CarregarHome()
+        {
+            var viewHome = new ViewHome();
+
+            // Assina o evento
+            viewHome.OnSolicitarNovoCandidato += (sender, e) =>
+            {
+                CarregarNovoCandidato();
+            };
+
+            NavegarPara(viewHome);
+
+            // ATUALIZAÇÃO VISUAL: Marca o botão Dashboard
+            AtualizarBotoes(btnDashboard);
+        }
+
+        private void CarregarNovoCandidato()
+        {
+            var viewNovo = new ViewNovoCandidato();
+            NavegarPara(viewNovo);
+
+            // ATUALIZAÇÃO VISUAL: Marca o botão Novo Candidato automaticamente!
+            AtualizarBotoes(btnNovoCandidato);
+        }
+
         private void NavegarPara(UserControl view)
         {
-            // Verifica se o painel existe antes de tentar usar
             if (pnlContent == null) return;
-
             try
             {
                 view.Dock = DockStyle.Fill;
-                pnlContent.Controls.Clear(); // Limpa a tela anterior
-                pnlContent.Controls.Add(view); // Adiciona a nova tela
-                view.BringToFront(); // Garante que fique na frente de tudo
+                pnlContent.Controls.Clear();
+                pnlContent.Controls.Add(view);
+                view.BringToFront();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao navegar: {ex.Message}");
+                mdNotifica.Show($"Erro ao navegar: {ex.Message}");
             }
         }
 
-        // --- EVENTOS DOS BOTÕES (CLICKS) ---
-        // IMPORTANTE: Verifique se o "Raiozinho" ⚡ nas Propriedades está ligado a estes métodos!
+        // --- EVENTOS DE CLICK DO MENU ---
+        // Agora todos chamam o AtualizarBotoes para garantir consistência
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            NavegarPara(new ViewHome());
+            CarregarHome();
+            // Não precisa chamar AtualizarBotoes aqui pq o método CarregarHome já chama
+        }
+
+        private void btnNovoCandidato_Click(object sender, EventArgs e)
+        {
+            CarregarNovoCandidato();
+            // Não precisa chamar AtualizarBotoes aqui pq CarregarNovoCandidato já chama
         }
 
         private void btnInscricoes_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewInscricoes());
+            AtualizarBotoes(sender); // 'sender' é o próprio botão clicado
         }
 
         private void btnTriagem_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewTriagem());
+            AtualizarBotoes(sender);
         }
 
         private void btnEntrevistas_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewEntrevista());
-        }
-
-        private void btnNovoCandidato_Click(object sender, EventArgs e)
-        {
-            NavegarPara(new ViewNovoCandidato());
+            AtualizarBotoes(sender);
         }
 
         private void btnGestaoOngs_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewGestaoOngs());
+            AtualizarBotoes(sender);
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewRelatorios());
+            AtualizarBotoes(sender);
         }
 
-        // --- BOTÃO SAIR ---
         private void btnSair_Click(object sender, EventArgs e)
         {
-            var confirmacao = MessageBox.Show("Deseja realmente sair?", "Sair",
-                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var confirmacao = mdNotifica.Show("Deseja realmente sair?");
             if (confirmacao == DialogResult.Yes)
             {
                 frmLogin login = new frmLogin();
                 login.Show();
                 this.Close();
             }
-        }
-
-        private void frmDashboard_Load(object sender, EventArgs e)
-        {
-            // this.WindowState = FormWindowState.Maximized; // Comentei para não maximizar
-
-            // Opcional: Se quiser que abra no meio da tela
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
