@@ -12,7 +12,6 @@ namespace Transformese.Domain.Entities
         public string NomeSocial { get; set; } = string.Empty; // Novo
         public DateTime DataNascimento { get; set; }
         public string CPF { get; set; } = string.Empty;
-        public DateTime DataNascimento { get; set; }
         public string IdentidadeGenero { get; set; } = string.Empty; // Novo
         public string OrientacaoSexual { get; set; } = string.Empty; // Novo
         public string RacaCor { get; set; } = string.Empty; // Novo
@@ -23,6 +22,7 @@ namespace Transformese.Domain.Entities
         public string Telefone { get; set; } = string.Empty;
         public string CEP { get; set; } = string.Empty; // Novo
         public string Cidade { get; set; } = string.Empty;
+        public string Estado { get; set; }
 
         // --- Socioeconômico ---
         public string Escolaridade { get; set; } = string.Empty; // Novo
