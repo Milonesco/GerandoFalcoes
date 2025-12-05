@@ -332,9 +332,9 @@
             dgvLogs.BackgroundColor = System.Drawing.Color.FromArgb(249, 249, 249);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(169, 15, 64);
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dgvLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -365,7 +365,7 @@
             dgvLogs.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(230, 230, 230);
             dgvLogs.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(169, 15, 64);
             dgvLogs.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dgvLogs.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dgvLogs.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             dgvLogs.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             dgvLogs.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvLogs.ThemeStyle.HeaderStyle.Height = 40;

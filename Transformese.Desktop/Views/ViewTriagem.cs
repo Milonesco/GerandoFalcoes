@@ -41,5 +41,15 @@ namespace Transformese.Desktop.Views
         {
 
         }
+
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
