@@ -1916,7 +1916,7 @@ html[data-theme="dark"] .inscription-input-addon {
 
 /* ========================================================================
    BOTÕES DO FORMULÁRIO - LIGHT MODE & DARK MODE (CORES DISTINTAS)
-   ======================================================================== */
+   ========================================================================== */
 
 /* --- BOTÃO VOLTAR (#btn-prev) - LIGHT MODE: Cinza Elegante --- */
 #btn-prev {
@@ -2018,7 +2018,7 @@ html[data-theme="dark"] #btn-prev:hover {
     box-shadow: 0 12px 25px rgba(79, 172, 254, 0.5);
 }
 
-/* --- BOTÃO PRÓXIMO - DARK MODE: Mesmo estilo do Light Mode --- */
+/* --- BOTÃO PRÓXIMO - DARK MODE: Mesmo estilo do Light Mode */
 html[data-theme="dark"] #btn-next {
     background: linear-gradient(135deg, var(--gf-purple) 0%, #005bea 100%);
     box-shadow: 0 5px 15px rgba(122, 90, 216, 0.4);
@@ -2094,11 +2094,8 @@ html[data-theme="dark"] #btn-submit {
     overflow: hidden;
 }
 
-/* REMOVIDO: Efeito Ripple ::before */
-/* REMOVIDO: Animação pulse-glow */
-
 html[data-theme="dark"] #btn-submit:hover {
-    background: linear-gradient(135deg, #d01d54 0%, #c85920 100%); /* Tom mais escuro para CTA */
+    background: linear-gradient(135deg, #d01d54 0%, #c85920 100%) !important; /* Tom mais escuro para CTA */
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 35px rgba(236, 34, 98, 0.6);
     color: white !important;
@@ -2116,4 +2113,295 @@ html[data-theme="dark"] #btn-submit i,
 html[data-theme="dark"] #btn-submit span {
     position: relative;
     z-index: 1;
+}
+
+/* ==========================================================================
+   CAMPOS PERSONALIZADOS DO FORMULÁRIO DE INSCRIÇÃO
+   ========================================================================== */
+
+/* --- CAMPO DE RENDA FAMILIAR (Input Monetário) --- */
+.currency-input-group {
+    position: relative;
+}
+
+    .currency-input-group .input-group-text {
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+/* --- CAMPO DE PESSOAS NA CASA (Input Numérico com Controles) --- */
+.number-input-group {
+    position: relative;
+}
+
+    .number-input-group input[type="number"] {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-right: 3rem;
+    }
+
+/* Remove setas padrão do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Controles customizados (setas) */
+.number-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--card-border);
+}
+
+    .number-controls button {
+        flex: 1;
+        border: none;
+        background-color: var(--card-bg);
+        padding: 0 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: var(--text-main);
+    }
+
+        .number-controls button:hover {
+            background-color: rgba(0, 168, 157, 0.1);
+            color: var(--gf-teal);
+        }
+
+        .number-controls button:active {
+            background-color: rgba(0, 168, 157, 0.2);
+        }
+
+        .number-controls button:first-child {
+            border-bottom: 1px solid var(--card-border);
+            border-top-right-radius: 0.375rem;
+        }
+
+        .number-controls button:last-child {
+            border-bottom-right-radius: 0.375rem;
+        }
+
+        .number-controls button i {
+            font-size: 0.75rem;
+        }
+
+/* Dark Mode - Controles numéricos */
+html[data-theme="dark"] .number-controls {
+    border-left-color: #30363d;
+}
+
+    html[data-theme="dark"] .number-controls button {
+        background-color: #0d1117;
+        color: #e6edf3;
+    }
+
+        html[data-theme="dark"] .number-controls button:hover {
+            background-color: rgba(0, 168, 157, 0.2);
+            color: var(--gf-teal);
+        }
+
+        html[data-theme="dark"] .number-controls button:first-child {
+            border-bottom-color: #30363d;
+        }
+
+/* Tooltips informativos */
+.inscription-label i[data-bs-toggle="tooltip"] {
+    cursor: help;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+    .inscription-label i[data-bs-toggle="tooltip"]:hover {
+        opacity: 1;
+    }
+
+/* Textos de ajuda com ícones */
+.form-text.text-muted i {
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   CORREÇÕES ESPECÍFICAS DO FORMULÁRIO DE INSCRIÇÃO
+   ========================================================================== */
+
+/* 1. ÍCONE DO CALENDÁRIO VISÍVEL NO DARK MODE */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: none; /* Light mode: ícone preto padrão */
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Dark mode: inverte para branco */
+    opacity: 0.8;
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* 2. ÍCONE R$ COM COR ADAPTÁVEL NO DARK MODE */
+.currency-input-group .input-group-text {
+    font-weight: 600;
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .currency-input-group .input-group-text {
+    color: var(--text-main) !important;
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+}
+
+/* ==========================================================================
+   PÁGINA DE SUCESSO DA INSCRIÇÃO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- CARD DE SUCESSO (Light Mode) --- */
+.success-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+/* --- ÍCONE DE SUCESSO (Light Mode) --- */
+.success-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #d1e7dd; /* Verde claro */
+    color: #198754; /* Verde escuro */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* --- TEXTOS (Light Mode) --- */
+.success-title {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.success-subtitle {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.success-description {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* --- BOTÃO DE SUCESSO (Light Mode) --- */
+.success-btn {
+    transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* ==========================================================================
+   DARK MODE - PÁGINA DE SUCESSO
+   ========================================================================== */
+
+/* --- CARD DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- ÍCONE DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-icon-circle {
+    background-color: rgba(0, 168, 157, 0.2); /* Teal com transparência */
+    color: var(--gf-teal); /* Teal da paleta */
+    box-shadow: 0 0 20px rgba(0, 168, 157, 0.3); /* Glow suave */
+}
+
+/* --- TEXTOS (Dark Mode) --- */
+html[data-theme="dark"] .success-title {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .success-subtitle {
+    color: rgba(230, 237, 243, 0.9) !important;
+}
+
+html[data-theme="dark"] .success-description {
+    color: rgba(230, 237, 243, 0.85) !important;
+}
+
+/* --- STRONG TAGS NO DARK MODE --- */
+html[data-theme="dark"] .success-subtitle strong,
+html[data-theme="dark"] .success-description strong {
+    color: var(--gf-teal); /* Destaque com cor da marca */
+    font-weight: 700;
+}
+
+/* --- BOTÃO DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,168,157,0.4) !important;
+}
+
+/* ==========================================================================
+   BOTÃO "VOLTAR PARA O INÍCIO" NA PÁGINA DE SUCESSO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- BOTÃO (Light Mode - Corrigido para texto branco) --- */
+.success-btn.btn-dark {
+    background-color: #212529 !important;
+    border-color: #212529 !important;
+    color: white !important; /* ✅ TEXTO BRANCO */
+}
+
+/* Garante que ícone também seja branco no Light Mode */
+.success-btn.btn-dark i {
+    color: white !important; /* ✅ ÍCONE BRANCO */
+}
+
+.success-btn.btn-dark:hover {
+    background-color: #1a1e21 !important;
+    border-color: #1a1e21 !important;
+    color: white !important; /* ✅ MANTÉM BRANCO NO HOVER */
+}
+
+.success-btn.btn-dark:hover i {
+    color: white !important; /* ✅ ÍCONE BRANCO NO HOVER */
+}
+
+/* --- BOTÃO (Dark Mode - Gradiente Teal/Roxo com texto branco) --- */
+html[data-theme="dark"] .success-btn.btn-dark {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(0, 168, 157, 0.4);
+}
+
+html[data-theme="dark"] .success-btn.btn-dark:hover {
+    background: linear-gradient(135deg, #008c82 0%, #6842c2 100%) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 168, 157, 0.5) !important;
+    color: white !important;
+}
+
+/* Garante que o ícone e texto fiquem brancos no dark mode */
+html[data-theme="dark"] .success-btn.btn-dark i,
+html[data-theme="dark"] .success-btn.btn-dark:hover i {
+    color: white !important;
 }
