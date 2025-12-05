@@ -4,38 +4,29 @@
 }
 
 <div class="container d-flex align-items-center justify-content-center py-5" style="min-height: 90vh;">
-    <div class="card shadow-lg border-0 rounded-4 text-center p-5" style="max-width: 600px;">
+    <div class="card success-card shadow-lg border-0 rounded-4 text-center p-5" style="max-width: 600px;">
         <div class="card-body">
-
             <div class="mb-4">
-                <div style="width: 80px; height: 80px; background-color: #d1e7dd; color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                <div class="success-icon-circle">
                     <i class="bi bi-check-lg" style="font-size: 3rem;"></i>
                 </div>
             </div>
 
-            <h1 class="fw-bold display-5 mb-3 text-dark">Inscrição Recebida! 🚀</h1>
+            <h1 class="fw-bold display-5 mb-3 success-title">Inscrição Recebida! 🚀</h1>
 
-            <p class="lead text-muted mb-4">
-                Obrigado por se inscrever no programa <strong>Transforma-se</strong> da Gerando Falcões.
+            <p class="lead success-subtitle mb-4">
+                Obrigado por se inscrever no programa <strong>Transforme-se</strong> da Serasa e Gerando Falcões.
             </p>
 
-            <p class="text-secondary mb-5">
+            <p class="success-description mb-5">
                 Recebemos seus dados com sucesso. Nossa equipe vai analisar seu perfil e entraremos em contato pelo <strong>WhatsApp</strong> ou <strong>E-mail</strong> cadastrado para os próximos passos do processo seletivo.
             </p>
 
             <div class="d-grid gap-2 col-8 mx-auto">
-                <a asp-controller="Home" asp-action="Index" class="btn btn-dark fw-bold py-3 rounded-3 shadow-sm transition-btn">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-dark fw-bold py-3 rounded-3 shadow-sm success-btn">
                     <i class="bi bi-house-door-fill me-2"></i> Voltar para o Início
                 </a>
             </div>
-
         </div>
     </div>
 </div>
-
-<style>
-    .transition-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
-    }
-</style>
