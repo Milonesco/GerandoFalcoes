@@ -60,6 +60,11 @@
             pnlSeparator = new Guna.UI2.WinForms.Guna2Panel();
             pnlGridContainer = new Guna.UI2.WinForms.Guna2Panel();
             dgvInscricoes = new Guna.UI2.WinForms.Guna2DataGridView();
+            colCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colAcao = new System.Windows.Forms.DataGridViewButtonColumn();
             pnlPaginacao = new Guna.UI2.WinForms.Guna2Panel();
             flpPaginacao = new System.Windows.Forms.FlowLayoutPanel();
             btnAnterior = new Guna.UI2.WinForms.Guna2Button();
@@ -67,11 +72,6 @@
             btnPag2 = new Guna.UI2.WinForms.Guna2Button();
             btnPag3 = new Guna.UI2.WinForms.Guna2Button();
             btnProximo = new Guna.UI2.WinForms.Guna2Button();
-            colCandidato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colAcao = new System.Windows.Forms.DataGridViewButtonColumn();
             pnlTopoFiltros.SuspendLayout();
             pnlGridContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInscricoes).BeginInit();
@@ -112,7 +112,7 @@
             btnBuscar.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             btnBuscar.ForeColor = System.Drawing.Color.White;
-            btnBuscar.Location = new System.Drawing.Point(885, 18);
+            btnBuscar.Location = new System.Drawing.Point(885, 15);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnBuscar.Size = new System.Drawing.Size(30, 30);
@@ -132,7 +132,7 @@
             txtPesquisa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtPesquisa.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new System.Drawing.Point(620, 13);
+            txtPesquisa.Location = new System.Drawing.Point(620, 10);
             txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Buscar por nome ou CPF...";
@@ -149,7 +149,7 @@
             lblTituloPagina.BackColor = System.Drawing.Color.Transparent;
             lblTituloPagina.Font = new System.Drawing.Font("Poppins ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloPagina.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            lblTituloPagina.Location = new System.Drawing.Point(20, 5);
+            lblTituloPagina.Location = new System.Drawing.Point(20, 10);
             lblTituloPagina.Name = "lblTituloPagina";
             lblTituloPagina.Size = new System.Drawing.Size(231, 39);
             lblTituloPagina.TabIndex = 0;
@@ -235,6 +235,36 @@
             dgvInscricoes.ThemeStyle.RowsStyle.Height = 25;
             dgvInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
             dgvInscricoes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            // 
+            // colCandidato
+            // 
+            colCandidato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colCandidato.HeaderText = "CANDIDATO";
+            colCandidato.Name = "colCandidato";
+            // 
+            // colCidade
+            // 
+            colCidade.HeaderText = "CIDADE";
+            colCidade.Name = "colCidade";
+            // 
+            // colStatus
+            // 
+            colStatus.HeaderText = "STATUS";
+            colStatus.Name = "colStatus";
+            // 
+            // colOng
+            // 
+            colOng.HeaderText = "ONG RESP.";
+            colOng.Name = "colOng";
+            // 
+            // colAcao
+            // 
+            colAcao.HeaderText = "AÇÃO";
+            colAcao.Name = "colAcao";
+            colAcao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            colAcao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            colAcao.Text = "Ver Detalhes";
+            colAcao.UseColumnTextForButtonValue = true;
             // 
             // pnlPaginacao
             // 
@@ -402,36 +432,6 @@
             btnProximo.Size = new System.Drawing.Size(34, 34);
             btnProximo.TabIndex = 6;
             btnProximo.Text = ">";
-            // 
-            // colCandidato
-            // 
-            colCandidato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            colCandidato.HeaderText = "CANDIDATO";
-            colCandidato.Name = "colCandidato";
-            // 
-            // colCidade
-            // 
-            colCidade.HeaderText = "CIDADE";
-            colCidade.Name = "colCidade";
-            // 
-            // colStatus
-            // 
-            colStatus.HeaderText = "STATUS";
-            colStatus.Name = "colStatus";
-            // 
-            // colOng
-            // 
-            colOng.HeaderText = "ONG RESP.";
-            colOng.Name = "colOng";
-            // 
-            // colAcao
-            // 
-            colAcao.HeaderText = "AÇÃO";
-            colAcao.Name = "colAcao";
-            colAcao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            colAcao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            colAcao.Text = "Ver Detalhes";
-            colAcao.UseColumnTextForButtonValue = true;
             // 
             // ViewInscricoes
             // 

@@ -160,7 +160,7 @@
             guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel2.Location = new System.Drawing.Point(20, 35);
+            guna2HtmlLabel2.Location = new System.Drawing.Point(20, 33);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new System.Drawing.Size(265, 24);
             guna2HtmlLabel2.TabIndex = 1;
@@ -171,7 +171,7 @@
             guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(22, 22, 22);
-            guna2HtmlLabel1.Location = new System.Drawing.Point(20, 5);
+            guna2HtmlLabel1.Location = new System.Drawing.Point(20, 3);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new System.Drawing.Size(176, 39);
             guna2HtmlLabel1.TabIndex = 0;
