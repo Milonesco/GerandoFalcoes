@@ -29,6 +29,10 @@ namespace Transformese.Data
                 .IsRequired()
                 .HasMaxLength(14);
 
+            modelBuilder.Entity<Candidato>()
+                .Property(c => c.RendaFamiliar)
+                .HasColumnType("decimal(18,2)");
+
             modelBuilder.Entity<Funcionario>().HasData(new Funcionario
             {
                 Id = 1,
