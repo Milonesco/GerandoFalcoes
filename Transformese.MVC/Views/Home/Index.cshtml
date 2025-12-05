@@ -1,42 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Gerando Falcões";
+    ViewData["Title"] = "Gerando Falcões - Transforme-se";
 }
 
 @section Styles {
     <link href="~/css/site.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
 }
 
-<div class="landing-hero">
-    <div class="container hero-content">
+<div id="inicio" class="hero-section">
+    <div class="hero-shape"></div>
+
+    <div class="container hero-container">
         <div class="row align-items-center">
 
-            <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
-                <h1 class="hero-title-large">Transforme-se</h1>
+            <div class="col-lg-6">
+                <h1 class="hero-title">
+                    Transforme seu futuro <br>
+                    <span class="text-gradient">com tecnologia.</span>
+                </h1>
 
-                <h2 class="hero-impact-phrase">
-                    Sua jornada para o futuro começa agora.
-                </h2>
-
-                <p class="hero-secondary-text">
-                    Educação, tecnologia e oportunidades reais para mudar sua vida e o mundo ao seu redor. Junte-se ao movimento que está redefinindo futuros.
+                <p class="hero-subtitle">
+                    Educação de qualidade, mentoria de carreira e conexão com as maiores empresas do mercado.
+                    Junte-se à Gerando Falcões e mude sua realidade.
                 </p>
 
-                <div>
-                    <a class="btn btn-primary btn-hero-cta" href="@Url.Action("Index", "Inscricao")">
-                        INSCREVA-SE AGORA
+                <div class="d-flex gap-3 flex-column flex-sm-row justify-content-lg-start justify-content-center">
+                    <a href="@Url.Action("Index", "Inscricao")" class="btn-hero text-decoration-none">
+                        QUERO ME INSCREVER
                     </a>
                 </div>
+            </div>
+
+            <div class="col-lg-6 hero-img-wrapper">
+                <img src="~/images/estudante_landing_page.png" alt="Favela 3D Gerando Falcões" class="hero-img">
 
             </div>
 
-            <div class="col-lg-6 text-center">
-                <img src="~/images/estudante_feliz.png" alt="Transforme seu futuro" class="img-fluid hero-static-img" />
-            </div>
         </div>
     </div>
 </div>
 
-<section class="island-section">
+<div class="brand-separator"></div>
+
+<section id="sobre" class="island-section bg-section-gray">
     <div class="container">
         <div class="island-card">
 
@@ -46,63 +51,52 @@
                         Transformando Vidas através da <span class="text-primary">Educação</span>
                     </h2>
                     <p class="lead text-muted">
-                        Nossa metodologia é baseada em etapas claras para garantir que o conhecimento chegue a quem mais precisa. Conheça nosso fluxo de impacto.
+                        Nossa metodologia é baseada em etapas claras para garantir que o conhecimento chegue a quem mais precisa.
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="~/images/logo-transformese.png" alt="Ilustração" style="max-height: 80px; opacity: 0.8;">
+                    <img src="~/images/serasa-logo-2.png" alt="Ilustração" style="max-height: 80px; opacity: 0.8;">
                 </div>
             </div>
 
             <div class="steps-container">
-
                 <div class="step-card">
                     <div class="step-icon">01.</div>
                     <h4 class="step-title">Inscrição</h4>
-                    <p class="step-desc">
-                        O candidato realiza o cadastro em nossa plataforma digital de forma rápida e acessível.
-                    </p>
+                    <p class="step-desc">Cadastro rápido e acessível em nossa plataforma.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">02.</div>
                     <h4 class="step-title">Seleção</h4>
-                    <p class="step-desc">
-                        Nossa equipe avalia o perfil socioeconômico para garantir a bolsa a quem precisa.
-                    </p>
+                    <p class="step-desc">Avaliação de perfil socioeconômico para bolsas.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">03.</div>
                     <h4 class="step-title">Formação</h4>
-                    <p class="step-desc">
-                        Aulas intensivas e práticas com mentores renomados do mercado de tecnologia.
-                    </p>
+                    <p class="step-desc">Aulas práticas com mentores renomados.</p>
                     <i class="bi bi-arrow-right step-arrow"></i>
                 </div>
-
                 <div class="step-card">
                     <div class="step-icon">04.</div>
-                    <h4 class="step-title">Empregabilidade</h4>
-                    <p class="step-desc">
-                        Conectamos os talentos formados com empresas parceiras para o mercado de trabalho.
-                    </p>
+                    <h4 class="step-title">Emprego</h4>
+                    <p class="step-desc">Conexão direta com empresas parceiras.</p>
                     <i class="bi bi-check-lg step-arrow"></i>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-<section class="why-section">
+<div class="brand-separator"></div>
+
+<section id="vantagens" class="why-section bg-section-white">
     <div class="container">
         <div class="row align-items-center">
 
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="section-title text-start mb-4">Por que se inscrever?</h2>
+                <h2 class="section-title text-start mb-4" style="color: var(--gf-black);">Por que se inscrever?</h2>
                 <p class="text-muted mb-5">
                     Fazer parte da Gerando Falcões é dar o primeiro passo para transformar sua realidade.
                 </p>
@@ -116,11 +110,10 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Acesso a educação de ponta e mentoria comportamental que preparam você não apenas tecnicamente, mas para os desafios reais do mercado de trabalho.
+                                Acesso a educação de ponta e mentoria comportamental que preparam você para os desafios reais.
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -129,11 +122,10 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Acesso direto a processos seletivos exclusivos em nossa rede de parceiros, aumentando exponencialmente suas chances de empregabilidade.
+                                Acesso direto a processos seletivos exclusivos em nossa rede de parceiros (Accenture, Serasa, etc).
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -142,7 +134,7 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionWhy">
                             <div class="accordion-body">
-                                Faça parte de uma rede de alumni engajada que se apoia mutuamente no crescimento profissional e pessoal.
+                                Faça parte de uma rede de alumni engajada que se apoia mutuamente no crescimento.
                             </div>
                         </div>
                     </div>
@@ -150,203 +142,142 @@
             </div>
 
             <div class="col-lg-6">
-                <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Transformando Futuros" class="why-image">
+                <img src="~/images/estudante_sobre.png" alt="Transformando Futuros" class="why-image">
             </div>
 
         </div>
     </div>
 </section>
 
+<div class="brand-separator"></div>
 
-<section class="spotlight-section">
+<section id="nosso_impacto" class="spotlight-section bg-section-gray">
     <div class="container">
 
         <div class="text-center mb-5">
-            <h2 class="section-title">Impacto em Números</h2>
+            <h2 class="section-title" style="color: var(--gf-black);">Impacto em Números</h2>
             <p class="text-muted">Resultados reais gerados pelo nosso ecossistema.</p>
         </div>
 
         <div class="spotlight-grid">
-
-            <div class="spotlight-card bg-gradient-1">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-teal) 0%, #008c82 100%);">
                 <i class="bi bi-people-fill spotlight-icon"></i>
                 <h3>+2 Mil</h3>
-                <p>
-                    <strong>Pessoas Beneficiadas.</strong><br>
-                    Jovens e adultos formados com excelência técnica e prontos para o mercado.
-                </p>
+                <p><strong>Pessoas Beneficiadas.</strong><br>Jovens formados com excelência.</p>
             </div>
 
-            <div class="spotlight-card bg-gradient-2">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-purple) 0%, #5a3cb5 100%);">
                 <i class="bi bi-buildings-fill spotlight-icon"></i>
                 <h3>+50 Empresas</h3>
-                <p>
-                    <strong>Parceiras Contratantes.</strong><br>
-                    Grandes nomes como Accenture, XP e Serasa buscam talentos aqui.
-                </p>
+                <p><strong>Parceiras.</strong><br>Conectadas ao banco de talentos.</p>
             </div>
 
-            <div class="spotlight-card bg-gradient-3">
+            <div class="spotlight-card" style="background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);">
                 <i class="bi bi-graph-up-arrow spotlight-icon"></i>
-                <h3>80% Sucesso</h3>
-                <p>
-                    <strong>Empregabilidade.</strong><br>
-                    Taxa de alunos que aumentaram a renda ou conseguiram emprego após o curso.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-<section class="section-light py-5">
-    <div class="container">
-        <h3 class="mb-4">ONGs Parceiras</h3>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong1.jpg" class="card-img-top" alt="ONG 1">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 1</h5>
-                        <p class="card-text">Atua em educação e inclusão digital.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong2.jpg" class="card-img-top" alt="ONG 2">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 2</h5>
-                        <p class="card-text">Projetos de capacitação profissional.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="~/images/ong3.jpg" class="card-img-top" alt="ONG 3">
-                    <div class="card-body">
-                        <h5 class="card-title">ONG Exemplo 3</h5>
-                        <p class="card-text">Promoção de oportunidades de estágio.</p>
-                        <a href="@Url.Action("Index", "Unidades")" class="btn btn-outline-primary btn-sm">Ver todas</a>
-                    </div>
-                </div>
+                <h3>+80% dos ex-alunos</h3>
+                <p><strong>Empregabilidade.</strong><br>conseguiram emprego, aumentaram sua renda, ou migraram para a área de TI </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 bg-light">
-    <div class="container">
-        <h3 class="text-center mb-4">Nosso impacto</h3>
-        <div class="row text-center g-4">
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="5500">0</h2>
-                    <p class="mb-0">FAVELAS ALCANÇADAS</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="2200">0</h2>
-                    <p class="mb-0">LÍDERES SOCIAIS FORMADOS</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="26">0</h2>
-                    <p class="mb-0">ESTADOS IMPACTADOS + DF</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 bg-white rounded shadow-sm">
-                    <h2 class="fw-bold counter text-primary" data-target="900000">0</h2>
-                    <p class="mb-0">PESSOAS IMPACTADAS</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="brand-separator"></div>
 
-<section class="projects-section">
-    <div class="container">
-        <h2 class="section-title">Nossos Projetos</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/sao-miguel_jardim-noite1.jpg" alt="Favela 3D">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Favela 3D</h3>
-                        <p class="project-text">
-                            Um projeto revolucionário que visa transformar as favelas em ambientes Dignos, Digitais e Desenvolvidos.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/curso-design.jpg" alt="Projeto Decolagem">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Decolagem</h3>
-                        <p class="project-text">
-                            Apoiamos líderes sociais para erradicar a pobreza, oferecendo mentoria e recursos para acelerar o impacto.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="~/images/curso-powerbi.png" alt="Bazar Escola">
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Bazar Escola</h3>
-                        <p class="project-text">
-                            Iniciativa de economia circular que gera renda e oportunidades através da venda de produtos doados.
-                        </p>
-                        <a href="#" class="project-btn">Conheça o Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="investors-section">
+<section id="parceiros" class="investors-section bg-section-white">
     <div class="container-fluid">
         <h3 class="investors-title">Investidores Master</h3>
 
         <div class="marquee-container">
+            <!-- Primeiro grupo de logos -->
             <div class="marquee-content">
-                <img src="~/images/accenture-logo-0.png" alt="Parceiro 1">
-                <img src="~/images/gerdau-logo-1-1.png" alt="Parceiro 2">
-                <img src="~/images/serasa-logo-0.png" alt="Parceiro 3"> 
-                <img src="~/images/tim-logo-png_seeklogo-273240.png" alt="Parceiro 4">
-                <img src="~/images/LOGOS-fundacao-LEMANN.png" alt="Parceiro 5">
-                <img src="~/images/logofvw-e1583532437339.png" alt="Parceiro 6">
+                <div class="logo-circle">
+                    <img src="~/images/accenture-logo-0.png" alt="Accenture">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/gerdau-logo-1-1.png" alt="Gerdau">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/serasa-logo-0.png" alt="Serasa">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/tim-logo-png_seeklogo-273240.png" alt="TIM">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/Logo-BFF.png" alt="BFF" />
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/LOGOS-fundacao-LEMANN.png" alt="Fundação Lemann">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/logofvw-e1583532437339.png" alt="Volkswagen">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/patria-logo-300dpi.png" alt="Pátria">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/png-clipart-citigroup-citibank-logo-organization-company-others-blue-company.png" alt="Citibank">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/BTG_POS_CMYK.png" alt="BTG Pactual">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/suzano-logo-0.png" alt="Suzano">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/localiza-logo-0.png" alt="Localiza">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/vale-logo-png_seeklogo-147112.png" alt="Vale">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/Zurich_Insurance_Group_Logo_Horizontal.svg.png" alt="Zurich">
+                </div>
             </div>
-
+            
+            <!-- Segundo grupo IDÊNTICO para loop infinito suave (aria-hidden para acessibilidade) -->
             <div class="marquee-content" aria-hidden="true">
-                <img src="~/images/patria-logo-300dpi.png" alt="Parceiro 1">
-                <img src="~/images/png-clipart-citigroup-citibank-logo-organization-company-others-blue-company.png" alt="Parceiro 2">
-                <img src="~/images/Logo-BFF.png" alt="Parceiro 3">
-                <img src="~/images/localiza-logo-0.png" alt="Parceiro 4">
-                <img src="~/images/vale-logo-png_seeklogo-147112.png" alt="Parceiro 5">
-                <img src="~/images/BTG_POS_CMYK.png" alt="Parceiro 6">
-                <img src="~/images/Zurich_Insurance_Group_Logo_Horizontal.svg.png" alt="Parceiro 7">
-                <img src="~/images/suzano-logo-0.png" alt="Parceiro 8">
+                <div class="logo-circle">
+                    <img src="~/images/accenture-logo-0.png" alt="Accenture">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/gerdau-logo-1-1.png" alt="Gerdau">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/serasa-logo-0.png" alt="Serasa">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/tim-logo-png_seeklogo-273240.png" alt="TIM">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/Logo-BFF.png" alt="BFF" />
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/LOGOS-fundacao-LEMANN.png" alt="Fundação Lemann">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/logofvw-e1583532437339.png" alt="Volkswagen">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/patria-logo-300dpi.png" alt="Pátria">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/png-clipart-citigroup-citibank-logo-organization-company-others-blue-company.png" alt="Citibank">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/BTG_POS_CMYK.png" alt="BTG Pactual">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/suzano-logo-0.png" alt="Suzano">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/localiza-logo-0.png" alt="Localiza">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/vale-logo-png_seeklogo-147112.png" alt="Vale">
+                </div>
+                <div class="logo-circle">
+                    <img src="~/images/Zurich_Insurance_Group_Logo_Horizontal.svg.png" alt="Zurich">
+                </div>
             </div>
         </div>
     </div>
@@ -362,33 +293,50 @@
 <footer class="footer-custom">
     <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center footer-content-wrapper">
+        <div class="row align-items-start">
+            <!-- Coluna 1: Logos -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-logos-container">
+                    <div class="footer-logo-group">
+                        <span class="footer-label">Realização</span>
+                        <img src="~/images/logo-transformese.png" alt="Gerando Falcões" class="footer-logo">
+                    </div>
 
-            <div class="footer-logos-container">
-
-                <div class="footer-logo-group">
-                    <span class="footer-label">Realização</span>
-                    <img src="~/images/logo-transformese.png" alt="Gerando Falcões" class="footer-logo">
+                    <div class="d-none d-md-block" style="width: 1px; height: 40px; background: #333; margin: 0 20px;"></div>
+                    
+                    <div class="footer-logo-group">
+                        <span class="footer-label">Parceria</span>
+                        <img src="~/images/serasa-logo-0.png" alt="Serasa" class="footer-logo">
+                    </div>
                 </div>
-
-                <div class="d-none d-md-block" style="width: 1px; height: 40px; background: #333;"></div>
-                <div class="footer-logo-group">
-                    <span class="footer-label">Parceria</span>
-                    <img src="~/images/serasa-logo-0.png" alt="Serasa" class="footer-logo">
-                </div>
-
             </div>
 
-            <div class="footer-social-group">
-                <span class="footer-label d-block mb-2 text-end text-md-start">Siga-nos</span>
+            <!-- Coluna 2: Redes Sociais -->
+            <div class="col-lg-4 mb-4 mb-lg-0 text-center">
+                <span class="footer-label d-block mb-3">Siga-nos</span>
                 <div class="footer-social">
-                    <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.instagram.com/gerandofalcoes/" target="_blank" class="social-icon social-instagram" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gerandofalcoes/posts/?feedView=all" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/GerandoFalcoes/" target="_blank" class="social-icon social-facebook" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/user/gerandofalcoes" target="_blank" class="social-icon social-youtube" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
                 </div>
             </div>
 
+            <!-- Coluna 3: Botão Sobre o Projeto -->
+            <div class="col-lg-4 text-lg-end text-center">
+                <button type="button" class="btn-about-project" data-bs-toggle="modal" data-bs-target="#teamModal">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Sobre o Projeto
+                </button>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -397,6 +345,112 @@
 
     </div>
 </footer>
+
+<!-- Modal da Equipe -->
+<div class="modal fade overflow-hidden" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+    @* Correção: Mantido apenas 'modal-dialog-centered' para centralizar. Removido 'scrollable' para o conteúdo expandir e não cortar o texto *@
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content team-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="teamModalLabel">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Equipe do Projeto
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted mb-4 text-center">
+                    Conheça os desenvolvedores que tornaram este projeto possível.
+                </p>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/milonesco.jpg" alt="Milonesco" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Milonesco</h6>
+                            <p class="team-role">Líder de Desenvolvimento</p>
+                            <p class="team-role-sub">Desenvolvedor Full Stack</p>
+                            <div class="team-links">
+                                <a href="https://github.com/Milonesco" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/gabrielmilone" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/daniel.jpg" alt="Daniel Nascimento" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Daniel Nascimento</h6>
+                            <p class="team-role">Desenvolvedor Full Stack</p>
+                            <p class="team-role-sub">DBA & QA</p>
+                            <div class="team-links">
+                                <a href="https://github.com/danielbrianez" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/daniel-nascimento-2729941a8/" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/maryana.jpg" alt="Maryana Oliveira" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Maryana Oliveira</h6>
+                            <p class="team-role">Desenvolvedor Full Stack</p>
+                            <p class="team-role-sub">Analista de Requisitos</p>
+                            <div class="team-links">
+                                <a href="https://github.com/MaryanaOlvra" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/maryana-oliveira/" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="team-card">
+                            <div class="team-avatar-img">
+                                <img src="~/images/team/raphaga.png" alt="Raphaga Willian" class="team-photo">
+                            </div>
+                            <h6 class="team-name">Raphaga Willian</h6>
+                            <p class="team-role">QA Engineer</p>
+                            <p class="team-role-sub">Testes e Implementação</p>
+                            <div class="team-links">
+                                <a href="https://github.com/Raphaga-Willian" target="_blank" class="team-social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/raphagawillian" target="_blank" class="team-social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-heart-fill text-danger"></i>
+                        Desenvolvido com dedicação para transformar vidas através da tecnologia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

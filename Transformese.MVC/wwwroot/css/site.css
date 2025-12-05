@@ -4,12 +4,17 @@
 
 /* --- Definição de Variáveis (Paleta & Temas) --- */
 :root {
-    /* Paleta Base da Marca */
-    --gf-blue-dark: #0d1d35; /* Azul Marinho Profundo */
-    --gf-blue-mid: #1e3a6b; /* Azul Intermediário para Hovers */
-    --gf-accent-primary: #ff5a4d; /* Laranja/Vermelho */
-    --gf-accent-secondary: #9c4df5; /* Roxo/Lilás */
-    --white: #ffffff;
+    /* Primárias */
+    --gf-teal: #00a89D;
+    --gf-pink: #ec2262;
+    --gf-black: #161616;
+    --gf-white: #FFFFFF;
+    /* Secundárias */
+    --gf-orange: #E96B2A;
+    --gf-lilac: #ca9ad9;
+    --gf-purple: #7a5ad8;
+    --gf-green: #5cc454;
+    --gf-gold: #ffd700;
     /* --- TEMA CLARO (Padrão) --- */
     --body-bg: #f8f9fb;
     --text-main: #0b2b42;
@@ -56,9 +61,9 @@ html[data-theme="dark"] {
 body {
     background-color: var(--body-bg);
     color: var(--text-main);
-    /* Transição suave de 0.3s para todas as mudanças de cor */
+    /* background-image: linear-gradient(180deg, #f4f7fc 0%, #eef2f8 100%); */
+    overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,12 +99,12 @@ a {
 
 /* Ícone do Dark Mode */
 .dark-mode-toggle {
-    color: var(--nav-footer-text);
+    color: black; /* Isso garante que ele tenha contraste na navbar */
     transition: transform 0.3s ease, color 0.2s ease;
 }
 
     .dark-mode-toggle:hover {
-        transform: rotate(15deg); /* Pequena rotação divertida no hover */
+        transform: rotate(15deg); /* Efeito legal de rotação */
         color: var(--white);
     }
 
@@ -112,11 +117,27 @@ a {
     font-size: 0.9rem;
 }
 
+/* Responsividade do Footer */
+@media (max-width: 991px) {
+    .footer-custom .row > div {
+        text-align: center !important;
+    }
+
+    .footer-logos-container {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .btn-about-project {
+        margin-top: 20px;
+    }
+}
+
 /* Organização das Logos */
 .footer-logos-container {
     display: flex;
     align-items: center;
-    gap: 40px; /* Espaço entre logos */
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -146,10 +167,19 @@ a {
         opacity: 1;
     }
 
+/* === REDES SOCIAIS - CONTAINER COM ALINHAMENTO CORRIGIDO === */
+.footer-social-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CORRIGIDO: Centraliza o label e os ícones */
+    gap: 10px;
+}
+
 /* Redes Sociais */
 .footer-social {
     display: flex;
     gap: 15px;
+    justify-content: center; /* CORRIGIDO: Garante que os ícones fiquem centralizados */
 }
 
 .social-icon {
@@ -172,29 +202,18 @@ a {
         transform: translateY(-3px);
     }
 
-/* Linha divisória final */
+/* Línea divisória final */
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
     margin-top: 40px;
     padding-top: 20px;
     text-align: center;
-    color: #666;
     font-size: 0.8rem;
 }
 
-/* Responsivo para celular */
-@media (max-width: 768px) {
-    .footer-logos-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6) !important;
     }
-
-    .footer-content-wrapper {
-        flex-direction: column;
-        gap: 40px;
-    }
-}
 
 /* ==========================
    SEÇÕES DA LANDING PAGE
@@ -204,13 +223,10 @@ a {
 
 .landing-hero {
     position: relative;
-    background-color: #ffffff; /* Fundo Branco Puro */
-    /* Se quiser um cinza muito sutil para diferenciar do resto, use #f8f9fa */
-    padding: 120px 0 100px 0; /* Espaçamento generoso para dar respiro */
-    overflow: hidden;
+    padding: 160px 0 120px 0;
+    background: linear-gradient( 180deg, #161616 0%, #0d1f2a 25%, #005 Bea 55%, #00a89D 75%, #ffffff 100% );
+    color: #ffffff;
 }
-
-/* Não precisamos mais do .hero-overlay */
 
 /* Título Gigante - Versão Escura */
 .hero-title-large {
@@ -303,6 +319,41 @@ a {
     }
 }
 
+/* --- 3. SEPARADOR GRADIENTE (A Linha Mágica) --- */
+.brand-separator {
+    height: 6px; /* Espessura da linha */
+    width: 100%;
+    border: none;
+    margin: 0;
+    /* Gradiente passando por todas as cores da sua paleta */
+    background: linear-gradient(90deg, var(--gf-teal) 0%, var(--gf-green) 20%, var(--gf-gold) 40%, var(--gf-orange) 60%, var(--gf-pink) 80%, var(--gf-purple) 100% );
+}
+
+/* Títulos e Destaques de Texto */
+.text-primary {
+    color: var(--gf-teal) !important; /* Substitui o azul padrão do Bootstrap */
+}
+
+.text-highlight-brand {
+    color: var(--gf-teal);
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+}
+
+    .text-highlight-brand::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 12px;
+        bottom: 5px;
+        left: 0;
+        background-color: rgba(255, 215, 0, 0.4); /* Gold transparente */
+        z-index: -1;
+        border-radius: 4px;
+        transform: rotate(-1deg);
+    }
+
 /* ==========================
    BOTÕES MODERNOS E UNIFICADOS
    ========================== */
@@ -373,23 +424,25 @@ a#btn-ongs.btn {
 
 /* Secção de projetos */
 .projects-section {
-    padding: 60px 0;
-    background-color: #f8f9fa; /* Fundo cinza bem claro para destacar os cards */
+    background-color: var(--body-bg);
+    transition: background-color 0.3s ease;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 40px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
     text-transform: uppercase;
 }
 
 .project-card {
-    border: none;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave inicial */
     height: 100%; /* Garante que todos os cards tenham a mesma altura */
@@ -397,10 +450,10 @@ a#btn-ongs.btn {
     flex-direction: column;
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+    .project-card:hover {
+        transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
 .project-img-wrapper {
     height: 200px; /* Altura fixa para a imagem */
@@ -429,12 +482,12 @@ a#btn-ongs.btn {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1a1a1a;
+    color: var(--text-main);
 }
 
 .project-text {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 20px;
     flex-grow: 1;
@@ -452,120 +505,331 @@ a#btn-ongs.btn {
     transition: all 0.3s ease;
 }
 
-.project-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
+    .project-btn:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
 
-/* --- Seção de Investidores (Loop Infinito) --- */
+/* --- Seção de Investidores (Loop Infinito com Círculos Elegantes) --- */
 .investors-section {
-    padding: 60px 0;
-    background-color: #fff;
-    overflow: hidden; /* Esconde a barra de rolagem horizontal */
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    padding: 80px 0; /* Aumentado de 60px para 80px */
 }
 
 .investors-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* Aumentado de 40px para 60px - mais espaço entre título e círculos */
     font-weight: 700;
     text-transform: uppercase;
-    color: #333;
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
 }
 
-/* Container do carrossel */
+/* Container do carrossel - ALTURA AUMENTADA */
 .marquee-container {
     display: flex;
     overflow: hidden;
     user-select: none;
-    gap: 2rem;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efeito fade nas bordas */
+    gap: 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    position: relative;
+    width: 100%;
+    min-height: 180px; /* NOVO: Garante espaço vertical suficiente (120px círculo + 30px margem superior + 30px inferior) */
+    align-items: center; /* NOVO: Centraliza verticalmente os círculos */
 }
 
-/* Conteúdo que se move */
+/* Conteúdo que se.move */
 .marquee-content {
     flex-shrink: 0;
     display: flex;
     justify-content: space-around;
-    gap: 4rem; /* Espaço entre logos */
-    min-width: 100%;
-    animation: scroll 30s linear infinite; /* O Loop mágico */
+    align-items: center;
+    gap: 3rem; /* Espaço entre os círculos */
+    animation: scroll 40s linear infinite;
+    padding: 30px 2rem; /* AUMENTADO: padding vertical de 0 para 30px - garante espaço para o hover */
+    will-change: transform;
 }
 
-    /* Estilo das logos */
-    .marquee-content img {
-        height: 60px; /* Altura padrão para alinhar todos */
-        width: auto;
-        object-fit: contain;
-        filter: grayscale(100%); /* Opcional: Deixa preto e branco até passar o mouse */
-        opacity: 0.7;
-        transition: all 0.3s ease;
+/* Círculo que envolve cada logo */
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow singelo */
+    padding: 20px;
+}
+
+/* Dark mode para os círculos */
+html[data-theme="dark"] .logo-circle {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo das logos dentro dos círculos */
+.logo-circle img {
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(100%) brightness(0.95);
+    opacity: 0.6;
+}
+
+/* Classe aplicada via JavaScript quando a logo está sob o cursor - LIGHT MODE */
+.logo-circle.auto-hovered {
+    transform: scale(1.15); /* Aumentado de 1.1 para 1.15 - mais destaque */
+    box-shadow: 0 8px 24px rgba(0,168,157,0.35); /* Shadow colorido e mais intenso */
+    border-color: var(--gf-teal);
+}
+
+    .logo-circle.auto-hovered img {
+        filter: grayscale(0%) brightness(1);
+        opacity: 1;
     }
 
-        .marquee-content img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
+/* DARK MODE - Hover com glow */
+html[data-theme="dark"] .logo-circle.auto-hovered {
+    transform: scale(1.15);
+    box-shadow: 0 8px 24px rgba(0, 168, 157, 0.4), /* Shadow externo teal */
+    0 0 30px rgba(0, 168, 157, 0.3); /* NOVO: Glow teal ao redor do círculo */
+    border-color: var(--gf-teal);
+}
 
-/* Animação Keyframes */
+/* ANIMAÇÃO para loop infinito suave */
 @keyframes scroll {
-    from {
+    0% {
         transform: translateX(0);
     }
 
-    to {
-        transform: translateX(calc(-100% - 4rem)); /* Move para a esquerda exatamente o tamanho do bloco + gap */
+    100% {
+        transform: translateX(-100%);
     }
 }
 
-/* Responsividade simples */
+/* Responsividade */
 @media (max-width: 768px) {
-    .impact-card {
-        border-right: none;
-        border-bottom: 1px solid #333;
-        padding-bottom: 40px;
+    .marquee-container {
+        min-height: 140px; /* Ajustado para mobile */
     }
 
     .marquee-content {
         gap: 2rem;
-    }
-}
-
-/* --- Navbar Estilo Ilha (Menu Flutuante) --- */
-.island-navbar {
-    background-color: rgba(255, 255, 255, 0.98); /* Branco quase sólido */
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco (opcional) */
-    border-radius: 50px; /* Bordas bem arredondadas (formato pílula) */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombra suave para flutuar */
-    /* Posicionamento e Tamanho */
-    width: 92%;
-    max-width: 1200px; /* Limite para não ficar muito largo em telas gigantes */
-    margin: 20px auto; /* 20px do topo e centralizado horizontalmente (auto) */
-    padding: 0.8rem 2rem; /* Espaçamento interno mais gordinho */
-    border: 1px solid rgba(0, 0, 0, 0.03); /* Borda sutil */
-}
-
-    /* Ajuste dos links dentro da ilha para ficarem mais elegantes */
-    .island-navbar .nav-link {
-        font-weight: 600;
-        color: #555 !important;
-        margin: 0 5px;
-        padding: 8px 16px !important;
-        border-radius: 25px;
-        transition: all 0.3s ease;
+        animation-duration: 30s; /* Mais rápido no mobile */
+        padding: 20px 2rem; /* Padding menor no mobile */
     }
 
-        .island-navbar .nav-link:hover,
-        .island-navbar .nav-link.active {
-            background-color: #f0f2f5; /* Fundo cinza claro ao passar o mouse */
-            color: #007bff !important; /* Azul destaque */
-            transform: translateY(-1px);
+    .logo-circle {
+        width: 90px;
+        height: 90px;
+        padding: 15px;
+    }
+
+        .logo-circle.auto-hovered {
+            transform: scale(1.12); /* Scale menor no mobile para não ultrapassar */
         }
+}
 
-    .island-navbar .navbar-brand {
-        font-weight: 800;
-        letter-spacing: -0.5px;
+/* --- 1. CORREÇÃO DO SCROLL (Evita que o menu cubra o título) --- */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Aplica margem no topo de QUALQUER elemento que tenha ID */
+section[id], div[id] {
+    scroll-margin-top: 140px; /* Aumentei para 140px para dar folga */
+}
+
+/* --- 2. NAVBAR: ESTADO INICIAL (Transparente no Topo) --- */
+.island-navbar {
+    background-color: transparent !important; /* Força transparência inicial */
+    box-shadow: none !important;
+    border-bottom: none !important;
+    padding: 25px 0 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .island-navbar .nav-link {
+        color: var(--text-main) !important;
+        font-weight: 600;
+        margin: 0 5px;
+        transition: color 0.3s ease;
     }
+
+    /* --- 3. NAVBAR: MODO ILHA (Ativado pelo JS) --- */
+    .island-navbar.scrolled-mode {
+        background-color: var(--card-bg) !important;
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--card-border) !important;
+        top: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Centraliza perfeitamente */
+        width: 90% !important; /* Largura da ilha */
+        max-width: 1100px !important;
+        border-radius: 50px !important; /* Borda redonda */
+        padding: 10px 30px !important; /* Mais fino */
+        box-shadow: var(--card-shadow) !important;
+        border-top: 4px solid #005bea;
+        border: 1px solid rgba(0,0,0,0.05) !important;
+    }
+
+/* Ajuste para Celular (Ilha ocupa quase toda largura) */
+@media (max-width: 768px) {
+    .island-navbar.scrolled-mode {
+        width: 95% !important;
+        top: 10px !important;
+    }
+}
+
+/* Botão Inscreva-se na Navbar */
+.btn-nav-cta {
+    background-color: var(--gf-teal);
+    border-color: var(--gf-teal);
+    color: white !important;
+}
+
+    .btn-nav-cta:hover {
+        background-color: #e90c8d;
+        border-color: #e90c8d;
+    }
+
+.btn-big-cta {
+    background: linear-gradient(45deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3); /* Sombra Teal */
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+    .btn-big-cta:hover {
+        background: linear-gradient(45deg, var(--gf-teal) 0%, var(--gf-pink) 100%); /* Muda para rosa no hover */
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4); /* Sombra Rosa */
+        color: white;
+    }
+
+/* --- Novo Hero Centralizado (Clean) --- */
+.hero-section {
+    background-color: var(--body-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* Forma decorativa sutil no fundo (Opcional - dá um charme) */
+.hero-shape {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 168, 157, 0.08) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1; /* Texto fica acima da forma decorativa */
+}
+
+/* TÍTULO */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+/* Destaque no texto (Gradiente na palavra) */
+.text-gradient {
+    background: -webkit-linear-gradient(45deg, #00a89D, #ec2262); /* Teal para Rosa */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 90%; /* Não deixa a linha ficar muito longa */
+}
+
+/* BOTÃO HERO */
+.btn-hero {
+    background-color: #00a89D; /* Teal Principal */
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 168, 157, 0.3); /* Sombra colorida */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+    .btn-hero:hover {
+        background-color: #e90c8d;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        color: white;
+    }
+
+/* IMAGEM HERO */
+.hero-img-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 600px; /* Tamanho máximo controlado */
+    height: auto;
+    background-color: transparent;
+    border: none;
+    /*border-radius: 24px;*/
+    box-shadow: /*20px 20px 60px rgba(0,0,0,0.1);*/ none !important;
+    transition: transform 0.5s ease;
+}
+
+    .hero-img:hover {
+        transform: scale(1.02); /* Efeito de zoom muito leve */
+    }
+
+/* Responsividade (Celular) */
+@media (max-width: 991px) {
+    .hero-section {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 30px auto;
+    }
+
+    .hero-img-wrapper {
+        margin-top: 50px;
+    }
+}
 
 
 /* --- Seção Como Funciona (Steps) --- */
@@ -585,14 +849,18 @@ a#btn-ongs.btn {
 .step-card {
     flex: 1; /* Distribui espaço igualmente */
     min-width: 250px; /* Tamanho mínimo para não esmagar */
-    background: #f8f9fa;
+    aspect-ratio: 1 / 1; /* IMPORTANTE: Força o card a ser quadrado */
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 30px 20px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição suave */
-    border: 1px solid transparent;
+    border: 1px solid var(--card-border);
     position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Ícone ou Número do passo */
@@ -607,45 +875,45 @@ a#btn-ongs.btn {
 .step-title {
     font-weight: 700;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--text-main);
 }
 
 .step-desc {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
 /* --- O Efeito Mágico de Foco --- */
 
 /* Quando passamos o mouse NO CONTAINER (não apenas no card),
-   fazemos TODOS os cards ficarem um pouco opacos e menores */
+   fazemos TODOS os cards ficarem um pouco opacos e desfocados */
 .steps-container:hover .step-card {
     opacity: 0.5;
     transform: scale(0.95);
+    filter: blur(3px);
 }
 
 /* Mas... o card específico que estamos passando o mouse (HOVER)
-   volta a ter opacidade total e cresce */
+   volta a ter opacidade total, cresce e fica em foco com borda azul */
 .steps-container .step-card:hover {
     opacity: 1;
-    transform: scale(1.05); /* Aumenta 5% */
-    background: #fff;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Sombra forte */
-    border-color: #007bff; /* Borda azul destaque */
-    z-index: 10; /* Traz para frente */
+    transform: scale(1.02);
+    filter: blur(0);
+    border-color: #0d6efd; /* Borda azul do Bootstrap */
+    box-shadow: 0 8px 16px rgba(13, 110, 253, 0.2); /* Sombra azul suave */
+    z-index: 10;
 }
 
-    /* Muda a cor do número/ícone no foco */
     .steps-container .step-card:hover .step-icon {
-        color: #007bff;
+        color: #0d6efd; /* Ícone azul no hover */
     }
 
 /* Setas decorativas (apenas visual) */
 .step-arrow {
     display: block;
     font-size: 1.5rem;
-    color: #007bff;
+    color: #0d6efd; /* Azul para consistência */
     margin-top: 15px;
     opacity: 0;
     transform: translateX(-10px);
@@ -657,6 +925,18 @@ a#btn-ongs.btn {
     transform: translateX(0);
 }
 
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-wrap: nowrap; /* Permite scroll horizontal */
+        overflow-x: auto;
+    }
+
+    .step-card {
+        min-width: 220px; /* Tamanho mínimo menor em mobile */
+    }
+}
+
 /* --- Seção Por Que Se Inscrever (Accordion) --- */
 
 .why-section {
@@ -665,11 +945,14 @@ a#btn-ongs.btn {
 
 /* Remove bordas padrão e adiciona espaçamento entre os itens */
 .custom-accordion .accordion-item {
+    background-color: var(--card-bg);
     border: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px !important; /* Força bordas arredondadas */
+    color: var(--text-main);
     margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02); /* Sombra leve */
+    box-shadow: none; /* Sombra leve */
+    transition: all 0.3s ease;
 }
 
 /* Estilo do botão (Cabeçalho) */
@@ -684,30 +967,31 @@ a#btn-ongs.btn {
 
     /* Estilo do botão quando o item está ABERTO */
     .custom-accordion .accordion-button:not(.collapsed) {
-        color: #007bff; /* Cor azul destaque */
-        background-color: #f8fbfd; /* Fundo azul bem clarinho */
+        background-color: rgba(0, 168, 157, 0.15);
+        color: var(--gf-teal); /* Cor da marca */
         box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
     }
 
-    /* Remove contorno padrão feio ao clicar */
     .custom-accordion .accordion-button:focus {
-        border-color: rgba(0,0,0,.125);
-        box-shadow: none;
+        border-color: var(--gf-teal);
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
     }
 
-/* Corpo do texto */
 .custom-accordion .accordion-body {
     font-size: 0.95rem;
-    color: #666;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
     line-height: 1.6;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--card-bg);
 }
 
 /* Imagem lateral */
 .why-image {
-    border-radius: 24px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: none !important;
+    /*border-radius: 24px;*/
+    background-color: transparent !important;
+    box-shadow: /*0 15px 30px rgba(0,0,0,0.1);*/ none !important;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -720,7 +1004,8 @@ a#btn-ongs.btn {
 }
 
 .custom-accordion .accordion-item {
-    border: 1px solid rgba(0,0,0,0.05);
+    background-color: transparent;
+    border: 1px solid var(--card-border);
     border-radius: 12px !important;
     margin-bottom: 15px;
     overflow: hidden;
@@ -766,8 +1051,10 @@ a#btn-ongs.btn {
 
 /* --- 2. Seção Spotlight (Cards com Foco e Blur) --- */
 .spotlight-section {
+    background-color: var(--card-bg);
+    color: var(--text-main);
     padding: 80px 0;
-    background-color: #fff; /* Fundo branco para separar */
+    transition: background-color 0.3s ease;
 }
 
 .spotlight-grid {
@@ -780,6 +1067,8 @@ a#btn-ongs.btn {
 .spotlight-card {
     flex: 1;
     min-width: 300px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 40px 30px;
     color: white;
@@ -836,22 +1125,1283 @@ a#btn-ongs.btn {
     display: block;
     opacity: 0.8;
 }
+
+.hero-section, /* Hero (Topo) */
+.island-section, /* Sobre */
+.why-section, /* Impacto */
+.spotlight-section, /* Números */
+.investors-section /* Parceiros */ {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+/* Ajuste específico para o Mobile não ficar com espaços gigantes */
+@media (max-width: 768px) {
+    .hero-section,
+    .island-section,
+    .why-section,
+    .spotlight-section,
+    .investors-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+/* 1. Crie uma classe para o container dos botões */
+.hero-buttons-container {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões */
+    transition: all 0.3s ease;
+}
+
+    /* 2. Quando o mouse entra no CONTAINER, todos os botões dentro dele ficam desfocados e opacos */
+    .hero-buttons-container:hover .btn {
+        filter: blur(3px); /* Borrão leve */
+        opacity: 0.6; /* Fica meio transparente */
+        transform: scale(0.95); /* Diminui um pouquinho */
+        transition: all 0.3s ease; /* Transição suave */
+    }
+
+    /* 3. O PULO DO GATO: O botão específico que recebe o HOVER volta ao normal */
+    .hero-buttons-container .btn:hover {
+        filter: blur(0) !important; /* Remove o borrão */
+        opacity: 1 !important; /* Opacidade total */
+        transform: scale(1.1) !important; /* Cresce para destaque */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para flutuar */
+        z-index: 10; /* Garante que fique por cima dos outros */
+    }
+
+
+/* --- Seção CTA (Call to Action) --- */
+.cta {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, #008c82 100%); /* Gradiente verde-água */
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Adiciona um efeito decorativo sutil no fundo */
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 60%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .cta h3 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Botão especial da CTA */
+    .cta .btn {
+        background-color: white;
+        color: var(--gf-teal);
+        border: 3px solid white;
+        padding: 15px 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .cta .btn:hover {
+            background-color: var(--gf-pink); /* Muda para rosa no hover */
+            color: white;
+            border-color: var(--gf-pink);
+            transform: translateY(-5px) scale(1.05); /* Levanta e cresce */
+            box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4); /* Sombra rosa intensa */
+        }
+
+/* Títulos e Subtítulos Gerais */
+.hero-impact-phrase,
+.hero-secondary-text,
+.section-title,
+.hero-subtitle,
+.step-desc,
+.project-text,
+p {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.text-muted, .step-desc, .project-text {
+    color: var(--text-muted) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cta h3 {
+        font-size: 1.8rem;
+    }
+
+    .cta .btn {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+}
+
+/* === AJUSTE DO BRAND "GERANDO FALCÕES" === */
+
+/* Modo Claro: Preto elegante */
+.navbar-brand.brand-text span {
+    color: var(--gf-black); /* Preto da paleta */
+    transition: color 0.3s ease;
+}
+
+/* Modo Escuro: Branco limpo */
+/*html[data-theme="dark"] .navbar-brand.brand-text span {
+    color: #ffffff;*/ /* Branco puro para contraste */
+/*}*/
+
+html[data-theme="dark"] .navbar-brand.brand-text span {
+    background: linear-gradient(45deg, #00a89D, #ec2262);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* ==========================
-   RESPONSIVO
+   DARK MODE: TEXTOS EM DESTAQUE NAS SEÇÕES SOBRE E VANTAGENS
    ========================== */
-@media (max-width: 991px) {
-    /* Ajustes para tablets e celulares */
-    .landing-hero {
-        min-height: auto;
-        padding: 3rem 0;
+
+/* Seção Sobre - Textos em Branco no Dark Mode */
+html[data-theme="dark"] .island-section h2,
+html[data-theme="dark"] .island-section .text-dark {
+    color: var(--text-main) !important; /* Branco/Claro no dark mode */
+}
+
+html[data-theme="dark"] .island-section .lead,
+html[data-theme="dark"] .island-section .text-muted {
+    color: rgba(230, 237, 243, 0.85) !important; /* Branco levemente transparente */
+}
+
+html[data-theme="dark"] .island-section .text-primary {
+    background: -webkit-linear-gradient(45deg, #00a89D, #ec2262);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Seção Vantagens - Textos em Branco no Dark Mode */
+html[data-theme="dark"] .why-section h2,
+html[data-theme="dark"] .why-section .section-title {
+    color: var(--text-main) !important; /* Branco/Claro no dark mode */
+}
+
+html[data-theme="dark"] .why-section .text-muted,
+html[data-theme="dark"] .why-section p {
+    color: rgba(230, 237, 243, 0.85) !important; /* Branco levemente transparente */
+}
+
+/* Accordion no Dark Mode */
+html[data-theme="dark"] .custom-accordion .accordion-button {
+    color: var(--text-main);
+    background-color: var(--card-bg);
+}
+
+    html[data-theme="dark"] .custom-accordion .accordion-button:not(.collapsed) {
+        background-color: rgba(0, 168, 157, 0.25);
+        color: var(--gf-teal);
+    }
+
+html[data-theme="dark"] .custom-accordion .accordion-body {
+    color: rgba(230, 237, 243, 0.85);
+    background-color: var(--card-bg);
+}
+
+/* Island Card (Card da seção Sobre) no Dark Mode */
+html[data-theme="dark"] .island-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+/* Step Cards no Dark Mode */
+html[data-theme="dark"] .step-title {
+    color: var(--text-main);
+}
+
+html[data-theme="dark"] .step-desc {
+    color: var(--text-muted);
+}
+
+/* Island Card - Fundo transparente para se mesclar com a section */
+.island-card {
+    background-color: transparent !important;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* No dark mode, mantém transparente */
+html[data-theme="dark"] .island-card {
+    background-color: transparent !important;
+}
+
+/* Island Card - Completamente transparente e invisível */
+.island-card {
+    background-color: transparent !important;
+    padding: 40px;
+    border-radius: 20px;
+    border: none !important; /* Remove qualquer borda */
+    box-shadow: none !important; /* Remove qualquer sombra */
+}
+
+/* No dark mode, mantém completamente invisível */
+html[data-theme="dark"] .island-card {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Classes auxiliares para backgrounds das seções */
+.bg-section-gray {
+    background-color: #f8f9fb;
+}
+
+html[data-theme="dark"] .bg-section-gray {
+    background-color: var(--body-bg);
+}
+
+.bg-section-white {
+    background-color: #ffffff;
+}
+
+html[data-theme="dark"] .bg-section-white {
+    background-color: var(--body-bg);
+}
+
+/* ==========================
+   FOOTER APRIMORADO COM CORES DAS REDES SOCIAIS
+   ========================== */
+
+/* Reorganização do Footer em 3 colunas */
+.footer-custom .row {
+    margin-bottom: 30px;
+}
+
+.footer-logos-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* === REDES SOCIAIS COM CORES ESPECÍFICAS === */
+
+/* Instagram - Gradiente Rosa/Roxo/Laranja */
+.social-instagram {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+    .social-instagram:hover {
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(5deg);
+        box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+    }
+
+/* LinkedIn - Azul Profissional */
+.social-linkedin {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+    .social-linkedin:hover {
+        background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(-5deg);
+        box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
+    }
+
+/* Facebook - Azul Facebook */
+.social-facebook {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+    .social-facebook:hover {
+        background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(5deg);
+        box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+    }
+
+/* YouTube - Vermelho */
+.social-youtube {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transition: all 0.4s ease;
+}
+
+    .social-youtube:hover {
+        background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        color: #fff !important;
+        transform: translateY(-5px) rotate(-5deg);
+        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+    }
+
+/* === BOTÃO "SOBRE O PROJETO" - TEXTO SEMPRE VISÍVEL (CORRIGIDO) === */
+.btn-about-project {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    color: white !important;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(0, 168, 157, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Define contexto de empilhamento */
+}
+
+    /* Camada de gradiente que "desliza" no hover */
+    .btn-about-project::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
+        transition: left 0.4s ease;
+        z-index: -1; /* CORRIGIDO: Fica ATRÁS do conteúdo */
+    }
+
+    .btn-about-project:hover::before {
+        left: 0;
+    }
+
+    /* Garante que o texto e ícone fiquem SEMPRE VISÍVEIS */
+    .btn-about-project i,
+    .btn-about-project span,
+    .btn-about-project {
+        position: relative;
+        z-index: 1; /* Fica acima do ::before */
+        color: white !important;
+    }
+
+        /* Garante cor branca em todos os estados */
+        .btn-about-project,
+        .btn-about-project:hover,
+        .btn-about-project:focus,
+        .btn-about-project:active {
+            color: white !important;
+        }
+
+            .btn-about-project:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(236, 34, 98, 0.4);
+            }
+
+/* === MODAL DA EQUIPE - DESIGN MODERNO E ELEGANTE === */
+
+/* Container do Modal */
+.team-modal .modal-content {
+    border-radius: 24px; /* Bordas bem arredondadas como os outros cards */
+    border: none;
+    background-color: var(--card-bg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); /* Sombra profunda */
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho do Modal */
+.team-modal .modal-header {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    color: white;
+    padding: 30px 40px;
+    border-bottom: none;
+}
+
+.team-modal .modal-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+    .team-modal .modal-title i {
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 12px;
+    }
+
+/* Botão Fechar */
+.team-modal .btn-close {
+    filter: brightness(0) invert(1); /* Torna o X branco */
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+    .team-modal .btn-close:hover {
+        transform: rotate(90deg) scale(1.1);
+        opacity: 1;
+    }
+
+/* Corpo do Modal */
+.team-modal .modal-body {
+    padding: 40px;
+    background-color: var(--card-bg);
+}
+
+    .team-modal .modal-body p {
+        color: var(--text-muted);
+    }
+
+/* Cards dos Membros da Equipe */
+.team-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Efeito de Brilho no Hover (Similar aos Step Cards) */
+    .team-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 168, 157, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .team-card:hover::before {
+        opacity: 1;
+    }
+
+    .team-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--gf-teal);
+        box-shadow: 0 15px 35px rgba(0,168,157,0.25);
+    }
+
+/* Avatar do Membro */
+.team-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,168,157,0.3);
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.5);
+}
+
+/* === AVATAR COM IMAGEM REAL === */
+
+.team-avatar-img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 168, 157, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 3px solid transparent;
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+    padding: 3px; /* Cria o efeito de borda gradiente */
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+/* Hover na imagem */
+.team-card:hover .team-avatar-img {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(0, 168, 157, 0.5);
+}
+
+.team-card:hover .team-photo {
+    transform: scale(1.05);
+}
+
+/* Subtítulo secundário (para a segunda linha do cargo) */
+.team-role-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Links Sociais (GitHub, LinkedIn) - VERSÃO APRIMORADA */
+.team-links {
+    display: flex;
+    gap: 18px; /* AUMENTADO: de 12px para 18px - mais espaço entre os ícones */
+    justify-content: center;
+}
+
+.team-social-link {
+    width: 45px; /* AUMENTADO: de 40px para 45px - ícones maiores */
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem; /* AUMENTADO: de 1.2rem para 1.4rem - ícone interno maior */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+    /* === GITHUB - PRETO (COR ORIGINAL) === */
+    .team-social-link[title="GitHub"] {
+        background-color: rgba(0, 0, 0, 0.05); /* Fundo cinza muito claro */
+        color: #181717; /* Preto GitHub oficial */
+    }
+
+        .team-social-link[title="GitHub"]:hover {
+            background-color: #181717; /* Preto GitHub no hover */
+            color: white;
+            transform: translateY(-3px) rotate(-5deg);
+            box-shadow: 0 8px 20px rgba(24, 23, 23, 0.3);
+            border-color: #181717;
+        }
+
+    /* === LINKEDIN - AZUL (COR ORIGINAL) === */
+    .team-social-link[title="LinkedIn"] {
+        background-color: rgba(0, 119, 181, 0.1); /* Fundo azul claro */
+        color: #0077b5; /* Azul LinkedIn oficial */
+    }
+
+        .team-social-link[title="LinkedIn"]:hover {
+            background-color: #0077b5; /* Azul LinkedIn no hover */
+            color: white;
+            transform: translateY(-3px) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+        }
+
+/* === DARK MODE - Ajustes para GitHub === */
+html[data-theme="dark"] .team-social-link[title="GitHub"] {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo mais claro no dark mode */
+    color: #f0f6fc; /* Ícone branco/claro no dark mode */
+}
+
+    html[data-theme="dark"] .team-social-link[title="GitHub"]:hover {
+        background-color: #30363d; /* Cinza escuro GitHub no hover (dark mode) */
+        color: white;
+    }
+
+html[data-theme="dark"] .team-social-link[title="LinkedIn"] {
+    background-color: rgba(0, 119, 181, 0.15);
+    color: #0a66c2; /* Tom de azul mais vibrante no dark */
+}
+
+    html[data-theme="dark"] .team-social-link[title="LinkedIn"]:hover {
+        background-color: #0077b5;
+        color: white;
+    }
+
+/* ==========================================================================
+   FORMULÁRIO DE INSCRIÇÃO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- CARD DE INSCRIÇÃO (Light Mode - Padrão) --- */
+.inscription-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.inscription-card-header {
+    background-color: rgba(0, 168, 157, 0.05);
+    border-bottom: 1px solid var(--card-border) !important;
+}
+
+.inscription-card-body {
+    background-color: var(--card-bg);
+}
+
+.inscription-title {
+    color: var(--text-main) !important;
+}
+
+.inscription-step-title,
+.inscription-label {
+    color: var(--text-main) !important;
+}
+
+.inscription-step-text {
+    color: var(--text-muted) !important;
+}
+
+/* Progress Bar */
+.inscription-progress-bar {
+    background: linear-gradient(90deg, var(--gf-teal) 0%, var(--gf-purple) 100%);
+}
+
+/* Info Box */
+.inscription-info-box {
+    background-color: rgba(0, 168, 157, 0.05);
+    border-color: var(--card-border) !important;
+}
+
+/* Input Group Addon */
+.inscription-input-addon {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-main) !important;
+}
+
+/* --- INPUTS & SELECTS (Light Mode) --- */
+.inscription-card input.form-control,
+.inscription-card select.form-select,
+.inscription-card textarea.form-control {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
+
+    .inscription-card input.form-control:focus,
+    .inscription-card select.form-select:focus,
+    .inscription-card textarea.form-control:focus {
+        background-color: #ffffff;
+        border-color: var(--gf-teal);
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25);
+        color: #212529;
+    }
+
+/* Dropdown específico - Light Mode */
+select#Genero {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+    select#Genero option {
+        background-color: #ffffff;
+        color: #212529;
+    }
+
+/* --- DARK MODE: CARD DE INSCRIÇÃO --- */
+html[data-theme="dark"] .inscription-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .inscription-card-header {
+    background-color: rgba(0, 168, 157, 0.1) !important;
+    border-bottom-color: var(--card-border) !important;
+}
+
+html[data-theme="dark"] .inscription-card-body {
+    background-color: var(--card-bg) !important;
+}
+
+html[data-theme="dark"] .inscription-title,
+html[data-theme="dark"] .inscription-step-title,
+html[data-theme="dark"] .inscription-label {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .inscription-step-text,
+html[data-theme="dark"] .inscription-card .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* --- DARK MODE: INPUTS & SELECTS --- */
+html[data-theme="dark"] .inscription-card input.form-control,
+html[data-theme="dark"] .inscription-card select.form-select,
+html[data-theme="dark"] .inscription-card textarea.form-control {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+    html[data-theme="dark"] .inscription-card input.form-control:focus,
+    html[data-theme="dark"] .inscription-card select.form-select:focus,
+    html[data-theme="dark"] .inscription-card textarea.form-control:focus {
+        background-color: #0d1117 !important;
+        border-color: var(--gf-teal) !important;
+        box-shadow: 0 0 0 0.25rem rgba(0, 168, 157, 0.25) !important;
+        color: #e6edf3 !important;
+    }
+
+    html[data-theme="dark"] .inscription-card input.form-control::placeholder,
+    html[data-theme="dark"] .inscription-card select.form-select::placeholder,
+    html[data-theme="dark"] .inscription-card textarea.form-control::placeholder {
+        color: #8b949e !important;
+        opacity: 0.7;
+    }
+
+/* --- DARK MODE: DROPDOWN (GÊNERO) --- */
+html[data-theme="dark"] select#Genero {
+    background-color: #0d1117 !important;
+    color: #e6edf3 !important;
+    border: 1px solid #30363d !important;
+    /* Recria a seta branca do dropdown */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e6edf3' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+    html[data-theme="dark"] select#Genero option {
+        background-color: #0d1117 !important;
+        color: #e6edf3 !important;
+    }
+
+/* --- DARK MODE: INFO BOX --- */
+html[data-theme="dark"] .inscription-info-box {
+    background-color: rgba(0, 168, 157, 0.1) !important;
+    border-color: #30363d !important;
+}
+
+/* --- DARK MODE: FORM CHECKS (Switches) --- */
+html[data-theme="dark"] .inscription-card .form-check-label {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .inscription-card .form-check-input {
+    background-color: #21262d;
+    border-color: #30363d;
+}
+
+    html[data-theme="dark"] .inscription-card .form-check-input:checked {
+        background-color: var(--gf-teal);
+        border-color: var(--gf-teal);
+    }
+
+/* --- DARK MODE: INPUT GROUP ADDON --- */
+html[data-theme="dark"] .inscription-input-addon {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+/* ========================================================================
+   BOTÕES DO FORMULÁRIO - LIGHT MODE & DARK MODE (CORES DISTINTAS)
+   ========================================================================== */
+
+/* --- BOTÃO VOLTAR (#btn-prev) - LIGHT MODE: Cinza Elegante --- */
+#btn-prev {
+    background-color: transparent;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+#btn-prev::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* MUDOU: Gradiente roxo vibrante */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: -1;
+}
+
+#btn-prev:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#btn-prev:hover {
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* --- BOTÃO VOLTAR - DARK MODE: Laranja Neon com Efeito Ripple --- */
+html[data-theme="dark"] #btn-prev {
+    background-color: rgba(233, 107, 42, 0.15);
+    border: 2px solid var(--gf-orange);
+    color: var(--gf-orange);
+    box-shadow: 0 0 15px rgba(233, 107, 42, 0.2);
+}
+
+html[data-theme="dark"] #btn-prev::before {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); /* MUDOU: Gradiente vermelho-coral vibrante */
+}
+
+html[data-theme="dark"] #btn-prev:hover {
+    color: white !important;
+    border-color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5), 
+                0 0 30px rgba(255, 107, 107, 0.3);
+}
+
+/* --- BOTÃO PRÓXIMO (#btn-next) - LIGHT MODE: Azul Vibrante --- */
+#btn-next {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    border: none;
+    color: white !important;
+    font-weight: 700;
+    padding: 12px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho deslizante */
+#btn-next::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+#btn-next:hover::after {
+    left: 100%;
+}
+
+#btn-next:hover {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Gradiente cyan elétrico */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(79, 172, 254, 0.5);
+}
+
+/* --- BOTÃO PRÓXIMO - DARK MODE: Mesmo estilo do Light Mode */
+html[data-theme="dark"] #btn-next {
+    background: linear-gradient(135deg, var(--gf-purple) 0%, #005bea 100%);
+    box-shadow: 0 5px 15px rgba(122, 90, 216, 0.4);
+    /* REMOVIDO: animation gradient-shift */
+}
+
+/* Mesmo efeito de brilho deslizante do Light Mode */
+html[data-theme="dark"] #btn-next::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+html[data-theme="dark"] #btn-next:hover::after {
+    left: 100%;
+}
+
+html[data-theme="dark"] #btn-next:hover {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Mesma cor do Light Mode */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(79, 172, 254, 0.6),
+                0 0 40px rgba(79, 172, 254, 0.3);
+}
+
+/* --- BOTÃO FINALIZAR (#btn-submit) - LIGHT MODE: Simples e Direto --- */
+#btn-submit {
+    background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+    border: none;
+    color: white !important;
+    font-weight: 800;
+    padding: 12px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* REMOVIDO: Efeito de onda ::before */
+
+#btn-submit:hover {
+    background: linear-gradient(135deg, #157347 0%, #0f5132 100%); /* Tom mais escuro para CTA */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.5);
+    color: white !important;
+}
+
+/* Garante que o texto fique visível */
+#btn-submit i,
+#btn-submit span {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+}
+
+/* --- BOTÃO FINALIZAR - DARK MODE: Simples e Direto --- */
+html[data-theme="dark"] #btn-submit {
+    background: linear-gradient(135deg, var(--gf-pink) 0%, var(--gf-orange) 100%);
+    box-shadow: 0 5px 15px rgba(236, 34, 98, 0.4);
+    /* REMOVIDO: animation pulse-glow */
+    position: relative;
+    overflow: hidden;
+}
+
+html[data-theme="dark"] #btn-submit:hover {
+    background: linear-gradient(135deg, #d01d54 0%, #c85920 100%) !important; /* Tom mais escuro para CTA */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(236, 34, 98, 0.6);
+    color: white !important;
+}
+
+/* Garante que o texto e ícone fiquem visíveis */
+html[data-theme="dark"] #btn-submit,
+html[data-theme="dark"] #btn-submit:hover,
+html[data-theme="dark"] #btn-submit i,
+html[data-theme="dark"] #btn-submit span {
+    color: white !important;
+}
+
+html[data-theme="dark"] #btn-submit i,
+html[data-theme="dark"] #btn-submit span {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   CAMPOS PERSONALIZADOS DO FORMULÁRIO DE INSCRIÇÃO
+   ========================================================================== */
+
+/* --- CAMPO DE RENDA FAMILIAR (Input Monetário) --- */
+.currency-input-group {
+    position: relative;
+}
+
+    .currency-input-group .input-group-text {
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+/* --- CAMPO DE PESSOAS NA CASA (Input Numérico com Controles) --- */
+.number-input-group {
+    position: relative;
+}
+
+    .number-input-group input[type="number"] {
         text-align: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-right: 3rem;
     }
 
-    .hero-illustration {
-        display: none; /* Esconde a ilustração em telas menores */
+/* Remove setas padrão do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Controles customizados (setas) */
+.number-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--card-border);
+}
+
+    .number-controls button {
+        flex: 1;
+        border: none;
+        background-color: var(--card-bg);
+        padding: 0 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: var(--text-main);
     }
 
-    .hero-content {
-        padding-bottom: 2rem;
+        .number-controls button:hover {
+            background-color: rgba(0, 168, 157, 0.1);
+            color: var(--gf-teal);
+        }
+
+        .number-controls button:active {
+            background-color: rgba(0, 168, 157, 0.2);
+        }
+
+        .number-controls button:first-child {
+            border-bottom: 1px solid var(--card-border);
+            border-top-right-radius: 0.375rem;
+        }
+
+        .number-controls button:last-child {
+            border-bottom-right-radius: 0.375rem;
+        }
+
+        .number-controls button i {
+            font-size: 0.75rem;
+        }
+
+/* Dark Mode - Controles numéricos */
+html[data-theme="dark"] .number-controls {
+    border-left-color: #30363d;
+}
+
+    html[data-theme="dark"] .number-controls button {
+        background-color: #0d1117;
+        color: #e6edf3;
     }
+
+        html[data-theme="dark"] .number-controls button:hover {
+            background-color: rgba(0, 168, 157, 0.2);
+            color: var(--gf-teal);
+        }
+
+        html[data-theme="dark"] .number-controls button:first-child {
+            border-bottom-color: #30363d;
+        }
+
+/* Tooltips informativos */
+.inscription-label i[data-bs-toggle="tooltip"] {
+    cursor: help;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+    .inscription-label i[data-bs-toggle="tooltip"]:hover {
+        opacity: 1;
+    }
+
+/* Textos de ajuda com ícones */
+.form-text.text-muted i {
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   CORREÇÕES ESPECÍFICAS DO FORMULÁRIO DE INSCRIÇÃO
+   ========================================================================== */
+
+/* 1. ÍCONE DO CALENDÁRIO VISÍVEL NO DARK MODE */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: none; /* Light mode: ícone preto padrão */
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Dark mode: inverte para branco */
+    opacity: 0.8;
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* 2. ÍCONE R$ COM COR ADAPTÁVEL NO DARK MODE */
+.currency-input-group .input-group-text {
+    font-weight: 600;
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .currency-input-group .input-group-text {
+    color: var(--text-main) !important;
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+}
+
+/* ==========================================================================
+   PÁGINA DE SUCESSO DA INSCRIÇÃO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- CARD DE SUCESSO (Light Mode) --- */
+.success-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+/* --- ÍCONE DE SUCESSO (Light Mode) --- */
+.success-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #d1e7dd; /* Verde claro */
+    color: #198754; /* Verde escuro */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* --- TEXTOS (Light Mode) --- */
+.success-title {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.success-subtitle {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.success-description {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* --- BOTÃO DE SUCESSO (Light Mode) --- */
+.success-btn {
+    transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* ==========================================================================
+   DARK MODE - PÁGINA DE SUCESSO
+   ========================================================================== */
+
+/* --- CARD DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- ÍCONE DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-icon-circle {
+    background-color: rgba(0, 168, 157, 0.2); /* Teal com transparência */
+    color: var(--gf-teal); /* Teal da paleta */
+    box-shadow: 0 0 20px rgba(0, 168, 157, 0.3); /* Glow suave */
+}
+
+/* --- TEXTOS (Dark Mode) --- */
+html[data-theme="dark"] .success-title {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .success-subtitle {
+    color: rgba(230, 237, 243, 0.9) !important;
+}
+
+html[data-theme="dark"] .success-description {
+    color: rgba(230, 237, 243, 0.85) !important;
+}
+
+/* --- STRONG TAGS NO DARK MODE --- */
+html[data-theme="dark"] .success-subtitle strong,
+html[data-theme="dark"] .success-description strong {
+    color: var(--gf-teal); /* Destaque com cor da marca */
+    font-weight: 700;
+}
+
+/* --- BOTÃO DE SUCESSO (Dark Mode) --- */
+html[data-theme="dark"] .success-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,168,157,0.4) !important;
+}
+
+/* ==========================================================================
+   BOTÃO "VOLTAR PARA O INÍCIO" NA PÁGINA DE SUCESSO - DARK MODE & LIGHT MODE
+   ========================================================================== */
+
+/* --- BOTÃO (Light Mode - Corrigido para texto branco) --- */
+.success-btn.btn-dark {
+    background-color: #212529 !important;
+    border-color: #212529 !important;
+    color: white !important; /* ✅ TEXTO BRANCO */
+}
+
+/* Garante que ícone também seja branco no Light Mode */
+.success-btn.btn-dark i {
+    color: white !important; /* ✅ ÍCONE BRANCO */
+}
+
+.success-btn.btn-dark:hover {
+    background-color: #1a1e21 !important;
+    border-color: #1a1e21 !important;
+    color: white !important; /* ✅ MANTÉM BRANCO NO HOVER */
+}
+
+.success-btn.btn-dark:hover i {
+    color: white !important; /* ✅ ÍCONE BRANCO NO HOVER */
+}
+
+/* --- BOTÃO (Dark Mode - Gradiente Teal/Roxo com texto branco) --- */
+html[data-theme="dark"] .success-btn.btn-dark {
+    background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-purple) 100%) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(0, 168, 157, 0.4);
+}
+
+html[data-theme="dark"] .success-btn.btn-dark:hover {
+    background: linear-gradient(135deg, #008c82 0%, #6842c2 100%) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 168, 157, 0.5) !important;
+    color: white !important;
+}
+
+/* Garante que o ícone e texto fiquem brancos no dark mode */
+html[data-theme="dark"] .success-btn.btn-dark i,
+html[data-theme="dark"] .success-btn.btn-dark:hover i {
+    color: white !important;
 }

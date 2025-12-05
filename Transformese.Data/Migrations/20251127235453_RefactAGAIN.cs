@@ -18,6 +18,7 @@ namespace Transformese.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NomeSocial = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CPF = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),

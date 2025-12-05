@@ -83,12 +83,14 @@ namespace Transformese.Api.Controllers
             {
                 // Dados Pessoais
                 NomeCompleto = dto.NomeCompleto,
+                NomeSocial = dto.NomeSocial ?? string.Empty,
                 CPF = cpfLimpo,
                 DataNascimento = dto.DataNascimento,
                 IdentidadeGenero = dto.IdentidadeGenero,
                 OrientacaoSexual = dto.OrientacaoSexual,
                 RacaCor = dto.RacaCor,
-                Deficiencia = dto.Deficiencia,
+
+                Deficiencia = dto.Deficiencia ?? string.Empty,
 
                 // Contato e Local
                 Email = dto.Email,
@@ -105,9 +107,9 @@ namespace Transformese.Api.Controllers
 
                 // Institucional
                 CursoInteresse = dto.CursoInteresse,
-                TurnoPreferido = dto.TurnoPreferido,
+                TurnoPreferido = dto.TurnoPreferido ?? string.Empty,
                 JaEstudouNaGF = dto.JaEstudouNaGF,
-                NomeIndicacao = dto.NomeIndicacao,
+                NomeIndicacao = dto.NomeIndicacao ?? string.Empty,
 
                 // Controle e Legado
                 AceitouTermos = dto.AceitouTermos,
@@ -128,18 +130,20 @@ namespace Transformese.Api.Controllers
 
         // ============================================================
         // DTO ATUALIZADO (CandidatoInscricaoDto)
-        // Reflete exatamente o que o formulário Web vai mandar
+        // ✅ CORREÇÃO: Campos opcionais agora são nullable
         // ============================================================
         public class CandidatoInscricaoDto
         {
             // Pessoais
             public string NomeCompleto { get; set; }
+            public string? NomeSocial { get; set; }
             public string CPF { get; set; }
             public DateTime DataNascimento { get; set; }
             public string IdentidadeGenero { get; set; }
             public string OrientacaoSexual { get; set; }
             public string RacaCor { get; set; }
-            public string Deficiencia { get; set; }
+
+            public string? Deficiencia { get; set; }
 
             // Contato
             public string Email { get; set; }
@@ -156,15 +160,17 @@ namespace Transformese.Api.Controllers
 
             // Institucional
             public string CursoInteresse { get; set; }
-            public string TurnoPreferido { get; set; }
+
+            public string? TurnoPreferido { get; set; }
             public bool JaEstudouNaGF { get; set; }
-            public string NomeIndicacao { get; set; }
+
+            public string? NomeIndicacao { get; set; }
 
             // Termos
             public bool AceitouTermos { get; set; }
             public bool AceitouNovidades { get; set; }
 
-            // Legado (Opcionais no novo form, mas mantidos por segurança)
+            // Legado (Opcionais)
             public bool PossuiComputador { get; set; }
             public bool PossuiInternet { get; set; }
             public string? PerfilLinkedin { get; set; }
