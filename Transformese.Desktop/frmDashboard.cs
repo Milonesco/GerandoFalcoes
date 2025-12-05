@@ -123,13 +123,6 @@ namespace Transformese.Desktop
             CarregarNovoCandidato();
             // Não precisa chamar AtualizarBotoes aqui pq CarregarNovoCandidato já chama
         }
-
-        private void btnInscricoes_Click(object sender, EventArgs e)
-        {
-            NavegarPara(new ViewInscricoes());
-            AtualizarBotoes(sender); // 'sender' é o próprio botão clicado
-        }
-
         private void btnTriagem_Click(object sender, EventArgs e)
         {
             NavegarPara(new ViewTriagem());

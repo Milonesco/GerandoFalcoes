@@ -158,6 +158,14 @@ namespace Transformese.Desktop.Views
                     lblKpiStatus.ForeColor = novosHoje > 0 ? Color.FromArgb(0, 168, 150) : Color.Gray;
                 }));
             }
+
+            if (lblEntrevistasStatus != null)
+            {
+                lblEntrevistasStatus.Text = $"{entrevistas} agendados";
+
+                // Lógica de cor: Se tiver entrevista pendente, fica Laranja ou Roxo, senão Cinza
+                lblEntrevistasStatus.ForeColor = entrevistas > 0 ? Color.Purple : Color.Gray;
+            }
         }
 
         private void AtualizarStatusSincronizacao()
@@ -219,9 +227,9 @@ namespace Transformese.Desktop.Views
             OnSolicitarNovoCandidato?.Invoke(this, EventArgs.Empty);
         }
 
-        private void ViewHome_Load_1(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            AtualizarInterface(txtBusca.Text.Trim());
         }
     }
 }

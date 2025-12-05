@@ -4,10 +4,9 @@
     {
         Inscrito = 1,
         Triagem = 2,
-        EncaminhadoONG = 3,
-        Entrevista = 4,
-        Aprovado = 5,
-        Reprovado = 6,
-        Desistente = 7
+        Entrevista = 3,
+        Aprovado = 4,
+        Reprovado = 5,
+        Desistente = 6
     }
 }

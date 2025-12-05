@@ -71,6 +71,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddScoped<CandidatoRepository>();
+builder.Services.AddScoped<UnidadeParceiraRepository>();
 
 // CORS
 builder.Services.AddCors(opt =>

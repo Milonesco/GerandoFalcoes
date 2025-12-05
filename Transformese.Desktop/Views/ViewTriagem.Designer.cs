@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -82,6 +84,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges71 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges72 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -92,14 +100,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges68 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges69 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges70 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlInfoPessoal = new Guna.UI2.WinForms.Guna2Panel();
             txtOrientacaoSexual = new Guna.UI2.WinForms.Guna2TextBox();
             txtGenero = new Guna.UI2.WinForms.Guna2TextBox();
@@ -117,6 +117,7 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTituloPessoal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlAvaliacao = new Guna.UI2.WinForms.Guna2Panel();
+            btnSalvarCadastro = new Guna.UI2.WinForms.Guna2Button();
             cboStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             numPontuacao = new Guna.UI2.WinForms.Guna2NumericUpDown();
             btnNovaTriagem = new Guna.UI2.WinForms.Guna2Button();
@@ -150,6 +151,9 @@
             txtTemInternet = new Guna.UI2.WinForms.Guna2TextBox();
             txtTemComputador = new Guna.UI2.WinForms.Guna2TextBox();
             txtRendaFamiliar = new Guna.UI2.WinForms.Guna2TextBox();
+            txtPessoasDomicilio = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTrabalho = new Guna.UI2.WinForms.Guna2TextBox();
+            txtEscolaridade = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -170,10 +174,6 @@
             tabPage1 = new System.Windows.Forms.TabPage();
             tabPage2 = new System.Windows.Forms.TabPage();
             panel1 = new System.Windows.Forms.Panel();
-            btnSalvarCadastro = new Guna.UI2.WinForms.Guna2Button();
-            txtPessoasDomicilio = new Guna.UI2.WinForms.Guna2TextBox();
-            txtTrabalho = new Guna.UI2.WinForms.Guna2TextBox();
-            txtEscolaridade = new Guna.UI2.WinForms.Guna2TextBox();
             pnlInfoPessoal.SuspendLayout();
             pnlAvaliacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numPontuacao).BeginInit();
@@ -521,6 +521,29 @@
             pnlAvaliacao.Size = new System.Drawing.Size(943, 238);
             pnlAvaliacao.TabIndex = 1;
             // 
+            // btnSalvarCadastro
+            // 
+            btnSalvarCadastro.BackColor = System.Drawing.Color.Transparent;
+            btnSalvarCadastro.BorderRadius = 10;
+            btnSalvarCadastro.CustomizableEdges = customizableEdges17;
+            btnSalvarCadastro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnSalvarCadastro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnSalvarCadastro.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnSalvarCadastro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnSalvarCadastro.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnSalvarCadastro.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSalvarCadastro.ForeColor = System.Drawing.Color.White;
+            btnSalvarCadastro.Location = new System.Drawing.Point(492, 180);
+            btnSalvarCadastro.Name = "btnSalvarCadastro";
+            btnSalvarCadastro.ShadowDecoration.BorderRadius = 10;
+            btnSalvarCadastro.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnSalvarCadastro.ShadowDecoration.Depth = 5;
+            btnSalvarCadastro.ShadowDecoration.Enabled = true;
+            btnSalvarCadastro.Size = new System.Drawing.Size(430, 40);
+            btnSalvarCadastro.TabIndex = 50;
+            btnSalvarCadastro.Text = "SALVAR";
+            btnSalvarCadastro.Click += btnSalvarCadastro_Click;
+            // 
             // cboStatus
             // 
             cboStatus.BackColor = System.Drawing.Color.Transparent;
@@ -582,6 +605,7 @@
             btnNovaTriagem.Size = new System.Drawing.Size(433, 40);
             btnNovaTriagem.TabIndex = 49;
             btnNovaTriagem.Text = "+ NOVA TRIAGEM";
+            btnNovaTriagem.Click += btnNovaTriagem_Click;
             // 
             // guna2HtmlLabel27
             // 
@@ -604,7 +628,6 @@
             guna2HtmlLabel4.Size = new System.Drawing.Size(70, 24);
             guna2HtmlLabel4.TabIndex = 19;
             guna2HtmlLabel4.Text = "Pontuação";
-            guna2HtmlLabel4.Click += guna2HtmlLabel4_Click;
             // 
             // cboONG
             // 
@@ -637,7 +660,6 @@
             guna2HtmlLabel1.Size = new System.Drawing.Size(111, 24);
             guna2HtmlLabel1.TabIndex = 15;
             guna2HtmlLabel1.Text = "ONG Responsável";
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
             // 
             // txtAnotacoesRH
             // 
@@ -737,7 +759,6 @@
             guna2HtmlLabel5.Size = new System.Drawing.Size(279, 24);
             guna2HtmlLabel5.TabIndex = 1;
             guna2HtmlLabel5.Text = "Avaliação e encaminhamento de candidatos\r\n";
-            guna2HtmlLabel5.Click += guna2HtmlLabel5_Click;
             // 
             // guna2HtmlLabel6
             // 
@@ -842,7 +863,6 @@
             txtCidade.ShadowDecoration.Enabled = true;
             txtCidade.Size = new System.Drawing.Size(165, 36);
             txtCidade.TabIndex = 23;
-            txtCidade.TextChanged += guna2TextBox1_TextChanged;
             // 
             // txtUF
             // 
@@ -1110,7 +1130,6 @@
             txtTemComputador.ShadowDecoration.Enabled = true;
             txtTemComputador.Size = new System.Drawing.Size(165, 36);
             txtTemComputador.TabIndex = 23;
-            txtTemComputador.TextChanged += guna2TextBox1_TextChanged_1;
             // 
             // txtRendaFamiliar
             // 
@@ -1138,6 +1157,87 @@
             txtRendaFamiliar.ShadowDecoration.Enabled = true;
             txtRendaFamiliar.Size = new System.Drawing.Size(165, 36);
             txtRendaFamiliar.TabIndex = 22;
+            // 
+            // txtPessoasDomicilio
+            // 
+            txtPessoasDomicilio.BackColor = System.Drawing.Color.Transparent;
+            txtPessoasDomicilio.BorderColor = System.Drawing.Color.Gainsboro;
+            txtPessoasDomicilio.BorderRadius = 10;
+            txtPessoasDomicilio.CustomizableEdges = customizableEdges55;
+            txtPessoasDomicilio.DefaultText = "";
+            txtPessoasDomicilio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtPessoasDomicilio.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtPessoasDomicilio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtPessoasDomicilio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtPessoasDomicilio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtPessoasDomicilio.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtPessoasDomicilio.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            txtPessoasDomicilio.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtPessoasDomicilio.Location = new System.Drawing.Point(205, 225);
+            txtPessoasDomicilio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtPessoasDomicilio.Name = "txtPessoasDomicilio";
+            txtPessoasDomicilio.PlaceholderText = "";
+            txtPessoasDomicilio.SelectedText = "";
+            txtPessoasDomicilio.ShadowDecoration.BorderRadius = 10;
+            txtPessoasDomicilio.ShadowDecoration.CustomizableEdges = customizableEdges56;
+            txtPessoasDomicilio.ShadowDecoration.Depth = 5;
+            txtPessoasDomicilio.ShadowDecoration.Enabled = true;
+            txtPessoasDomicilio.Size = new System.Drawing.Size(165, 36);
+            txtPessoasDomicilio.TabIndex = 21;
+            // 
+            // txtTrabalho
+            // 
+            txtTrabalho.BackColor = System.Drawing.Color.Transparent;
+            txtTrabalho.BorderColor = System.Drawing.Color.Gainsboro;
+            txtTrabalho.BorderRadius = 10;
+            txtTrabalho.CustomizableEdges = customizableEdges57;
+            txtTrabalho.DefaultText = "";
+            txtTrabalho.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtTrabalho.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtTrabalho.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtTrabalho.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtTrabalho.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtTrabalho.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTrabalho.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            txtTrabalho.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtTrabalho.Location = new System.Drawing.Point(20, 150);
+            txtTrabalho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtTrabalho.Name = "txtTrabalho";
+            txtTrabalho.PlaceholderText = "";
+            txtTrabalho.SelectedText = "";
+            txtTrabalho.ShadowDecoration.BorderRadius = 10;
+            txtTrabalho.ShadowDecoration.CustomizableEdges = customizableEdges58;
+            txtTrabalho.ShadowDecoration.Depth = 5;
+            txtTrabalho.ShadowDecoration.Enabled = true;
+            txtTrabalho.Size = new System.Drawing.Size(350, 36);
+            txtTrabalho.TabIndex = 3;
+            // 
+            // txtEscolaridade
+            // 
+            txtEscolaridade.BackColor = System.Drawing.Color.Transparent;
+            txtEscolaridade.BorderColor = System.Drawing.Color.Gainsboro;
+            txtEscolaridade.BorderRadius = 10;
+            txtEscolaridade.CustomizableEdges = customizableEdges59;
+            txtEscolaridade.DefaultText = "";
+            txtEscolaridade.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtEscolaridade.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtEscolaridade.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtEscolaridade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtEscolaridade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtEscolaridade.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtEscolaridade.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            txtEscolaridade.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtEscolaridade.Location = new System.Drawing.Point(20, 75);
+            txtEscolaridade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtEscolaridade.Name = "txtEscolaridade";
+            txtEscolaridade.PlaceholderText = "";
+            txtEscolaridade.SelectedText = "";
+            txtEscolaridade.ShadowDecoration.BorderRadius = 10;
+            txtEscolaridade.ShadowDecoration.CustomizableEdges = customizableEdges60;
+            txtEscolaridade.ShadowDecoration.Depth = 5;
+            txtEscolaridade.ShadowDecoration.Enabled = true;
+            txtEscolaridade.Size = new System.Drawing.Size(350, 36);
+            txtEscolaridade.TabIndex = 4;
             // 
             // guna2HtmlLabel11
             // 
@@ -1228,7 +1328,6 @@
             guna2Panel2.ShadowDecoration.Enabled = true;
             guna2Panel2.Size = new System.Drawing.Size(390, 354);
             guna2Panel2.TabIndex = 6;
-            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // txtEstudouOng
             // 
@@ -1458,109 +1557,6 @@
             panel1.Size = new System.Drawing.Size(940, 20);
             panel1.TabIndex = 51;
             // 
-            // btnSalvarCadastro
-            // 
-            btnSalvarCadastro.BackColor = System.Drawing.Color.Transparent;
-            btnSalvarCadastro.BorderRadius = 10;
-            btnSalvarCadastro.CustomizableEdges = customizableEdges17;
-            btnSalvarCadastro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnSalvarCadastro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnSalvarCadastro.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnSalvarCadastro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnSalvarCadastro.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnSalvarCadastro.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnSalvarCadastro.ForeColor = System.Drawing.Color.White;
-            btnSalvarCadastro.Location = new System.Drawing.Point(492, 180);
-            btnSalvarCadastro.Name = "btnSalvarCadastro";
-            btnSalvarCadastro.ShadowDecoration.BorderRadius = 10;
-            btnSalvarCadastro.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnSalvarCadastro.ShadowDecoration.Depth = 5;
-            btnSalvarCadastro.ShadowDecoration.Enabled = true;
-            btnSalvarCadastro.Size = new System.Drawing.Size(430, 40);
-            btnSalvarCadastro.TabIndex = 50;
-            btnSalvarCadastro.Text = "SALVAR";
-            // 
-            // txtPessoasDomicilio
-            // 
-            txtPessoasDomicilio.BackColor = System.Drawing.Color.Transparent;
-            txtPessoasDomicilio.BorderColor = System.Drawing.Color.Gainsboro;
-            txtPessoasDomicilio.BorderRadius = 10;
-            txtPessoasDomicilio.CustomizableEdges = customizableEdges55;
-            txtPessoasDomicilio.DefaultText = "";
-            txtPessoasDomicilio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtPessoasDomicilio.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtPessoasDomicilio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtPessoasDomicilio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtPessoasDomicilio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPessoasDomicilio.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtPessoasDomicilio.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtPessoasDomicilio.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtPessoasDomicilio.Location = new System.Drawing.Point(205, 225);
-            txtPessoasDomicilio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtPessoasDomicilio.Name = "txtPessoasDomicilio";
-            txtPessoasDomicilio.PlaceholderText = "";
-            txtPessoasDomicilio.SelectedText = "";
-            txtPessoasDomicilio.ShadowDecoration.BorderRadius = 10;
-            txtPessoasDomicilio.ShadowDecoration.CustomizableEdges = customizableEdges56;
-            txtPessoasDomicilio.ShadowDecoration.Depth = 5;
-            txtPessoasDomicilio.ShadowDecoration.Enabled = true;
-            txtPessoasDomicilio.Size = new System.Drawing.Size(165, 36);
-            txtPessoasDomicilio.TabIndex = 21;
-            // 
-            // txtTrabalho
-            // 
-            txtTrabalho.BackColor = System.Drawing.Color.Transparent;
-            txtTrabalho.BorderColor = System.Drawing.Color.Gainsboro;
-            txtTrabalho.BorderRadius = 10;
-            txtTrabalho.CustomizableEdges = customizableEdges57;
-            txtTrabalho.DefaultText = "";
-            txtTrabalho.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtTrabalho.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtTrabalho.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtTrabalho.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtTrabalho.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtTrabalho.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtTrabalho.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtTrabalho.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtTrabalho.Location = new System.Drawing.Point(20, 150);
-            txtTrabalho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtTrabalho.Name = "txtTrabalho";
-            txtTrabalho.PlaceholderText = "";
-            txtTrabalho.SelectedText = "";
-            txtTrabalho.ShadowDecoration.BorderRadius = 10;
-            txtTrabalho.ShadowDecoration.CustomizableEdges = customizableEdges58;
-            txtTrabalho.ShadowDecoration.Depth = 5;
-            txtTrabalho.ShadowDecoration.Enabled = true;
-            txtTrabalho.Size = new System.Drawing.Size(350, 36);
-            txtTrabalho.TabIndex = 3;
-            // 
-            // txtEscolaridade
-            // 
-            txtEscolaridade.BackColor = System.Drawing.Color.Transparent;
-            txtEscolaridade.BorderColor = System.Drawing.Color.Gainsboro;
-            txtEscolaridade.BorderRadius = 10;
-            txtEscolaridade.CustomizableEdges = customizableEdges59;
-            txtEscolaridade.DefaultText = "";
-            txtEscolaridade.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtEscolaridade.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtEscolaridade.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEscolaridade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEscolaridade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEscolaridade.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtEscolaridade.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtEscolaridade.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEscolaridade.Location = new System.Drawing.Point(20, 75);
-            txtEscolaridade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtEscolaridade.Name = "txtEscolaridade";
-            txtEscolaridade.PlaceholderText = "";
-            txtEscolaridade.SelectedText = "";
-            txtEscolaridade.ShadowDecoration.BorderRadius = 10;
-            txtEscolaridade.ShadowDecoration.CustomizableEdges = customizableEdges60;
-            txtEscolaridade.ShadowDecoration.Depth = 5;
-            txtEscolaridade.ShadowDecoration.Enabled = true;
-            txtEscolaridade.Size = new System.Drawing.Size(350, 36);
-            txtEscolaridade.TabIndex = 4;
-            // 
             // ViewTriagem
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1573,6 +1569,7 @@
             Name = "ViewTriagem";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
+            Load += ViewTriagem_Load;
             pnlInfoPessoal.ResumeLayout(false);
             pnlInfoPessoal.PerformLayout();
             pnlAvaliacao.ResumeLayout(false);

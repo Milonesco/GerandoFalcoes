@@ -14,6 +14,7 @@ namespace Transformese.Data
         public DbSet<Candidato> Candidatos { get; set; }
 
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<UnidadeParceira> UnidadesParceiras { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

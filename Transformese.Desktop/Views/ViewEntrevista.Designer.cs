@@ -56,7 +56,7 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             flpEntrevistas = new System.Windows.Forms.FlowLayoutPanel();
             pnlCardModelo = new Guna.UI2.WinForms.Guna2Panel();
-            btnIniciarEntrevista1 = new Guna.UI2.WinForms.Guna2Button();
+            btnIniciarTriagem = new Guna.UI2.WinForms.Guna2Button();
             lblVagaCandidato1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNomeCandidato1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataEntrevista1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -118,6 +118,7 @@
             dtpFiltroData.Size = new System.Drawing.Size(130, 40);
             dtpFiltroData.TabIndex = 0;
             dtpFiltroData.Value = new System.DateTime(2025, 12, 3, 12, 3, 48, 921);
+            dtpFiltroData.ValueChanged += dtpFiltroData_ValueChanged_1;
             // 
             // guna2HtmlLabel2
             // 
@@ -157,7 +158,7 @@
             // 
             pnlCardModelo.BackColor = System.Drawing.Color.Transparent;
             pnlCardModelo.BorderRadius = 10;
-            pnlCardModelo.Controls.Add(btnIniciarEntrevista1);
+            pnlCardModelo.Controls.Add(btnIniciarTriagem);
             pnlCardModelo.Controls.Add(lblVagaCandidato1);
             pnlCardModelo.Controls.Add(lblNomeCandidato1);
             pnlCardModelo.Controls.Add(lblDataEntrevista1);
@@ -175,25 +176,25 @@
             pnlCardModelo.Size = new System.Drawing.Size(300, 160);
             pnlCardModelo.TabIndex = 0;
             // 
-            // btnIniciarEntrevista1
+            // btnIniciarTriagem
             // 
-            btnIniciarEntrevista1.BorderRadius = 5;
-            btnIniciarEntrevista1.CustomizableEdges = customizableEdges5;
-            btnIniciarEntrevista1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnIniciarEntrevista1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnIniciarEntrevista1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnIniciarEntrevista1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnIniciarEntrevista1.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            btnIniciarEntrevista1.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnIniciarEntrevista1.ForeColor = System.Drawing.Color.White;
-            btnIniciarEntrevista1.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnIniciarEntrevista1.HoverState.ForeColor = System.Drawing.Color.White;
-            btnIniciarEntrevista1.Location = new System.Drawing.Point(20, 115);
-            btnIniciarEntrevista1.Name = "btnIniciarEntrevista1";
-            btnIniciarEntrevista1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnIniciarEntrevista1.Size = new System.Drawing.Size(260, 35);
-            btnIniciarEntrevista1.TabIndex = 8;
-            btnIniciarEntrevista1.Text = "Iniciar Avaliação";
+            btnIniciarTriagem.BorderRadius = 5;
+            btnIniciarTriagem.CustomizableEdges = customizableEdges5;
+            btnIniciarTriagem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarTriagem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnIniciarTriagem.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnIniciarTriagem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnIniciarTriagem.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            btnIniciarTriagem.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnIniciarTriagem.ForeColor = System.Drawing.Color.White;
+            btnIniciarTriagem.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnIniciarTriagem.HoverState.ForeColor = System.Drawing.Color.White;
+            btnIniciarTriagem.Location = new System.Drawing.Point(20, 115);
+            btnIniciarTriagem.Name = "btnIniciarTriagem";
+            btnIniciarTriagem.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnIniciarTriagem.Size = new System.Drawing.Size(260, 35);
+            btnIniciarTriagem.TabIndex = 8;
+            btnIniciarTriagem.Text = "Iniciar Triagem";
             // 
             // lblVagaCandidato1
             // 
@@ -291,7 +292,6 @@
             btnVerDetalhes.Size = new System.Drawing.Size(260, 35);
             btnVerDetalhes.TabIndex = 8;
             btnVerDetalhes.Text = "Ver Detalhes";
-            btnVerDetalhes.Click += btnIniciarEntrevista2_Click;
             // 
             // lblVagaCandidato2
             // 
@@ -455,6 +455,7 @@
             Name = "ViewEntrevista";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
+            Load += ViewEntrevista_Load_1;
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
             flpEntrevistas.ResumeLayout(false);
@@ -480,7 +481,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario1;
-        private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista1;
+        private Guna.UI2.WinForms.Guna2Button btnIniciarTriagem;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnVerDetalhes;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato2;

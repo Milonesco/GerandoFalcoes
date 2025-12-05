@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transformese.Data;
 
@@ -11,9 +12,11 @@ using Transformese.Data;
 namespace Transformese.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251205093428_AdicionandoMaisCamposTriagem")]
+    partial class AdicionandoMaisCamposTriagem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,9 +86,6 @@ namespace Transformese.Data.Migrations
                     b.Property<string>("NomeOngResponsavel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ObservacoesONG")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("OrientacaoSexual")
                         .HasColumnType("nvarchar(max)");
 
@@ -93,9 +93,6 @@ namespace Transformese.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PessoasNaCasa")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Pontuacao")
                         .HasColumnType("int");
 
                     b.Property<bool>("PossuiComputador")
@@ -177,12 +174,12 @@ namespace Transformese.Data.Migrations
                         {
                             Id = 1,
                             Ativo = true,
-                            DataCadastro = new DateTime(2025, 12, 5, 6, 43, 9, 129, DateTimeKind.Local).AddTicks(9566),
+                            DataCadastro = new DateTime(2025, 12, 5, 6, 34, 28, 280, DateTimeKind.Local).AddTicks(9468),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EhAdministrador = true,
                             Email = "admin@admingerando.falcoes",
                             Nome = "Admin",
-                            Senha = "$2a$11$4LHWGMUAqH1mFegwo7pXm.Gal0yVc3woBL1SQePF.yEZdsoUc9/j2",
+                            Senha = "$2a$11$THyQeeHXVbg.c39HbDfUtuRJmE57iPRbO9GjKtngc9a80mpX1EmQa",
                             Sexo = "Outro",
                             Sobrenome = "Geral"
                         });

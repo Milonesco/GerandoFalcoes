@@ -126,11 +126,6 @@
             pnlConteudoPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             pnlTabelaInscricoes = new Guna.UI2.WinForms.Guna2Panel();
             dgvInscricoes = new Guna.UI2.WinForms.Guna2DataGridView();
-            colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colAcoes = new System.Windows.Forms.DataGridViewButtonColumn();
             pnlHeaderTabela = new Guna.UI2.WinForms.Guna2Panel();
             lblTituloTabela = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlEspacador = new Guna.UI2.WinForms.Guna2Panel();
@@ -138,6 +133,10 @@
             btnSincronizar = new Guna.UI2.WinForms.Guna2Button();
             lblStatusSync = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pbNuvem = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             flowKpiCards.SuspendLayout();
             pnlKpiCardModelo.SuspendLayout();
             pnlKpiTriagem.SuspendLayout();
@@ -725,6 +724,7 @@
             btnBuscar.Size = new System.Drawing.Size(35, 35);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "🔍︎";
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtBusca
             // 
@@ -806,7 +806,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvInscricoes.ColumnHeadersHeight = 30;
-            dgvInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colNome, colCidade, colStatus, colOng, colAcoes });
+            dgvInscricoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colNome, colCidade, colStatus, colOng });
             dgvInscricoes.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -845,42 +845,6 @@
             dgvInscricoes.ThemeStyle.RowsStyle.Height = 25;
             dgvInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
             dgvInscricoes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
-            // 
-            // colNome
-            // 
-            colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            colNome.FillWeight = 449.238617F;
-            colNome.HeaderText = "CANDIDATO";
-            colNome.MinimumWidth = 200;
-            colNome.Name = "colNome";
-            // 
-            // colCidade
-            // 
-            colCidade.FillWeight = 2.9438467F;
-            colCidade.HeaderText = "CIDADE";
-            colCidade.MinimumWidth = 100;
-            colCidade.Name = "colCidade";
-            // 
-            // colStatus
-            // 
-            colStatus.FillWeight = 29.4714565F;
-            colStatus.HeaderText = "STATUS";
-            colStatus.MinimumWidth = 90;
-            colStatus.Name = "colStatus";
-            // 
-            // colOng
-            // 
-            colOng.FillWeight = 17.7666035F;
-            colOng.HeaderText = "ONG RESP.";
-            colOng.MinimumWidth = 100;
-            colOng.Name = "colOng";
-            // 
-            // colAcoes
-            // 
-            colAcoes.FillWeight = 0.5795342F;
-            colAcoes.HeaderText = "AÇÃO";
-            colAcoes.MinimumWidth = 50;
-            colAcoes.Name = "colAcoes";
             // 
             // pnlHeaderTabela
             // 
@@ -986,6 +950,35 @@
             pbNuvem.TabIndex = 0;
             pbNuvem.TabStop = false;
             // 
+            // colNome
+            // 
+            colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colNome.FillWeight = 449.238617F;
+            colNome.HeaderText = "CANDIDATO";
+            colNome.MinimumWidth = 200;
+            colNome.Name = "colNome";
+            // 
+            // colCidade
+            // 
+            colCidade.FillWeight = 2.9438467F;
+            colCidade.HeaderText = "CIDADE";
+            colCidade.MinimumWidth = 100;
+            colCidade.Name = "colCidade";
+            // 
+            // colStatus
+            // 
+            colStatus.FillWeight = 29.4714565F;
+            colStatus.HeaderText = "STATUS";
+            colStatus.MinimumWidth = 90;
+            colStatus.Name = "colStatus";
+            // 
+            // colOng
+            // 
+            colOng.FillWeight = 17.7666035F;
+            colOng.HeaderText = "ONG RESP.";
+            colOng.MinimumWidth = 100;
+            colOng.Name = "colOng";
+            // 
             // ViewHome
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -998,7 +991,6 @@
             Name = "ViewHome";
             Padding = new System.Windows.Forms.Padding(20);
             Size = new System.Drawing.Size(980, 740);
-            Load += ViewHome_Load_1;
             flowKpiCards.ResumeLayout(false);
             pnlKpiCardModelo.ResumeLayout(false);
             pnlKpiCardModelo.PerformLayout();
@@ -1066,11 +1058,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTituloTabela;
         private Guna.UI2.WinForms.Guna2Panel pnlHeaderTabela;
         private Guna.UI2.WinForms.Guna2Panel pnlAlerta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOng;
-        private System.Windows.Forms.DataGridViewButtonColumn colAcoes;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbNuvem;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatusSync;
         private Guna.UI2.WinForms.Guna2Button btnSincronizar;
@@ -1096,5 +1083,9 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOng;
     }
 }

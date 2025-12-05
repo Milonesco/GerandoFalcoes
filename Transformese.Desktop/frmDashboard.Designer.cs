@@ -36,8 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,8 +54,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pnlContent = new Guna.UI2.WinForms.Guna2Panel();
             pnlUserInfo = new Guna.UI2.WinForms.Guna2Panel();
@@ -74,7 +72,6 @@
             btnNovoCandidato = new Guna.UI2.WinForms.Guna2Button();
             btnEntrevistas = new Guna.UI2.WinForms.Guna2Button();
             btnTriagem = new Guna.UI2.WinForms.Guna2Button();
-            btnIncricoes = new Guna.UI2.WinForms.Guna2Button();
             btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             pnlLogo = new Guna.UI2.WinForms.Guna2Panel();
             lblSubTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -206,14 +203,13 @@
             pnlSidebar.Controls.Add(btnNovoCandidato);
             pnlSidebar.Controls.Add(btnEntrevistas);
             pnlSidebar.Controls.Add(btnTriagem);
-            pnlSidebar.Controls.Add(btnIncricoes);
             pnlSidebar.Controls.Add(btnDashboard);
             pnlSidebar.Controls.Add(pnlLogo);
-            pnlSidebar.CustomizableEdges = customizableEdges26;
+            pnlSidebar.CustomizableEdges = customizableEdges24;
             pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             pnlSidebar.Location = new System.Drawing.Point(0, 0);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            pnlSidebar.ShadowDecoration.CustomizableEdges = customizableEdges25;
             pnlSidebar.Size = new System.Drawing.Size(220, 800);
             pnlSidebar.TabIndex = 2;
             // 
@@ -267,7 +263,7 @@
             btnRelatorios.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnRelatorios.ForeColor = System.Drawing.Color.White;
             btnRelatorios.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnRelatorios.Location = new System.Drawing.Point(0, 450);
+            btnRelatorios.Location = new System.Drawing.Point(0, 420);
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnRelatorios.Size = new System.Drawing.Size(220, 50);
@@ -291,7 +287,7 @@
             btnGestaoOngs.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnGestaoOngs.ForeColor = System.Drawing.Color.White;
             btnGestaoOngs.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnGestaoOngs.Location = new System.Drawing.Point(0, 400);
+            btnGestaoOngs.Location = new System.Drawing.Point(3, 364);
             btnGestaoOngs.Name = "btnGestaoOngs";
             btnGestaoOngs.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnGestaoOngs.Size = new System.Drawing.Size(220, 50);
@@ -315,7 +311,7 @@
             btnNovoCandidato.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnNovoCandidato.ForeColor = System.Drawing.Color.White;
             btnNovoCandidato.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnNovoCandidato.Location = new System.Drawing.Point(0, 350);
+            btnNovoCandidato.Location = new System.Drawing.Point(0, 308);
             btnNovoCandidato.Name = "btnNovoCandidato";
             btnNovoCandidato.ShadowDecoration.CustomizableEdges = customizableEdges15;
             btnNovoCandidato.Size = new System.Drawing.Size(220, 50);
@@ -339,7 +335,7 @@
             btnEntrevistas.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnEntrevistas.ForeColor = System.Drawing.Color.White;
             btnEntrevistas.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnEntrevistas.Location = new System.Drawing.Point(0, 290);
+            btnEntrevistas.Location = new System.Drawing.Point(0, 252);
             btnEntrevistas.Name = "btnEntrevistas";
             btnEntrevistas.ShadowDecoration.CustomizableEdges = customizableEdges17;
             btnEntrevistas.Size = new System.Drawing.Size(220, 50);
@@ -363,7 +359,7 @@
             btnTriagem.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnTriagem.ForeColor = System.Drawing.Color.White;
             btnTriagem.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnTriagem.Location = new System.Drawing.Point(0, 240);
+            btnTriagem.Location = new System.Drawing.Point(3, 196);
             btnTriagem.Name = "btnTriagem";
             btnTriagem.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnTriagem.Size = new System.Drawing.Size(220, 50);
@@ -372,37 +368,13 @@
             btnTriagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnTriagem.Click += btnTriagem_Click;
             // 
-            // btnIncricoes
-            // 
-            btnIncricoes.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnIncricoes.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnIncricoes.CheckedState.ForeColor = System.Drawing.Color.White;
-            btnIncricoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnIncricoes.CustomizableEdges = customizableEdges20;
-            btnIncricoes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnIncricoes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnIncricoes.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnIncricoes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnIncricoes.FillColor = System.Drawing.Color.Transparent;
-            btnIncricoes.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnIncricoes.ForeColor = System.Drawing.Color.White;
-            btnIncricoes.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnIncricoes.Location = new System.Drawing.Point(0, 190);
-            btnIncricoes.Name = "btnIncricoes";
-            btnIncricoes.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            btnIncricoes.Size = new System.Drawing.Size(220, 50);
-            btnIncricoes.TabIndex = 3;
-            btnIncricoes.Text = "Inscrições Recebidas";
-            btnIncricoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            btnIncricoes.Click += btnInscricoes_Click;
-            // 
             // btnDashboard
             // 
             btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnDashboard.CheckedState.ForeColor = System.Drawing.Color.White;
             btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnDashboard.CustomizableEdges = customizableEdges22;
+            btnDashboard.CustomizableEdges = customizableEdges20;
             btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -413,7 +385,7 @@
             btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnDashboard.Location = new System.Drawing.Point(0, 140);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnDashboard.Size = new System.Drawing.Size(220, 50);
             btnDashboard.TabIndex = 2;
             btnDashboard.Text = "Dashboard";
@@ -425,10 +397,10 @@
             pnlLogo.BackColor = System.Drawing.Color.Transparent;
             pnlLogo.Controls.Add(lblSubTitulo);
             pnlLogo.Controls.Add(lblTituloLogo);
-            pnlLogo.CustomizableEdges = customizableEdges24;
+            pnlLogo.CustomizableEdges = customizableEdges22;
             pnlLogo.Location = new System.Drawing.Point(0, 0);
             pnlLogo.Name = "pnlLogo";
-            pnlLogo.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            pnlLogo.ShadowDecoration.CustomizableEdges = customizableEdges23;
             pnlLogo.Size = new System.Drawing.Size(220, 120);
             pnlLogo.TabIndex = 2;
             // 
@@ -505,7 +477,6 @@
         private Guna.UI2.WinForms.Guna2Button btnNovoCandidato;
         private Guna.UI2.WinForms.Guna2Button btnEntrevistas;
         private Guna.UI2.WinForms.Guna2Button btnTriagem;
-        private Guna.UI2.WinForms.Guna2Button btnIncricoes;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Panel pnlLogo;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSubTitulo;
