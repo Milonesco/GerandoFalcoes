@@ -16,7 +16,7 @@ namespace Transformese.MVC.Controllers
 
             // Tenta pegar a URL do appsettings. Se não achar, usa o padrão da API local.
             // IMPORTANTE: Verifique se sua API roda na porta 7001, 5000 ou 5001.
-            _apiBaseUrl = configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7001";
+            _apiBaseUrl = configuration["ApiSettings:BaseUrl"] ?? "https://localhost:5001";
         }
 
         // GET: Exibe o formulário
@@ -33,6 +33,10 @@ namespace Transformese.MVC.Controllers
 
             try
             {
+                if (string.IsNullOrEmpty(model.NomeIndicacao))
+                {
+                    model.NomeIndicacao = "";
+                }
                 // 1. Cria o cliente HTTP da forma correta (via fábrica)
                 var client = _httpClientFactory.CreateClient();
                 client.BaseAddress = new Uri(_apiBaseUrl);

@@ -28,33 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             dtpFiltroData = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            btnAgendar = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             flpEntrevistas = new System.Windows.Forms.FlowLayoutPanel();
@@ -66,14 +63,14 @@
             lblHorario1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlStatusIndicator1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            btnIniciarEntrevista2 = new Guna.UI2.WinForms.Guna2Button();
+            btnVerDetalhes = new Guna.UI2.WinForms.Guna2Button();
             lblVagaCandidato2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNomeCandidato2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataEntrevista2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblHorario2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlStatusIndicator2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            btnVerDetalhes = new Guna.UI2.WinForms.Guna2Button();
+            btnAgendarEntrevista = new Guna.UI2.WinForms.Guna2Button();
             lblVagaCandidato3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNomeCandidato3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataEntrevista3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -89,14 +86,13 @@
             // pnlHeader
             // 
             pnlHeader.Controls.Add(dtpFiltroData);
-            pnlHeader.Controls.Add(btnAgendar);
             pnlHeader.Controls.Add(guna2HtmlLabel2);
             pnlHeader.Controls.Add(guna2HtmlLabel1);
-            pnlHeader.CustomizableEdges = customizableEdges29;
+            pnlHeader.CustomizableEdges = customizableEdges3;
             pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             pnlHeader.Location = new System.Drawing.Point(20, 20);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges4;
             pnlHeader.Size = new System.Drawing.Size(940, 70);
             pnlHeader.TabIndex = 0;
             // 
@@ -106,45 +102,22 @@
             dtpFiltroData.BorderRadius = 10;
             dtpFiltroData.Checked = true;
             dtpFiltroData.Cursor = System.Windows.Forms.Cursors.Hand;
-            dtpFiltroData.CustomizableEdges = customizableEdges25;
+            dtpFiltroData.CustomizableEdges = customizableEdges1;
             dtpFiltroData.FillColor = System.Drawing.Color.Gray;
             dtpFiltroData.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             dtpFiltroData.ForeColor = System.Drawing.Color.White;
             dtpFiltroData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpFiltroData.Location = new System.Drawing.Point(655, 15);
+            dtpFiltroData.Location = new System.Drawing.Point(807, 15);
             dtpFiltroData.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFiltroData.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFiltroData.Name = "dtpFiltroData";
             dtpFiltroData.ShadowDecoration.BorderRadius = 10;
-            dtpFiltroData.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            dtpFiltroData.ShadowDecoration.CustomizableEdges = customizableEdges2;
             dtpFiltroData.ShadowDecoration.Depth = 5;
             dtpFiltroData.ShadowDecoration.Enabled = true;
             dtpFiltroData.Size = new System.Drawing.Size(130, 40);
             dtpFiltroData.TabIndex = 0;
             dtpFiltroData.Value = new System.DateTime(2025, 12, 3, 12, 3, 48, 921);
-            // 
-            // btnAgendar
-            // 
-            btnAgendar.BackColor = System.Drawing.Color.Transparent;
-            btnAgendar.BorderRadius = 10;
-            btnAgendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnAgendar.CustomizableEdges = customizableEdges27;
-            btnAgendar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnAgendar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnAgendar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnAgendar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnAgendar.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
-            btnAgendar.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnAgendar.ForeColor = System.Drawing.Color.White;
-            btnAgendar.Location = new System.Drawing.Point(800, 15);
-            btnAgendar.Name = "btnAgendar";
-            btnAgendar.ShadowDecoration.BorderRadius = 10;
-            btnAgendar.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            btnAgendar.ShadowDecoration.Depth = 5;
-            btnAgendar.ShadowDecoration.Enabled = true;
-            btnAgendar.Size = new System.Drawing.Size(140, 40);
-            btnAgendar.TabIndex = 2;
-            btnAgendar.Text = "+ Agendar";
             // 
             // guna2HtmlLabel2
             // 
@@ -190,13 +163,13 @@
             pnlCardModelo.Controls.Add(lblDataEntrevista1);
             pnlCardModelo.Controls.Add(lblHorario1);
             pnlCardModelo.Controls.Add(pnlStatusIndicator1);
-            pnlCardModelo.CustomizableEdges = customizableEdges35;
+            pnlCardModelo.CustomizableEdges = customizableEdges9;
             pnlCardModelo.FillColor = System.Drawing.Color.White;
             pnlCardModelo.Location = new System.Drawing.Point(0, 0);
             pnlCardModelo.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
             pnlCardModelo.Name = "pnlCardModelo";
             pnlCardModelo.ShadowDecoration.BorderRadius = 10;
-            pnlCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            pnlCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnlCardModelo.ShadowDecoration.Depth = 10;
             pnlCardModelo.ShadowDecoration.Enabled = true;
             pnlCardModelo.Size = new System.Drawing.Size(300, 160);
@@ -205,7 +178,7 @@
             // btnIniciarEntrevista1
             // 
             btnIniciarEntrevista1.BorderRadius = 5;
-            btnIniciarEntrevista1.CustomizableEdges = customizableEdges31;
+            btnIniciarEntrevista1.CustomizableEdges = customizableEdges5;
             btnIniciarEntrevista1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnIniciarEntrevista1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnIniciarEntrevista1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -217,7 +190,7 @@
             btnIniciarEntrevista1.HoverState.ForeColor = System.Drawing.Color.White;
             btnIniciarEntrevista1.Location = new System.Drawing.Point(20, 115);
             btnIniciarEntrevista1.Name = "btnIniciarEntrevista1";
-            btnIniciarEntrevista1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnIniciarEntrevista1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnIniciarEntrevista1.Size = new System.Drawing.Size(260, 35);
             btnIniciarEntrevista1.TabIndex = 8;
             btnIniciarEntrevista1.Text = "Iniciar Avaliação";
@@ -229,9 +202,9 @@
             lblVagaCandidato1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             lblVagaCandidato1.Location = new System.Drawing.Point(20, 87);
             lblVagaCandidato1.Name = "lblVagaCandidato1";
-            lblVagaCandidato1.Size = new System.Drawing.Size(174, 24);
+            lblVagaCandidato1.Size = new System.Drawing.Size(232, 24);
             lblVagaCandidato1.TabIndex = 7;
-            lblVagaCandidato1.Text = "Vaga: Desenvolvimento Web";
+            lblVagaCandidato1.Text = "Vaga desejada: Desenvolvimento Web";
             // 
             // lblNomeCandidato1
             // 
@@ -268,12 +241,12 @@
             // 
             // pnlStatusIndicator1
             // 
-            pnlStatusIndicator1.CustomizableEdges = customizableEdges33;
+            pnlStatusIndicator1.CustomizableEdges = customizableEdges7;
             pnlStatusIndicator1.Dock = System.Windows.Forms.DockStyle.Left;
             pnlStatusIndicator1.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
             pnlStatusIndicator1.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator1.Name = "pnlStatusIndicator1";
-            pnlStatusIndicator1.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            pnlStatusIndicator1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnlStatusIndicator1.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator1.TabIndex = 3;
             // 
@@ -281,43 +254,44 @@
             // 
             guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             guna2Panel1.BorderRadius = 10;
-            guna2Panel1.Controls.Add(btnIniciarEntrevista2);
+            guna2Panel1.Controls.Add(btnVerDetalhes);
             guna2Panel1.Controls.Add(lblVagaCandidato2);
             guna2Panel1.Controls.Add(lblNomeCandidato2);
             guna2Panel1.Controls.Add(lblDataEntrevista2);
             guna2Panel1.Controls.Add(lblHorario2);
             guna2Panel1.Controls.Add(pnlStatusIndicator2);
-            guna2Panel1.CustomizableEdges = customizableEdges41;
+            guna2Panel1.CustomizableEdges = customizableEdges15;
             guna2Panel1.FillColor = System.Drawing.Color.White;
             guna2Panel1.Location = new System.Drawing.Point(320, 0);
             guna2Panel1.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.BorderRadius = 10;
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Panel1.ShadowDecoration.Depth = 10;
             guna2Panel1.ShadowDecoration.Enabled = true;
             guna2Panel1.Size = new System.Drawing.Size(300, 160);
             guna2Panel1.TabIndex = 1;
             // 
-            // btnIniciarEntrevista2
+            // btnVerDetalhes
             // 
-            btnIniciarEntrevista2.BorderRadius = 5;
-            btnIniciarEntrevista2.CustomizableEdges = customizableEdges37;
-            btnIniciarEntrevista2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnIniciarEntrevista2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnIniciarEntrevista2.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnIniciarEntrevista2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnIniciarEntrevista2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
-            btnIniciarEntrevista2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnIniciarEntrevista2.ForeColor = System.Drawing.Color.White;
-            btnIniciarEntrevista2.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnIniciarEntrevista2.HoverState.ForeColor = System.Drawing.Color.White;
-            btnIniciarEntrevista2.Location = new System.Drawing.Point(20, 115);
-            btnIniciarEntrevista2.Name = "btnIniciarEntrevista2";
-            btnIniciarEntrevista2.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            btnIniciarEntrevista2.Size = new System.Drawing.Size(260, 35);
-            btnIniciarEntrevista2.TabIndex = 8;
-            btnIniciarEntrevista2.Text = "Iniciar Avaliação";
+            btnVerDetalhes.BorderRadius = 5;
+            btnVerDetalhes.CustomizableEdges = customizableEdges11;
+            btnVerDetalhes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnVerDetalhes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnVerDetalhes.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnVerDetalhes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnVerDetalhes.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
+            btnVerDetalhes.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnVerDetalhes.ForeColor = System.Drawing.Color.White;
+            btnVerDetalhes.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnVerDetalhes.HoverState.ForeColor = System.Drawing.Color.White;
+            btnVerDetalhes.Location = new System.Drawing.Point(20, 115);
+            btnVerDetalhes.Name = "btnVerDetalhes";
+            btnVerDetalhes.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnVerDetalhes.Size = new System.Drawing.Size(260, 35);
+            btnVerDetalhes.TabIndex = 8;
+            btnVerDetalhes.Text = "Ver Detalhes";
+            btnVerDetalhes.Click += btnIniciarEntrevista2_Click;
             // 
             // lblVagaCandidato2
             // 
@@ -326,9 +300,9 @@
             lblVagaCandidato2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             lblVagaCandidato2.Location = new System.Drawing.Point(20, 87);
             lblVagaCandidato2.Name = "lblVagaCandidato2";
-            lblVagaCandidato2.Size = new System.Drawing.Size(172, 24);
+            lblVagaCandidato2.Size = new System.Drawing.Size(230, 24);
             lblVagaCandidato2.TabIndex = 7;
-            lblVagaCandidato2.Text = "Vaga: Analista de Qualidade";
+            lblVagaCandidato2.Text = "Vaga desejada: Analista de Qualidade";
             // 
             // lblNomeCandidato2
             // 
@@ -365,12 +339,12 @@
             // 
             // pnlStatusIndicator2
             // 
-            pnlStatusIndicator2.CustomizableEdges = customizableEdges39;
+            pnlStatusIndicator2.CustomizableEdges = customizableEdges13;
             pnlStatusIndicator2.Dock = System.Windows.Forms.DockStyle.Left;
-            pnlStatusIndicator2.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
+            pnlStatusIndicator2.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
             pnlStatusIndicator2.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator2.Name = "pnlStatusIndicator2";
-            pnlStatusIndicator2.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            pnlStatusIndicator2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             pnlStatusIndicator2.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator2.TabIndex = 3;
             // 
@@ -378,43 +352,43 @@
             // 
             guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             guna2Panel3.BorderRadius = 10;
-            guna2Panel3.Controls.Add(btnVerDetalhes);
+            guna2Panel3.Controls.Add(btnAgendarEntrevista);
             guna2Panel3.Controls.Add(lblVagaCandidato3);
             guna2Panel3.Controls.Add(lblNomeCandidato3);
             guna2Panel3.Controls.Add(lblDataEntrevista3);
             guna2Panel3.Controls.Add(lblHorario3);
             guna2Panel3.Controls.Add(pnlStatusIndicator3);
-            guna2Panel3.CustomizableEdges = customizableEdges47;
+            guna2Panel3.CustomizableEdges = customizableEdges21;
             guna2Panel3.FillColor = System.Drawing.Color.White;
             guna2Panel3.Location = new System.Drawing.Point(640, 0);
             guna2Panel3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.BorderRadius = 10;
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel3.ShadowDecoration.Depth = 10;
             guna2Panel3.ShadowDecoration.Enabled = true;
             guna2Panel3.Size = new System.Drawing.Size(300, 160);
             guna2Panel3.TabIndex = 2;
             // 
-            // btnVerDetalhes
+            // btnAgendarEntrevista
             // 
-            btnVerDetalhes.BorderRadius = 5;
-            btnVerDetalhes.CustomizableEdges = customizableEdges43;
-            btnVerDetalhes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnVerDetalhes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnVerDetalhes.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnVerDetalhes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnVerDetalhes.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
-            btnVerDetalhes.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnVerDetalhes.ForeColor = System.Drawing.Color.White;
-            btnVerDetalhes.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnVerDetalhes.HoverState.ForeColor = System.Drawing.Color.White;
-            btnVerDetalhes.Location = new System.Drawing.Point(20, 115);
-            btnVerDetalhes.Name = "btnVerDetalhes";
-            btnVerDetalhes.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            btnVerDetalhes.Size = new System.Drawing.Size(260, 35);
-            btnVerDetalhes.TabIndex = 8;
-            btnVerDetalhes.Text = "Ver Detalhes";
+            btnAgendarEntrevista.BorderRadius = 5;
+            btnAgendarEntrevista.CustomizableEdges = customizableEdges17;
+            btnAgendarEntrevista.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnAgendarEntrevista.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnAgendarEntrevista.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnAgendarEntrevista.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnAgendarEntrevista.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            btnAgendarEntrevista.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAgendarEntrevista.ForeColor = System.Drawing.Color.White;
+            btnAgendarEntrevista.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnAgendarEntrevista.HoverState.ForeColor = System.Drawing.Color.White;
+            btnAgendarEntrevista.Location = new System.Drawing.Point(20, 115);
+            btnAgendarEntrevista.Name = "btnAgendarEntrevista";
+            btnAgendarEntrevista.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnAgendarEntrevista.Size = new System.Drawing.Size(260, 35);
+            btnAgendarEntrevista.TabIndex = 8;
+            btnAgendarEntrevista.Text = "Agendar Entrevista";
             // 
             // lblVagaCandidato3
             // 
@@ -423,9 +397,9 @@
             lblVagaCandidato3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             lblVagaCandidato3.Location = new System.Drawing.Point(20, 87);
             lblVagaCandidato3.Name = "lblVagaCandidato3";
-            lblVagaCandidato3.Size = new System.Drawing.Size(185, 24);
+            lblVagaCandidato3.Size = new System.Drawing.Size(243, 24);
             lblVagaCandidato3.TabIndex = 7;
-            lblVagaCandidato3.Text = "Vaga: Programação Full-Stack\r\n";
+            lblVagaCandidato3.Text = "Vaga desejada: Programação Full-Stack\r\n";
             // 
             // lblNomeCandidato3
             // 
@@ -462,12 +436,12 @@
             // 
             // pnlStatusIndicator3
             // 
-            pnlStatusIndicator3.CustomizableEdges = customizableEdges45;
+            pnlStatusIndicator3.CustomizableEdges = customizableEdges19;
             pnlStatusIndicator3.Dock = System.Windows.Forms.DockStyle.Left;
             pnlStatusIndicator3.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
             pnlStatusIndicator3.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator3.Name = "pnlStatusIndicator3";
-            pnlStatusIndicator3.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            pnlStatusIndicator3.ShadowDecoration.CustomizableEdges = customizableEdges20;
             pnlStatusIndicator3.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator3.TabIndex = 3;
             // 
@@ -497,7 +471,6 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnlHeader;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Button btnAgendar;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFiltroData;
         private System.Windows.Forms.FlowLayoutPanel flpEntrevistas;
@@ -509,14 +482,14 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario1;
         private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnIniciarEntrevista2;
+        private Guna.UI2.WinForms.Guna2Button btnVerDetalhes;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblHorario2;
         private Guna.UI2.WinForms.Guna2Panel pnlStatusIndicator2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button btnVerDetalhes;
+        private Guna.UI2.WinForms.Guna2Button btnAgendarEntrevista;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblVagaCandidato3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeCandidato3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataEntrevista3;

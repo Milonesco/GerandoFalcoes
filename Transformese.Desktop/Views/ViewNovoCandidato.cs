@@ -26,5 +26,10 @@ namespace Transformese.Desktop.Views
         {
 
         }
+
+        private void guna2HtmlLabel44_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

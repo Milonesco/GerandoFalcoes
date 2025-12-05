@@ -16,5 +16,10 @@ namespace Transformese.Desktop.Views
         {
             InitializeComponent();
         }
+
+        private void btnIniciarEntrevista2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

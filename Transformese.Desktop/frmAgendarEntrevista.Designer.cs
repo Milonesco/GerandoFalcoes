@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,11 +49,11 @@
             txtVaga = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtpDataAgendamento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            btnSalvar = new Guna.UI2.WinForms.Guna2Button();
+            txtVagaAgendamento = new Guna.UI2.WinForms.Guna2TextBox();
+            btnCancelarAgendamento = new Guna.UI2.WinForms.Guna2Button();
+            btnSalvarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -92,7 +92,7 @@
             // 
             cboCandidato.BackColor = System.Drawing.Color.Transparent;
             cboCandidato.BorderRadius = 10;
-            cboCandidato.CustomizableEdges = customizableEdges11;
+            cboCandidato.CustomizableEdges = customizableEdges13;
             cboCandidato.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboCandidato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboCandidato.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -103,7 +103,7 @@
             cboCandidato.Location = new System.Drawing.Point(20, 111);
             cboCandidato.Name = "cboCandidato";
             cboCandidato.ShadowDecoration.BorderRadius = 10;
-            cboCandidato.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cboCandidato.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cboCandidato.ShadowDecoration.Depth = 5;
             cboCandidato.ShadowDecoration.Enabled = true;
             cboCandidato.Size = new System.Drawing.Size(360, 36);
@@ -114,7 +114,7 @@
             txtVaga.BackColor = System.Drawing.Color.Transparent;
             txtVaga.BorderRadius = 10;
             txtVaga.Checked = true;
-            txtVaga.CustomizableEdges = customizableEdges9;
+            txtVaga.CustomizableEdges = customizableEdges15;
             txtVaga.FillColor = System.Drawing.Color.White;
             txtVaga.Font = new System.Drawing.Font("Segoe UI", 9F);
             txtVaga.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -123,7 +123,7 @@
             txtVaga.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             txtVaga.Name = "txtVaga";
             txtVaga.ShadowDecoration.BorderRadius = 10;
-            txtVaga.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtVaga.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtVaga.ShadowDecoration.Depth = 5;
             txtVaga.Size = new System.Drawing.Size(360, 36);
             txtVaga.TabIndex = 3;
@@ -152,26 +152,26 @@
             guna2HtmlLabel3.Text = "Hora";
             guna2HtmlLabel3.Click += guna2HtmlLabel3_Click;
             // 
-            // guna2DateTimePicker1
+            // dtpDataAgendamento
             // 
-            guna2DateTimePicker1.BackColor = System.Drawing.Color.Transparent;
-            guna2DateTimePicker1.BorderRadius = 10;
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges7;
-            guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            guna2DateTimePicker1.Location = new System.Drawing.Point(20, 271);
-            guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.BorderRadius = 10;
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2DateTimePicker1.ShadowDecoration.Depth = 5;
-            guna2DateTimePicker1.ShowUpDown = true;
-            guna2DateTimePicker1.Size = new System.Drawing.Size(360, 36);
-            guna2DateTimePicker1.TabIndex = 6;
-            guna2DateTimePicker1.Value = new System.DateTime(2025, 12, 3, 13, 39, 42, 37);
+            dtpDataAgendamento.BackColor = System.Drawing.Color.Transparent;
+            dtpDataAgendamento.BorderRadius = 10;
+            dtpDataAgendamento.Checked = true;
+            dtpDataAgendamento.CustomizableEdges = customizableEdges17;
+            dtpDataAgendamento.FillColor = System.Drawing.Color.White;
+            dtpDataAgendamento.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dtpDataAgendamento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            dtpDataAgendamento.Location = new System.Drawing.Point(20, 271);
+            dtpDataAgendamento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpDataAgendamento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpDataAgendamento.Name = "dtpDataAgendamento";
+            dtpDataAgendamento.ShadowDecoration.BorderRadius = 10;
+            dtpDataAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            dtpDataAgendamento.ShadowDecoration.Depth = 5;
+            dtpDataAgendamento.ShowUpDown = true;
+            dtpDataAgendamento.Size = new System.Drawing.Size(360, 36);
+            dtpDataAgendamento.TabIndex = 6;
+            dtpDataAgendamento.Value = new System.DateTime(2025, 12, 3, 13, 39, 42, 37);
             // 
             // guna2HtmlLabel4
             // 
@@ -184,85 +184,85 @@
             guna2HtmlLabel4.TabIndex = 7;
             guna2HtmlLabel4.Text = "Vaga / Cargo";
             // 
-            // guna2TextBox1
+            // txtVagaAgendamento
             // 
-            guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            guna2TextBox1.BorderRadius = 10;
-            guna2TextBox1.CustomizableEdges = customizableEdges5;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new System.Drawing.Point(20, 351);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "Ex: Desenvolvedor Web";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.BorderRadius = 10;
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2TextBox1.ShadowDecoration.Depth = 5;
-            guna2TextBox1.ShadowDecoration.Enabled = true;
-            guna2TextBox1.Size = new System.Drawing.Size(360, 36);
-            guna2TextBox1.TabIndex = 10;
+            txtVagaAgendamento.BackColor = System.Drawing.Color.Transparent;
+            txtVagaAgendamento.BorderRadius = 10;
+            txtVagaAgendamento.CustomizableEdges = customizableEdges19;
+            txtVagaAgendamento.DefaultText = "";
+            txtVagaAgendamento.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            txtVagaAgendamento.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            txtVagaAgendamento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtVagaAgendamento.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            txtVagaAgendamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtVagaAgendamento.Font = new System.Drawing.Font("Segoe UI", 9F);
+            txtVagaAgendamento.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            txtVagaAgendamento.Location = new System.Drawing.Point(20, 351);
+            txtVagaAgendamento.Name = "txtVagaAgendamento";
+            txtVagaAgendamento.PlaceholderText = "Ex: Desenvolvedor Web";
+            txtVagaAgendamento.SelectedText = "";
+            txtVagaAgendamento.ShadowDecoration.BorderRadius = 10;
+            txtVagaAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtVagaAgendamento.ShadowDecoration.Depth = 5;
+            txtVagaAgendamento.ShadowDecoration.Enabled = true;
+            txtVagaAgendamento.Size = new System.Drawing.Size(360, 36);
+            txtVagaAgendamento.TabIndex = 10;
             // 
-            // guna2Button1
+            // btnCancelarAgendamento
             // 
-            guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges3;
-            guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
-            guna2Button1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = System.Drawing.Color.White;
-            guna2Button1.Location = new System.Drawing.Point(270, 430);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.BorderRadius = 10;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.ShadowDecoration.Depth = 5;
-            guna2Button1.ShadowDecoration.Enabled = true;
-            guna2Button1.Size = new System.Drawing.Size(110, 45);
-            guna2Button1.TabIndex = 11;
-            guna2Button1.Text = "Cancelar";
+            btnCancelarAgendamento.BackColor = System.Drawing.Color.Transparent;
+            btnCancelarAgendamento.BorderRadius = 10;
+            btnCancelarAgendamento.CustomizableEdges = customizableEdges21;
+            btnCancelarAgendamento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnCancelarAgendamento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnCancelarAgendamento.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnCancelarAgendamento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnCancelarAgendamento.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
+            btnCancelarAgendamento.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnCancelarAgendamento.ForeColor = System.Drawing.Color.White;
+            btnCancelarAgendamento.Location = new System.Drawing.Point(270, 430);
+            btnCancelarAgendamento.Name = "btnCancelarAgendamento";
+            btnCancelarAgendamento.ShadowDecoration.BorderRadius = 10;
+            btnCancelarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnCancelarAgendamento.ShadowDecoration.Depth = 5;
+            btnCancelarAgendamento.ShadowDecoration.Enabled = true;
+            btnCancelarAgendamento.Size = new System.Drawing.Size(110, 45);
+            btnCancelarAgendamento.TabIndex = 11;
+            btnCancelarAgendamento.Text = "Cancelar";
             // 
-            // btnSalvar
+            // btnSalvarAgendamento
             // 
-            btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            btnSalvar.BorderRadius = 10;
-            btnSalvar.CustomizableEdges = customizableEdges1;
-            btnSalvar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnSalvar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnSalvar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnSalvar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnSalvar.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnSalvar.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnSalvar.ForeColor = System.Drawing.Color.White;
-            btnSalvar.Location = new System.Drawing.Point(20, 430);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.ShadowDecoration.BorderRadius = 10;
-            btnSalvar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSalvar.ShadowDecoration.Depth = 5;
-            btnSalvar.ShadowDecoration.Enabled = true;
-            btnSalvar.Size = new System.Drawing.Size(240, 45);
-            btnSalvar.TabIndex = 12;
-            btnSalvar.Text = "Confirmar Agendamento";
-            btnSalvar.Click += btnSalvar_Click;
+            btnSalvarAgendamento.BackColor = System.Drawing.Color.Transparent;
+            btnSalvarAgendamento.BorderRadius = 10;
+            btnSalvarAgendamento.CustomizableEdges = customizableEdges23;
+            btnSalvarAgendamento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnSalvarAgendamento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnSalvarAgendamento.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            btnSalvarAgendamento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            btnSalvarAgendamento.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
+            btnSalvarAgendamento.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSalvarAgendamento.ForeColor = System.Drawing.Color.White;
+            btnSalvarAgendamento.Location = new System.Drawing.Point(20, 430);
+            btnSalvarAgendamento.Name = "btnSalvarAgendamento";
+            btnSalvarAgendamento.ShadowDecoration.BorderRadius = 10;
+            btnSalvarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnSalvarAgendamento.ShadowDecoration.Depth = 5;
+            btnSalvarAgendamento.ShadowDecoration.Enabled = true;
+            btnSalvarAgendamento.Size = new System.Drawing.Size(240, 45);
+            btnSalvarAgendamento.TabIndex = 12;
+            btnSalvarAgendamento.Text = "Confirmar Agendamento";
+            btnSalvarAgendamento.Click += btnSalvar_Click;
             // 
             // frmAgendarEntrevista
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(400, 500);
-            Controls.Add(btnSalvar);
-            Controls.Add(guna2Button1);
-            Controls.Add(guna2TextBox1);
+            Controls.Add(btnSalvarAgendamento);
+            Controls.Add(btnCancelarAgendamento);
+            Controls.Add(txtVagaAgendamento);
             Controls.Add(guna2HtmlLabel4);
-            Controls.Add(guna2DateTimePicker1);
+            Controls.Add(dtpDataAgendamento);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(txtVaga);
@@ -287,11 +287,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCandidato;
         private Guna.UI2.WinForms.Guna2DateTimePicker txtVaga;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataAgendamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button btnSalvar;
+        private Guna.UI2.WinForms.Guna2TextBox txtVagaAgendamento;
+        private Guna.UI2.WinForms.Guna2Button btnCancelarAgendamento;
+        private Guna.UI2.WinForms.Guna2Button btnSalvarAgendamento;
     }
 }

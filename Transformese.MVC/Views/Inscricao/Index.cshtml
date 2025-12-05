@@ -10,37 +10,41 @@
 
     <script>
         $(document).ready(function () {
+            // Máscaras
             $('#CPF').mask('000.000.000-00');
             $('#Telefone').mask('(00) 00000-0000');
             $('#Cep').mask('00000-000');
-
-            // Máscara de Moeda Simples
             $('#RendaFamiliar').mask('000.000.000,00', {reverse: true});
+
+            // Tratamento da Renda antes de enviar
+            $('#wizard-form').submit(function() {
+                var campoRenda = $('#RendaFamiliar');
+                if(campoRenda.val()) {
+                    var valorLimpo = campoRenda.val().replace(/\./g, '').replace(',', '.');
+                    campoRenda.val(valorLimpo);
+                }
+            });
         });
 
+        // Lógica do Wizard
         let currentStep = 1;
-        const totalSteps = 4; // AUMENTAMOS PARA 4 PASSOS
+        const totalSteps = 4;
 
         function changeStep(n) {
             if (n === 1 && !validateStep(currentStep)) return;
-
             document.getElementById(`step-${currentStep}`).classList.add('d-none');
             currentStep += n;
             document.getElementById(`step-${currentStep}`).classList.remove('d-none');
-
             updateUI();
         }
 
         function validateStep(step) {
             const container = document.getElementById(`step-${step}`);
-            // Valida inputs normais e selects
-            const inputs = container.querySelectorAll('input, select');
+            const inputs = container.querySelectorAll('input:not([type="hidden"]), select');
             let valid = true;
 
             inputs.forEach(input => {
-                // Ignora campos opcionais se estiverem vazios
                 if (!input.hasAttribute('required') && input.value === '') return;
-
                 if (!input.checkValidity()) {
                     input.classList.add('is-invalid');
                     valid = false;
@@ -49,42 +53,23 @@
                 }
             });
 
-            // Validação especial para campos condicionais
-            if (step === 4) {
-                const possuiDeficiencia = document.getElementById('PossuiDeficiencia').checked;
-                const descricaoDeficiencia = document.getElementById('DescricaoDeficiencia');
-                if (possuiDeficiencia && !descricaoDeficiencia.value.trim()) {
-                    descricaoDeficiencia.classList.add('is-invalid');
-                    valid = false;
-                }
-            }
-
-            if (!valid) {
-                container.closest('form').reportValidity();
-            }
+            if (!valid) container.closest('form').reportValidity();
             return valid;
         }
 
         function updateUI() {
             const percentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
-            const progressBar = document.getElementById('progress-bar-fill');
-            progressBar.style.width = `${percentage}%`;
+            document.getElementById('progress-bar-fill').style.width = `${percentage}%`;
 
-            // Atualiza Texto do Passo
-            const stepTitles = [
-                "Dados Pessoais",
-                "Contato & Localização",
-                "Perfil Socioeconômico", // Novo Passo
-                "Curso & Termos"
-            ];
-            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${stepTitles[currentStep-1]}`;
+            const titles = ["Dados Pessoais", "Contato", "Perfil Socioeconômico", "Carreira & Termos"];
+            document.getElementById('step-title').innerText = `Passo ${currentStep}: ${titles[currentStep-1]}`;
+            document.getElementById('step-count').innerText = `${currentStep}/${totalSteps}`;
 
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
             const btnSubmit = document.getElementById('btn-submit');
 
-            if (currentStep === 1) btnPrev.classList.add('d-none');
-            else btnPrev.classList.remove('d-none');
+            currentStep === 1 ? btnPrev.classList.add('d-none') : btnPrev.classList.remove('d-none');
 
             if (currentStep === totalSteps) {
                 btnNext.classList.add('d-none');
@@ -97,23 +82,18 @@
             document.getElementById('form-top').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // ViaCEP
         function buscarCep(cep) {
             cep = cep.replace(/\D/g, '');
             if (cep.length === 8) {
                 document.getElementById('Cidade').value = "...";
-                document.getElementById('Estado').value = "...";
-
                 fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (!data.erro) {
-                            document.getElementById('Cidade').value = data.localidade;
-                            document.getElementById('Estado').value = data.uf;
-                        } else {
-                            alert("CEP não encontrado.");
-                            document.getElementById('Cidade').value = "";
-                            document.getElementById('Estado').value = "";
-                        }
+                    .then(r => r.json())
+                    .then(d => {
+                        if (!d.erro) {
+                            document.getElementById('Cidade').value = d.localidade;
+                            document.getElementById('Estado').value = d.uf;
+                        } else alert("CEP não encontrado.");
                     })
                     .catch(() => {
                         alert("Erro ao buscar CEP.");
@@ -143,60 +123,56 @@
 <div class="container py-5" id="form-top">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-
             <div class="text-center mb-5">
-                <h2 class="fw-bold display-6">Vamos começar sua jornada 🚀</h2>
-                <p class="text-muted">Preencha os dados completos para concorrer às bolsas.</p>
+                <h2 class="fw-bold display-6">Transforme-se 🚀</h2>
+                <p class="text-muted">Inscrição para Processo Seletivo</p>
             </div>
 
-            <div class="card inscription-card shadow-lg border-0 rounded-4 overflow-hidden">
-
-                <div class="inscription-card-header p-4 border-bottom">
+            <div class="card shadow rounded-4 overflow-hidden">
+                <div class="bg-light p-4 border-bottom">
                     <div class="d-flex justify-content-between mb-2">
-                        <span class="fw-bold text-uppercase small inscription-step-text" id="step-title">Passo 1: Dados Pessoais</span>
-                        <span class="fw-bold small inscription-step-text" id="step-count"></span>
+                        <span class="fw-bold text-uppercase small text-muted" id="step-title">Passo 1</span>
+                        <span class="fw-bold small text-muted" id="step-count">1/4</span>
                     </div>
-                    <div class="progress" style="height: 8px;">
-                        <div id="progress-bar-fill" class="progress-bar bg-success" role="progressbar" style="width: 0%; transition: width 0.5s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" style="height: 6px;">
+                        <div id="progress-bar-fill" class="progress-bar bg-success" style="width: 0%; transition: 0.4s;"></div>
                     </div>
                 </div>
 
-                <div class="card-body inscription-card-body p-4 p-md-5">
-
+                <div class="card-body p-4 p-md-5">
                     @if (!ViewData.ModelState.IsValid)
                     {
                         <div class="alert alert-danger rounded-3 mb-4">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i> Verifique os erros abaixo.
+                            <i class="bi bi-exclamation-octagon-fill me-2"></i> Verifique os erros abaixo:
                             <div asp-validation-summary="All" class="small mt-2"></div>
                         </div>
                     }
 
-                    <form asp-action="Sucesso" method="post" id="wizard-form">
+                    <form asp-action="Criar" method="post" id="wizard-form">
 
                         <!-- PASSO 1: Dados Pessoais -->
                         <div id="step-1" class="step-content">
-                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-person-circle me-2"></i>Quem é você?</h4>
+                            <h5 class="mb-4 fw-bold text-success">Quem é você?</h5>
 
                             <div class="mb-3">
                                 <label asp-for="NomeCompleto" class="form-label fw-semibold">Nome Completo</label>
-                                <input asp-for="NomeCompleto" class="form-control form-control-lg" placeholder="Digite seu nome completo" required />
-                                <span asp-validation-for="NomeCompleto" class="text-danger small"></span>
+                                <input asp-for="NomeCompleto" class="form-control form-control-lg" placeholder="Seu nome" required />
                             </div>
 
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label asp-for="CPF" class="form-label fw-semibold">CPF</label>
-                                    <input asp-for="CPF" class="form-control" placeholder="000.000.000-00" required />
+                                    <input asp-for="CPF" id="CPF" class="form-control" placeholder="000.000.000-00" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="DataNascimento" class="form-label fw-semibold">Data de Nascimento</label>
+                                    <label asp-for="DataNascimento" class="form-label fw-semibold">Nascimento</label>
                                     <input asp-for="DataNascimento" type="date" class="form-control" required />
                                 </div>
                             </div>
 
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
-                                    <label asp-for="IdentidadeGenero" class="form-label fw-semibold">Identidade de Gênero</label>
+                                    <label asp-for="IdentidadeGenero" class="form-label fw-semibold">Gênero</label>
                                     <select asp-for="IdentidadeGenero" class="form-select">
                                         <option value="">Selecione...</option>
                                         <option value="Mulher Cisgênero">Mulher Cisgênero</option>
@@ -208,111 +184,51 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
+                                    <label asp-for="RacaCor" class="form-label fw-semibold">Raça/Cor</label>
+                                    <select asp-for="RacaCor" class="form-select">
+                                        <option value="">Selecione...</option>
+                                        <option value="Branca">Branca</option>
+                                        <option value="Preta">Preta</option>
+                                        <option value="Parda">Parda</option>
+                                        <option value="Amarela">Amarela</option>
+                                        <option value="Indígena">Indígena</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
                                     <label asp-for="OrientacaoSexual" class="form-label fw-semibold">Orientação Sexual</label>
                                     <select asp-for="OrientacaoSexual" class="form-select">
                                         <option value="">Selecione...</option>
                                         <option value="Heterossexual">Heterossexual</option>
                                         <option value="Homossexual">Homossexual</option>
                                         <option value="Bissexual">Bissexual</option>
-                                        <option value="Outro">Outro / Prefiro não responder</option>
+                                        <option value="Outro">Outro</option>
                                     </select>
                                 </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label asp-for="RacaCor" class="form-label fw-semibold">Raça / Cor</label>
-                                <select asp-for="RacaCor" class="form-select">
-                                    <option value="">Selecione...</option>
-                                    <option value="Branca">Branca</option>
-                                    <option value="Preta">Preta</option>
-                                    <option value="Parda">Parda</option>
-                                    <option value="Amarela">Amarela</option>
-                                    <option value="Indígena">Indígena</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label asp-for="Deficiencia" class="form-label fw-semibold">Possui Deficiência?</label>
-                                <input asp-for="Deficiencia" class="form-control" placeholder="Descreva ou digite 'Não possui'" />
+                                <div class="col-md-6">
+                                    <label asp-for="Deficiencia" class="form-label fw-semibold">Possui Deficiência?</label>
+                                    <input asp-for="Deficiencia" class="form-control" placeholder="Se sim, qual?" />
+                                </div>
                             </div>
                         </div>
 
                         <div id="step-2" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-geo-alt-fill me-2"></i>Onde te encontramos?</h4>
-
-                            <div class="mb-4">
-                                <label asp-for="RaçaEtnia" class="form-label fw-semibold inscription-label">Raça/Etnia</label>
-                                <select asp-for="RaçaEtnia" class="form-select form-select-lg" required>
-                                    <option value="" selected disabled>Selecione</option>
-                                    <option value="Branca">Branca</option>
-                                    <option value="Preta">Preta</option>
-                                    <option value="Parda">Parda</option>
-                                    <option value="Amarela">Amarela</option>
-                                    <option value="Indígena">Indígena</option>
-                                    <option value="PreferNaoInformar">Prefiro não informar</option>
-                                </select>
-                                <span asp-validation-for="RaçaEtnia" class="text-danger small"></span>
-                            </div>
-
-                            <div class="mb-4">
-                                <label asp-for="IdentidadeGenero" class="form-label fw-semibold inscription-label">Identidade de Gênero</label>
-                                <select asp-for="IdentidadeGenero" class="form-select form-select-lg" required>
-                                    <option value="" selected disabled>Selecione sua identidade de gênero</option>
-                                    <option value="Feminino">Feminino</option>
-                                    <option value="Masculino">Masculino</option>
-                                    <option value="NaoBinario">Não-binário</option>
-                                    <option value="Outro">Outro</option>
-                                    <option value="PreferNaoInformar">Prefiro não informar</option>
-                                </select>
-                                <span asp-validation-for="IdentidadeGenero" class="text-danger small"></span>
-                            </div>
-
-                            <div class="mb-4">
-                                <div class="form-check form-switch">
-                                    <input asp-for="PessoaTransgenero" class="form-check-input" type="checkbox" id="PessoaTransgenero">
-                                    <label class="form-check-label inscription-label" for="PessoaTransgenero">
-                                        Sou uma pessoa transgênero
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <label asp-for="OrientacaoSexual" class="form-label fw-semibold inscription-label">Orientação Sexual</label>
-                                <select asp-for="OrientacaoSexual" class="form-select form-select-lg" required>
-                                    <option value="" selected disabled>Selecione</option>
-                                    <option value="Heterossexual">Heterossexual</option>
-                                    <option value="Homossexual">Homossexual</option>
-                                    <option value="Bissexual">Bissexual</option>
-                                    <option value="Pansexual">Pansexual</option>
-                                    <option value="Assexual">Assexual</option>
-                                    <option value="Outra">Outra</option>
-                                    <option value="PreferNaoInformar">Prefiro não informar</option>
-                                </select>
-                                <span asp-validation-for="OrientacaoSexual" class="text-danger small"></span>
-                            </div>
-                        </div>
-
-                        <!-- PASSO 3: Contato & Localização -->
-                        <div id="step-3" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold inscription-step-title">Como te encontramos?</h4>
-
-                            <div class="row g-3 mb-4">
+                            <h5 class="mb-4 fw-bold text-success">Contato</h5>
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
-                                    <label asp-for="Email" class="form-label fw-semibold">E-mail Principal</label>
-                                    <input asp-for="Email" type="email" class="form-control" placeholder="seu@email.com" required />
+                                    <label asp-for="Email" class="form-label fw-semibold">E-mail</label>
+                                    <input asp-for="Email" type="email" class="form-control" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Telefone" class="form-label fw-semibold">Celular / WhatsApp</label>
-                                    <input asp-for="Telefone" class="form-control" placeholder="(00) 00000-0000" required />
+                                    <label asp-for="Telefone" class="form-label fw-semibold">Celular</label>
+                                    <input asp-for="Telefone" id="Telefone" class="form-control" required />
                                 </div>
                             </div>
-
-                            <hr class="my-4 text-muted">
-
                             <div class="row g-3">
                                 <div class="col-md-4">
                                     <label asp-for="CEP" class="form-label fw-semibold">CEP</label>
-                                    <input asp-for="CEP" id="Cep" class="form-control" placeholder="00000-000" onblur="buscarCep(this.value)" />
+                                    <input asp-for="CEP" id="Cep" class="form-control" onblur="buscarCep(this.value)" />
                                 </div>
                                 <div class="col-md-6">
                                     <label asp-for="Cidade" class="form-label fw-semibold">Cidade</label>
@@ -325,6 +241,7 @@
                                         <option value="SP">SP</option>
                                         <option value="RJ">RJ</option>
                                         <option value="MG">MG</option>
+                                        <option value="RS">RS</option>
                                     </select>
                                 </div>
                             </div>
@@ -451,10 +368,9 @@
                         </div>
 
                         <div id="step-3" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-graph-up-arrow me-2"></i>Perfil Socioeconômico</h4>
-                            <p class="text-muted small mb-4">Essas informações são confidenciais e usadas apenas para critérios de bolsa.</p>
+                            <h5 class="mb-4 fw-bold text-success">Perfil socioeconomico & estrutura</h5>
 
-                            <div class="row g-3 mb-3">
+                            <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label asp-for="Escolaridade" class="form-label fw-semibold">Escolaridade</label>
                                     <select asp-for="Escolaridade" class="form-select" required>
@@ -467,35 +383,49 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="TrabalhaAtualmente" class="form-label fw-semibold">Trabalha Atualmente?</label>
-                                    <select asp-for="TrabalhaAtualmente" class="form-select" required>
-                                        <option value="false">Não</option>
-                                        <option value="true">Sim</option>
-                                    </select>
+                                    <label asp-for="PessoasNaCasa" class="form-label fw-semibold">Pessoas na Casa</label>
+                                    <input asp-for="PessoasNaCasa" type="number" class="form-control" min="1" required />
                                 </div>
                             </div>
 
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label asp-for="RendaFamiliar" class="form-label fw-semibold">Renda Familiar (R$)</label>
-                                    <input asp-for="RendaFamiliar" id="RendaFamiliar" class="form-control" placeholder="Ex: 1.500,00" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label asp-for="PessoasNaCasa" class="form-label fw-semibold">Pessoas na Casa</label>
-                                    <input asp-for="PessoasNaCasa" type="number" class="form-control" min="1" placeholder="Incluindo você" required />
+                            <div class="mb-4">
+                                <label asp-for="RendaFamiliar" class="form-label fw-semibold">Renda Familiar (R$)</label>
+                                <input asp-for="RendaFamiliar" id="RendaFamiliar" class="form-control form-control-lg" placeholder="Ex: 1.500,00" />
+                            </div>
+
+                            <div class="card bg-light border-0 mb-3">
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" asp-for="TrabalhaAtualmente">
+                                        <label class="form-check-label fw-semibold ms-2" asp-for="TrabalhaAtualmente">Eu trabalho atualmente</label>
+                                    </div>
+
+                                    <hr class="text-muted">
+
+                                    <label class="form-label fw-bold d-block mb-2 text-muted small">INFRAESTRUTURA</label>
+                                    <div class="d-flex flex-column flex-md-row gap-md-4">
+                                        <div class="form-check form-switch mb-2">
+                                            <input class="form-check-input" type="checkbox" role="switch" asp-for="PossuiComputador">
+                                            <label class="form-check-label ms-2" asp-for="PossuiComputador">Tenho Computador</label>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" asp-for="PossuiInternet">
+                                            <label class="form-check-label ms-2" asp-for="PossuiInternet">Tenho Internet em casa</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div id="step-4" class="step-content d-none">
-                            <h4 class="mb-4 fw-bold text-success"><i class="bi bi-mortarboard-fill me-2"></i>Seu Futuro</h4>
+                            <h5 class="mb-4 fw-bold text-success">Carreira & Futuro</h5>
 
                             <div class="mb-3">
-                                <label asp-for="CursoInteresse" class="form-label fw-semibold">Qual curso deseja fazer?</label>
+                                <label asp-for="CursoInteresse" class="form-label fw-semibold">Curso de Interesse</label>
                                 <select asp-for="CursoInteresse" class="form-select form-select-lg" required>
-                                    <option value="">Selecione o curso...</option>
+                                    <option value="">Selecione...</option>
                                     <option value="Desenvolvimento Web Fullstack">Desenvolvimento Web Fullstack</option>
-                                    <option value="Data Analytics">Data Analytics (Dados)</option>
+                                    <option value="Data Analytics">Data Analytics</option>
                                     <option value="Marketing Digital">Marketing Digital</option>
                                     <option value="Design UX/UI">Design UX/UI</option>
                                 </select>
@@ -503,7 +433,7 @@
 
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
-                                    <label asp-for="TurnoPreferido" class="form-label fw-semibold">Turno de Preferência</label>
+                                    <label asp-for="TurnoPreferido" class="form-label fw-semibold">Turno</label>
                                     <select asp-for="TurnoPreferido" class="form-select">
                                         <option value="Manhã">Manhã</option>
                                         <option value="Tarde">Tarde</option>
@@ -511,23 +441,34 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="NomeIndicacao" class="form-label fw-semibold">Indicado por alguém? (Opcional)</label>
-                                    <input asp-for="NomeIndicacao" class="form-control" placeholder="Nome do aluno" />
+                                    <label asp-for="NomeIndicacao" class="form-label fw-semibold">Indicação (Opcional)</label>
+                                    <input asp-for="NomeIndicacao" class="form-control" placeholder="Quem indicou?" />
                                 </div>
                             </div>
 
-                            <div class="card bg-light border-0 mb-3">
+                            <div class="mb-4">
+                                <label asp-for="PerfilLinkedin" class="form-label fw-semibold">LinkedIn (Opcional)</label>
+                                <input asp-for="PerfilLinkedin" class="form-control" placeholder="linkedin.com/in/voce" />
+                            </div>
+
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="JaEstudouNaGF">
+                                <label class="form-check-label fw-semibold ms-2" asp-for="JaEstudouNaGF">Já estudei na Gerando Falcões antes</label>
+                            </div>
+
+                            <div class="card border-success bg-white border-opacity-25 mb-3">
                                 <div class="card-body">
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" asp-for="AceitouTermos" id="termos" required>
-                                        <label class="form-check-label small" for="termos">
-                                            Declaro que li e aceito os termos do programa Transformese e que todas as informações prestadas aqui são verdadeiras.
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" asp-for="AceitouTermos" required>
+                                        <label class="form-check-label small ms-2" asp-for="AceitouTermos">
+                                            Li e aceito os <strong>Termos de Uso</strong> e declaro que as informações são verdadeiras.
                                         </label>
+                                        <span asp-validation-for="AceitouTermos" class="text-danger d-block small mt-1"></span>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" asp-for="AceitouNovidades" id="news">
-                                        <label class="form-check-label small" for="news">
-                                            Aceito receber novidades e comunicações da Gerando Falcões.
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" asp-for="AceitouNovidades">
+                                        <label class="form-check-label small ms-2" asp-for="AceitouNovidades">
+                                            Aceito receber novidades por e-mail.
                                         </label>
                                     </div>
                                 </div>
@@ -535,19 +476,10 @@
                         </div>
 
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" id="btn-prev" class="btn btn-outline-secondary px-4 fw-semibold d-none" onclick="changeStep(-1)">
-                                <i class="bi bi-arrow-left me-2"></i> Voltar
-                            </button>
-
-                            <button type="button" id="btn-next" class="btn btn-dark px-5 fw-bold ms-auto" onclick="changeStep(1)">
-                                Próximo <i class="bi bi-arrow-right ms-2"></i>
-                            </button>
-
-                            <button type="submit" id="btn-submit" class="btn btn-success px-5 fw-bold ms-auto d-none">
-                                FINALIZAR INSCRIÇÃO <i class="bi bi-check-lg ms-2"></i>
-                            </button>
+                            <button type="button" id="btn-prev" class="btn btn-outline-secondary px-4 d-none" onclick="changeStep(-1)">Voltar</button>
+                            <button type="button" id="btn-next" class="btn btn-dark px-5 ms-auto" onclick="changeStep(1)">Próximo</button>
+                            <button type="submit" id="btn-submit" class="btn btn-success px-5 ms-auto d-none fw-bold">FINALIZAR</button>
                         </div>
-
                     </form>
                 </div>
             </div>
