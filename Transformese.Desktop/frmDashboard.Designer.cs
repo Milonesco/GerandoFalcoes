@@ -180,6 +180,7 @@
             lblBoasVindas.Name = "lblBoasVindas";
             lblBoasVindas.Size = new System.Drawing.Size(426, 30);
             lblBoasVindas.TabIndex = 10;
+            lblBoasVindas.TabStop = false;
             lblBoasVindas.Text = "Bem-vindo(a) Usuário! Aqui está o resumo de hoje.";
             // 
             // lblTituloDashboard
@@ -235,6 +236,7 @@
             btnSair.ForeColor = System.Drawing.Color.FromArgb(236, 34, 98);
             btnSair.Location = new System.Drawing.Point(0, 750);
             btnSair.Name = "btnSair";
+            btnSair.PressedDepth = 6;
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnSair.Size = new System.Drawing.Size(220, 50);
             btnSair.TabIndex = 9;
@@ -268,7 +270,7 @@
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnRelatorios.Size = new System.Drawing.Size(220, 50);
-            btnRelatorios.TabIndex = 8;
+            btnRelatorios.TabIndex = 5;
             btnRelatorios.Text = "Relatórios (Asana)";
             btnRelatorios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnRelatorios.Click += btnRelatorios_Click;
@@ -292,7 +294,7 @@
             btnGestaoOngs.Name = "btnGestaoOngs";
             btnGestaoOngs.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnGestaoOngs.Size = new System.Drawing.Size(220, 50);
-            btnGestaoOngs.TabIndex = 7;
+            btnGestaoOngs.TabIndex = 4;
             btnGestaoOngs.Text = "Gestão de Ong's";
             btnGestaoOngs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnGestaoOngs.Click += btnGestaoOngs_Click;
@@ -316,7 +318,7 @@
             btnNovoCandidato.Name = "btnNovoCandidato";
             btnNovoCandidato.ShadowDecoration.CustomizableEdges = customizableEdges15;
             btnNovoCandidato.Size = new System.Drawing.Size(220, 50);
-            btnNovoCandidato.TabIndex = 6;
+            btnNovoCandidato.TabIndex = 3;
             btnNovoCandidato.Text = "Novo Candidato";
             btnNovoCandidato.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnNovoCandidato.Click += btnNovoCandidato_Click;
@@ -340,7 +342,7 @@
             btnEntrevistas.Name = "btnEntrevistas";
             btnEntrevistas.ShadowDecoration.CustomizableEdges = customizableEdges17;
             btnEntrevistas.Size = new System.Drawing.Size(220, 50);
-            btnEntrevistas.TabIndex = 5;
+            btnEntrevistas.TabIndex = 2;
             btnEntrevistas.Text = "Entrevistas (Ong's)";
             btnEntrevistas.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnEntrevistas.Click += btnEntrevistas_Click;
@@ -364,7 +366,7 @@
             btnTriagem.Name = "btnTriagem";
             btnTriagem.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnTriagem.Size = new System.Drawing.Size(220, 50);
-            btnTriagem.TabIndex = 4;
+            btnTriagem.TabIndex = 1;
             btnTriagem.Text = "Triagem Inicial";
             btnTriagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnTriagem.Click += btnTriagem_Click;
@@ -388,7 +390,7 @@
             btnDashboard.Name = "btnDashboard";
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnDashboard.Size = new System.Drawing.Size(220, 50);
-            btnDashboard.TabIndex = 2;
+            btnDashboard.TabIndex = 0;
             btnDashboard.Text = "Dashboard";
             btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             btnDashboard.Click += btnDashboard_Click;
@@ -414,6 +416,7 @@
             lblSubTitulo.Name = "lblSubTitulo";
             lblSubTitulo.Size = new System.Drawing.Size(145, 24);
             lblSubTitulo.TabIndex = 5;
+            lblSubTitulo.TabStop = false;
             lblSubTitulo.Text = "GESTÃO TRANSFORME-SE";
             // 
             // lblTituloLogo
@@ -425,6 +428,7 @@
             lblTituloLogo.Name = "lblTituloLogo";
             lblTituloLogo.Size = new System.Drawing.Size(206, 26);
             lblTituloLogo.TabIndex = 4;
+            lblTituloLogo.TabStop = false;
             lblTituloLogo.Text = "GERANDO FALCÕES";
             // 
             // mdNotifica

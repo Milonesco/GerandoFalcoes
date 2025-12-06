@@ -51,6 +51,7 @@
             btnCancelarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             btnSalvarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -72,6 +73,7 @@
             lblNomeCandidato.Name = "lblNomeCandidato";
             lblNomeCandidato.Size = new System.Drawing.Size(196, 36);
             lblNomeCandidato.TabIndex = 0;
+            lblNomeCandidato.TabStop = false;
             lblNomeCandidato.Text = "Nome do candidato";
             // 
             // dtpData
@@ -91,7 +93,7 @@
             dtpData.ShadowDecoration.CustomizableEdges = customizableEdges10;
             dtpData.ShadowDecoration.Depth = 5;
             dtpData.Size = new System.Drawing.Size(360, 36);
-            dtpData.TabIndex = 3;
+            dtpData.TabIndex = 0;
             dtpData.Value = new System.DateTime(2025, 12, 3, 14, 51, 16, 519);
             // 
             // guna2HtmlLabel2
@@ -103,6 +105,7 @@
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new System.Drawing.Size(33, 24);
             guna2HtmlLabel2.TabIndex = 4;
+            guna2HtmlLabel2.TabStop = false;
             guna2HtmlLabel2.Text = "Data";
             // 
             // guna2HtmlLabel3
@@ -134,7 +137,7 @@
             dtpHora.ShadowDecoration.Depth = 5;
             dtpHora.ShowUpDown = true;
             dtpHora.Size = new System.Drawing.Size(360, 36);
-            dtpHora.TabIndex = 6;
+            dtpHora.TabIndex = 1;
             dtpHora.Value = new System.DateTime(2025, 12, 3, 13, 39, 42, 37);
             // 
             // guna2HtmlLabel4
@@ -146,6 +149,7 @@
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new System.Drawing.Size(86, 24);
             guna2HtmlLabel4.TabIndex = 7;
+            guna2HtmlLabel4.TabStop = false;
             guna2HtmlLabel4.Text = "Vaga / Cargo";
             // 
             // txtVagaCandidato
@@ -170,7 +174,7 @@
             txtVagaCandidato.ShadowDecoration.Depth = 5;
             txtVagaCandidato.ShadowDecoration.Enabled = true;
             txtVagaCandidato.Size = new System.Drawing.Size(360, 36);
-            txtVagaCandidato.TabIndex = 10;
+            txtVagaCandidato.TabIndex = 2;
             // 
             // btnCancelarAgendamento
             // 
@@ -191,7 +195,7 @@
             btnCancelarAgendamento.ShadowDecoration.Depth = 5;
             btnCancelarAgendamento.ShadowDecoration.Enabled = true;
             btnCancelarAgendamento.Size = new System.Drawing.Size(110, 45);
-            btnCancelarAgendamento.TabIndex = 11;
+            btnCancelarAgendamento.TabIndex = 4;
             btnCancelarAgendamento.Text = "Cancelar";
             btnCancelarAgendamento.Click += btnCancelarAgendamento_Click;
             // 
@@ -214,7 +218,7 @@
             btnSalvarAgendamento.ShadowDecoration.Depth = 5;
             btnSalvarAgendamento.ShadowDecoration.Enabled = true;
             btnSalvarAgendamento.Size = new System.Drawing.Size(240, 45);
-            btnSalvarAgendamento.TabIndex = 12;
+            btnSalvarAgendamento.TabIndex = 3;
             btnSalvarAgendamento.Text = "Confirmar Agendamento";
             btnSalvarAgendamento.Click += btnSalvar_Click;
             // 
@@ -227,6 +231,18 @@
             mdNotifica.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             mdNotifica.Text = null;
             // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel1.Location = new System.Drawing.Point(23, 182);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new System.Drawing.Size(33, 24);
+            guna2HtmlLabel1.TabIndex = 4;
+            guna2HtmlLabel1.TabStop = false;
+            guna2HtmlLabel1.Text = "Hora";
+            // 
             // frmAgendarEntrevista
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -238,6 +254,7 @@
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(dtpHora);
             Controls.Add(guna2HtmlLabel3);
+            Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(dtpData);
             Controls.Add(lblNomeCandidato);
@@ -264,5 +281,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCancelarAgendamento;
         private Guna.UI2.WinForms.Guna2Button btnSalvarAgendamento;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

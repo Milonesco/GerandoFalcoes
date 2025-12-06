@@ -275,6 +275,7 @@
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new System.Drawing.Size(265, 24);
             guna2HtmlLabel2.TabIndex = 1;
+            guna2HtmlLabel2.TabStop = false;
             guna2HtmlLabel2.Text = "Preencha os dados para cadastro manual.";
             // 
             // guna2HtmlLabel1
@@ -286,6 +287,7 @@
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new System.Drawing.Size(176, 39);
             guna2HtmlLabel1.TabIndex = 0;
+            guna2HtmlLabel1.TabStop = false;
             guna2HtmlLabel1.Text = "Novo Candidato";
             // 
             // pnlFormulario
@@ -442,6 +444,7 @@
             guna2HtmlLabel53.Name = "guna2HtmlLabel53";
             guna2HtmlLabel53.Size = new System.Drawing.Size(53, 24);
             guna2HtmlLabel53.TabIndex = 58;
+            guna2HtmlLabel53.TabStop = false;
             guna2HtmlLabel53.Text = "LinkedIn";
             // 
             // txtLinkedinCandidato
@@ -468,7 +471,7 @@
             txtLinkedinCandidato.ShadowDecoration.Depth = 5;
             txtLinkedinCandidato.ShadowDecoration.Enabled = true;
             txtLinkedinCandidato.Size = new System.Drawing.Size(430, 36);
-            txtLinkedinCandidato.TabIndex = 57;
+            txtLinkedinCandidato.TabIndex = 8;
             // 
             // guna2HtmlLabel52
             // 
@@ -479,6 +482,7 @@
             guna2HtmlLabel52.Name = "guna2HtmlLabel52";
             guna2HtmlLabel52.Size = new System.Drawing.Size(217, 24);
             guna2HtmlLabel52.TabIndex = 56;
+            guna2HtmlLabel52.TabStop = false;
             guna2HtmlLabel52.Text = "Possui computador e/ou notbook?";
             // 
             // guna2HtmlLabel51
@@ -490,6 +494,7 @@
             guna2HtmlLabel51.Name = "guna2HtmlLabel51";
             guna2HtmlLabel51.Size = new System.Drawing.Size(145, 24);
             guna2HtmlLabel51.TabIndex = 55;
+            guna2HtmlLabel51.TabStop = false;
             guna2HtmlLabel51.Text = "Tem acesso a Internet?";
             // 
             // cboTemComputador
@@ -511,7 +516,7 @@
             cboTemComputador.ShadowDecoration.Depth = 5;
             cboTemComputador.ShadowDecoration.Enabled = true;
             cboTemComputador.Size = new System.Drawing.Size(280, 36);
-            cboTemComputador.TabIndex = 54;
+            cboTemComputador.TabIndex = 17;
             // 
             // cboTrabalhoCandidato
             // 
@@ -532,7 +537,7 @@
             cboTrabalhoCandidato.ShadowDecoration.Depth = 5;
             cboTrabalhoCandidato.ShadowDecoration.Enabled = true;
             cboTrabalhoCandidato.Size = new System.Drawing.Size(280, 36);
-            cboTrabalhoCandidato.TabIndex = 53;
+            cboTrabalhoCandidato.TabIndex = 14;
             // 
             // guna2Separator5
             // 
@@ -542,6 +547,7 @@
             guna2Separator5.Name = "guna2Separator5";
             guna2Separator5.Size = new System.Drawing.Size(880, 10);
             guna2Separator5.TabIndex = 52;
+            guna2Separator5.TabStop = false;
             // 
             // guna2Separator6
             // 
@@ -551,6 +557,7 @@
             guna2Separator6.Name = "guna2Separator6";
             guna2Separator6.Size = new System.Drawing.Size(880, 10);
             guna2Separator6.TabIndex = 51;
+            guna2Separator6.TabStop = false;
             // 
             // guna2Separator7
             // 
@@ -560,6 +567,7 @@
             guna2Separator7.Name = "guna2Separator7";
             guna2Separator7.Size = new System.Drawing.Size(880, 10);
             guna2Separator7.TabIndex = 50;
+            guna2Separator7.TabStop = false;
             // 
             // guna2Separator8
             // 
@@ -569,6 +577,7 @@
             guna2Separator8.Name = "guna2Separator8";
             guna2Separator8.Size = new System.Drawing.Size(880, 10);
             guna2Separator8.TabIndex = 49;
+            guna2Separator8.TabStop = false;
             // 
             // btnSalvarCandidato
             // 
@@ -589,7 +598,7 @@
             btnSalvarCandidato.ShadowDecoration.Depth = 5;
             btnSalvarCandidato.ShadowDecoration.Enabled = true;
             btnSalvarCandidato.Size = new System.Drawing.Size(880, 50);
-            btnSalvarCandidato.TabIndex = 48;
+            btnSalvarCandidato.TabIndex = 25;
             btnSalvarCandidato.Text = "SALVAR CADASTRO";
             btnSalvarCandidato.Click += btnSalvarCandidato_Click;
             // 
@@ -604,7 +613,7 @@
             chkNovidadesCandidato.Location = new System.Drawing.Point(30, 1070);
             chkNovidadesCandidato.Name = "chkNovidadesCandidato";
             chkNovidadesCandidato.Size = new System.Drawing.Size(406, 26);
-            chkNovidadesCandidato.TabIndex = 47;
+            chkNovidadesCandidato.TabIndex = 24;
             chkNovidadesCandidato.Text = "Aceito receber novidades e comunicações da Gerando Falcões.";
             chkNovidadesCandidato.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(125, 137, 149);
             chkNovidadesCandidato.UncheckedState.BorderRadius = 0;
@@ -622,7 +631,7 @@
             chkTermosCandidato.Location = new System.Drawing.Point(30, 1037);
             chkTermosCandidato.Name = "chkTermosCandidato";
             chkTermosCandidato.Size = new System.Drawing.Size(496, 26);
-            chkTermosCandidato.TabIndex = 46;
+            chkTermosCandidato.TabIndex = 23;
             chkTermosCandidato.Text = "Declaro que li e concordo com os termos e regras do programa Transforme-se.";
             chkTermosCandidato.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(125, 137, 149);
             chkTermosCandidato.UncheckedState.BorderRadius = 0;
@@ -653,7 +662,7 @@
             txtIndicacaoCandidato.ShadowDecoration.Depth = 5;
             txtIndicacaoCandidato.ShadowDecoration.Enabled = true;
             txtIndicacaoCandidato.Size = new System.Drawing.Size(420, 36);
-            txtIndicacaoCandidato.TabIndex = 45;
+            txtIndicacaoCandidato.TabIndex = 22;
             // 
             // cboEstudouOngCandidato
             // 
@@ -674,7 +683,7 @@
             cboEstudouOngCandidato.ShadowDecoration.Depth = 5;
             cboEstudouOngCandidato.ShadowDecoration.Enabled = true;
             cboEstudouOngCandidato.Size = new System.Drawing.Size(420, 36);
-            cboEstudouOngCandidato.TabIndex = 44;
+            cboEstudouOngCandidato.TabIndex = 21;
             // 
             // cboTurnoCandidato
             // 
@@ -695,7 +704,7 @@
             cboTurnoCandidato.ShadowDecoration.Depth = 5;
             cboTurnoCandidato.ShadowDecoration.Enabled = true;
             cboTurnoCandidato.Size = new System.Drawing.Size(420, 36);
-            cboTurnoCandidato.TabIndex = 43;
+            cboTurnoCandidato.TabIndex = 20;
             // 
             // cboCursoCandidato
             // 
@@ -716,7 +725,7 @@
             cboCursoCandidato.ShadowDecoration.Depth = 5;
             cboCursoCandidato.ShadowDecoration.Enabled = true;
             cboCursoCandidato.Size = new System.Drawing.Size(420, 36);
-            cboCursoCandidato.TabIndex = 42;
+            cboCursoCandidato.TabIndex = 19;
             // 
             // guna2HtmlLabel27
             // 
@@ -727,6 +736,7 @@
             guna2HtmlLabel27.Name = "guna2HtmlLabel27";
             guna2HtmlLabel27.Size = new System.Drawing.Size(327, 24);
             guna2HtmlLabel27.TabIndex = 41;
+            guna2HtmlLabel27.TabStop = false;
             guna2HtmlLabel27.Text = "Indicado por aluno? (Nome completo ou em branco)";
             // 
             // guna2HtmlLabel28
@@ -738,6 +748,7 @@
             guna2HtmlLabel28.Name = "guna2HtmlLabel28";
             guna2HtmlLabel28.Size = new System.Drawing.Size(202, 24);
             guna2HtmlLabel28.TabIndex = 40;
+            guna2HtmlLabel28.TabStop = false;
             guna2HtmlLabel28.Text = "Já estudou na Gerando Falcões?";
             // 
             // guna2HtmlLabel29
@@ -749,6 +760,7 @@
             guna2HtmlLabel29.Name = "guna2HtmlLabel29";
             guna2HtmlLabel29.Size = new System.Drawing.Size(39, 24);
             guna2HtmlLabel29.TabIndex = 39;
+            guna2HtmlLabel29.TabStop = false;
             guna2HtmlLabel29.Text = "Turno";
             // 
             // guna2HtmlLabel30
@@ -760,6 +772,7 @@
             guna2HtmlLabel30.Name = "guna2HtmlLabel30";
             guna2HtmlLabel30.Size = new System.Drawing.Size(117, 24);
             guna2HtmlLabel30.TabIndex = 38;
+            guna2HtmlLabel30.TabStop = false;
             guna2HtmlLabel30.Text = "Curso de Interesse";
             // 
             // guna2HtmlLabel31
@@ -771,6 +784,7 @@
             guna2HtmlLabel31.Name = "guna2HtmlLabel31";
             guna2HtmlLabel31.Size = new System.Drawing.Size(157, 30);
             guna2HtmlLabel31.TabIndex = 37;
+            guna2HtmlLabel31.TabStop = false;
             guna2HtmlLabel31.Text = "INTERESSE E CURSO";
             // 
             // numPessoasDomicilio
@@ -787,7 +801,7 @@
             numPessoasDomicilio.ShadowDecoration.Depth = 5;
             numPessoasDomicilio.ShadowDecoration.Enabled = true;
             numPessoasDomicilio.Size = new System.Drawing.Size(280, 36);
-            numPessoasDomicilio.TabIndex = 36;
+            numPessoasDomicilio.TabIndex = 15;
             numPessoasDomicilio.UpDownButtonFillColor = System.Drawing.Color.FromArgb(122, 90, 216);
             numPessoasDomicilio.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -815,7 +829,7 @@
             txtRendaCandidato.ShadowDecoration.Depth = 5;
             txtRendaCandidato.ShadowDecoration.Enabled = true;
             txtRendaCandidato.Size = new System.Drawing.Size(280, 36);
-            txtRendaCandidato.TabIndex = 35;
+            txtRendaCandidato.TabIndex = 16;
             // 
             // cboTemInternet
             // 
@@ -836,7 +850,7 @@
             cboTemInternet.ShadowDecoration.Depth = 5;
             cboTemInternet.ShadowDecoration.Enabled = true;
             cboTemInternet.Size = new System.Drawing.Size(280, 36);
-            cboTemInternet.TabIndex = 34;
+            cboTemInternet.TabIndex = 18;
             // 
             // guna2HtmlLabel32
             // 
@@ -847,6 +861,7 @@
             guna2HtmlLabel32.Name = "guna2HtmlLabel32";
             guna2HtmlLabel32.Size = new System.Drawing.Size(230, 24);
             guna2HtmlLabel32.TabIndex = 33;
+            guna2HtmlLabel32.TabStop = false;
             guna2HtmlLabel32.Text = "Quantas pessoas moram com você?";
             // 
             // guna2HtmlLabel33
@@ -858,6 +873,7 @@
             guna2HtmlLabel33.Name = "guna2HtmlLabel33";
             guna2HtmlLabel33.Size = new System.Drawing.Size(172, 24);
             guna2HtmlLabel33.TabIndex = 32;
+            guna2HtmlLabel33.TabStop = false;
             guna2HtmlLabel33.Text = "Renda Familiar Mensal (R$)";
             // 
             // guna2HtmlLabel34
@@ -869,6 +885,7 @@
             guna2HtmlLabel34.Name = "guna2HtmlLabel34";
             guna2HtmlLabel34.Size = new System.Drawing.Size(139, 24);
             guna2HtmlLabel34.TabIndex = 31;
+            guna2HtmlLabel34.TabStop = false;
             guna2HtmlLabel34.Text = "Trabalha atualmente?";
             // 
             // cboEscolaridadeCandidato
@@ -890,7 +907,7 @@
             cboEscolaridadeCandidato.ShadowDecoration.Depth = 5;
             cboEscolaridadeCandidato.ShadowDecoration.Enabled = true;
             cboEscolaridadeCandidato.Size = new System.Drawing.Size(280, 36);
-            cboEscolaridadeCandidato.TabIndex = 30;
+            cboEscolaridadeCandidato.TabIndex = 13;
             // 
             // guna2HtmlLabel35
             // 
@@ -901,6 +918,7 @@
             guna2HtmlLabel35.Name = "guna2HtmlLabel35";
             guna2HtmlLabel35.Size = new System.Drawing.Size(81, 24);
             guna2HtmlLabel35.TabIndex = 29;
+            guna2HtmlLabel35.TabStop = false;
             guna2HtmlLabel35.Text = "Escolaridade";
             // 
             // guna2HtmlLabel36
@@ -912,6 +930,7 @@
             guna2HtmlLabel36.Name = "guna2HtmlLabel36";
             guna2HtmlLabel36.Size = new System.Drawing.Size(214, 30);
             guna2HtmlLabel36.TabIndex = 28;
+            guna2HtmlLabel36.TabStop = false;
             guna2HtmlLabel36.Text = "PERFIL SOCIOECONÔMICO";
             // 
             // txtCidadeCandidato
@@ -938,7 +957,7 @@
             txtCidadeCandidato.ShadowDecoration.Depth = 5;
             txtCidadeCandidato.ShadowDecoration.Enabled = true;
             txtCidadeCandidato.Size = new System.Drawing.Size(205, 36);
-            txtCidadeCandidato.TabIndex = 27;
+            txtCidadeCandidato.TabIndex = 12;
             // 
             // txtCepCandidato
             // 
@@ -964,7 +983,8 @@
             txtCepCandidato.ShadowDecoration.Depth = 5;
             txtCepCandidato.ShadowDecoration.Enabled = true;
             txtCepCandidato.Size = new System.Drawing.Size(205, 36);
-            txtCepCandidato.TabIndex = 26;
+            txtCepCandidato.TabIndex = 10;
+            txtCepCandidato.Leave += txtCepCandidato_Leave;
             // 
             // txtTelefoneCandidato
             // 
@@ -990,7 +1010,7 @@
             txtTelefoneCandidato.ShadowDecoration.Depth = 5;
             txtTelefoneCandidato.ShadowDecoration.Enabled = true;
             txtTelefoneCandidato.Size = new System.Drawing.Size(205, 36);
-            txtTelefoneCandidato.TabIndex = 25;
+            txtTelefoneCandidato.TabIndex = 9;
             // 
             // txtEmailCandidato
             // 
@@ -1016,7 +1036,7 @@
             txtEmailCandidato.ShadowDecoration.Depth = 5;
             txtEmailCandidato.ShadowDecoration.Enabled = true;
             txtEmailCandidato.Size = new System.Drawing.Size(430, 36);
-            txtEmailCandidato.TabIndex = 24;
+            txtEmailCandidato.TabIndex = 7;
             // 
             // cboUF
             // 
@@ -1037,7 +1057,7 @@
             cboUF.ShadowDecoration.Depth = 5;
             cboUF.ShadowDecoration.Enabled = true;
             cboUF.Size = new System.Drawing.Size(205, 36);
-            cboUF.TabIndex = 23;
+            cboUF.TabIndex = 11;
             // 
             // guna2HtmlLabel37
             // 
@@ -1048,6 +1068,7 @@
             guna2HtmlLabel37.Name = "guna2HtmlLabel37";
             guna2HtmlLabel37.Size = new System.Drawing.Size(117, 24);
             guna2HtmlLabel37.TabIndex = 22;
+            guna2HtmlLabel37.TabStop = false;
             guna2HtmlLabel37.Text = "Celular/WhatsApp";
             // 
             // guna2HtmlLabel38
@@ -1059,6 +1080,7 @@
             guna2HtmlLabel38.Name = "guna2HtmlLabel38";
             guna2HtmlLabel38.Size = new System.Drawing.Size(98, 24);
             guna2HtmlLabel38.TabIndex = 21;
+            guna2HtmlLabel38.TabStop = false;
             guna2HtmlLabel38.Text = "E-mail Principal";
             // 
             // guna2HtmlLabel39
@@ -1070,6 +1092,7 @@
             guna2HtmlLabel39.Name = "guna2HtmlLabel39";
             guna2HtmlLabel39.Size = new System.Drawing.Size(25, 24);
             guna2HtmlLabel39.TabIndex = 20;
+            guna2HtmlLabel39.TabStop = false;
             guna2HtmlLabel39.Text = "CEP";
             // 
             // guna2HtmlLabel40
@@ -1081,6 +1104,7 @@
             guna2HtmlLabel40.Name = "guna2HtmlLabel40";
             guna2HtmlLabel40.Size = new System.Drawing.Size(46, 24);
             guna2HtmlLabel40.TabIndex = 19;
+            guna2HtmlLabel40.TabStop = false;
             guna2HtmlLabel40.Text = "Cidade";
             // 
             // guna2HtmlLabel41
@@ -1092,6 +1116,7 @@
             guna2HtmlLabel41.Name = "guna2HtmlLabel41";
             guna2HtmlLabel41.Size = new System.Drawing.Size(65, 24);
             guna2HtmlLabel41.TabIndex = 18;
+            guna2HtmlLabel41.TabStop = false;
             guna2HtmlLabel41.Text = "UF/Estado";
             // 
             // guna2HtmlLabel42
@@ -1103,6 +1128,7 @@
             guna2HtmlLabel42.Name = "guna2HtmlLabel42";
             guna2HtmlLabel42.Size = new System.Drawing.Size(215, 30);
             guna2HtmlLabel42.TabIndex = 17;
+            guna2HtmlLabel42.TabStop = false;
             guna2HtmlLabel42.Text = "LOCALIZAÇÃO E CONTATO";
             // 
             // cboEtniaCandidato
@@ -1124,7 +1150,7 @@
             cboEtniaCandidato.ShadowDecoration.Depth = 5;
             cboEtniaCandidato.ShadowDecoration.Enabled = true;
             cboEtniaCandidato.Size = new System.Drawing.Size(880, 36);
-            cboEtniaCandidato.TabIndex = 16;
+            cboEtniaCandidato.TabIndex = 5;
             // 
             // cboOrientacaoCandidato
             // 
@@ -1145,7 +1171,7 @@
             cboOrientacaoCandidato.ShadowDecoration.Depth = 5;
             cboOrientacaoCandidato.ShadowDecoration.Enabled = true;
             cboOrientacaoCandidato.Size = new System.Drawing.Size(430, 36);
-            cboOrientacaoCandidato.TabIndex = 15;
+            cboOrientacaoCandidato.TabIndex = 4;
             // 
             // dtpDataNascCandidato
             // 
@@ -1162,7 +1188,7 @@
             dtpDataNascCandidato.Name = "dtpDataNascCandidato";
             dtpDataNascCandidato.ShadowDecoration.CustomizableEdges = customizableEdges42;
             dtpDataNascCandidato.Size = new System.Drawing.Size(430, 36);
-            dtpDataNascCandidato.TabIndex = 14;
+            dtpDataNascCandidato.TabIndex = 2;
             dtpDataNascCandidato.Value = new System.DateTime(2025, 12, 3, 15, 48, 25, 361);
             // 
             // cboGeneroCandidato
@@ -1184,7 +1210,7 @@
             cboGeneroCandidato.ShadowDecoration.Depth = 5;
             cboGeneroCandidato.ShadowDecoration.Enabled = true;
             cboGeneroCandidato.Size = new System.Drawing.Size(430, 36);
-            cboGeneroCandidato.TabIndex = 13;
+            cboGeneroCandidato.TabIndex = 3;
             // 
             // txtCpfCandidato
             // 
@@ -1210,7 +1236,7 @@
             txtCpfCandidato.ShadowDecoration.Depth = 5;
             txtCpfCandidato.ShadowDecoration.Enabled = true;
             txtCpfCandidato.Size = new System.Drawing.Size(430, 36);
-            txtCpfCandidato.TabIndex = 12;
+            txtCpfCandidato.TabIndex = 1;
             // 
             // txtDeficienciaCandidato
             // 
@@ -1235,7 +1261,7 @@
             txtDeficienciaCandidato.ShadowDecoration.Depth = 5;
             txtDeficienciaCandidato.ShadowDecoration.Enabled = true;
             txtDeficienciaCandidato.Size = new System.Drawing.Size(880, 36);
-            txtDeficienciaCandidato.TabIndex = 11;
+            txtDeficienciaCandidato.TabIndex = 6;
             // 
             // guna2HtmlLabel43
             // 
@@ -1246,6 +1272,7 @@
             guna2HtmlLabel43.Name = "guna2HtmlLabel43";
             guna2HtmlLabel43.Size = new System.Drawing.Size(25, 24);
             guna2HtmlLabel43.TabIndex = 10;
+            guna2HtmlLabel43.TabStop = false;
             guna2HtmlLabel43.Text = "CPF";
             // 
             // guna2HtmlLabel44
@@ -1257,6 +1284,7 @@
             guna2HtmlLabel44.Name = "guna2HtmlLabel44";
             guna2HtmlLabel44.Size = new System.Drawing.Size(129, 24);
             guna2HtmlLabel44.TabIndex = 9;
+            guna2HtmlLabel44.TabStop = false;
             guna2HtmlLabel44.Text = "Data de Nascimento";
             // 
             // guna2HtmlLabel45
@@ -1268,6 +1296,7 @@
             guna2HtmlLabel45.Name = "guna2HtmlLabel45";
             guna2HtmlLabel45.Size = new System.Drawing.Size(133, 24);
             guna2HtmlLabel45.TabIndex = 8;
+            guna2HtmlLabel45.TabStop = false;
             guna2HtmlLabel45.Text = "Identidade de Gênero";
             // 
             // guna2HtmlLabel46
@@ -1279,6 +1308,7 @@
             guna2HtmlLabel46.Name = "guna2HtmlLabel46";
             guna2HtmlLabel46.Size = new System.Drawing.Size(113, 24);
             guna2HtmlLabel46.TabIndex = 7;
+            guna2HtmlLabel46.TabStop = false;
             guna2HtmlLabel46.Text = "Orientação Sexual";
             // 
             // guna2HtmlLabel47
@@ -1290,6 +1320,7 @@
             guna2HtmlLabel47.Name = "guna2HtmlLabel47";
             guna2HtmlLabel47.Size = new System.Drawing.Size(70, 24);
             guna2HtmlLabel47.TabIndex = 6;
+            guna2HtmlLabel47.TabStop = false;
             guna2HtmlLabel47.Text = "Raça/Etnia";
             // 
             // guna2HtmlLabel48
@@ -1301,6 +1332,7 @@
             guna2HtmlLabel48.Name = "guna2HtmlLabel48";
             guna2HtmlLabel48.Size = new System.Drawing.Size(273, 24);
             guna2HtmlLabel48.TabIndex = 5;
+            guna2HtmlLabel48.TabStop = false;
             guna2HtmlLabel48.Text = "Deficiência (Descreva ou digite 'Não possui')";
             // 
             // guna2HtmlLabel49
@@ -1312,6 +1344,7 @@
             guna2HtmlLabel49.Name = "guna2HtmlLabel49";
             guna2HtmlLabel49.Size = new System.Drawing.Size(144, 30);
             guna2HtmlLabel49.TabIndex = 4;
+            guna2HtmlLabel49.TabStop = false;
             guna2HtmlLabel49.Text = "DADOS PESSOAIS";
             // 
             // txtNomeCandidato
@@ -1338,7 +1371,7 @@
             txtNomeCandidato.ShadowDecoration.Depth = 5;
             txtNomeCandidato.ShadowDecoration.Enabled = true;
             txtNomeCandidato.Size = new System.Drawing.Size(880, 36);
-            txtNomeCandidato.TabIndex = 3;
+            txtNomeCandidato.TabIndex = 0;
             // 
             // guna2HtmlLabel50
             // 
@@ -1349,6 +1382,7 @@
             guna2HtmlLabel50.Name = "guna2HtmlLabel50";
             guna2HtmlLabel50.Size = new System.Drawing.Size(104, 24);
             guna2HtmlLabel50.TabIndex = 2;
+            guna2HtmlLabel50.TabStop = false;
             guna2HtmlLabel50.Text = "Nome Completo";
             // 
             // guna2Separator4

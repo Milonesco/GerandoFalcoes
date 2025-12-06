@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            btnSair = new Guna.UI2.WinForms.Guna2CircleButton();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -81,7 +79,7 @@
             // btnLiberarAcesso
             // 
             btnLiberarAcesso.BorderRadius = 8;
-            btnLiberarAcesso.CustomizableEdges = customizableEdges4;
+            btnLiberarAcesso.CustomizableEdges = customizableEdges3;
             btnLiberarAcesso.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnLiberarAcesso.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnLiberarAcesso.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -91,26 +89,11 @@
             btnLiberarAcesso.ForeColor = System.Drawing.Color.White;
             btnLiberarAcesso.Location = new System.Drawing.Point(31, 408);
             btnLiberarAcesso.Name = "btnLiberarAcesso";
-            btnLiberarAcesso.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnLiberarAcesso.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnLiberarAcesso.Size = new System.Drawing.Size(335, 45);
-            btnLiberarAcesso.TabIndex = 10;
+            btnLiberarAcesso.TabIndex = 3;
             btnLiberarAcesso.Text = "Liberar Acesso";
             btnLiberarAcesso.Click += btnLiberarAcesso_Click;
-            btnLiberarAcesso.BorderRadius = 8;
-            btnLiberarAcesso.CustomizableEdges = customizableEdges4;
-            btnLiberarAcesso.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnLiberarAcesso.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnLiberarAcesso.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnLiberarAcesso.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnLiberarAcesso.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnLiberarAcesso.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnLiberarAcesso.ForeColor = System.Drawing.Color.White;
-            btnLiberarAcesso.Location = new System.Drawing.Point(31, 408);
-            btnLiberarAcesso.Name = "btnLiberarAcesso";
-            btnLiberarAcesso.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            btnLiberarAcesso.Size = new System.Drawing.Size(335, 45);
-            btnLiberarAcesso.TabIndex = 10;
-            btnLiberarAcesso.Text = "Liberar Acesso";
             // 
             // chkSenha
             // 
@@ -123,7 +106,7 @@
             chkSenha.Location = new System.Drawing.Point(35, 358);
             chkSenha.Name = "chkSenha";
             chkSenha.Size = new System.Drawing.Size(99, 26);
-            chkSenha.TabIndex = 9;
+            chkSenha.TabIndex = 2;
             chkSenha.Text = "Exibir senha";
             chkSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             chkSenha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(125, 137, 149);
@@ -134,7 +117,7 @@
             // txtSenhaAdmin
             // 
             txtSenhaAdmin.BorderRadius = 8;
-            txtSenhaAdmin.CustomizableEdges = customizableEdges6;
+            txtSenhaAdmin.CustomizableEdges = customizableEdges5;
             txtSenhaAdmin.DefaultText = "";
             txtSenhaAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSenhaAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -147,31 +130,14 @@
             txtSenhaAdmin.Name = "txtSenhaAdmin";
             txtSenhaAdmin.PlaceholderText = "Digite sua senha";
             txtSenhaAdmin.SelectedText = "";
-            txtSenhaAdmin.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            txtSenhaAdmin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtSenhaAdmin.Size = new System.Drawing.Size(331, 36);
-            txtSenhaAdmin.TabIndex = 7;
-            txtSenhaAdmin.BorderRadius = 8;
-            txtSenhaAdmin.CustomizableEdges = customizableEdges6;
-            txtSenhaAdmin.DefaultText = "";
-            txtSenhaAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtSenhaAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtSenhaAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtSenhaAdmin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtSenhaAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtSenhaAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            txtSenhaAdmin.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtSenhaAdmin.Location = new System.Drawing.Point(31, 313);
-            txtSenhaAdmin.Name = "txtSenhaAdmin";
-            txtSenhaAdmin.PlaceholderText = "Digite sua senha";
-            txtSenhaAdmin.SelectedText = "";
-            txtSenhaAdmin.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtSenhaAdmin.Size = new System.Drawing.Size(331, 36);
-            txtSenhaAdmin.TabIndex = 7;
+            txtSenhaAdmin.TabIndex = 1;
             // 
             // txtEmailAdmin
             // 
             txtEmailAdmin.BorderRadius = 8;
-            txtEmailAdmin.CustomizableEdges = customizableEdges8;
+            txtEmailAdmin.CustomizableEdges = customizableEdges7;
             txtEmailAdmin.DefaultText = "";
             txtEmailAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtEmailAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -184,26 +150,9 @@
             txtEmailAdmin.Name = "txtEmailAdmin";
             txtEmailAdmin.PlaceholderText = "example@example.com";
             txtEmailAdmin.SelectedText = "";
-            txtEmailAdmin.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            txtEmailAdmin.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtEmailAdmin.Size = new System.Drawing.Size(335, 36);
-            txtEmailAdmin.TabIndex = 8;
-            txtEmailAdmin.BorderRadius = 8;
-            txtEmailAdmin.CustomizableEdges = customizableEdges8;
-            txtEmailAdmin.DefaultText = "";
-            txtEmailAdmin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            txtEmailAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            txtEmailAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEmailAdmin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            txtEmailAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEmailAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            txtEmailAdmin.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEmailAdmin.Location = new System.Drawing.Point(31, 246);
-            txtEmailAdmin.Name = "txtEmail";
-            txtEmailAdmin.PlaceholderText = "example@example.com";
-            txtEmailAdmin.SelectedText = "";
-            txtEmailAdmin.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            txtEmailAdmin.Size = new System.Drawing.Size(335, 36);
-            txtEmailAdmin.TabIndex = 8;
+            txtEmailAdmin.TabIndex = 0;
             // 
             // label3
             // 
@@ -228,7 +177,7 @@
             // btnCancelar
             // 
             btnCancelar.BorderRadius = 8;
-            btnCancelar.CustomizableEdges = customizableEdges2;
+            btnCancelar.CustomizableEdges = customizableEdges1;
             btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -238,34 +187,16 @@
             btnCancelar.ForeColor = System.Drawing.Color.White;
             btnCancelar.Location = new System.Drawing.Point(31, 498);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancelar.Size = new System.Drawing.Size(335, 45);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
-            // 
-            // btnSair
-            // 
-            btnSair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnSair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnSair.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            btnSair.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnSair.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
-            btnSair.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnSair.ForeColor = System.Drawing.Color.White;
-            btnSair.Location = new System.Drawing.Point(358, 12);
-            btnSair.Name = "btnSair";
-            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            btnSair.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            btnSair.Size = new System.Drawing.Size(30, 30);
-            btnSair.TabIndex = 12;
-            btnSair.Text = "X";
             // 
             // frmPainelAdmin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(400, 600);
-            Controls.Add(btnSair);
             Controls.Add(btnCancelar);
             Controls.Add(btnLiberarAcesso);
             Controls.Add(chkSenha);
@@ -294,6 +225,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
-        private Guna.UI2.WinForms.Guna2CircleButton btnSair;
     }
 }

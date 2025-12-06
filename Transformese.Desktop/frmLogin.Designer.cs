@@ -119,7 +119,7 @@
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges9;
             txtEmail.Size = new System.Drawing.Size(378, 36);
-            txtEmail.TabIndex = 2;
+            txtEmail.TabIndex = 0;
             // 
             // label4
             // 
@@ -160,7 +160,7 @@
             txtSenha.SelectedText = "";
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges7;
             txtSenha.Size = new System.Drawing.Size(378, 36);
-            txtSenha.TabIndex = 2;
+            txtSenha.TabIndex = 1;
             txtSenha.UseSystemPasswordChar = true;
             // 
             // chkSenha
@@ -175,7 +175,7 @@
             chkSenha.Location = new System.Drawing.Point(720, 443);
             chkSenha.Name = "chkSenha";
             chkSenha.Size = new System.Drawing.Size(99, 26);
-            chkSenha.TabIndex = 3;
+            chkSenha.TabIndex = 2;
             chkSenha.Text = "Exibir senha";
             chkSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             chkSenha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(125, 137, 149);
@@ -193,7 +193,7 @@
             lblEsqueciSenha.Location = new System.Drawing.Point(974, 443);
             lblEsqueciSenha.Name = "lblEsqueciSenha";
             lblEsqueciSenha.Size = new System.Drawing.Size(124, 22);
-            lblEsqueciSenha.TabIndex = 1;
+            lblEsqueciSenha.TabIndex = 3;
             lblEsqueciSenha.Text = "Esqueceu a senha?";
             lblEsqueciSenha.Click += lblEsqueciSenha_Click;
             // 
@@ -233,7 +233,7 @@
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnCadastrar.Size = new System.Drawing.Size(378, 45);
-            btnCadastrar.TabIndex = 4;
+            btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Inscreva-se como usuário";
             btnCadastrar.Click += btnCadastrar_Click;
             // 
@@ -246,7 +246,7 @@
             lblGerandoFalcoes.Location = new System.Drawing.Point(803, 705);
             lblGerandoFalcoes.Name = "lblGerandoFalcoes";
             lblGerandoFalcoes.Size = new System.Drawing.Size(204, 22);
-            lblGerandoFalcoes.TabIndex = 1;
+            lblGerandoFalcoes.TabIndex = 6;
             lblGerandoFalcoes.Text = "Ir para o site da Gerando Falcões";
             lblGerandoFalcoes.Click += lblGerandoFalcoes_Click;
             // 
@@ -286,7 +286,7 @@
             btnSair.ShadowDecoration.CustomizableEdges = customizableEdges1;
             btnSair.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             btnSair.Size = new System.Drawing.Size(30, 30);
-            btnSair.TabIndex = 5;
+            btnSair.TabIndex = 7;
             btnSair.Text = "X";
             btnSair.Click += btnSair_Click;
             // 

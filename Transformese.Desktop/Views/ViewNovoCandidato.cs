@@ -139,43 +139,6 @@ namespace Transformese.Desktop.Views
         }
 
         // ========================================================
-        // VIA CEP
-        // ========================================================
-        private async void txtCEP_Leave(object sender, EventArgs e)
-        {
-            string cep = txtCEP.Text.Replace("-", "").Trim();
-
-            if (cep.Length == 8)
-            {
-                try
-                {
-                    using (var viaCepClient = new HttpClient())
-                    {
-                        var url = $"https://viacep.com.br/ws/{cep}/json/";
-                        var resultado = await viaCepClient.GetFromJsonAsync<ViaCepDto>(url);
-
-                        if (resultado != null && !resultado.erro)
-                        {
-                            txtCidade.Text = resultado.localidade;
-                            if (cboUF.Items.Contains(resultado.uf))
-                                cboUF.SelectedItem = resultado.uf;
-                            else
-                                cboUF.Text = resultado.uf;
-                        }
-                        else
-                        {
-                            ExibirMensagem("CEP não encontrado.");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ExibirMensagem($"Erro ao buscar CEP: {ex.Message}");
-                }
-            }
-        }
-
-        // ========================================================
         // SALVAR
         // ========================================================
         private async void btnSalvarCandidato_Click(object sender, EventArgs e)
@@ -303,5 +266,46 @@ namespace Transformese.Desktop.Views
         }
 
         public class ViaCepDto { public string localidade { get; set; } public string uf { get; set; } public bool erro { get; set; } }
+
+        private async void txtCepCandidato_Leave(object sender, EventArgs e)
+        {
+            // CORREÇÃO 1: Use o nome correto do controle (txtCepCandidato)
+            string cep = txtCepCandidato.Text.Replace("-", "").Trim();
+
+            if (cep.Length == 8)
+            {
+                try
+                {
+                    using (var viaCepClient = new HttpClient())
+                    {
+                        var url = $"https://viacep.com.br/ws/{cep}/json/";
+                        var resultado = await viaCepClient.GetFromJsonAsync<ViaCepDto>(url);
+
+                        if (resultado != null && !resultado.erro)
+                        {
+                            // CORREÇÃO 2: Use o nome correto do controle (txtCidadeCandidato)
+                            txtCidadeCandidato.Text = resultado.localidade;
+
+                            // Tenta selecionar no combo, se não der, joga no texto
+                            if (cboUF.Items.Contains(resultado.uf))
+                                cboUF.SelectedItem = resultado.uf;
+                            else
+                                cboUF.Text = resultado.uf;
+                        }
+                        else
+                        {
+                            ExibirMensagem("CEP não encontrado.");
+                            // Opcional: Limpar campos se não achar
+                            txtCidadeCandidato.Clear();
+                            cboUF.SelectedIndex = -1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ExibirMensagem($"Erro ao buscar CEP: {ex.Message}");
+                }
+            }
+        }
     }
 }
