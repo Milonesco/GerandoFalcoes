@@ -157,5 +157,10 @@ namespace Transformese.Desktop
                 this.Close();
             }
         }
+
+        private void lblSubTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

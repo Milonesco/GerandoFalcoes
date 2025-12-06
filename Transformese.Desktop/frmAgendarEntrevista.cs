@@ -112,9 +112,9 @@ namespace Transformese.Desktop
                 mdNotifica.Show("Erro local: " + ex.Message);
             }
         }
-        private void btnCancelarAgendamento_Click(object sender, EventArgs e) 
-        { 
-            this.Close(); 
+        private void btnCancelarAgendamento_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -30,8 +30,8 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,12 +39,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -128,14 +128,16 @@
             pnlLista.BorderRadius = 10;
             pnlLista.Controls.Add(dgvOngs);
             pnlLista.Controls.Add(txtBuscarOng);
+            pnlLista.Controls.Add(btnAtualizarGrid);
+            pnlLista.Controls.Add(btnExcluir);
             pnlLista.Controls.Add(guna2Separator1);
             pnlLista.Controls.Add(guna2HtmlLabel2);
-            pnlLista.CustomizableEdges = customizableEdges5;
+            pnlLista.CustomizableEdges = customizableEdges9;
             pnlLista.FillColor = System.Drawing.Color.White;
             pnlLista.Location = new System.Drawing.Point(20, 80);
             pnlLista.Name = "pnlLista";
             pnlLista.ShadowDecoration.BorderRadius = 10;
-            pnlLista.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnlLista.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnlLista.ShadowDecoration.Depth = 10;
             pnlLista.ShadowDecoration.Enabled = true;
             pnlLista.Size = new System.Drawing.Size(600, 640);
@@ -170,7 +172,7 @@
             dgvOngs.Name = "dgvOngs";
             dgvOngs.ReadOnly = true;
             dgvOngs.RowHeadersVisible = false;
-            dgvOngs.Size = new System.Drawing.Size(560, 500);
+            dgvOngs.Size = new System.Drawing.Size(560, 449);
             dgvOngs.TabIndex = 3;
             dgvOngs.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
             dgvOngs.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -297,8 +299,6 @@
             pnlCadastroONG.BorderRadius = 10;
             pnlCadastroONG.Controls.Add(guna2HtmlLabel10);
             pnlCadastroONG.Controls.Add(txtNomeVaga);
-            pnlCadastroONG.Controls.Add(btnExcluir);
-            pnlCadastroONG.Controls.Add(btnAtualizarGrid);
             pnlCadastroONG.Controls.Add(btnNovaOng);
             pnlCadastroONG.Controls.Add(btnSalvarOng);
             pnlCadastroONG.Controls.Add(numVagas);
@@ -329,7 +329,7 @@
             guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel10.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel10.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel10.Location = new System.Drawing.Point(20, 356);
+            guna2HtmlLabel10.Location = new System.Drawing.Point(20, 380);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new System.Drawing.Size(95, 24);
             guna2HtmlLabel10.TabIndex = 18;
@@ -339,7 +339,7 @@
             // 
             txtNomeVaga.BackColor = System.Drawing.Color.Transparent;
             txtNomeVaga.BorderRadius = 10;
-            txtNomeVaga.CustomizableEdges = customizableEdges7;
+            txtNomeVaga.CustomizableEdges = customizableEdges11;
             txtNomeVaga.DefaultText = "";
             txtNomeVaga.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtNomeVaga.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -348,13 +348,13 @@
             txtNomeVaga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtNomeVaga.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtNomeVaga.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtNomeVaga.Location = new System.Drawing.Point(20, 381);
+            txtNomeVaga.Location = new System.Drawing.Point(20, 405);
             txtNomeVaga.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtNomeVaga.Name = "txtNomeVaga";
             txtNomeVaga.PlaceholderText = "";
             txtNomeVaga.SelectedText = "";
             txtNomeVaga.ShadowDecoration.BorderRadius = 10;
-            txtNomeVaga.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtNomeVaga.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtNomeVaga.ShadowDecoration.Depth = 5;
             txtNomeVaga.ShadowDecoration.Enabled = true;
             txtNomeVaga.Size = new System.Drawing.Size(280, 36);
@@ -367,7 +367,7 @@
             btnExcluir.BorderRadius = 10;
             btnExcluir.BorderThickness = 1;
             btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnExcluir.CustomizableEdges = customizableEdges9;
+            btnExcluir.CustomizableEdges = customizableEdges7;
             btnExcluir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnExcluir.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -375,13 +375,13 @@
             btnExcluir.FillColor = System.Drawing.Color.FromArgb(169, 15, 64);
             btnExcluir.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = System.Drawing.Color.White;
-            btnExcluir.Location = new System.Drawing.Point(161, 575);
+            btnExcluir.Location = new System.Drawing.Point(305, 575);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.BorderRadius = 10;
-            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnExcluir.ShadowDecoration.Depth = 5;
             btnExcluir.ShadowDecoration.Enabled = true;
-            btnExcluir.Size = new System.Drawing.Size(135, 45);
+            btnExcluir.Size = new System.Drawing.Size(275, 45);
             btnExcluir.TabIndex = 16;
             btnExcluir.Text = "Excluir";
             btnExcluir.Click += btnExcluir_Click;
@@ -393,7 +393,7 @@
             btnAtualizarGrid.BorderRadius = 10;
             btnAtualizarGrid.BorderThickness = 1;
             btnAtualizarGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnAtualizarGrid.CustomizableEdges = customizableEdges11;
+            btnAtualizarGrid.CustomizableEdges = customizableEdges5;
             btnAtualizarGrid.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnAtualizarGrid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnAtualizarGrid.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -404,10 +404,10 @@
             btnAtualizarGrid.Location = new System.Drawing.Point(20, 575);
             btnAtualizarGrid.Name = "btnAtualizarGrid";
             btnAtualizarGrid.ShadowDecoration.BorderRadius = 10;
-            btnAtualizarGrid.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnAtualizarGrid.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnAtualizarGrid.ShadowDecoration.Depth = 5;
             btnAtualizarGrid.ShadowDecoration.Enabled = true;
-            btnAtualizarGrid.Size = new System.Drawing.Size(135, 45);
+            btnAtualizarGrid.Size = new System.Drawing.Size(275, 45);
             btnAtualizarGrid.TabIndex = 15;
             btnAtualizarGrid.Text = "Atualizar";
             btnAtualizarGrid.Click += btnSalvarOng_Click;
@@ -424,10 +424,10 @@
             btnNovaOng.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnNovaOng.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             btnNovaOng.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            btnNovaOng.FillColor = System.Drawing.Color.Gray;
+            btnNovaOng.FillColor = System.Drawing.Color.FromArgb(169, 15, 64);
             btnNovaOng.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnNovaOng.ForeColor = System.Drawing.Color.White;
-            btnNovaOng.Location = new System.Drawing.Point(161, 524);
+            btnNovaOng.Location = new System.Drawing.Point(161, 575);
             btnNovaOng.Name = "btnNovaOng";
             btnNovaOng.ShadowDecoration.BorderRadius = 10;
             btnNovaOng.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -453,7 +453,7 @@
             btnSalvarOng.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
             btnSalvarOng.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnSalvarOng.ForeColor = System.Drawing.Color.White;
-            btnSalvarOng.Location = new System.Drawing.Point(20, 524);
+            btnSalvarOng.Location = new System.Drawing.Point(20, 575);
             btnSalvarOng.Name = "btnSalvarOng";
             btnSalvarOng.ShadowDecoration.BorderRadius = 10;
             btnSalvarOng.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -471,7 +471,7 @@
             numVagas.Cursor = System.Windows.Forms.Cursors.Hand;
             numVagas.CustomizableEdges = customizableEdges17;
             numVagas.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            numVagas.Location = new System.Drawing.Point(20, 456);
+            numVagas.Location = new System.Drawing.Point(20, 480);
             numVagas.Name = "numVagas";
             numVagas.ShadowDecoration.BorderRadius = 10;
             numVagas.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -486,7 +486,7 @@
             guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel9.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel9.Location = new System.Drawing.Point(20, 431);
+            guna2HtmlLabel9.Location = new System.Drawing.Point(20, 455);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new System.Drawing.Size(169, 24);
             guna2HtmlLabel9.TabIndex = 13;
@@ -505,7 +505,7 @@
             txtCidadeOng.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtCidadeOng.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtCidadeOng.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtCidadeOng.Location = new System.Drawing.Point(20, 306);
+            txtCidadeOng.Location = new System.Drawing.Point(20, 330);
             txtCidadeOng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCidadeOng.Name = "txtCidadeOng";
             txtCidadeOng.PlaceholderText = "Ex: Ferraz de Vasconcelos - SP";
@@ -522,7 +522,7 @@
             guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel8.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel8.Location = new System.Drawing.Point(20, 281);
+            guna2HtmlLabel8.Location = new System.Drawing.Point(20, 305);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new System.Drawing.Size(153, 24);
             guna2HtmlLabel8.TabIndex = 11;
@@ -533,7 +533,7 @@
             guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel6.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel6.Location = new System.Drawing.Point(20, 206);
+            guna2HtmlLabel6.Location = new System.Drawing.Point(20, 230);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new System.Drawing.Size(43, 24);
             guna2HtmlLabel6.TabIndex = 9;
@@ -544,7 +544,7 @@
             guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel5.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel5.Location = new System.Drawing.Point(20, 131);
+            guna2HtmlLabel5.Location = new System.Drawing.Point(20, 155);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new System.Drawing.Size(205, 24);
             guna2HtmlLabel5.TabIndex = 8;
@@ -563,7 +563,7 @@
             txtResponsavelOng.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtResponsavelOng.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtResponsavelOng.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtResponsavelOng.Location = new System.Drawing.Point(20, 156);
+            txtResponsavelOng.Location = new System.Drawing.Point(20, 180);
             txtResponsavelOng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtResponsavelOng.Name = "txtResponsavelOng";
             txtResponsavelOng.PlaceholderText = "";
@@ -588,7 +588,7 @@
             txtEmailOng.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtEmailOng.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtEmailOng.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtEmailOng.Location = new System.Drawing.Point(20, 231);
+            txtEmailOng.Location = new System.Drawing.Point(20, 255);
             txtEmailOng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtEmailOng.Name = "txtEmailOng";
             txtEmailOng.PlaceholderText = "";
@@ -605,7 +605,7 @@
             guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel4.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            guna2HtmlLabel4.Location = new System.Drawing.Point(20, 56);
+            guna2HtmlLabel4.Location = new System.Drawing.Point(20, 80);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new System.Drawing.Size(143, 24);
             guna2HtmlLabel4.TabIndex = 4;
@@ -624,7 +624,7 @@
             txtResponsavel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             txtResponsavel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtResponsavel.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            txtResponsavel.Location = new System.Drawing.Point(20, 81);
+            txtResponsavel.Location = new System.Drawing.Point(20, 105);
             txtResponsavel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtResponsavel.Name = "txtResponsavel";
             txtResponsavel.PlaceholderText = "";
@@ -642,7 +642,7 @@
             guna2Separator2.FillThickness = 2;
             guna2Separator2.Location = new System.Drawing.Point(20, 40);
             guna2Separator2.Name = "guna2Separator2";
-            guna2Separator2.Size = new System.Drawing.Size(300, 10);
+            guna2Separator2.Size = new System.Drawing.Size(280, 10);
             guna2Separator2.TabIndex = 2;
             // 
             // guna2HtmlLabel3

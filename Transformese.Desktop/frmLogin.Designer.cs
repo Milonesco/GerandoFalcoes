@@ -30,15 +30,15 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
@@ -60,11 +60,13 @@
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
             // 
+            guna2BorderlessForm1.BorderRadius = 20;
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
@@ -83,28 +85,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(720, 98);
+            label1.Location = new System.Drawing.Point(713, 88);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(330, 96);
+            label1.Size = new System.Drawing.Size(358, 96);
             label1.TabIndex = 1;
-            label1.Text = "Bem-vindo(a) ao seu\r\nPortal Administrativo!";
+            label1.Text = "Bem-vindo(a) ao Portal \r\nGerando Falcões!";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            label2.Location = new System.Drawing.Point(725, 194);
+            label2.Location = new System.Drawing.Point(719, 184);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(397, 23);
+            label2.Size = new System.Drawing.Size(376, 23);
             label2.TabIndex = 1;
-            label2.Text = "Acesse sua área restrita (Administrador ou ONG Parceira).";
+            label2.Text = "Acesso Exclusivo para Colaboradores e Administração.";
             // 
             // txtEmail
             // 
             txtEmail.BorderRadius = 8;
             txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            txtEmail.CustomizableEdges = customizableEdges8;
+            txtEmail.CustomizableEdges = customizableEdges17;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -117,7 +119,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example@example.com";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtEmail.Size = new System.Drawing.Size(378, 36);
             txtEmail.TabIndex = 2;
             // 
@@ -145,7 +147,7 @@
             // 
             txtSenha.BorderRadius = 8;
             txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            txtSenha.CustomizableEdges = customizableEdges6;
+            txtSenha.CustomizableEdges = customizableEdges15;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -158,7 +160,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Digite sua senha";
             txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtSenha.Size = new System.Drawing.Size(378, 36);
             txtSenha.TabIndex = 2;
             txtSenha.UseSystemPasswordChar = true;
@@ -201,7 +203,7 @@
             // 
             btnLogin.BorderRadius = 8;
             btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnLogin.CustomizableEdges = customizableEdges4;
+            btnLogin.CustomizableEdges = customizableEdges13;
             btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -211,7 +213,7 @@
             btnLogin.ForeColor = System.Drawing.Color.White;
             btnLogin.Location = new System.Drawing.Point(720, 475);
             btnLogin.Name = "btnLogin";
-            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnLogin.Size = new System.Drawing.Size(378, 45);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
@@ -221,7 +223,7 @@
             // 
             btnCadastrar.BorderRadius = 8;
             btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnCadastrar.CustomizableEdges = customizableEdges2;
+            btnCadastrar.CustomizableEdges = customizableEdges11;
             btnCadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -231,7 +233,7 @@
             btnCadastrar.ForeColor = System.Drawing.Color.White;
             btnCadastrar.Location = new System.Drawing.Point(720, 641);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCadastrar.Size = new System.Drawing.Size(378, 45);
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Inscreva-se como usuário";
@@ -281,9 +283,9 @@
             btnSair.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
             btnSair.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnSair.ForeColor = System.Drawing.Color.White;
-            btnSair.Location = new System.Drawing.Point(1158, 12);
+            btnSair.Location = new System.Drawing.Point(1150, 20);
             btnSair.Name = "btnSair";
-            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            btnSair.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSair.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             btnSair.Size = new System.Drawing.Size(30, 30);
             btnSair.TabIndex = 5;
@@ -330,6 +332,10 @@
             guna2Separator2.Name = "guna2Separator2";
             guna2Separator2.Size = new System.Drawing.Size(167, 28);
             guna2Separator2.TabIndex = 7;
+            // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.BorderRadius = 20;
             // 
             // frmLogin
             // 
@@ -387,5 +393,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

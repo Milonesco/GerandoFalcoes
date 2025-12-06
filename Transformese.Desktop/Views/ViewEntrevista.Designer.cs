@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             dtpFiltroData = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -78,6 +80,9 @@
             pnlStatusIndicator3 = new Guna.UI2.WinForms.Guna2Panel();
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             mdIniciarTriagem = new Guna.UI2.WinForms.Guna2MessageDialog();
+            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlHeader.SuspendLayout();
             flpEntrevistas.SuspendLayout();
             pnlCardModelo.SuspendLayout();
@@ -87,14 +92,17 @@
             // 
             // pnlHeader
             // 
+            pnlHeader.Controls.Add(guna2ComboBox1);
             pnlHeader.Controls.Add(dtpFiltroData);
             pnlHeader.Controls.Add(guna2HtmlLabel2);
             pnlHeader.Controls.Add(guna2HtmlLabel1);
-            pnlHeader.CustomizableEdges = customizableEdges25;
+            pnlHeader.Controls.Add(guna2HtmlLabel3);
+            pnlHeader.Controls.Add(guna2HtmlLabel4);
+            pnlHeader.CustomizableEdges = customizableEdges5;
             pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             pnlHeader.Location = new System.Drawing.Point(20, 20);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pnlHeader.Size = new System.Drawing.Size(940, 70);
             pnlHeader.TabIndex = 0;
             // 
@@ -104,20 +112,20 @@
             dtpFiltroData.BorderRadius = 10;
             dtpFiltroData.Checked = true;
             dtpFiltroData.Cursor = System.Windows.Forms.Cursors.Hand;
-            dtpFiltroData.CustomizableEdges = customizableEdges23;
-            dtpFiltroData.FillColor = System.Drawing.Color.Gray;
+            dtpFiltroData.CustomizableEdges = customizableEdges3;
+            dtpFiltroData.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
             dtpFiltroData.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             dtpFiltroData.ForeColor = System.Drawing.Color.White;
             dtpFiltroData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpFiltroData.Location = new System.Drawing.Point(807, 15);
+            dtpFiltroData.Location = new System.Drawing.Point(807, 28);
             dtpFiltroData.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFiltroData.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFiltroData.Name = "dtpFiltroData";
             dtpFiltroData.ShadowDecoration.BorderRadius = 10;
-            dtpFiltroData.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            dtpFiltroData.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpFiltroData.ShadowDecoration.Depth = 5;
             dtpFiltroData.ShadowDecoration.Enabled = true;
-            dtpFiltroData.Size = new System.Drawing.Size(130, 40);
+            dtpFiltroData.Size = new System.Drawing.Size(125, 36);
             dtpFiltroData.TabIndex = 0;
             dtpFiltroData.Value = new System.DateTime(2025, 12, 3, 12, 3, 48, 921);
             dtpFiltroData.ValueChanged += dtpFiltroData_ValueChanged_1;
@@ -166,13 +174,13 @@
             pnlCardModelo.Controls.Add(lblDataEntrevista1);
             pnlCardModelo.Controls.Add(lblHorario1);
             pnlCardModelo.Controls.Add(pnlStatusIndicator1);
-            pnlCardModelo.CustomizableEdges = customizableEdges31;
+            pnlCardModelo.CustomizableEdges = customizableEdges11;
             pnlCardModelo.FillColor = System.Drawing.Color.White;
             pnlCardModelo.Location = new System.Drawing.Point(0, 0);
             pnlCardModelo.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
             pnlCardModelo.Name = "pnlCardModelo";
             pnlCardModelo.ShadowDecoration.BorderRadius = 10;
-            pnlCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            pnlCardModelo.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pnlCardModelo.ShadowDecoration.Depth = 10;
             pnlCardModelo.ShadowDecoration.Enabled = true;
             pnlCardModelo.Size = new System.Drawing.Size(300, 160);
@@ -181,7 +189,7 @@
             // btnIniciarTriagem
             // 
             btnIniciarTriagem.BorderRadius = 5;
-            btnIniciarTriagem.CustomizableEdges = customizableEdges27;
+            btnIniciarTriagem.CustomizableEdges = customizableEdges7;
             btnIniciarTriagem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnIniciarTriagem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnIniciarTriagem.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -193,7 +201,7 @@
             btnIniciarTriagem.HoverState.ForeColor = System.Drawing.Color.White;
             btnIniciarTriagem.Location = new System.Drawing.Point(20, 115);
             btnIniciarTriagem.Name = "btnIniciarTriagem";
-            btnIniciarTriagem.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnIniciarTriagem.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnIniciarTriagem.Size = new System.Drawing.Size(260, 35);
             btnIniciarTriagem.TabIndex = 8;
             btnIniciarTriagem.Text = "Iniciar Triagem";
@@ -244,12 +252,12 @@
             // 
             // pnlStatusIndicator1
             // 
-            pnlStatusIndicator1.CustomizableEdges = customizableEdges29;
+            pnlStatusIndicator1.CustomizableEdges = customizableEdges9;
             pnlStatusIndicator1.Dock = System.Windows.Forms.DockStyle.Left;
             pnlStatusIndicator1.FillColor = System.Drawing.Color.FromArgb(233, 107, 42);
             pnlStatusIndicator1.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator1.Name = "pnlStatusIndicator1";
-            pnlStatusIndicator1.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            pnlStatusIndicator1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnlStatusIndicator1.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator1.TabIndex = 3;
             // 
@@ -263,13 +271,13 @@
             guna2Panel1.Controls.Add(lblDataEntrevista2);
             guna2Panel1.Controls.Add(lblHorario2);
             guna2Panel1.Controls.Add(pnlStatusIndicator2);
-            guna2Panel1.CustomizableEdges = customizableEdges37;
+            guna2Panel1.CustomizableEdges = customizableEdges17;
             guna2Panel1.FillColor = System.Drawing.Color.White;
             guna2Panel1.Location = new System.Drawing.Point(320, 0);
             guna2Panel1.Margin = new System.Windows.Forms.Padding(0, 0, 20, 20);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.BorderRadius = 10;
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2Panel1.ShadowDecoration.Depth = 10;
             guna2Panel1.ShadowDecoration.Enabled = true;
             guna2Panel1.Size = new System.Drawing.Size(300, 160);
@@ -278,7 +286,7 @@
             // btnVerDetalhes
             // 
             btnVerDetalhes.BorderRadius = 5;
-            btnVerDetalhes.CustomizableEdges = customizableEdges33;
+            btnVerDetalhes.CustomizableEdges = customizableEdges13;
             btnVerDetalhes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnVerDetalhes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnVerDetalhes.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -290,7 +298,7 @@
             btnVerDetalhes.HoverState.ForeColor = System.Drawing.Color.White;
             btnVerDetalhes.Location = new System.Drawing.Point(20, 115);
             btnVerDetalhes.Name = "btnVerDetalhes";
-            btnVerDetalhes.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnVerDetalhes.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnVerDetalhes.Size = new System.Drawing.Size(260, 35);
             btnVerDetalhes.TabIndex = 8;
             btnVerDetalhes.Text = "Ver Detalhes";
@@ -341,12 +349,12 @@
             // 
             // pnlStatusIndicator2
             // 
-            pnlStatusIndicator2.CustomizableEdges = customizableEdges35;
+            pnlStatusIndicator2.CustomizableEdges = customizableEdges15;
             pnlStatusIndicator2.Dock = System.Windows.Forms.DockStyle.Left;
             pnlStatusIndicator2.FillColor = System.Drawing.Color.FromArgb(236, 34, 98);
             pnlStatusIndicator2.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator2.Name = "pnlStatusIndicator2";
-            pnlStatusIndicator2.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            pnlStatusIndicator2.ShadowDecoration.CustomizableEdges = customizableEdges16;
             pnlStatusIndicator2.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator2.TabIndex = 3;
             // 
@@ -360,13 +368,13 @@
             guna2Panel3.Controls.Add(lblDataEntrevista3);
             guna2Panel3.Controls.Add(lblHorario3);
             guna2Panel3.Controls.Add(pnlStatusIndicator3);
-            guna2Panel3.CustomizableEdges = customizableEdges43;
+            guna2Panel3.CustomizableEdges = customizableEdges23;
             guna2Panel3.FillColor = System.Drawing.Color.White;
             guna2Panel3.Location = new System.Drawing.Point(640, 0);
             guna2Panel3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.BorderRadius = 10;
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2Panel3.ShadowDecoration.Depth = 10;
             guna2Panel3.ShadowDecoration.Enabled = true;
             guna2Panel3.Size = new System.Drawing.Size(300, 160);
@@ -375,7 +383,7 @@
             // btnAgendarEntrevista
             // 
             btnAgendarEntrevista.BorderRadius = 5;
-            btnAgendarEntrevista.CustomizableEdges = customizableEdges39;
+            btnAgendarEntrevista.CustomizableEdges = customizableEdges19;
             btnAgendarEntrevista.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             btnAgendarEntrevista.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             btnAgendarEntrevista.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -387,7 +395,7 @@
             btnAgendarEntrevista.HoverState.ForeColor = System.Drawing.Color.White;
             btnAgendarEntrevista.Location = new System.Drawing.Point(20, 115);
             btnAgendarEntrevista.Name = "btnAgendarEntrevista";
-            btnAgendarEntrevista.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btnAgendarEntrevista.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnAgendarEntrevista.Size = new System.Drawing.Size(260, 35);
             btnAgendarEntrevista.TabIndex = 8;
             btnAgendarEntrevista.Text = "Agendar Entrevista";
@@ -438,12 +446,12 @@
             // 
             // pnlStatusIndicator3
             // 
-            pnlStatusIndicator3.CustomizableEdges = customizableEdges41;
+            pnlStatusIndicator3.CustomizableEdges = customizableEdges21;
             pnlStatusIndicator3.Dock = System.Windows.Forms.DockStyle.Left;
             pnlStatusIndicator3.FillColor = System.Drawing.Color.FromArgb(22, 163, 74);
             pnlStatusIndicator3.Location = new System.Drawing.Point(0, 0);
             pnlStatusIndicator3.Name = "pnlStatusIndicator3";
-            pnlStatusIndicator3.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            pnlStatusIndicator3.ShadowDecoration.CustomizableEdges = customizableEdges22;
             pnlStatusIndicator3.Size = new System.Drawing.Size(6, 160);
             pnlStatusIndicator3.TabIndex = 3;
             // 
@@ -464,6 +472,50 @@
             mdIniciarTriagem.Parent = null;
             mdIniciarTriagem.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             mdIniciarTriagem.Text = null;
+            // 
+            // guna2ComboBox1
+            // 
+            guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            guna2ComboBox1.BorderRadius = 10;
+            guna2ComboBox1.CustomizableEdges = customizableEdges1;
+            guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(122, 90, 216);
+            guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            guna2ComboBox1.ForeColor = System.Drawing.Color.White;
+            guna2ComboBox1.ItemHeight = 30;
+            guna2ComboBox1.Location = new System.Drawing.Point(641, 28);
+            guna2ComboBox1.Name = "guna2ComboBox1";
+            guna2ComboBox1.ShadowDecoration.BorderRadius = 10;
+            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ComboBox1.ShadowDecoration.Depth = 5;
+            guna2ComboBox1.ShadowDecoration.Enabled = true;
+            guna2ComboBox1.Size = new System.Drawing.Size(160, 36);
+            guna2ComboBox1.TabIndex = 2;
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel3.Location = new System.Drawing.Point(640, 9);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new System.Drawing.Size(130, 24);
+            guna2HtmlLabel3.TabIndex = 3;
+            guna2HtmlLabel3.Text = "Status do Candidato";
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel4.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            guna2HtmlLabel4.Location = new System.Drawing.Point(807, 10);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new System.Drawing.Size(33, 24);
+            guna2HtmlLabel4.TabIndex = 4;
+            guna2HtmlLabel4.Text = "Data";
             // 
             // ViewEntrevista
             // 
@@ -518,5 +570,8 @@
         private Guna.UI2.WinForms.Guna2Panel pnlStatusIndicator3;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
         private Guna.UI2.WinForms.Guna2MessageDialog mdIniciarTriagem;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
     }
 }
