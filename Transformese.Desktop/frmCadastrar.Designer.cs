@@ -78,11 +78,13 @@
             dtpDataCadastro = new Guna.UI2.WinForms.Guna2DateTimePicker();
             label8 = new System.Windows.Forms.Label();
             dtpDataNascimento = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
             // 
+            guna2BorderlessForm1.BorderRadius = 20;
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
@@ -515,6 +517,10 @@
             dtpDataNascimento.TabIndex = 3;
             dtpDataNascimento.Value = new System.DateTime(2025, 12, 1, 21, 30, 2, 926);
             // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.BorderRadius = 20;
+            // 
             // frmCadastrar
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -584,5 +590,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Sexo;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataNascimento;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

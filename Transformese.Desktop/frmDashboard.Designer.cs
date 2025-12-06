@@ -78,6 +78,7 @@
             lblTituloLogo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
             mdSair = new Guna.UI2.WinForms.Guna2MessageDialog();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
             pnlHeader.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // guna2BorderlessForm1
             // 
+            guna2BorderlessForm1.BorderRadius = 20;
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
@@ -246,7 +248,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            guna2Separator1.Location = new System.Drawing.Point(0, 340);
+            guna2Separator1.Location = new System.Drawing.Point(0, 304);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new System.Drawing.Size(220, 2);
             guna2Separator1.TabIndex = 2;
@@ -266,7 +268,7 @@
             btnRelatorios.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnRelatorios.ForeColor = System.Drawing.Color.White;
             btnRelatorios.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnRelatorios.Location = new System.Drawing.Point(0, 420);
+            btnRelatorios.Location = new System.Drawing.Point(0, 406);
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnRelatorios.Size = new System.Drawing.Size(220, 50);
@@ -290,7 +292,7 @@
             btnGestaoOngs.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnGestaoOngs.ForeColor = System.Drawing.Color.White;
             btnGestaoOngs.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnGestaoOngs.Location = new System.Drawing.Point(3, 364);
+            btnGestaoOngs.Location = new System.Drawing.Point(0, 356);
             btnGestaoOngs.Name = "btnGestaoOngs";
             btnGestaoOngs.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnGestaoOngs.Size = new System.Drawing.Size(220, 50);
@@ -314,7 +316,7 @@
             btnNovoCandidato.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnNovoCandidato.ForeColor = System.Drawing.Color.White;
             btnNovoCandidato.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnNovoCandidato.Location = new System.Drawing.Point(0, 308);
+            btnNovoCandidato.Location = new System.Drawing.Point(0, 306);
             btnNovoCandidato.Name = "btnNovoCandidato";
             btnNovoCandidato.ShadowDecoration.CustomizableEdges = customizableEdges15;
             btnNovoCandidato.Size = new System.Drawing.Size(220, 50);
@@ -362,7 +364,7 @@
             btnTriagem.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnTriagem.ForeColor = System.Drawing.Color.White;
             btnTriagem.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 168, 157);
-            btnTriagem.Location = new System.Drawing.Point(3, 196);
+            btnTriagem.Location = new System.Drawing.Point(0, 196);
             btnTriagem.Name = "btnTriagem";
             btnTriagem.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnTriagem.Size = new System.Drawing.Size(220, 50);
@@ -418,15 +420,16 @@
             lblSubTitulo.TabIndex = 5;
             lblSubTitulo.TabStop = false;
             lblSubTitulo.Text = "GESTÃO TRANSFORME-SE";
+            lblSubTitulo.Click += lblSubTitulo_Click;
             // 
             // lblTituloLogo
             // 
             lblTituloLogo.BackColor = System.Drawing.Color.Transparent;
-            lblTituloLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTituloLogo.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lblTituloLogo.ForeColor = System.Drawing.Color.White;
             lblTituloLogo.Location = new System.Drawing.Point(7, 30);
             lblTituloLogo.Name = "lblTituloLogo";
-            lblTituloLogo.Size = new System.Drawing.Size(206, 26);
+            lblTituloLogo.Size = new System.Drawing.Size(204, 39);
             lblTituloLogo.TabIndex = 4;
             lblTituloLogo.TabStop = false;
             lblTituloLogo.Text = "GERANDO FALCÕES";
@@ -448,6 +451,10 @@
             mdSair.Parent = this;
             mdSair.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             mdSair.Text = null;
+            // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.BorderRadius = 20;
             // 
             // frmDashboard
             // 
@@ -499,5 +506,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblBoasVindas;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
         private Guna.UI2.WinForms.Guna2MessageDialog mdSair;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

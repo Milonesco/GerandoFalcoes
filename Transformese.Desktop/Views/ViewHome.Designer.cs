@@ -126,6 +126,10 @@
             pnlConteudoPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             pnlTabelaInscricoes = new Guna.UI2.WinForms.Guna2Panel();
             dgvInscricoes = new Guna.UI2.WinForms.Guna2DataGridView();
+            colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pnlHeaderTabela = new Guna.UI2.WinForms.Guna2Panel();
             lblTituloTabela = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlEspacador = new Guna.UI2.WinForms.Guna2Panel();
@@ -133,10 +137,6 @@
             btnSincronizar = new Guna.UI2.WinForms.Guna2Button();
             lblStatusSync = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pbNuvem = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             flowKpiCards.SuspendLayout();
             pnlKpiCardModelo.SuspendLayout();
             pnlKpiTriagem.SuspendLayout();
@@ -195,34 +195,34 @@
             // lblKpiStatus
             // 
             lblKpiStatus.BackColor = System.Drawing.Color.Transparent;
-            lblKpiStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblKpiStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             lblKpiStatus.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
             lblKpiStatus.Location = new System.Drawing.Point(10, 85);
             lblKpiStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblKpiStatus.Name = "lblKpiStatus";
-            lblKpiStatus.Size = new System.Drawing.Size(52, 15);
+            lblKpiStatus.Size = new System.Drawing.Size(51, 24);
             lblKpiStatus.TabIndex = 2;
             lblKpiStatus.Text = "+12 hoje";
             // 
             // lblKpiValor
             // 
             lblKpiValor.BackColor = System.Drawing.Color.Transparent;
-            lblKpiValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            lblKpiValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             lblKpiValor.ForeColor = System.Drawing.Color.FromArgb(0, 168, 157);
             lblKpiValor.Location = new System.Drawing.Point(10, 35);
             lblKpiValor.Name = "lblKpiValor";
-            lblKpiValor.Size = new System.Drawing.Size(87, 39);
+            lblKpiValor.Size = new System.Drawing.Size(85, 58);
             lblKpiValor.TabIndex = 1;
             lblKpiValor.Text = "1.250";
             // 
             // lblKpiTitulo
             // 
             lblKpiTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblKpiTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblKpiTitulo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             lblKpiTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblKpiTitulo.Location = new System.Drawing.Point(10, 10);
             lblKpiTitulo.Name = "lblKpiTitulo";
-            lblKpiTitulo.Size = new System.Drawing.Size(137, 18);
+            lblKpiTitulo.Size = new System.Drawing.Size(143, 30);
             lblKpiTitulo.TabIndex = 0;
             lblKpiTitulo.Text = "TOTAL INSCRITOS";
             // 
@@ -247,34 +247,34 @@
             // lblTriagemStatus
             // 
             lblTriagemStatus.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblTriagemStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             lblTriagemStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblTriagemStatus.Location = new System.Drawing.Point(10, 85);
             lblTriagemStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblTriagemStatus.Name = "lblTriagemStatus";
-            lblTriagemStatus.Size = new System.Drawing.Size(115, 15);
+            lblTriagemStatus.Size = new System.Drawing.Size(128, 24);
             lblTriagemStatus.TabIndex = 2;
             lblTriagemStatus.Text = "Aguardando análise";
             // 
             // lblTriagemValor
             // 
             lblTriagemValor.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            lblTriagemValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             lblTriagemValor.ForeColor = System.Drawing.Color.FromArgb(233, 107, 42);
             lblTriagemValor.Location = new System.Drawing.Point(10, 35);
             lblTriagemValor.Name = "lblTriagemValor";
-            lblTriagemValor.Size = new System.Drawing.Size(58, 39);
+            lblTriagemValor.Size = new System.Drawing.Size(57, 58);
             lblTriagemValor.TabIndex = 1;
             lblTriagemValor.Text = "150";
             // 
             // lblTriagemTitulo
             // 
             lblTriagemTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblTriagemTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            lblTriagemTitulo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             lblTriagemTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblTriagemTitulo.Location = new System.Drawing.Point(10, 10);
             lblTriagemTitulo.Name = "lblTriagemTitulo";
-            lblTriagemTitulo.Size = new System.Drawing.Size(97, 18);
+            lblTriagemTitulo.Size = new System.Drawing.Size(102, 30);
             lblTriagemTitulo.TabIndex = 0;
             lblTriagemTitulo.Text = "EM TRIAGEM";
             // 
@@ -299,34 +299,34 @@
             // lblEntrevistasStatus
             // 
             lblEntrevistasStatus.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             lblEntrevistasStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblEntrevistasStatus.Location = new System.Drawing.Point(10, 85);
             lblEntrevistasStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblEntrevistasStatus.Name = "lblEntrevistasStatus";
-            lblEntrevistasStatus.Size = new System.Drawing.Size(110, 15);
+            lblEntrevistasStatus.Size = new System.Drawing.Size(121, 24);
             lblEntrevistasStatus.TabIndex = 2;
             lblEntrevistasStatus.Text = "+15 agendamentos";
             // 
             // lblEntrevistasValor
             // 
             lblEntrevistasValor.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             lblEntrevistasValor.ForeColor = System.Drawing.Color.FromArgb(236, 34, 98);
             lblEntrevistasValor.Location = new System.Drawing.Point(10, 35);
             lblEntrevistasValor.Name = "lblEntrevistasValor";
-            lblEntrevistasValor.Size = new System.Drawing.Size(41, 39);
+            lblEntrevistasValor.Size = new System.Drawing.Size(45, 58);
             lblEntrevistasValor.TabIndex = 1;
             lblEntrevistasValor.Text = "80";
             // 
             // lblEntrevistasTitulo
             // 
             lblEntrevistasTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblEntrevistasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            lblEntrevistasTitulo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             lblEntrevistasTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblEntrevistasTitulo.Location = new System.Drawing.Point(10, 10);
             lblEntrevistasTitulo.Name = "lblEntrevistasTitulo";
-            lblEntrevistasTitulo.Size = new System.Drawing.Size(109, 18);
+            lblEntrevistasTitulo.Size = new System.Drawing.Size(110, 30);
             lblEntrevistasTitulo.TabIndex = 0;
             lblEntrevistasTitulo.Text = "ENTREVISTAS";
             // 
@@ -351,34 +351,34 @@
             // lblAprovadosStatus
             // 
             lblAprovadosStatus.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblAprovadosStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             lblAprovadosStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblAprovadosStatus.Location = new System.Drawing.Point(10, 85);
             lblAprovadosStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblAprovadosStatus.Name = "lblAprovadosStatus";
-            lblAprovadosStatus.Size = new System.Drawing.Size(125, 15);
+            lblAprovadosStatus.Size = new System.Drawing.Size(137, 24);
             lblAprovadosStatus.TabIndex = 2;
             lblAprovadosStatus.Text = "Prontos para o Asana";
             // 
             // lblAprovadosValor
             // 
             lblAprovadosValor.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            lblAprovadosValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             lblAprovadosValor.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
             lblAprovadosValor.Location = new System.Drawing.Point(10, 35);
             lblAprovadosValor.Name = "lblAprovadosValor";
-            lblAprovadosValor.Size = new System.Drawing.Size(41, 39);
+            lblAprovadosValor.Size = new System.Drawing.Size(44, 58);
             lblAprovadosValor.TabIndex = 1;
             lblAprovadosValor.Text = "60";
             // 
             // lblAprovadosTitulo
             // 
             lblAprovadosTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblAprovadosTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            lblAprovadosTitulo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             lblAprovadosTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
-            lblAprovadosTitulo.Location = new System.Drawing.Point(10, 10);
+            lblAprovadosTitulo.Location = new System.Drawing.Point(10, 11);
             lblAprovadosTitulo.Name = "lblAprovadosTitulo";
-            lblAprovadosTitulo.Size = new System.Drawing.Size(97, 18);
+            lblAprovadosTitulo.Size = new System.Drawing.Size(107, 30);
             lblAprovadosTitulo.TabIndex = 0;
             lblAprovadosTitulo.Text = "APROVADOS";
             // 
@@ -403,34 +403,34 @@
             // lblVagasStatus
             // 
             lblVagasStatus.BackColor = System.Drawing.Color.Transparent;
-            lblVagasStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
+            lblVagasStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             lblVagasStatus.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasStatus.Location = new System.Drawing.Point(10, 85);
             lblVagasStatus.MaximumSize = new System.Drawing.Size(155, 0);
             lblVagasStatus.Name = "lblVagasStatus";
-            lblVagasStatus.Size = new System.Drawing.Size(107, 15);
+            lblVagasStatus.Size = new System.Drawing.Size(115, 24);
             lblVagasStatus.TabIndex = 2;
             lblVagasStatus.Text = "Vagas disponíveis";
             // 
             // lblVagasValor
             // 
             lblVagasValor.BackColor = System.Drawing.Color.Transparent;
-            lblVagasValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            lblVagasValor.Font = new System.Drawing.Font("Poppins ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             lblVagasValor.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasValor.Location = new System.Drawing.Point(10, 35);
             lblVagasValor.Name = "lblVagasValor";
-            lblVagasValor.Size = new System.Drawing.Size(60, 39);
+            lblVagasValor.Size = new System.Drawing.Size(66, 58);
             lblVagasValor.TabIndex = 1;
             lblVagasValor.Text = "340";
             // 
             // lblVagasTitulo
             // 
             lblVagasTitulo.BackColor = System.Drawing.Color.Transparent;
-            lblVagasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            lblVagasTitulo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             lblVagasTitulo.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
             lblVagasTitulo.Location = new System.Drawing.Point(10, 10);
             lblVagasTitulo.Name = "lblVagasTitulo";
-            lblVagasTitulo.Size = new System.Drawing.Size(150, 18);
+            lblVagasTitulo.Size = new System.Drawing.Size(154, 30);
             lblVagasTitulo.TabIndex = 0;
             lblVagasTitulo.Text = "VAGAS RESTANTES";
             // 
@@ -800,9 +800,9 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dgvInscricoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvInscricoes.ColumnHeadersHeight = 30;
@@ -833,8 +833,8 @@
             dgvInscricoes.ThemeStyle.GridColor = System.Drawing.Color.White;
             dgvInscricoes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.White;
             dgvInscricoes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dgvInscricoes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            dgvInscricoes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(136, 136, 136);
+            dgvInscricoes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dgvInscricoes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             dgvInscricoes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvInscricoes.ThemeStyle.HeaderStyle.Height = 30;
             dgvInscricoes.ThemeStyle.ReadOnly = false;
@@ -843,8 +843,37 @@
             dgvInscricoes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             dgvInscricoes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
             dgvInscricoes.ThemeStyle.RowsStyle.Height = 25;
-            dgvInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            dgvInscricoes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
             dgvInscricoes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            // 
+            // colNome
+            // 
+            colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colNome.FillWeight = 449.238617F;
+            colNome.HeaderText = "CANDIDATO";
+            colNome.MinimumWidth = 200;
+            colNome.Name = "colNome";
+            // 
+            // colCidade
+            // 
+            colCidade.FillWeight = 2.9438467F;
+            colCidade.HeaderText = "CIDADE";
+            colCidade.MinimumWidth = 100;
+            colCidade.Name = "colCidade";
+            // 
+            // colStatus
+            // 
+            colStatus.FillWeight = 29.4714565F;
+            colStatus.HeaderText = "STATUS";
+            colStatus.MinimumWidth = 90;
+            colStatus.Name = "colStatus";
+            // 
+            // colOng
+            // 
+            colOng.FillWeight = 17.7666035F;
+            colOng.HeaderText = "ONG RESP.";
+            colOng.MinimumWidth = 100;
+            colOng.Name = "colOng";
             // 
             // pnlHeaderTabela
             // 
@@ -949,35 +978,6 @@
             pbNuvem.Size = new System.Drawing.Size(40, 40);
             pbNuvem.TabIndex = 0;
             pbNuvem.TabStop = false;
-            // 
-            // colNome
-            // 
-            colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            colNome.FillWeight = 449.238617F;
-            colNome.HeaderText = "CANDIDATO";
-            colNome.MinimumWidth = 200;
-            colNome.Name = "colNome";
-            // 
-            // colCidade
-            // 
-            colCidade.FillWeight = 2.9438467F;
-            colCidade.HeaderText = "CIDADE";
-            colCidade.MinimumWidth = 100;
-            colCidade.Name = "colCidade";
-            // 
-            // colStatus
-            // 
-            colStatus.FillWeight = 29.4714565F;
-            colStatus.HeaderText = "STATUS";
-            colStatus.MinimumWidth = 90;
-            colStatus.Name = "colStatus";
-            // 
-            // colOng
-            // 
-            colOng.FillWeight = 17.7666035F;
-            colOng.HeaderText = "ONG RESP.";
-            colOng.MinimumWidth = 100;
-            colOng.Name = "colOng";
             // 
             // ViewHome
             // 
